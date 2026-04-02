@@ -102,37 +102,49 @@ export default function RecommendedToolsPage() {
                   </p>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2">
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                   {category.tools.map((tool) => (
                     <a
                       key={tool.name}
                       href={tool.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group grid min-h-[19rem] grid-rows-[auto_1fr_auto] rounded-[0.72rem] border border-obsidian/12 bg-white/45 p-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] ring-1 ring-white/60 transition duration-300 hover:-translate-y-0.5 hover:border-obsidian/20 hover:bg-white/60"
+                      className="group rounded-[0.72rem] border border-obsidian/12 bg-white/45 p-3 shadow-[0_18px_50px_rgba(17,17,17,0.04)] ring-1 ring-white/60 transition duration-300 hover:-translate-y-1 hover:border-obsidian/20 hover:bg-white/60"
                     >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="tool-logo-tile relative flex h-[4.75rem] w-[4.75rem] items-center justify-center overflow-hidden rounded-[0.72rem] border border-obsidian/10 bg-porcelain/90">
-                          <span className="tool-logo-gloss" />
+                      <div className="tool-preview relative overflow-hidden rounded-[0.72rem] border border-obsidian/10 bg-porcelain/90">
+                        <span className="tool-logo-gloss" />
+                        <div className="absolute left-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-[0.55rem] bg-white/90 shadow-[0_6px_18px_rgba(17,17,17,0.08)] ring-1 ring-black/5 backdrop-blur-sm">
                           <Image
                             src={tool.image}
                             alt={`${tool.name} logo`}
-                            width={44}
-                            height={44}
-                            className="tool-logo-image h-11 w-11 rounded-[0.55rem] object-contain"
+                            width={22}
+                            height={22}
+                            className="tool-logo-image h-[1.15rem] w-[1.15rem] object-contain"
                             unoptimized
                           />
                         </div>
-                        <span className="pt-1 text-[0.7rem] uppercase tracking-editorial text-stone transition group-hover:text-obsidian">
-                          Open →
-                        </span>
+                        <div className="tool-preview-image flex h-[9.5rem] w-full items-center justify-center bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(245,242,239,0.96))]">
+                          <Image
+                            src={tool.image}
+                            alt={`${tool.name} preview`}
+                            width={112}
+                            height={112}
+                            className="h-16 w-16 object-contain opacity-[0.92]"
+                            unoptimized
+                          />
+                        </div>
                       </div>
 
-                      <div className="mt-8">
-                        <h2 className="font-serif text-3xl leading-tight text-obsidian">
-                          {tool.name}
-                        </h2>
-                        <p className="mt-4 text-base leading-8 text-stone">
+                      <div className="mt-4 px-1 pb-2">
+                        <div className="flex items-start justify-between gap-3">
+                          <h2 className="font-sans text-[2rem] font-semibold leading-[1.02] tracking-[-0.03em] text-obsidian">
+                            {tool.name}
+                          </h2>
+                          <span className="pt-1 text-[0.64rem] uppercase tracking-editorial text-stone transition group-hover:text-obsidian">
+                            Open →
+                          </span>
+                        </div>
+                        <p className="mt-3 text-[0.98rem] leading-7 text-stone">
                           {tool.description}
                         </p>
                       </div>
