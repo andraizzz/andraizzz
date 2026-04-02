@@ -58,6 +58,29 @@ body > * {
   z-index: 1;
 }
 
+.site-header {
+  background-color: rgba(245, 242, 239, var(--header-bg-alpha, 0.84));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgba(28, 34, 40, var(--header-border-alpha, 0.1));
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 242, 239, 0) 0%,
+    rgba(245, 242, 239, 0.94) 18%,
+    rgba(245, 242, 239, 0.3) 68%,
+    rgba(245, 242, 239, 0) 100%
+  );
+  opacity: var(--header-gradient-alpha, 0);
+  transition: opacity 300ms ease;
+}
+
 .hero-fade {
   animation: heroFadeIn 700ms ease-out both;
 }

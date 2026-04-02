@@ -1,7 +1,37 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "wisprflow.ai"
+      },
+      {
+        protocol: "https",
+        hostname: "claude.ai"
+      },
+      {
+        protocol: "https",
+        hostname: "code.visualstudio.com"
+      },
+      {
+        protocol: "https",
+        hostname: "brave.com"
+      },
+      {
+        protocol: "https",
+        hostname: "www.perplexity.ai"
+      },
+      {
+        protocol: "https",
+        hostname: "chatgpt.com"
+      },
+      {
+        protocol: "https",
+        hostname: "www.notion.so"
+      }
+    ]
   },
   async headers() {
     return [

@@ -30,40 +30,7 @@ export default function HomePage() {
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[58rem] bg-hero-radial opacity-90" />
 
-      <div className="sticky top-0 z-50 border-b border-obsidian/10 bg-porcelain/82 backdrop-blur-xl">
-        <div className="mx-auto max-w-7xl px-6 py-4 sm:px-8 sm:py-5 lg:px-12">
-          <header className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
-            <span className="font-serif text-2xl tracking-[0.35em] text-obsidian">
-              ANDRA
-            </span>
-            <div className="flex items-center gap-4 sm:gap-7">
-              <a
-                href="https://www.linkedin.com/in/andraizgarian/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-[0.78rem] tracking-[0.18em] text-stone transition hover:text-obsidian sm:text-sm"
-              >
-                LINKEDIN
-              </a>
-              <a
-                href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
-                className="text-[0.78rem] tracking-[0.18em] text-stone transition hover:text-obsidian sm:text-sm"
-              >
-                CONTACT
-              </a>
-            </div>
-          </header>
-        </div>
-      </div>
-
       <section className="hero-fade mx-auto min-h-screen max-w-7xl px-6 pb-10 pt-6 sm:px-8 sm:pb-12 sm:pt-8 lg:px-12 lg:pb-14 lg:pt-10">
-        <div className="border-b border-transparent pb-1" />
-
-        <header className="sr-only">
-          <span className="font-serif text-2xl tracking-[0.35em] text-obsidian">
-            ANDRA
-          </span>
-        </header>
 
         <div className="grid gap-12 pt-10 sm:gap-14 sm:pt-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-24 lg:pt-16">
           <div className="hero-copy-reveal flex flex-col justify-start">
