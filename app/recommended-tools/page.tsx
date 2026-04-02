@@ -53,6 +53,13 @@ const toolCategories = [
         image: "https://www.notion.so/images/favicon.ico",
         description:
           "A clean operating system for notes, planning, systems, and keeping ideas organized without adding visual noise."
+      },
+      {
+        name: "HeyReach",
+        href: "https://heyreach.io/?via=andra",
+        image: "https://www.heyreach.io/favicon.ico",
+        description:
+          "A smart choice for outreach systems and LinkedIn-led growth when you want more structure around outbound without overcomplicating it."
       }
     ]
   }
@@ -105,13 +112,14 @@ export default function RecommendedToolsPage() {
                       className="group grid min-h-[19rem] grid-rows-[auto_1fr_auto] rounded-[0.72rem] border border-obsidian/12 bg-white/45 p-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] ring-1 ring-white/60 transition duration-300 hover:-translate-y-0.5 hover:border-obsidian/20 hover:bg-white/60"
                     >
                       <div className="flex items-start justify-between gap-4">
-                        <div className="flex h-[4.75rem] w-[4.75rem] items-center justify-center rounded-[0.72rem] border border-obsidian/10 bg-porcelain/90">
+                        <div className="tool-logo-tile relative flex h-[4.75rem] w-[4.75rem] items-center justify-center overflow-hidden rounded-[0.72rem] border border-obsidian/10 bg-porcelain/90">
+                          <span className="tool-logo-gloss" />
                           <Image
                             src={tool.image}
                             alt={`${tool.name} logo`}
                             width={44}
                             height={44}
-                            className="h-11 w-11 rounded-[0.55rem] object-contain"
+                            className="tool-logo-image h-11 w-11 rounded-[0.55rem] object-contain"
                             unoptimized
                           />
                         </div>
