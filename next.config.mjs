@@ -34,6 +34,22 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "www.heyreach.io"
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.prod.website-files.com"
+      },
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net"
+      },
+      {
+        protocol: "https",
+        hostname: "downloads.intercomcdn.com"
+      },
+      {
+        protocol: "https",
+        hostname: "www.notion.com"
       }
     ]
   },
