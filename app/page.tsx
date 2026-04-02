@@ -1,157 +1,248 @@
 import Image from "next/image";
+import Link from "next/link";
+import { BrandStrip } from "@/components/brand-strip";
 
-const logos = [
-  "BuzzFeed",
-  "Marriott",
-  "IHG",
-  "Accor",
-  "Condé Nast",
-  "Lionsgate",
-  "Chiva-Som",
-  "W Hotels"
+const specialties = [
+  {
+    number: "01",
+    title: "AI Visibility Strategy",
+    descriptor: "ChatGPT, Gemini, Claude, Perplexity"
+  },
+  {
+    number: "02",
+    title: "Brand Positioning & Narrative",
+    descriptor: "Messaging, Differentiation, Authority"
+  },
+  {
+    number: "03",
+    title: "Performance Growth Strategy",
+    descriptor: "Digital Ads, Email Marketing, PR Strategy"
+  },
+  {
+    number: "04",
+    title: "Digital Marketing Advisory",
+    descriptor: "SEO, Social Media Strategy, Website Creation, AI Discovery"
+  }
 ];
 
 export default function HomePage() {
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-hero-radial" />
-      <div className="pointer-events-none absolute left-[-10rem] top-24 h-80 w-80 rounded-full bg-shell/80 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-8rem] top-40 h-96 w-96 rounded-full bg-blush/20 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[58rem] bg-hero-radial opacity-90" />
 
-      <section className="mx-auto grid min-h-screen max-w-7xl gap-16 px-6 pb-20 pt-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-12 lg:pb-24 lg:pt-10">
-        <div className="flex flex-col justify-between">
-          <header className="flex items-center justify-between border-b border-obsidian/10 pb-6">
+      <div className="sticky top-0 z-50 border-b border-obsidian/10 bg-porcelain/82 backdrop-blur-xl">
+        <div className="mx-auto max-w-7xl px-6 py-4 sm:px-8 sm:py-5 lg:px-12">
+          <header className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
             <span className="font-serif text-2xl tracking-[0.35em] text-obsidian">
               ANDRA
             </span>
-            <a
-              href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
-              className="text-sm tracking-[0.18em] text-stone transition hover:text-obsidian"
-            >
-              CONTACT
-            </a>
-          </header>
-
-          <div className="max-w-2xl pt-14 lg:pt-20">
-            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              Strategy / AI Visibility / Growth
-            </p>
-            <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[0.95] text-obsidian sm:text-6xl lg:text-7xl">
-              Strategy for brands that refuse to be invisible.
-            </h1>
-            <p className="mt-8 max-w-xl text-base leading-8 text-stone sm:text-lg">
-              ANDRA advises ambitious brands at the intersection of media,
-              hospitality, and AI visibility. Drawing from hands-on experience
-              shaping narratives, partnerships, and growth across editorial and
-              luxury spaces, she helps businesses clarify their position, expand
-              their reach, and become unmistakably discoverable in the age of
-              AI.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="flex items-center gap-4 sm:gap-7">
+              <a
+                href="https://www.linkedin.com/in/andraizgarian/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[0.78rem] tracking-[0.18em] text-stone transition hover:text-obsidian sm:text-sm"
+              >
+                LINKEDIN
+              </a>
               <a
                 href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
-                className="inline-flex items-center justify-center rounded-full bg-obsidian px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition hover:bg-ink"
+                className="text-[0.78rem] tracking-[0.18em] text-stone transition hover:text-obsidian sm:text-sm"
               >
-                Work with me →
+                CONTACT
               </a>
-              <a
-                href="#newsletter"
-                className="inline-flex items-center justify-center rounded-full border border-obsidian/15 bg-white/50 px-7 py-4 text-sm uppercase tracking-[0.18em] text-obsidian backdrop-blur transition hover:border-obsidian/40 hover:bg-white/70"
-              >
-                Join the newsletter →
-              </a>
+            </div>
+          </header>
+        </div>
+      </div>
+
+      <section className="hero-fade mx-auto min-h-screen max-w-7xl px-6 pb-10 pt-6 sm:px-8 sm:pb-12 sm:pt-8 lg:px-12 lg:pb-14 lg:pt-10">
+        <div className="border-b border-transparent pb-1" />
+
+        <header className="sr-only">
+          <span className="font-serif text-2xl tracking-[0.35em] text-obsidian">
+            ANDRA
+          </span>
+        </header>
+
+        <div className="grid gap-12 pt-10 sm:gap-14 sm:pt-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-24 lg:pt-16">
+          <div className="hero-copy-reveal flex flex-col justify-start">
+            <div className="max-w-2xl">
+              <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+                Strategy / AI Visibility / Growth
+              </p>
+              <h1 className="mt-6 max-w-3xl font-serif text-[3.6rem] leading-[1.04] text-obsidian sm:text-[4.5rem] lg:text-[5.35rem]">
+                Strategy for brands that refuse to be invisible.
+              </h1>
+              <p className="mt-12 max-w-xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
+                ANDRA advises ambitious brands at the intersection of media,
+                hospitality, and AI visibility. Drawing from hands-on experience
+                shaping narratives, partnerships, and growth across editorial and
+                luxury spaces, she helps businesses clarify their position, expand
+                their reach, and become unmistakably discoverable in the age of
+                AI.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+                  className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98]"
+                >
+                  Work with me →
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] border border-obsidian/20 bg-white/25 px-7 py-4 text-sm uppercase tracking-[0.18em] text-obsidian backdrop-blur-md transition duration-300 hover:scale-[1.02] hover:border-obsidian/45 hover:bg-white/50 hover:shadow-[0_14px_34px_rgba(17,17,17,0.07)] active:scale-[0.98]"
+                >
+                  Join the newsletter →
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="mt-16 hidden border-t border-obsidian/10 pt-8 lg:block">
-            <p className="max-w-md text-sm leading-7 text-stone">
-              Precision strategy for founders and legacy brands who want their
-              next chapter to feel inevitable, elevated, and visible.
-            </p>
-          </div>
-        </div>
-
-        <div className="relative flex items-center lg:justify-end">
-          <div className="relative w-full max-w-[42rem] overflow-hidden rounded-[2rem] border border-white/60 bg-white/50 p-4 shadow-halo backdrop-blur-xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-transparent to-shell/30" />
-            <div className="relative overflow-hidden rounded-[1.5rem] bg-[#d8c7bc]">
-              <Image
-                src="/andra-hero.jpg"
-                alt="Andra hero placeholder"
-                width={1200}
-                height={1500}
-                priority
-                className="h-full min-h-[28rem] w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/20 via-transparent to-white/20" />
-              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-6 text-porcelain">
-                <div>
-                  <p className="text-[0.7rem] uppercase tracking-editorial text-porcelain/80">
-                    Personal Strategy Consulting
-                  </p>
-                  <p className="mt-2 font-serif text-2xl">ANDRA</p>
-                </div>
-                <p className="max-w-[12rem] text-right text-xs uppercase tracking-[0.16em] text-porcelain/75">
-                  Visibility with elegance and intent
-                </p>
+          <div className="hero-image-reveal relative flex items-center lg:justify-end">
+            <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.62),transparent_45%),radial-gradient(circle_at_80%_20%,rgba(231,216,207,0.58),transparent_38%),radial-gradient(circle_at_50%_100%,rgba(217,167,154,0.14),transparent_45%)] blur-2xl" />
+            <div className="relative w-full max-w-[44rem] rounded-[2.25rem] border border-white/50 bg-white/28 p-4 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl">
+              <div className="absolute inset-0 rounded-[2.25rem] border border-white/45 bg-gradient-to-br from-white/42 via-white/8 to-shell/12" />
+              <div className="pointer-events-none absolute -bottom-8 left-10 right-10 h-24 rounded-full bg-obsidian/8 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-white/60 bg-[#d8c7bc]">
+                <Image
+                  src="/andra-hero.jpg"
+                  alt="Andra hero placeholder"
+                  width={1200}
+                  height={1500}
+                  priority
+                  className="h-full min-h-[30rem] w-full scale-[1.04] object-cover saturate-[0.84] brightness-[1.08] contrast-[0.96]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/24 via-[rgba(244,245,244,0.06)] to-[rgba(223,228,228,0.14)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(248,248,247,0.24),transparent_32%),radial-gradient(circle_at_78%_22%,rgba(229,233,233,0.16),transparent_36%)]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/10 via-transparent to-white/16" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-obsidian/10 bg-white/35">
-        <div className="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 gap-x-8 gap-y-6 text-center sm:grid-cols-4 lg:grid-cols-8">
-            {logos.map((logo) => (
-              <p
-                key={logo}
-                className="font-serif text-xl text-ink/80 opacity-90 sm:text-2xl"
+      <section className="mx-auto max-w-7xl px-6 pb-2 sm:px-8 lg:px-12">
+        <BrandStrip />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
+          <div>
+            <h2 className="font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+              Specialties
+            </h2>
+          </div>
+
+          <div className="border-t border-obsidian/12">
+            {specialties.map((item) => (
+              <div
+                key={item.number}
+                className="grid gap-4 border-b border-obsidian/12 py-8 sm:py-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-baseline lg:gap-8"
               >
-                {logo}
-              </p>
+                <div className="flex items-baseline gap-4 sm:gap-5">
+                  <span className="min-w-12 text-xs uppercase tracking-editorial text-stone sm:text-sm">
+                    {item.number}
+                  </span>
+                  <h3 className="font-serif text-2xl leading-tight text-obsidian sm:text-[2rem]">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="pl-[3.25rem] text-base leading-8 text-stone/90 sm:pl-[3.75rem] sm:text-lg lg:pl-0 lg:text-right">
+                  {item.descriptor}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <section
-        id="newsletter"
-        className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-12 lg:py-28"
+        id="contact"
+        className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-28"
       >
-        <div>
-          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-            Newsletter
-          </p>
-          <h2 className="mt-5 max-w-md font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-            Notes on growth, perception, and staying visible.
-          </h2>
-          <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
-            Join for sharp thinking on strategy, positioning, hospitality,
-            media, and how brands can earn relevance in an AI-shaped world.
-          </p>
-        </div>
+        <div className="grid gap-14 rounded-[2rem] bg-white/45 px-6 py-8 shadow-[0_20px_60px_rgba(17,17,17,0.05)] ring-1 ring-white/60 backdrop-blur-sm sm:px-8 sm:py-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 lg:px-12 lg:py-14">
+          <div>
+            <h2 className="max-w-md font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+              Join the Conversation.
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
+              Stay connected with the tips and tricks I&apos;ve learned along the
+              way.
+            </p>
+          </div>
 
-        <div className="overflow-hidden rounded-[2rem] border border-obsidian/10 bg-white/70 p-3 shadow-halo backdrop-blur">
-          <iframe
-            src="https://forms.monday.com/forms/9e3c378090f8d1eaad00f31f0b3184e0?r=use1"
-            title="ANDRA newsletter signup"
-            className="h-[680px] w-full rounded-[1.5rem] bg-porcelain"
-          />
+          <div className="w-full">
+            <form className="space-y-6" method="post">
+              <div className="grid gap-6 sm:grid-cols-2">
+                <label className="block">
+                  <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
+                    Name
+                  </span>
+                  <input
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    className="w-full rounded-[0.85rem] border border-obsidian/12 bg-porcelain/80 px-5 py-4 text-base text-obsidian outline-none transition duration-300 placeholder:text-stone/70 focus:border-obsidian/35 focus:bg-white"
+                    placeholder="Your name"
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
+                    Email
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    className="w-full rounded-[0.85rem] border border-obsidian/12 bg-porcelain/80 px-5 py-4 text-base text-obsidian outline-none transition duration-300 placeholder:text-stone/70 focus:border-obsidian/35 focus:bg-white"
+                    placeholder="Your email"
+                  />
+                </label>
+              </div>
+
+              <label className="block">
+                <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
+                  Optional Message
+                </span>
+                <textarea
+                  name="message"
+                  rows={6}
+                  className="w-full resize-none rounded-[0.85rem] border border-obsidian/12 bg-porcelain/80 px-5 py-4 text-base leading-7 text-obsidian outline-none transition duration-300 placeholder:text-stone/70 focus:border-obsidian/35 focus:bg-white"
+                  placeholder="Tell me a little about what you're building or exploring."
+                />
+              </label>
+
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98]"
+              >
+                Connect
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
       <footer className="border-t border-obsidian/10 px-6 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="font-serif text-3xl tracking-[0.28em] text-obsidian">
               ANDRA
             </p>
           </div>
-          <div className="space-y-1 text-sm uppercase tracking-[0.16em] text-stone">
-            <p>andra@zanobe.com</p>
+          <div className="flex flex-col gap-2 text-sm uppercase tracking-[0.16em] text-stone sm:items-end">
             <p>andraizzz.com</p>
+            <div className="flex flex-wrap gap-4 text-[0.72rem] tracking-[0.18em]">
+              <Link href="/privacy-policy" className="transition hover:text-obsidian">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="transition hover:text-obsidian">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </footer>

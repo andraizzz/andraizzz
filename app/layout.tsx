@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { ClickStars } from "@/components/click-stars";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -28,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ClickStars />
+      </body>
     </html>
   );
 }
