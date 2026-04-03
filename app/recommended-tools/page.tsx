@@ -10,6 +10,14 @@ type Tool = {
   eyebrow?: string;
 };
 
+const toolPalettes = [
+  { background: "#F7F0EB", surface: "#F1E5DD", accent: "#D9A79A", ink: "#1C2228" },
+  { background: "#F4EFEA", surface: "#E8DDD3", accent: "#C98D82", ink: "#1C2228" },
+  { background: "#F3F1EE", surface: "#E6E2DD", accent: "#A7B2BC", ink: "#1C2228" },
+  { background: "#F7F3F0", surface: "#EDE3DC", accent: "#B98E82", ink: "#1C2228" },
+  { background: "#F5F1EC", surface: "#E6DCD2", accent: "#8DA0A8", ink: "#1C2228" }
+] as const;
+
 const featuredTools: Tool[] = [
   {
     name: "Wispr Flow",
@@ -86,24 +94,38 @@ const furtherTools: Tool[] = [
     eyebrow: "AI CMO"
   },
   {
-    name: "HeyGen / Synthesia",
+    name: "HeyGen",
     href: "https://www.heygen.com/",
     description:
       "AI avatar video for ads, brand storytelling, and social content is exploding. Essential if video is in your strategy.",
     eyebrow: "Video"
   },
   {
-    name: "ElevenLabs / Voice Design V3 / Fish Audio S1",
+    name: "Synthesia",
+    href: "https://www.synthesia.io/",
+    description:
+      "A strong business-facing AI video platform if your workflow leans toward training, brand storytelling, or polished internal content.",
+    eyebrow: "Video"
+  },
+  {
+    name: "ElevenLabs",
     href: "https://elevenlabs.io/",
     description:
-      "Voice-over and audio branding for video, podcasts, and ads.",
+      "Voice-over and audio branding for video, podcasts, ads, and narration-heavy content workflows.",
     eyebrow: "Audio"
   },
   {
-    name: "Ad Copy Generator / AdGen AI / Arcads",
+    name: "Fish Audio S1",
+    href: "https://fish.audio/",
+    description:
+      "Another strong voice layer for audio branding, expressive narration, and creative voice experimentation.",
+    eyebrow: "Audio"
+  },
+  {
+    name: "Arcads",
     href: "https://www.arcads.ai/",
     description:
-      "Direct digital ad production tools. Very relevant for paid social and search campaigns.",
+      "A direct digital ad production tool that feels especially relevant for paid social and performance workflows.",
     eyebrow: "Paid Ads"
   },
   {
@@ -122,6 +144,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "PromptSignal",
+    href: "https://www.promptsignal.ai/",
     description:
       "As LLMs increasingly influence brand discovery, tracking how AI ranks your brand is a new but critical digital marketing metric.",
     eyebrow: "AI Visibility"
@@ -148,6 +171,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Lumona",
+    href: "https://www.lumona.ai/",
     description:
       "Social media-powered AI search insights is a modern take on audience research.",
     eyebrow: "Research"
@@ -156,10 +180,16 @@ const furtherTools: Tool[] = [
 
 const situationalTools: Tool[] = [
   {
-    name: "Midjourney / Nano Banana 2",
+    name: "Midjourney",
     href: "https://www.midjourney.com/",
     description:
-      "Great for creative teams producing visual content at scale, but still requires more manual workflow integration.",
+      "Great for creative teams producing visual content at scale, though it still benefits from a stronger manual workflow around it.",
+    eyebrow: "Situational"
+  },
+  {
+    name: "Nano Banana 2",
+    description:
+      "Useful for creative experimentation, but more niche and workflow-dependent than the core recommendations above.",
     eyebrow: "Situational"
   },
   {
@@ -176,14 +206,21 @@ const situationalTools: Tool[] = [
     eyebrow: "Lead Capture"
   },
   {
-    name: "AgentX / AI Chatbot on Zapier / Aicado",
-    href: "https://zapier.com/",
+    name: "AI Chatbot on Zapier",
+    href: "https://zapier.com/ai",
     description:
       "Useful if your digital marketing stack includes website automation or conversational marketing.",
     eyebrow: "Automation"
   },
   {
-    name: "Infography / Canvas in Gemini",
+    name: "Aicado",
+    href: "https://aicado.ai/",
+    description:
+      "A practical option if you want branded AI agents or assistant-like experiences embedded directly into your site or product.",
+    eyebrow: "Automation"
+  },
+  {
+    name: "Canvas in Gemini",
     href: "https://gemini.google.com/",
     description:
       "Good for content marketing and thought leadership visuals.",
@@ -191,18 +228,21 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Magic Animator",
+    href: "https://magicanimator.com/",
     description:
       "Relevant if you are producing motion graphics for social and web.",
     eyebrow: "Motion"
   },
   {
     name: "Pomelli",
+    href: "https://pomelli.ai/",
     description:
       "An early-stage Google Labs experiment worth watching, but not yet production-ready.",
     eyebrow: "Emerging"
   },
   {
     name: "Hailuo 2.3",
+    href: "https://hailuoai.video/",
     description:
       "Solid for video content production, though more of a creator tool than a pure marketing tool.",
     eyebrow: "Video"
@@ -217,6 +257,78 @@ export const metadata: Metadata = {
 function toolMonogram(name: string) {
   const parts = name.split(/[ /]+/).filter(Boolean);
   return parts.slice(0, 2).map((part) => part[0]).join("").toUpperCase();
+}
+
+function hashToolName(name: string) {
+  return Array.from(name).reduce((total, char) => total + char.charCodeAt(0), 0);
+}
+
+function pickToolPalette(name: string) {
+  return toolPalettes[hashToolName(name) % toolPalettes.length];
+}
+
+function svgToDataUri(svg: string) {
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+function renderToolIcon(tool: Tool) {
+  if (tool.image) {
+    return tool.image;
+  }
+
+  const palette = pickToolPalette(tool.name);
+  const monogram = toolMonogram(tool.name);
+
+  return svgToDataUri(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+      <rect width="96" height="96" rx="28" fill="${palette.background}"/>
+      <rect x="10" y="10" width="76" height="76" rx="22" fill="${palette.surface}" stroke="rgba(28,34,40,0.08)"/>
+      <rect x="18" y="18" width="60" height="14" rx="7" fill="${palette.background}"/>
+      <rect x="18" y="42" width="60" height="30" rx="15" fill="${palette.accent}" fill-opacity="0.18"/>
+      <text x="48" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="${palette.ink}">${monogram}</text>
+    </svg>
+  `);
+}
+
+function renderToolPreview(tool: Tool) {
+  if (tool.preview) {
+    return tool.preview;
+  }
+
+  const palette = pickToolPalette(tool.name);
+  const title = tool.name.replace(/&/g, "&amp;");
+  const eyebrow = (tool.eyebrow ?? "Tool").replace(/&/g, "&amp;");
+
+  return svgToDataUri(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" fill="none">
+      <rect width="1200" height="760" rx="36" fill="${palette.background}"/>
+      <rect x="32" y="32" width="1136" height="696" rx="28" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.08)"/>
+      <rect x="64" y="64" width="1072" height="72" rx="20" fill="${palette.surface}"/>
+      <circle cx="104" cy="100" r="10" fill="${palette.accent}" fill-opacity="0.9"/>
+      <circle cx="136" cy="100" r="10" fill="${palette.accent}" fill-opacity="0.55"/>
+      <circle cx="168" cy="100" r="10" fill="${palette.accent}" fill-opacity="0.3"/>
+      <rect x="220" y="84" width="172" height="30" rx="15" fill="rgba(28,34,40,0.08)"/>
+      <rect x="748" y="84" width="324" height="30" rx="15" fill="rgba(28,34,40,0.06)"/>
+      <rect x="80" y="176" width="420" height="472" rx="28" fill="${palette.surface}"/>
+      <rect x="532" y="176" width="556" height="214" rx="28" fill="rgba(255,255,255,0.78)"/>
+      <rect x="532" y="420" width="266" height="228" rx="28" fill="rgba(255,255,255,0.78)"/>
+      <rect x="822" y="420" width="266" height="228" rx="28" fill="rgba(255,255,255,0.78)"/>
+      <text x="112" y="236" font-family="Arial, sans-serif" font-size="20" letter-spacing="5" fill="rgba(28,34,40,0.45)">${eyebrow.toUpperCase()}</text>
+      <text x="112" y="300" font-family="Georgia, serif" font-size="54" fill="${palette.ink}">${title}</text>
+      <rect x="112" y="338" width="256" height="14" rx="7" fill="rgba(28,34,40,0.12)"/>
+      <rect x="112" y="370" width="220" height="14" rx="7" fill="rgba(28,34,40,0.08)"/>
+      <rect x="112" y="450" width="160" height="160" rx="32" fill="${palette.background}"/>
+      <rect x="300" y="450" width="136" height="22" rx="11" fill="rgba(28,34,40,0.08)"/>
+      <rect x="300" y="490" width="88" height="88" rx="24" fill="${palette.accent}" fill-opacity="0.18"/>
+      <rect x="564" y="208" width="360" height="18" rx="9" fill="rgba(28,34,40,0.08)"/>
+      <rect x="564" y="244" width="454" height="18" rx="9" fill="rgba(28,34,40,0.06)"/>
+      <rect x="564" y="292" width="144" height="64" rx="20" fill="${palette.accent}" fill-opacity="0.18"/>
+      <rect x="734" y="292" width="146" height="64" rx="20" fill="${palette.surface}"/>
+      <rect x="906" y="292" width="146" height="64" rx="20" fill="${palette.background}"/>
+      <path d="M576 584C630 528 676 514 732 498C792 480 834 458 888 420" stroke="${palette.accent}" stroke-width="10" stroke-linecap="round"/>
+      <path d="M858 584L908 532L960 566L1034 480" stroke="${palette.ink}" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `);
 }
 
 function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
@@ -237,7 +349,7 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
         <div className="absolute left-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-[0.55rem] bg-white/90 shadow-[0_6px_18px_rgba(17,17,17,0.08)] ring-1 ring-black/5 backdrop-blur-sm">
           {tool.image ? (
             <Image
-              src={tool.image}
+              src={renderToolIcon(tool)}
               alt={`${tool.name} logo`}
               width={22}
               height={22}
@@ -245,9 +357,14 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
               unoptimized
             />
           ) : (
-            <span className="tool-monogram text-[0.62rem] font-semibold tracking-[0.12em] text-obsidian">
-              {toolMonogram(tool.name)}
-            </span>
+            <Image
+              src={renderToolIcon(tool)}
+              alt={`${tool.name} icon`}
+              width={22}
+              height={22}
+              className="tool-logo-image h-[1.15rem] w-[1.15rem] object-contain"
+              unoptimized
+            />
           )}
         </div>
 
@@ -258,7 +375,7 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
         >
           {tool.preview ? (
             <Image
-              src={tool.preview}
+              src={renderToolPreview(tool)}
               alt={`${tool.name} preview`}
               width={1200}
               height={800}
@@ -266,19 +383,14 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
               unoptimized
             />
           ) : (
-            <div className="tool-preview-fallback flex h-full items-end justify-between px-4 pb-4 pt-12">
-              <div>
-                {tool.eyebrow ? (
-                  <p className="text-[0.62rem] uppercase tracking-editorial text-stone">
-                    {tool.eyebrow}
-                  </p>
-                ) : null}
-                <p className="mt-2 max-w-[10rem] font-serif text-2xl leading-none text-obsidian/85">
-                  {toolMonogram(tool.name)}
-                </p>
-              </div>
-              <div className="h-14 w-14 rounded-full border border-obsidian/8 bg-white/30" />
-            </div>
+            <Image
+              src={renderToolPreview(tool)}
+              alt={`${tool.name} preview`}
+              width={1200}
+              height={800}
+              className="h-full w-full object-cover object-top"
+              unoptimized
+            />
           )}
         </div>
       </div>
