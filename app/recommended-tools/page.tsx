@@ -8,71 +8,64 @@ const toolCategories = [
       {
         name: "Wispr Flow",
         href: "https://wisprflow.ai/r?ANDRA16",
-        image: "https://wisprflow.ai/favicon.ico",
-        preview:
-          "https://cdn.prod.website-files.com/6838259bd246e848c14f0840/683829796f346a9a6f931363_apple.png",
+        image: "/recommended-tools/wispr-logo.png",
+        preview: "/recommended-tools/wispr-preview.jpg",
         description:
           "My pick for fast voice capture and cleaner momentum when thinking, drafting, or moving quickly."
       },
       {
         name: "Claude / Claude Code",
         href: "https://claude.ai",
-        image: "https://claude.ai/favicon.ico",
-        preview:
-          "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6914d00328fde4187dc9cdbe_claude-code_vs-code_preview.webp",
+        image: "/recommended-tools/claude-logo.png",
+        preview: "/recommended-tools/claude-preview.webp",
         description:
           "My personal favorite for vibe coding. Excellent for strategy, long-form thinking, and working through ideas with depth."
       },
       {
         name: "Visual Studio Code",
         href: "https://code.visualstudio.com/",
-        image: "https://code.visualstudio.com/favicon.ico",
-        preview:
-          "https://code.visualstudio.com/assets/home/swimlane-customized.png",
+        image: "/recommended-tools/vscode-logo.png",
+        preview: "/recommended-tools/vscode-preview.png",
         description:
           "A clean environment for writing, editing, and building. Still one of the strongest homes for vibe coding workflows."
       },
       {
         name: "Brave Browser",
         href: "https://brave.com/",
-        image: "https://brave.com/favicon.ico",
-        preview: "https://brave.com/home-assets/images/default-accordion-image.png",
+        image: "/recommended-tools/brave-logo.png",
+        preview: "/recommended-tools/brave-preview.png",
         description:
           "For ad-free browsing, cleaner focus, and a more private day-to-day web experience."
       },
       {
         name: "Perplexity",
         href: "https://www.perplexity.ai/",
-        image: "https://www.perplexity.ai/favicon.ico",
-        preview:
-          "https://downloads.intercomcdn.com/i/o/l2wyozh0/1498451662/deb72b6a16156798e755e6b82265/Screenshot%2B2025-04-28%2Bat%2B12_16_01%E2%80%AFPM.png?expires=1775165400&req=dSQuHs17nIdZW%2FMW1HO4zSqqR6WCwYahsVGITKn1XqQdF%2FzfAnJAaCOC4sN4%0Avs8y5qaGeYvA0yRZwd4%3D%0A&signature=9fe6e2c70b99999d0ad119fc39d06fad5eddf23c5066d3dc0cb3b8a9d6f80386",
+        image: "/recommended-tools/perplexity-logo.png",
+        preview: "/recommended-tools/perplexity-preview.png",
         description:
           "Fast research and synthesis when you need to move quickly, scan sources, and sharpen an early point of view."
       },
       {
         name: "ChatGPT",
         href: "https://chatgpt.com/",
-        image: "https://chatgpt.com/favicon.ico",
-        preview:
-          "https://images.ctfassets.net/j22is2dtoxu1/7MQhNOlZH0P1UkDzw0DpPt/bdd905a2af2973662c243f3f1cfe2f64/7.png",
+        image: "/recommended-tools/chatgpt-logo.png",
+        preview: "/recommended-tools/chatgpt-preview.png",
         description:
           "Strong for strategy support, ideation, drafting, and helping move a concept from rough instinct into clearer structure."
       },
       {
         name: "Notion",
         href: "https://www.notion.so/",
-        image: "https://www.notion.so/images/favicon.ico",
-        preview:
-          "https://www.notion.com/_next/image?q=75&url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F6ryGYBBeFdl21HUR07Rf45%2F805485a867aec66c8aca2087dfd7cb19%2Fen-US_MeetingNotes.jpg&w=3840",
+        image: "/recommended-tools/notion-logo.png",
+        preview: "/recommended-tools/notion-preview.jpg",
         description:
           "A clean operating system for notes, planning, systems, and keeping ideas organized without adding visual noise."
       },
       {
         name: "HeyReach",
         href: "https://heyreach.io/?via=andra",
-        image: "https://www.heyreach.io/favicon.ico",
-        preview:
-          "https://cdn.prod.website-files.com/65492afe86bfa964d89f2005/681e98127c850dc8f6eea10f_67bde19c84dbd00082d0bd3e_Group%20269.webp",
+        image: "/recommended-tools/heyreach-logo.png",
+        preview: "/recommended-tools/heyreach-preview.webp",
         description:
           "A smart choice for outreach systems and LinkedIn-led growth when you want more structure around outbound without overcomplicating it."
       }
