@@ -4,50 +4,42 @@ const logos = [
   {
     name: "BuzzFeed",
     src: "/client-logos/buzzfeed.png",
-    href: "https://www.buzzfeed.com/",
-    imageClass: "scale-[1.32]"
+    href: "https://www.buzzfeed.com/"
   },
   {
     name: "Marriott",
     src: "/client-logos/marriott.png",
-    href: "https://www.marriott.com/",
-    imageClass: "scale-[0.98]"
+    href: "https://www.marriott.com/"
   },
   {
     name: "IHG",
     src: "/client-logos/ihg.png",
-    href: "https://www.ihg.com/",
-    imageClass: "scale-[1.08]"
+    href: "https://www.ihg.com/"
   },
   {
     name: "Condé Nast",
     src: "/client-logos/conde-nast.png",
-    href: "https://www.condenast.com/",
-    imageClass: "scale-[1.28]"
+    href: "https://www.condenast.com/"
   },
   {
     name: "Lionsgate",
     src: "/client-logos/lionsgate.png",
-    href: "https://www.lionsgate.com/",
-    imageClass: "scale-[1.22]"
+    href: "https://www.lionsgate.com/"
   },
   {
     name: "Mercure Hotels",
     src: "/client-logos/mercure-hotels.png",
-    href: "https://mercure.accor.com/",
-    imageClass: "scale-[1.26]"
+    href: "https://mercure.accor.com/"
   },
   {
     name: "Novotel",
     src: "/client-logos/novotel.png",
-    href: "https://novotel.accor.com/",
-    imageClass: "scale-[1.26]"
+    href: "https://novotel.accor.com/"
   },
   {
     name: "W Hotels",
     src: "/client-logos/w-hotels.png",
-    href: "https://w-hotels.marriott.com/",
-    imageClass: "scale-[1.14]"
+    href: "https://w-hotels.marriott.com/"
   }
 ];
 
@@ -71,7 +63,7 @@ export function BrandStrip() {
                 alt={logo.name}
                 width={260}
                 height={104}
-                className={`h-auto max-h-8 w-auto max-w-full object-contain opacity-88 transition duration-300 hover:opacity-100 sm:max-h-9 ${logo.imageClass ?? ""}`}
+                className="h-auto max-h-8 w-auto max-w-full object-contain opacity-88 transition duration-300 hover:opacity-100 sm:max-h-9"
                 unoptimized
               />
             </div>
