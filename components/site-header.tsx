@@ -3,27 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-function clamp(value: number, min: number, max: number) {
-  return Math.min(Math.max(value, min), max);
-}
-
 export function SiteHeader() {
-  const [fadeProgress, setFadeProgress] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-      if (maxScroll <= 0) {
-        setFadeProgress(0);
-        return;
-      }
-
-      const scrollRatio = window.scrollY / maxScroll;
-      const nextFade = clamp((scrollRatio - 0.5) / 0.22, 0, 1);
-
-      setFadeProgress(nextFade);
+      setIsScrolled(window.scrollY > 12);
     };
 
     handleScroll();
@@ -36,20 +21,14 @@ export function SiteHeader() {
 
   return (
     <div
+      data-scrolled={isScrolled}
       className="site-header sticky top-0 z-50 border-b border-obsidian/10"
-      style={
-        {
-          "--header-bg-alpha": `${0.84 - fadeProgress * 0.28}`,
-          "--header-gradient-alpha": `${fadeProgress * 0.92}`,
-          "--header-border-alpha": `${0.1 - fadeProgress * 0.04}`
-        } as React.CSSProperties
-      }
     >
-      <div className="mx-auto max-w-7xl px-6 py-4 sm:px-8 sm:py-5 lg:px-12">
+      <div className="site-header-inner mx-auto max-w-7xl px-6 py-5 sm:px-8 lg:px-12">
         <header className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
           <Link
             href="/"
-            className="font-serif text-2xl tracking-[0.35em] text-obsidian"
+            className="font-serif text-[1.45rem] tracking-[0.34em] text-obsidian transition-opacity duration-300 hover:opacity-88 sm:text-2xl"
           >
             ANDRA
           </Link>
@@ -71,7 +50,7 @@ export function SiteHeader() {
             </a>
             <a
               href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
-              className="text-[0.78rem] tracking-[0.18em] text-stone transition hover:text-obsidian sm:text-sm"
+              className="site-header-contact relative text-[0.78rem] tracking-[0.18em] text-stone transition-colors duration-200 hover:text-obsidian sm:text-sm"
             >
               CONTACT
             </a>
