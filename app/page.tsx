@@ -30,7 +30,7 @@ export default function HomePage() {
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[58rem] bg-hero-radial opacity-90" />
 
-      <section className="hero-fade mx-auto min-h-screen max-w-7xl px-6 pb-10 pt-6 sm:px-8 sm:pb-12 sm:pt-8 lg:px-12 lg:pb-14 lg:pt-10">
+      <section className="hero-fade mx-auto min-h-screen max-w-7xl px-6 pb-2 pt-6 sm:px-8 sm:pb-3 sm:pt-8 lg:px-12 lg:pb-4 lg:pt-10">
 
         <div className="grid gap-12 pt-10 sm:gap-14 sm:pt-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-24 lg:pt-16">
           <div className="hero-copy-reveal flex flex-col justify-start">
