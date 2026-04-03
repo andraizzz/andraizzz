@@ -89,6 +89,8 @@ const furtherTools: Tool[] = [
   {
     name: "Lindy AI CMO",
     href: "https://www.lindy.ai/",
+    image: "/recommended-tools-extra/lindy-logo.png",
+    preview: "/recommended-tools-extra/lindy-preview.jpg",
     description:
       "Agent-driven SEO, content, and social pipelines are exactly what digital marketers are moving toward. These are very on-trend.",
     eyebrow: "AI CMO"
@@ -96,6 +98,8 @@ const furtherTools: Tool[] = [
   {
     name: "HeyGen",
     href: "https://www.heygen.com/",
+    image: "/recommended-tools-extra/heygen-logo.ico",
+    preview: "/recommended-tools-extra/heygen-preview.png",
     description:
       "AI avatar video for ads, brand storytelling, and social content is exploding. Essential if video is in your strategy.",
     eyebrow: "Video"
@@ -103,6 +107,8 @@ const furtherTools: Tool[] = [
   {
     name: "Synthesia",
     href: "https://www.synthesia.io/",
+    image: "/recommended-tools-extra/synthesia-logo.png",
+    preview: "/recommended-tools-extra/synthesia-preview.jpg",
     description:
       "A strong business-facing AI video platform if your workflow leans toward training, brand storytelling, or polished internal content.",
     eyebrow: "Video"
@@ -110,6 +116,8 @@ const furtherTools: Tool[] = [
   {
     name: "ElevenLabs",
     href: "https://elevenlabs.io/",
+    image: "/recommended-tools-extra/elevenlabs-logo.ico",
+    preview: "/recommended-tools-extra/elevenlabs-preview.png",
     description:
       "Voice-over and audio branding for video, podcasts, ads, and narration-heavy content workflows.",
     eyebrow: "Audio"
@@ -117,6 +125,8 @@ const furtherTools: Tool[] = [
   {
     name: "Fish Audio S1",
     href: "https://fish.audio/",
+    image: "/recommended-tools-extra/fish-logo.ico",
+    preview: "/recommended-tools-extra/fish-preview.png",
     description:
       "Another strong voice layer for audio branding, expressive narration, and creative voice experimentation.",
     eyebrow: "Audio"
@@ -124,6 +134,8 @@ const furtherTools: Tool[] = [
   {
     name: "Arcads",
     href: "https://www.arcads.ai/",
+    image: "/recommended-tools-extra/arcads-logo.png",
+    preview: "/recommended-tools-extra/arcads-preview.png",
     description:
       "A direct digital ad production tool that feels especially relevant for paid social and performance workflows.",
     eyebrow: "Paid Ads"
@@ -131,6 +143,8 @@ const furtherTools: Tool[] = [
   {
     name: "Blaze",
     href: "https://www.blaze.ai/",
+    image: "/recommended-tools-extra/blaze-logo.png",
+    preview: "/recommended-tools-extra/blaze-preview.jpg",
     description:
       "Content scheduling and visual creation in one practical workflow for everyday social media management.",
     eyebrow: "Social"
@@ -145,13 +159,17 @@ const furtherTools: Tool[] = [
   {
     name: "PromptSignal",
     href: "https://www.promptsignal.ai/",
+    image: "/recommended-tools-extra/promptsignal-logo.png",
+    preview: "/recommended-tools-extra/promptsignal-preview.webp",
     description:
       "As LLMs increasingly influence brand discovery, tracking how AI ranks your brand is a new but critical digital marketing metric.",
     eyebrow: "AI Visibility"
   },
   {
     name: "Reachy.ai",
-    href: "https://reachy.ai/",
+    href: "https://www.reachy.ai/",
+    image: "/recommended-tools-extra/reachy-logo.png",
+    preview: "/recommended-tools-extra/reachy-preview.png",
     description:
       "LinkedIn outreach automation is very relevant for B2B digital marketing.",
     eyebrow: "Outreach"
@@ -165,13 +183,14 @@ const furtherTools: Tool[] = [
   {
     name: "Typefully",
     href: "https://typefully.com/",
+    image: "/recommended-tools-extra/typefully-logo.ico",
+    preview: "/recommended-tools-extra/typefully-preview.png",
     description:
       "X and Twitter are still key digital marketing channels, and thread scheduling stays relevant.",
     eyebrow: "Publishing"
   },
   {
     name: "Lumona",
-    href: "https://www.lumona.ai/",
     description:
       "Social media-powered AI search insights is a modern take on audience research.",
     eyebrow: "Research"
@@ -195,6 +214,7 @@ const situationalTools: Tool[] = [
   {
     name: "60secsite",
     href: "https://60sec.site/",
+    image: "/recommended-tools-extra/60secsite-logo.png",
     description:
       "Useful for quick landing page experiments and lightweight performance marketing tests.",
     eyebrow: "Landing Pages"
@@ -208,13 +228,17 @@ const situationalTools: Tool[] = [
   {
     name: "AI Chatbot on Zapier",
     href: "https://zapier.com/ai",
+    image: "/recommended-tools-extra/zapier-ai-logo.png",
+    preview: "/recommended-tools-extra/zapier-ai-preview.png",
     description:
       "Useful if your digital marketing stack includes website automation or conversational marketing.",
     eyebrow: "Automation"
   },
   {
     name: "Aicado",
-    href: "https://aicado.ai/",
+    href: "https://www.aicado.ai/",
+    image: "/recommended-tools-extra/aicado-logo.png",
+    preview: "/recommended-tools-extra/aicado-preview.png",
     description:
       "A practical option if you want branded AI agents or assistant-like experiences embedded directly into your site or product.",
     eyebrow: "Automation"
@@ -229,13 +253,14 @@ const situationalTools: Tool[] = [
   {
     name: "Magic Animator",
     href: "https://magicanimator.com/",
+    image: "/recommended-tools-extra/magic-animator-logo.svg",
+    preview: "/recommended-tools-extra/magic-animator-preview.png",
     description:
       "Relevant if you are producing motion graphics for social and web.",
     eyebrow: "Motion"
   },
   {
     name: "Pomelli",
-    href: "https://pomelli.ai/",
     description:
       "An early-stage Google Labs experiment worth watching, but not yet production-ready.",
     eyebrow: "Emerging"
@@ -243,6 +268,7 @@ const situationalTools: Tool[] = [
   {
     name: "Hailuo 2.3",
     href: "https://hailuoai.video/",
+    image: "/recommended-tools-extra/hailuo-logo.png",
     description:
       "Solid for video content production, though more of a creator tool than a pure marketing tool.",
     eyebrow: "Video"
