@@ -30,7 +30,7 @@ export default function HomePage() {
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[58rem] bg-hero-radial opacity-90" />
 
-      <section className="hero-fade mx-auto max-w-7xl px-6 pb-0 pt-20 sm:px-8 sm:pb-1 sm:pt-24 lg:px-12 lg:pb-2 lg:pt-28">
+      <section className="hero-fade relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-24 lg:px-12 lg:pb-28 lg:pt-28">
 
         <div className="grid gap-10 pt-2 sm:gap-12 sm:pt-4 lg:grid-cols-[0.98fr_1.02fr] lg:gap-20 lg:pt-6">
           <div className="hero-copy-reveal flex flex-col justify-start">
@@ -90,7 +90,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto -mt-20 max-w-7xl px-6 pb-2 sm:-mt-16 sm:px-8 lg:-mt-24 lg:px-12">
+      <section className="relative z-20 mx-auto max-w-7xl px-6 pb-10 sm:px-8 sm:pb-12 lg:px-12 lg:pb-14">
         <BrandStrip />
       </section>
 

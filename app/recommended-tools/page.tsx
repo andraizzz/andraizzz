@@ -201,12 +201,17 @@ const situationalTools: Tool[] = [
   {
     name: "Midjourney",
     href: "https://www.midjourney.com/",
+    image: "/recommended-tools-extra/midjourney-logo.png",
+    preview: "/recommended-tools-extra/midjourney-preview.png",
     description:
       "Great for creative teams producing visual content at scale, though it still benefits from a stronger manual workflow around it.",
     eyebrow: "Situational"
   },
   {
     name: "Nano Banana 2",
+    href: "https://gemini.google.com/",
+    image: "/recommended-tools-extra/nano-banana-logo.png",
+    preview: "/recommended-tools-extra/nano-banana-preview.png",
     description:
       "Useful for creative experimentation, but more niche and workflow-dependent than the core recommendations above.",
     eyebrow: "Situational"
@@ -215,12 +220,16 @@ const situationalTools: Tool[] = [
     name: "60secsite",
     href: "https://60sec.site/",
     image: "/recommended-tools-extra/60secsite-logo.png",
+    preview: "/recommended-tools-extra/60secsite-preview.webp",
     description:
       "Useful for quick landing page experiments and lightweight performance marketing tests.",
     eyebrow: "Landing Pages"
   },
   {
     name: "10xlaunch",
+    href: "https://tenxlaunch.framer.ai/",
+    image: "/recommended-tools-extra/10xlaunch-logo.png",
+    preview: "/recommended-tools-extra/10xlaunch-preview.png",
     description:
       "Lead capture is always relevant, but this depends on your CRO strategy and funnel design.",
     eyebrow: "Lead Capture"
