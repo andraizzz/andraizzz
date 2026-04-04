@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { BrandStrip } from "@/components/brand-strip";
 
 const specialties = [
@@ -24,34 +23,6 @@ const specialties = [
     descriptor: "SEO, Social Media Strategy, Website Creation, AI Discovery"
   }
 ];
-
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/andraizgarian/",
-    icon: (
-      <path d="M7.75 6.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5ZM4.75 8h2.5v8h-2.5V8Zm4 0h2.4v1.14h.03c.33-.63 1.15-1.29 2.37-1.29 2.53 0 3 1.67 3 3.84V16h-2.5v-3.81c0-.91-.02-2.08-1.27-2.08-1.27 0-1.46.99-1.46 2.01V16h-2.57V8Z" />
-    )
-  },
-  {
-    name: "YouTube",
-    href: "https://www.youtube.com/@AndraIzzz",
-    icon: (
-      <path d="M16.73 6.27c-1.82-.5-9.64-.5-11.46 0A2.1 2.1 0 0 0 3.8 7.74c-.5 1.82-.5 4.7 0 6.52a2.1 2.1 0 0 0 1.47 1.47c1.82.5 9.64.5 11.46 0a2.1 2.1 0 0 0 1.47-1.47c.5-1.82.5-4.7 0-6.52a2.1 2.1 0 0 0-1.47-1.47ZM10.4 13.1V8.9l3.64 2.1-3.64 2.1Z" />
-    )
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/zanobegrowth/",
-    icon: (
-      <>
-        <rect x="4.5" y="4.5" width="11" height="11" rx="3.25" ry="3.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="10" cy="10" r="2.6" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="13.45" cy="6.55" r="0.9" />
-      </>
-    )
-  }
-] as const;
 
 export default function HomePage() {
   return (
@@ -220,55 +191,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <footer className="px-6 pb-10 pt-6 sm:px-8 lg:px-12 lg:pb-14">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-obsidian/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.52),rgba(246,240,235,0.86))] px-6 py-8 shadow-[0_20px_60px_rgba(17,17,17,0.04)] ring-1 ring-white/60 backdrop-blur-sm sm:px-8 sm:py-10 lg:px-10">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-xl">
-              <p className="font-serif text-3xl tracking-[0.28em] text-obsidian">
-                ANDRA
-              </p>
-              <p className="mt-4 max-w-md text-sm leading-7 text-stone sm:text-base">
-                Strategy, growth, and AI visibility for brands that want sharper positioning and stronger discoverability.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-5 lg:items-end">
-              <div className="flex flex-wrap gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={social.name}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-obsidian/12 bg-white/60 text-stone transition duration-300 hover:-translate-y-0.5 hover:border-obsidian/25 hover:bg-white hover:text-obsidian hover:shadow-[0_12px_28px_rgba(17,17,17,0.08)]"
-                  >
-                    <svg
-                      viewBox="0 0 20 20"
-                      className="h-[1.05rem] w-[1.05rem]"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      {social.icon}
-                    </svg>
-                  </a>
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-3 text-sm text-stone sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:gap-5">
-                <p className="uppercase tracking-[0.16em]">© 2026 ANDRA</p>
-                <Link href="/privacy-policy" className="transition hover:text-obsidian">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms-of-service" className="transition hover:text-obsidian">
-                  Terms of Service
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

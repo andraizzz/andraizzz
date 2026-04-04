@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { ClickStars } from "@/components/click-stars";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body>
         <SiteHeader />
         {children}
+        <SiteFooter />
         <ClickStars />
       </body>
     </html>
