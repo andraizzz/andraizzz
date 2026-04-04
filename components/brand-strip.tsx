@@ -4,42 +4,50 @@ const logos = [
   {
     name: "BuzzFeed",
     src: "/client-logos/buzzfeed.png",
-    href: "https://www.buzzfeed.com/"
+    href: "https://www.buzzfeed.com/",
+    imageClass: "scale-[4.4]"
   },
   {
     name: "Marriott",
     src: "/client-logos/marriott.png",
-    href: "https://www.marriott.com/"
+    href: "https://www.marriott.com/",
+    imageClass: "scale-[1]"
   },
   {
     name: "IHG",
     src: "/client-logos/ihg.png",
-    href: "https://www.ihg.com/"
+    href: "https://www.ihg.com/",
+    imageClass: "scale-[1.28]"
   },
   {
     name: "Condé Nast",
     src: "/client-logos/conde-nast.png",
-    href: "https://www.condenast.com/"
+    href: "https://www.condenast.com/",
+    imageClass: "scale-[2.25]"
   },
   {
     name: "Lionsgate",
     src: "/client-logos/lionsgate.png",
-    href: "https://www.lionsgate.com/"
+    href: "https://www.lionsgate.com/",
+    imageClass: "scale-[2.6]"
   },
   {
     name: "Mercure Hotels",
     src: "/client-logos/mercure-hotels.png",
-    href: "https://mercure.accor.com/"
+    href: "https://mercure.accor.com/",
+    imageClass: "scale-[1.95]"
   },
   {
     name: "Novotel",
     src: "/client-logos/novotel.png",
-    href: "https://novotel.accor.com/"
+    href: "https://novotel.accor.com/",
+    imageClass: "scale-[2.05]"
   },
   {
     name: "W Hotels",
     src: "/client-logos/w-hotels.png",
-    href: "https://w-hotels.marriott.com/"
+    href: "https://w-hotels.marriott.com/",
+    imageClass: "scale-[2.3]"
   }
 ];
 
@@ -63,7 +71,7 @@ export function BrandStrip() {
                 alt={logo.name}
                 width={260}
                 height={104}
-                className="h-auto max-h-8 w-auto max-w-full object-contain opacity-88 transition duration-300 hover:opacity-100 sm:max-h-9"
+                className={`h-auto max-h-8 w-auto max-w-full object-contain opacity-88 transition duration-300 hover:opacity-100 sm:max-h-9 ${logo.imageClass ?? ""}`}
                 unoptimized
               />
             </div>
