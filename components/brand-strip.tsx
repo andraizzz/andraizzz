@@ -19,6 +19,8 @@ const logos = [
   {
     name: "Condé Nast",
     src: "/client-logos-tight/conde-nast.png",
+    desktopSrc: "/client-logos/conde-nast.png",
+    desktopImageClass: "scale-[2.05]",
     href: "https://www.condenast.com/"
   },
   {
@@ -86,11 +88,11 @@ export function BrandStrip() {
             >
               <div className="relative flex h-[4.6rem] w-[13rem] items-center justify-center overflow-hidden">
                 <Image
-                  src={logo.src}
+                  src={logo.desktopSrc ?? logo.src}
                   alt={logo.name}
                   width={420}
                   height={160}
-                  className="h-full w-auto max-w-full object-contain opacity-100 [image-rendering:crisp-edges]"
+                  className={`h-full w-auto max-w-full object-contain opacity-100 ${logo.desktopImageClass ?? ""}`}
                   unoptimized
                 />
               </div>

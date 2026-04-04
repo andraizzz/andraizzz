@@ -205,9 +205,10 @@ body > * {
 .brand-marquee-track {
   display: flex;
   width: max-content;
-  position: relative;
-  left: 0;
-  animation: brandMarquee 96s linear infinite;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: brandMarquee 82s linear infinite;
 }
 
 .brand-marquee:hover .brand-marquee-track {
@@ -358,10 +359,10 @@ iframe {
 
 @keyframes brandMarquee {
   0% {
-    left: 0;
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    left: -50%;
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
