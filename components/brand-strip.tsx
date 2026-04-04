@@ -90,7 +90,7 @@ export function BrandStrip() {
                   alt={logo.name}
                   width={420}
                   height={160}
-                  className="h-full w-auto max-w-full object-contain opacity-100"
+                  className="h-full w-auto max-w-full object-contain opacity-100 [image-rendering:crisp-edges]"
                   unoptimized
                 />
               </div>

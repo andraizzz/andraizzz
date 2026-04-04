@@ -205,19 +205,13 @@ body > * {
 .brand-marquee-track {
   display: flex;
   width: max-content;
-  will-change: transform;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  animation: brandMarquee 68s linear infinite;
+  position: relative;
+  left: 0;
+  animation: brandMarquee 96s linear infinite;
 }
 
 .brand-marquee:hover .brand-marquee-track {
   animation-play-state: paused;
-}
-
-.brand-marquee-item {
-  backface-visibility: hidden;
-  transform: translateZ(0);
 }
 
 .tool-logo-tile {
@@ -364,10 +358,10 @@ iframe {
 
 @keyframes brandMarquee {
   0% {
-    transform: translate3d(0, 0, 0);
+    left: 0;
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
+    left: -50%;
   }
 }
 
