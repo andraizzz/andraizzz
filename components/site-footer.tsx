@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const footerGroups = [
@@ -31,20 +30,13 @@ const footerGroups = [
 
 export function SiteFooter() {
   return (
-    <footer className="px-6 pb-10 pt-6 sm:px-8 lg:px-12 lg:pb-14">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-obsidian/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.58),rgba(244,236,231,0.9))] px-6 py-8 shadow-[0_24px_70px_rgba(17,17,17,0.05)] ring-1 ring-white/70 backdrop-blur-sm sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+    <footer className="mt-4 border-t border-obsidian/10 px-6 pb-10 pt-8 sm:px-8 lg:px-12 lg:pb-14 lg:pt-10">
+      <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-[0.95rem] border border-obsidian/10 bg-white/75 shadow-[0_10px_24px_rgba(17,17,17,0.06)]">
-                <Image src="/icon.svg" alt="ANDRA mark" width={32} height={32} />
-              </div>
-              <div>
-                <p className="font-serif text-[1.6rem] tracking-[0.16em] text-obsidian">
-                  ANDRA
-                </p>
-              </div>
-            </div>
+            <p className="font-serif text-[1.6rem] tracking-[0.16em] text-obsidian">
+              ANDRA
+            </p>
             <p className="mt-5 text-base leading-8 text-stone">
               Strategy, growth, and AI visibility for brands that want sharper positioning and stronger discoverability.
             </p>
@@ -56,7 +48,7 @@ export function SiteFooter() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             {footerGroups.map((group) => (
               <div key={group.title}>
-                <p className="text-xs uppercase tracking-[0.18em] text-obsidian/75">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-obsidian">
                   {group.title}
                 </p>
                 <div className="mt-4 flex flex-col gap-3 text-sm text-stone">
@@ -85,6 +77,10 @@ export function SiteFooter() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-10 text-sm text-stone/90">
+          <p>© 2026 ANDRA</p>
         </div>
       </div>
     </footer>
