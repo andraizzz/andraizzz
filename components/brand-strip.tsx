@@ -50,29 +50,30 @@ const marqueeLogos = [...logos, ...logos];
 export function BrandStrip() {
   return (
     <section className="rounded-[1.2rem] border-y border-obsidian/10 bg-white/20 py-6 sm:py-7">
-      <div className="grid grid-cols-2 gap-x-5 gap-y-5 lg:hidden sm:grid-cols-4">
-        {logos.map((logo, index) => (
-          <a
-            key={logo.name}
-            href={logo.href}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={logo.name}
-            className="brand-reveal flex h-[4rem] items-center justify-center overflow-hidden rounded-[0.72rem] border border-transparent px-2 opacity-95 transition duration-300 hover:border-obsidian/10 hover:bg-white/30 sm:h-[4.25rem]"
-            style={{ animationDelay: `${index * 70}ms` }}
-          >
-            <div className="relative flex h-8 w-[8.5rem] items-center justify-center overflow-hidden sm:h-9 sm:w-[9.25rem]">
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={320}
-                height={120}
-                className="h-full w-auto max-w-full object-contain opacity-100 transition duration-300"
-                unoptimized
-              />
-            </div>
-          </a>
-        ))}
+      <div className="brand-marquee lg:hidden">
+        <div className="brand-marquee-track brand-marquee-track-mobile">
+          {marqueeLogos.map((logo, index) => (
+            <a
+              key={`mobile-${logo.name}-${index}`}
+              href={logo.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={logo.name}
+              className="brand-marquee-item flex h-[4.5rem] min-w-[8.75rem] items-center justify-center px-3 sm:h-[5rem] sm:min-w-[10rem] sm:px-4"
+            >
+              <div className="relative flex h-8 w-[7rem] items-center justify-center overflow-hidden sm:h-9 sm:w-[8.25rem]">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={320}
+                  height={120}
+                  className="h-full w-auto max-w-full object-contain opacity-100"
+                  unoptimized
+                />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
 
       <div className="brand-marquee hidden lg:block">

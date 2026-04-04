@@ -211,6 +211,10 @@ body > * {
   animation: brandMarquee 82s linear infinite;
 }
 
+.brand-marquee-track-mobile {
+  animation-duration: 54s;
+}
+
 .brand-marquee:hover .brand-marquee-track {
   animation-play-state: paused;
 }
