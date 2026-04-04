@@ -205,11 +205,19 @@ body > * {
 .brand-marquee-track {
   display: flex;
   width: max-content;
-  animation: brandMarquee 34s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  animation: brandMarquee 68s linear infinite;
 }
 
 .brand-marquee:hover .brand-marquee-track {
   animation-play-state: paused;
+}
+
+.brand-marquee-item {
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .tool-logo-tile {

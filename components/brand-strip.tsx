@@ -65,7 +65,7 @@ export function BrandStrip() {
                 alt={logo.name}
                 width={320}
                 height={120}
-                className="h-full w-auto max-w-full object-contain opacity-88 transition duration-300 hover:opacity-100"
+                className="h-full w-auto max-w-full object-contain opacity-100 transition duration-300"
                 unoptimized
               />
             </div>
@@ -90,7 +90,7 @@ export function BrandStrip() {
                   alt={logo.name}
                   width={420}
                   height={160}
-                  className="h-full w-auto max-w-full object-contain opacity-92 transition duration-300 hover:opacity-100"
+                  className="h-full w-auto max-w-full object-contain opacity-100"
                   unoptimized
                 />
               </div>
