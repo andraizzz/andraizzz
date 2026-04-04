@@ -43,10 +43,12 @@ const logos = [
   }
 ];
 
+const marqueeLogos = [...logos, ...logos];
+
 export function BrandStrip() {
   return (
     <section className="rounded-[1.2rem] border-y border-obsidian/10 bg-white/20 py-6 sm:py-7">
-      <div className="grid grid-cols-2 gap-x-5 gap-y-5 sm:grid-cols-4 lg:grid-cols-8 lg:gap-x-6">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-5 lg:hidden sm:grid-cols-4">
         {logos.map((logo, index) => (
           <a
             key={logo.name}
@@ -69,6 +71,32 @@ export function BrandStrip() {
             </div>
           </a>
         ))}
+      </div>
+
+      <div className="brand-marquee hidden lg:block">
+        <div className="brand-marquee-track">
+          {marqueeLogos.map((logo, index) => (
+            <a
+              key={`${logo.name}-${index}`}
+              href={logo.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={logo.name}
+              className="brand-marquee-item flex h-[7.5rem] min-w-[15rem] items-center justify-center px-4"
+            >
+              <div className="relative flex h-[4.6rem] w-[13rem] items-center justify-center overflow-hidden">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={420}
+                  height={160}
+                  className="h-full w-auto max-w-full object-contain opacity-92 transition duration-300 hover:opacity-100"
+                  unoptimized
+                />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

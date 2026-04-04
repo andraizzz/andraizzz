@@ -176,6 +176,42 @@ body > * {
   animation: brandFade 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.brand-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-marquee::before,
+.brand-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 7rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.brand-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(248, 244, 240, 0.95), rgba(248, 244, 240, 0));
+}
+
+.brand-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(248, 244, 240, 0.95), rgba(248, 244, 240, 0));
+}
+
+.brand-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: brandMarquee 34s linear infinite;
+}
+
+.brand-marquee:hover .brand-marquee-track {
+  animation-play-state: paused;
+}
+
 .tool-logo-tile {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
@@ -318,6 +354,15 @@ iframe {
   }
 }
 
+@keyframes brandMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 @keyframes starPulse {
   0% {
     opacity: 0;
@@ -330,5 +375,11 @@ iframe {
   100% {
     opacity: 0;
     transform: translate(-50%, -57%) scale(0.82);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track {
+    animation: none;
   }
 }
