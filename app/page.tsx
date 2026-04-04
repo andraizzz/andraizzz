@@ -140,8 +140,8 @@ export default function HomePage() {
           </div>
 
           <div className="w-full">
-            <form className="space-y-6" method="post">
-              <div className="grid gap-6 sm:grid-cols-2">
+            <form className="flex flex-col gap-6 lg:flex-row lg:items-end" method="post">
+              <div className="grid flex-1 gap-6 sm:grid-cols-2">
                 <label className="block">
                   <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
                     Name
@@ -169,21 +169,9 @@ export default function HomePage() {
                 </label>
               </div>
 
-              <label className="block">
-                <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
-                  Optional Message
-                </span>
-                <textarea
-                  name="message"
-                  rows={6}
-                  className="w-full resize-none rounded-[0.85rem] border border-obsidian/12 bg-porcelain/80 px-5 py-4 text-base leading-7 text-obsidian outline-none transition duration-300 placeholder:text-stone/70 focus:border-obsidian/35 focus:bg-white"
-                  placeholder="Tell me a little about what you're building or exploring."
-                />
-              </label>
-
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98]"
+                className="inline-flex min-h-[3.75rem] items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98] lg:self-end"
               >
                 Connect
               </button>
