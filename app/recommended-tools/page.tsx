@@ -36,12 +36,12 @@ const featuredTools: Tool[] = [
       "My personal favorite for vibe coding. Excellent for strategy, long-form thinking, and working through ideas with depth."
   },
   {
-    name: "Visual Studio Code",
-    href: "https://code.visualstudio.com/",
-    image: "/recommended-tools/vscode-logo.png",
-    preview: "/recommended-tools/vscode-preview.png",
+    name: "Descript",
+    href: "https://www.descript.com/",
+    image: "/recommended-tools-extra/descript-logo.png",
+    preview: "/recommended-tools-extra/descript-preview.png",
     description:
-      "A clean environment for writing, editing, and building. Still one of the strongest homes for vibe coding workflows."
+      "The easiest video editor to recommend when you want fast edits, cleaner workflows, and less production friction."
   },
   {
     name: "Brave Browser",
@@ -86,6 +86,15 @@ const featuredTools: Tool[] = [
 ];
 
 const furtherTools: Tool[] = [
+  {
+    name: "Visual Studio Code",
+    href: "https://code.visualstudio.com/",
+    image: "/recommended-tools/vscode-logo.png",
+    preview: "/recommended-tools/vscode-preview.png",
+    description:
+      "Still one of the strongest environments for writing, editing, and building when your workflow leans technical.",
+    eyebrow: "Build"
+  },
   {
     name: "Lindy AI CMO",
     href: "https://www.lindy.ai/",
