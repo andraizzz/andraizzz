@@ -36,6 +36,8 @@ const logos = [
   {
     name: "Novotel",
     src: "/client-logos-tight/novotel.png",
+    desktopSrc: "/client-logos/novotel.png",
+    desktopImageClass: "scale-[1.9]",
     href: "https://novotel.accor.com/"
   },
   {
