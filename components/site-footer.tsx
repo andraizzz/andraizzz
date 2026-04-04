@@ -38,7 +38,7 @@ export function SiteFooter() {
               ANDRA
             </p>
             <p className="mt-5 text-base leading-8 text-stone">
-              Strategy, growth, and AI visibility for brands that want sharper positioning and stronger discoverability.
+              Strategic growth consulting for brands that want sharper positioning and stronger discoverability.
             </p>
             <p className="mt-3 text-sm leading-7 text-stone/90">
               Clearer positioning. Stronger visibility. More intentional growth.
