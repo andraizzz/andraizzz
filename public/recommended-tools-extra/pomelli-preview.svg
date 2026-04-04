@@ -1,0 +1,19 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F7F1EC"/>
+  <rect x="64" y="64" width="1472" height="772" rx="38" fill="#FFFDFC"/>
+  <rect x="112" y="112" width="1376" height="676" rx="32" fill="url(#surface)"/>
+  <circle cx="1310" cy="256" r="172" fill="#F3B6A6" opacity="0.42"/>
+  <circle cx="1204" cy="328" r="104" fill="#FFD9A8" opacity="0.5"/>
+  <text x="126" y="196" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="0.28em" fill="#7A675D">EXPERIMENTAL TOOL</text>
+  <text x="126" y="390" font-family="Georgia, 'Times New Roman', serif" font-size="124" font-weight="700" fill="#151515">Pomelli</text>
+  <text x="126" y="478" font-family="Arial, Helvetica, sans-serif" font-size="44" fill="#5B524D">A cleaner home for lightweight AI workflows and early-stage experiments.</text>
+  <rect x="126" y="558" width="270" height="72" rx="36" fill="#151515"/>
+  <text x="168" y="605" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#FFFDFC">pomelli.run</text>
+  <path d="M112 724C258 664 420 634 598 634C868 634 1108 704 1320 788" stroke="#151515" stroke-width="8" stroke-linecap="round" opacity="0.12"/>
+  <defs>
+    <linearGradient id="surface" x1="196" y1="132" x2="1370" y2="744" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8F4"/>
+      <stop offset="1" stop-color="#FFF1E8"/>
+    </linearGradient>
+  </defs>
+</svg>

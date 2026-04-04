@@ -1,0 +1,19 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F5F0EB"/>
+  <rect x="64" y="64" width="1472" height="772" rx="38" fill="#FEFDFB"/>
+  <rect x="100" y="100" width="1400" height="700" rx="34" fill="url(#surface)"/>
+  <rect x="150" y="150" width="880" height="500" rx="28" fill="#0E1014"/>
+  <circle cx="590" cy="402" r="116" fill="#FF6F61"/>
+  <path d="M566 342L666 402L566 462V342Z" fill="white"/>
+  <text x="1102" y="300" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="0.26em" fill="#7A6F69">VIDEO</text>
+  <text x="1102" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-weight="700" fill="#151515">Hailuo 2.3</text>
+  <text x="1102" y="510" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#4F4844">Fast AI video generation for campaign concepts, shorts, and visual tests.</text>
+  <rect x="1102" y="576" width="248" height="70" rx="35" fill="#151515"/>
+  <text x="1144" y="621" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#FEFDFB">hailuoai.video</text>
+  <defs>
+    <linearGradient id="surface" x1="180" y1="120" x2="1428" y2="748" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7F1"/>
+      <stop offset="1" stop-color="#F1E7DE"/>
+    </linearGradient>
+  </defs>
+</svg>

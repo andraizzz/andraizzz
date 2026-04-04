@@ -151,7 +151,9 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Canva Creative OS",
-    href: "https://www.canva.com/",
+    href: "https://www.canva.com/newsroom/news/creative-operating-system/",
+    image: "/recommended-tools-extra/canva-logo.ico",
+    preview: "/recommended-tools-extra/canva-creative-os-preview.svg",
     description:
       "Already a staple. The new AI-powered suite makes it more powerful than ever for digital creatives.",
     eyebrow: "Creative"
@@ -242,7 +244,9 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Canvas in Gemini",
-    href: "https://gemini.google.com/",
+    href: "https://blog.google/products/gemini/gemini-collaboration-features/",
+    image: "/recommended-tools-extra/gemini-logo.ico",
+    preview: "/recommended-tools-extra/gemini-canvas-preview.png",
     description:
       "Good for content marketing and thought leadership visuals.",
     eyebrow: "Content"
@@ -259,6 +263,8 @@ const situationalTools: Tool[] = [
   {
     name: "Pomelli",
     href: "https://www.pomelli.run/",
+    image: "/recommended-tools-extra/pomelli-logo.ico",
+    preview: "/recommended-tools-extra/pomelli-preview.svg",
     description:
       "An early-stage Google Labs experiment worth watching, but not yet production-ready.",
     eyebrow: "Emerging"
@@ -267,6 +273,7 @@ const situationalTools: Tool[] = [
     name: "Hailuo 2.3",
     href: "https://hailuoai.video/",
     image: "/recommended-tools-extra/hailuo-logo.png",
+    preview: "/recommended-tools-extra/hailuo-preview.svg",
     description:
       "Solid for video content production, though more of a creator tool than a pure marketing tool.",
     eyebrow: "Video"

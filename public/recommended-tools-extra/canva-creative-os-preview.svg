@@ -1,0 +1,27 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F8F4F0"/>
+  <rect x="64" y="64" width="1472" height="772" rx="38" fill="url(#surface)"/>
+  <circle cx="1248" cy="230" r="260" fill="url(#glow)" opacity="0.85"/>
+  <rect x="120" y="122" width="160" height="160" rx="44" fill="url(#badge)"/>
+  <text x="200" y="225" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700" fill="white">C</text>
+  <text x="120" y="382" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="0.24em" fill="#0F1720">CREATIVE</text>
+  <text x="120" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="108" font-weight="700" fill="#0F1720">Canva Creative OS</text>
+  <text x="120" y="590" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#40505C">AI-powered visual workflows for teams, campaigns, and brand systems.</text>
+  <rect x="120" y="656" width="308" height="76" rx="38" fill="#FFFFFF" opacity="0.82"/>
+  <text x="162" y="705" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0F1720">Official Canva Release</text>
+  <defs>
+    <linearGradient id="surface" x1="160" y1="104" x2="1490" y2="792" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7F2"/>
+      <stop offset="0.48" stop-color="#F4F8FF"/>
+      <stop offset="1" stop-color="#F6F0FF"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="120" y1="122" x2="280" y2="282" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00C4CC"/>
+      <stop offset="1" stop-color="#7D2AE8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1248 230) rotate(90) scale(260)">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
