@@ -20,7 +20,7 @@ const logos = [
     name: "Condé Nast",
     src: "/client-logos-tight/conde-nast.png",
     desktopSrc: "/client-logos/conde-nast.png",
-    desktopImageClass: "scale-[2.05]",
+    desktopImageClass: "scale-[2.4]",
     href: "https://www.condenast.com/"
   },
   {
