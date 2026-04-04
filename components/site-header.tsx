@@ -7,8 +7,27 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 12);
+      if (ticking) {
+        return;
+      }
+
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+
+        setIsScrolled((current) => {
+          if (current) {
+            return y > 10;
+          }
+
+          return y > 28;
+        });
+
+        ticking = false;
+      });
     };
 
     handleScroll();

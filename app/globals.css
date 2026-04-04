@@ -92,12 +92,10 @@ body > * {
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   border-bottom-color: rgba(28, 34, 40, 0.08);
-  transform: translate3d(0, 0, 0);
   transition:
     background-color 360ms ease,
     backdrop-filter 360ms ease,
-    border-color 360ms ease,
-    transform 360ms ease;
+    border-color 360ms ease;
 }
 
 .site-header::after {
@@ -116,27 +114,15 @@ body > * {
   transition: opacity 360ms ease;
 }
 
-.site-header-inner {
-  transition:
-    padding-top 360ms ease,
-    padding-bottom 360ms ease;
-}
-
 .site-header[data-scrolled="true"] {
   background-color: rgba(244, 235, 229, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom-color: rgba(28, 34, 40, 0.14);
-  transform: translate3d(0, -1px, 0);
 }
 
 .site-header[data-scrolled="true"]::after {
   opacity: 1;
-}
-
-.site-header[data-scrolled="true"] .site-header-inner {
-  padding-top: 0.95rem;
-  padding-bottom: 0.95rem;
 }
 
 .site-header-contact::after {
