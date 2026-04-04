@@ -371,9 +371,17 @@ function renderToolPreview(tool: Tool) {
   `);
 }
 
+function shouldSkipOptimization(src: string) {
+  return src.startsWith("data:") || src.endsWith(".svg") || src.endsWith(".ico");
+}
+
 function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
   const CardTag = tool.href ? "a" : "div";
   const isLinked = Boolean(tool.href);
+  const iconSrc = renderToolIcon(tool);
+  const previewSrc = renderToolPreview(tool);
+  const iconUnoptimized = shouldSkipOptimization(iconSrc);
+  const previewUnoptimized = shouldSkipOptimization(previewSrc);
 
   return (
     <CardTag
@@ -389,47 +397,55 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
         <div className="absolute left-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-[0.55rem] bg-white/90 shadow-[0_6px_18px_rgba(17,17,17,0.08)] ring-1 ring-black/5 backdrop-blur-sm">
           {tool.image ? (
             <Image
-              src={renderToolIcon(tool)}
+              src={iconSrc}
               alt={`${tool.name} logo`}
               width={22}
               height={22}
               className="tool-logo-image h-[1.15rem] w-[1.15rem] object-contain"
-              unoptimized
+              sizes="18px"
+              quality={100}
+              unoptimized={iconUnoptimized}
             />
           ) : (
             <Image
-              src={renderToolIcon(tool)}
+              src={iconSrc}
               alt={`${tool.name} icon`}
               width={22}
               height={22}
               className="tool-logo-image h-[1.15rem] w-[1.15rem] object-contain"
-              unoptimized
+              sizes="18px"
+              quality={100}
+              unoptimized={iconUnoptimized}
             />
           )}
         </div>
 
         <div
-          className={`tool-preview-image relative w-full overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(245,242,239,0.98))] ${
+          className={`tool-preview-image relative w-full overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,242,239,0.98))] p-2 ${
             compact ? "h-[7.2rem]" : "h-[8.4rem]"
           }`}
         >
           {tool.preview ? (
             <Image
-              src={renderToolPreview(tool)}
+              src={previewSrc}
               alt={`${tool.name} preview`}
               width={1200}
               height={800}
-              className="h-full w-full object-cover object-top"
-              unoptimized
+              className="h-full w-full object-contain object-top"
+              sizes="(min-width: 1280px) 360px, (min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+              quality={100}
+              unoptimized={previewUnoptimized}
             />
           ) : (
             <Image
-              src={renderToolPreview(tool)}
+              src={previewSrc}
               alt={`${tool.name} preview`}
               width={1200}
               height={800}
-              className="h-full w-full object-cover object-top"
-              unoptimized
+              className="h-full w-full object-contain object-top"
+              sizes="(min-width: 1280px) 360px, (min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+              quality={100}
+              unoptimized={previewUnoptimized}
             />
           )}
         </div>
