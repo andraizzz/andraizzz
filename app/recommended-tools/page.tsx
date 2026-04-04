@@ -175,12 +175,6 @@ const furtherTools: Tool[] = [
     eyebrow: "Outreach"
   },
   {
-    name: "AI User Persona Generator",
-    description:
-      "Understanding your audience with AI is foundational for any digital strategy.",
-    eyebrow: "Strategy"
-  },
-  {
     name: "Typefully",
     href: "https://typefully.com/",
     image: "/recommended-tools-extra/typefully-logo.ico",
@@ -188,12 +182,6 @@ const furtherTools: Tool[] = [
     description:
       "X and Twitter are still key digital marketing channels, and thread scheduling stays relevant.",
     eyebrow: "Publishing"
-  },
-  {
-    name: "Lumona",
-    description:
-      "Social media-powered AI search insights is a modern take on audience research.",
-    eyebrow: "Research"
   }
 ];
 
@@ -270,6 +258,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Pomelli",
+    href: "https://www.pomelli.run/",
     description:
       "An early-stage Google Labs experiment worth watching, but not yet production-ready.",
     eyebrow: "Emerging"
