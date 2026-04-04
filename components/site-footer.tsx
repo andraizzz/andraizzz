@@ -40,9 +40,6 @@ export function SiteFooter() {
             <p className="mt-5 text-base leading-8 text-stone">
               Strategic growth consulting for brands that want sharper positioning and stronger discoverability.
             </p>
-            <p className="mt-3 text-sm leading-7 text-stone/90">
-              Clearer positioning. Stronger visibility. More intentional growth.
-            </p>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
