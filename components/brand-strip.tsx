@@ -5,6 +5,8 @@ type BrandLogo = {
   src: string;
   href: string;
   desktopSrc?: string;
+  itemClass?: string;
+  desktopItemClass?: string;
   frameClass?: string;
   desktopFrameClass?: string;
 };
@@ -13,6 +15,8 @@ const logos: BrandLogo[] = [
   {
     name: "BuzzFeed",
     src: "/client-logos-tight/buzzfeed.png",
+    itemClass: "min-w-[10.25rem] sm:min-w-[12rem]",
+    desktopItemClass: "min-w-[18rem]",
     frameClass: "w-[7.35rem] sm:w-[8.7rem]",
     desktopFrameClass: "w-[14.35rem]",
     href: "https://www.buzzfeed.com/"
@@ -20,6 +24,8 @@ const logos: BrandLogo[] = [
   {
     name: "Marriott",
     src: "/client-logos-tight/marriott.png",
+    itemClass: "min-w-[10rem] sm:min-w-[11.5rem]",
+    desktopItemClass: "min-w-[17rem]",
     frameClass: "w-[7.1rem] sm:w-[8.45rem]",
     desktopFrameClass: "w-[13.2rem]",
     href: "https://www.marriott.com/"
@@ -27,6 +33,8 @@ const logos: BrandLogo[] = [
   {
     name: "IHG",
     src: "/client-logos-tight/ihg.png",
+    itemClass: "min-w-[9.4rem] sm:min-w-[10.7rem]",
+    desktopItemClass: "min-w-[15.5rem]",
     frameClass: "w-[6.2rem] sm:w-[7.3rem]",
     desktopFrameClass: "w-[11.2rem]",
     href: "https://www.ihg.com/"
@@ -34,6 +42,8 @@ const logos: BrandLogo[] = [
   {
     name: "Condé Nast",
     src: "/client-logos-tight/conde-nast.png",
+    itemClass: "min-w-[11.25rem] sm:min-w-[13rem]",
+    desktopItemClass: "min-w-[20.5rem]",
     frameClass: "w-[8.45rem] sm:w-[9.9rem]",
     desktopFrameClass: "w-[16.6rem]",
     href: "https://www.condenast.com/"
@@ -41,6 +51,8 @@ const logos: BrandLogo[] = [
   {
     name: "Lionsgate",
     src: "/client-logos-tight/lionsgate.png",
+    itemClass: "min-w-[11.25rem] sm:min-w-[13rem]",
+    desktopItemClass: "min-w-[20.5rem]",
     frameClass: "w-[8.6rem] sm:w-[10.1rem]",
     desktopFrameClass: "w-[16.8rem]",
     href: "https://www.lionsgate.com/"
@@ -48,6 +60,8 @@ const logos: BrandLogo[] = [
   {
     name: "Mercure Hotels",
     src: "/client-logos-tight/mercure-hotels.png",
+    itemClass: "min-w-[10.1rem] sm:min-w-[11.7rem]",
+    desktopItemClass: "min-w-[17.5rem]",
     frameClass: "w-[7.25rem] sm:w-[8.65rem]",
     desktopFrameClass: "w-[13.5rem]",
     href: "https://mercure.accor.com/"
@@ -55,6 +69,8 @@ const logos: BrandLogo[] = [
   {
     name: "Novotel",
     src: "/client-logos-tight/novotel.png",
+    itemClass: "min-w-[10rem] sm:min-w-[11.5rem]",
+    desktopItemClass: "min-w-[17.5rem]",
     frameClass: "w-[7.25rem] sm:w-[8.55rem]",
     desktopFrameClass: "w-[14rem]",
     href: "https://novotel.accor.com/"
@@ -62,6 +78,8 @@ const logos: BrandLogo[] = [
   {
     name: "W Hotels",
     src: "/client-logos-tight/w-hotels.png",
+    itemClass: "min-w-[8.6rem] sm:min-w-[9.8rem]",
+    desktopItemClass: "min-w-[13rem]",
     frameClass: "w-[5.3rem] sm:w-[6.2rem]",
     desktopFrameClass: "w-[8.7rem]",
     href: "https://w-hotels.marriott.com/"
@@ -82,7 +100,7 @@ export function BrandStrip() {
               target="_blank"
               rel="noreferrer"
               aria-label={logo.name}
-              className="brand-marquee-item flex h-[4.5rem] min-w-[9.25rem] items-center justify-center px-3 sm:h-[5rem] sm:min-w-[10.75rem] sm:px-4"
+              className={`brand-marquee-item flex h-[4.5rem] min-w-[9.25rem] items-center justify-center px-3 sm:h-[5rem] sm:min-w-[10.75rem] sm:px-4 ${logo.itemClass ?? ""}`}
             >
               <div
                 className={`relative flex h-8 w-[7rem] items-center justify-center sm:h-9 sm:w-[8.25rem] ${logo.frameClass ?? ""}`}
@@ -110,7 +128,7 @@ export function BrandStrip() {
               target="_blank"
               rel="noreferrer"
               aria-label={logo.name}
-              className="brand-marquee-item flex h-[7.5rem] min-w-[17rem] items-center justify-center px-4"
+              className={`brand-marquee-item flex h-[7.5rem] min-w-[17rem] items-center justify-center px-4 ${logo.desktopItemClass ?? ""}`}
             >
               <div
                 className={`relative flex h-[4.6rem] w-[13rem] items-center justify-center ${logo.desktopFrameClass ?? ""}`}
