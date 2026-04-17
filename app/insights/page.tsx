@@ -17,26 +17,19 @@ export default function InsightsPage() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[44rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[26rem] max-w-6xl rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.3),transparent_62%)] blur-3xl" />
 
-      <section className="relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12 lg:pb-20 lg:pt-28">
-        <div className="rounded-[2rem] border border-white/50 bg-white/26 px-6 py-8 shadow-[0_24px_70px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+      <section className="hero-fade relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12 lg:pb-20 lg:pt-28">
+        <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
             Actionable Insights
           </p>
-          <div className="mt-6 grid gap-8 border-t border-obsidian/10 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14 lg:pt-8">
-            <div>
-              <h1 className="max-w-5xl font-serif text-[3.3rem] leading-[1.02] text-obsidian sm:text-[4.25rem] lg:text-[5.1rem]">
-                Actionable thinking for brands building authority in the AI era.
-              </h1>
-            </div>
-
-            <div className="lg:flex lg:items-end lg:justify-end">
-              <p className="max-w-xl text-base leading-8 text-stone sm:text-lg sm:leading-9 lg:text-right">
-                Practical strategies for enterprise AI solutions, operational clarity,
-                and digital authority for brands looking to scale with sharper systems
-                and stronger market positioning.
-              </p>
-            </div>
-          </div>
+          <h1 className="mt-6 font-serif text-[3.3rem] leading-[1.04] text-obsidian sm:text-[4.2rem] lg:text-[5rem]">
+            Actionable thinking for brands building authority in the AI era.
+          </h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
+            Practical strategies for enterprise AI solutions, operational clarity,
+            and digital authority for brands looking to scale with sharper systems
+            and stronger market positioning.
+          </p>
         </div>
       </section>
 
