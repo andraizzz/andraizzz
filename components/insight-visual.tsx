@@ -3,14 +3,12 @@ type InsightVisualProps = {
   stat: string;
   kicker: string;
   headline: string[];
-  summary: string;
   stages: Array<{
     number: string;
     title: string;
     subtitle: string;
     detail: string;
   }>;
-  footerLabel: string;
   compact?: boolean;
 };
 
@@ -62,12 +60,12 @@ export function InsightVisual({
         <div className={`mt-6 grid grid-cols-1 gap-3 ${compact ? "sm:mt-6 sm:grid-cols-2" : "sm:mt-8 sm:grid-cols-[1fr_auto_1fr_auto_1fr]"} sm:items-stretch`}>
         {visibleStages.map((stage, index) => (
           <div key={stage.title} className="contents">
-            <div className="rounded-[1.25rem] border border-white/18 bg-white/[0.07] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm sm:px-5 sm:py-5">
+            <div className="rounded-[1.25rem] border border-white/24 bg-white/[0.12] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm sm:px-5 sm:py-5">
               <div className="flex items-center justify-between gap-3">
-                <div className="text-[0.54rem] font-semibold uppercase tracking-[0.18em] text-white/58">
+                <div className="text-[0.54rem] font-semibold uppercase tracking-[0.18em] text-white/72">
                   Stage {stage.number}
                 </div>
-                <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white/18 bg-white/[0.08] text-[0.52rem] font-semibold text-white/72">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white/24 bg-white/[0.14] text-[0.52rem] font-semibold text-white/88">
                   {stage.number.slice(1)}
                 </div>
               </div>
@@ -75,13 +73,13 @@ export function InsightVisual({
               <div className="mt-4 font-serif text-[1.75rem] leading-none text-white sm:text-[2rem]">
                 {stage.title}
               </div>
-              <div className="mt-3 text-[0.64rem] uppercase tracking-[0.18em] text-[#d7cbc3] sm:text-[0.68rem]">
+              <div className="mt-3 text-[0.64rem] uppercase tracking-[0.18em] text-[#efe3dc] sm:text-[0.68rem]">
                 {stage.subtitle}
               </div>
 
-              <div className="mt-4 h-px bg-white/16" />
+              <div className="mt-4 h-px bg-white/22" />
 
-              <p className={`mt-4 max-w-[15rem] text-white/82 ${compact ? "text-[0.76rem] leading-5 sm:text-[0.8rem]" : "text-[0.82rem] leading-6 sm:text-[0.88rem]"}`}>
+              <p className={`mt-4 max-w-[15rem] text-white/96 ${compact ? "text-[0.76rem] leading-5 sm:text-[0.8rem]" : "text-[0.82rem] leading-6 sm:text-[0.88rem]"}`}>
                 {stage.detail}
               </p>
             </div>

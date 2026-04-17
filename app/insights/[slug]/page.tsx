@@ -223,9 +223,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                   stat={post.featuredStat}
                   kicker={post.visual.kicker}
                   headline={post.visual.headline}
-                  summary={post.visual.summary}
                   stages={post.visual.stages}
-                  footerLabel={post.visual.footerLabel}
                 />
               </div>
 

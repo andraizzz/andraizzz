@@ -44,15 +44,8 @@ export default function InsightsPage() {
               stat={featuredPost.featuredStat}
               kicker={featuredPost.visual.kicker}
               headline={featuredPost.visual.headline}
-              summary={featuredPost.visual.summary}
               stages={featuredPost.visual.stages}
-              footerLabel={featuredPost.visual.footerLabel}
             />
-            <div className="pointer-events-none absolute bottom-5 left-5 flex items-center gap-3 rounded-full border border-white/35 bg-obsidian/45 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
-              <span>{featuredPost.eyebrow}</span>
-              <span className="h-1 w-1 rounded-full bg-white/80" />
-              <span>{featuredPost.readTime}</span>
-            </div>
           </div>
 
           <div className="flex flex-col justify-between rounded-[1.7rem] border border-obsidian/8 bg-[linear-gradient(160deg,rgba(255,255,255,0.52),rgba(245,242,239,0.24))] px-6 py-6 sm:px-8 sm:py-8">
@@ -105,9 +98,7 @@ export default function InsightsPage() {
                   stat={post.featuredStat}
                   kicker={post.visual.kicker}
                   headline={post.visual.headline}
-                  summary={post.visual.summary}
                   stages={post.visual.stages}
-                  footerLabel={post.visual.footerLabel}
                   compact
                 />
                 <div className="flex flex-col justify-center px-2 py-2 sm:px-4">
