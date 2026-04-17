@@ -54,6 +54,12 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-4 sm:gap-7">
             <Link
+              href="/insights"
+              className="text-[0.78rem] font-bold tracking-[0.18em] text-obsidian transition hover:opacity-72 sm:text-sm"
+            >
+              INSIGHTS
+            </Link>
+            <Link
               href="/recommended-tools"
               className="text-[0.78rem] font-bold tracking-[0.18em] text-obsidian transition hover:opacity-72 sm:text-sm"
             >

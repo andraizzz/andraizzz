@@ -1,9 +1,20 @@
 import Image from "next/image";
 
-const logos = [
+type BrandLogo = {
+  name: string;
+  src: string;
+  href: string;
+  desktopSrc?: string;
+  imageClass?: string;
+  desktopImageClass?: string;
+};
+
+const logos: BrandLogo[] = [
   {
     name: "BuzzFeed",
     src: "/client-logos-tight/buzzfeed.png",
+    imageClass: "scale-[1.16]",
+    desktopImageClass: "scale-[1.3]",
     href: "https://www.buzzfeed.com/"
   },
   {
@@ -19,13 +30,15 @@ const logos = [
   {
     name: "Condé Nast",
     src: "/client-logos-tight/conde-nast.png",
-    desktopSrc: "/client-logos/conde-nast.png",
-    desktopImageClass: "scale-[2.4]",
+    imageClass: "scale-[1.36]",
+    desktopImageClass: "scale-[1.58]",
     href: "https://www.condenast.com/"
   },
   {
     name: "Lionsgate",
     src: "/client-logos-tight/lionsgate.png",
+    imageClass: "scale-[1.44]",
+    desktopImageClass: "scale-[1.62]",
     href: "https://www.lionsgate.com/"
   },
   {
@@ -36,8 +49,8 @@ const logos = [
   {
     name: "Novotel",
     src: "/client-logos-tight/novotel.png",
-    desktopSrc: "/client-logos/novotel.png",
-    desktopImageClass: "scale-[2.45]",
+    imageClass: "scale-[1.04]",
+    desktopImageClass: "scale-[1.08]",
     href: "https://novotel.accor.com/"
   },
   {
@@ -69,7 +82,7 @@ export function BrandStrip() {
                   alt={logo.name}
                   width={320}
                   height={120}
-                  className="h-full w-auto max-w-full object-contain opacity-100"
+                  className={`h-full w-auto max-w-full object-contain opacity-100 ${logo.imageClass ?? ""}`}
                   unoptimized
                 />
               </div>
