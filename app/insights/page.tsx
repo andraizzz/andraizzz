@@ -18,22 +18,24 @@ export default function InsightsPage() {
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[26rem] max-w-6xl rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.3),transparent_62%)] blur-3xl" />
 
       <section className="relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12 lg:pb-20 lg:pt-28">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              Actionable Insights
-            </p>
-            <h1 className="mt-6 max-w-4xl font-serif text-[3.3rem] leading-[1.02] text-obsidian sm:text-[4.25rem] lg:text-[5.1rem]">
-              Actionable thinking for brands building authority in the AI era.
-            </h1>
-          </div>
+        <div className="rounded-[2rem] border border-white/50 bg-white/26 px-6 py-8 shadow-[0_24px_70px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+            Actionable Insights
+          </p>
+          <div className="mt-6 grid gap-8 border-t border-obsidian/10 pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14 lg:pt-8">
+            <div>
+              <h1 className="max-w-5xl font-serif text-[3.3rem] leading-[1.02] text-obsidian sm:text-[4.25rem] lg:text-[5.1rem]">
+                Actionable thinking for brands building authority in the AI era.
+              </h1>
+            </div>
 
-          <div className="flex items-end">
-            <p className="max-w-xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
-              This is ANDRA&apos;s editorial layer: practical strategy, enterprise AI operations,
-              and visibility insights designed to help premium brands make sharper decisions
-              and become more discoverable where it matters.
-            </p>
+            <div className="lg:flex lg:items-end lg:justify-end">
+              <p className="max-w-xl text-base leading-8 text-stone sm:text-lg sm:leading-9 lg:text-right">
+                Practical strategies for enterprise AI solutions, operational clarity,
+                and digital authority for brands looking to scale with sharper systems
+                and stronger market positioning.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -45,7 +47,6 @@ export default function InsightsPage() {
         >
           <div className="relative">
             <InsightVisual
-              title={featuredPost.title}
               eyebrow={featuredPost.eyebrow}
               stat={featuredPost.featuredStat}
               label={featuredPost.featuredLabel}
@@ -103,7 +104,6 @@ export default function InsightsPage() {
                 className="group grid gap-6 rounded-[1.75rem] border border-white/50 bg-white/30 p-4 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-halo lg:grid-cols-[0.82fr_1.18fr]"
               >
                 <InsightVisual
-                  title={post.title}
                   eyebrow={post.eyebrow}
                   stat={post.featuredStat}
                   label={post.featuredLabel}

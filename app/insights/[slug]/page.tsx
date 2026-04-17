@@ -195,7 +195,6 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
             <div className="mt-10 overflow-hidden rounded-[2rem] border border-white/50 bg-white/30 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl">
               <div className="border-b border-white/40 p-4 sm:p-5">
                 <InsightVisual
-                  title={post.title}
                   eyebrow={post.eyebrow}
                   stat={post.featuredStat}
                   label={post.featuredLabel}

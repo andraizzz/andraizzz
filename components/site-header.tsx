@@ -52,16 +52,16 @@ export function SiteHeader() {
             ANDRA
           </Link>
 
-          <div className="flex items-center gap-4 sm:gap-7">
+          <div className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:w-auto sm:justify-end sm:gap-x-7 sm:gap-y-3">
             <Link
               href="/insights"
-              className="text-[0.78rem] font-bold tracking-[0.18em] text-obsidian transition hover:opacity-72 sm:text-sm"
+              className="text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition hover:opacity-72 sm:text-sm sm:tracking-[0.18em]"
             >
-              INSIGHTS
+              ACTIONABLE INSIGHTS
             </Link>
             <Link
               href="/recommended-tools"
-              className="text-[0.78rem] font-bold tracking-[0.18em] text-obsidian transition hover:opacity-72 sm:text-sm"
+              className="text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition hover:opacity-72 sm:text-sm sm:tracking-[0.18em]"
             >
               RECOMMENDED TOOLS
             </Link>
@@ -69,13 +69,13 @@ export function SiteHeader() {
               href="https://www.linkedin.com/in/andraizgarian/"
               target="_blank"
               rel="noreferrer"
-              className="text-[0.78rem] font-bold tracking-[0.18em] text-obsidian transition hover:opacity-72 sm:text-sm"
+              className="text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition hover:opacity-72 sm:text-sm sm:tracking-[0.18em]"
             >
               LINKEDIN
             </a>
             <a
               href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
-              className="site-header-contact relative text-[0.78rem] font-bold tracking-[0.18em] text-obsidian transition-opacity duration-200 hover:opacity-72 sm:text-sm"
+              className="site-header-contact relative text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition-opacity duration-200 hover:opacity-72 sm:text-sm sm:tracking-[0.18em]"
             >
               CONTACT
             </a>
