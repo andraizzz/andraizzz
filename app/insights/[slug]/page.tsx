@@ -34,11 +34,34 @@ export async function generateMetadata({
   };
 }
 
+function renderInlineLinks(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+
+    if (!match) {
+      return <span key={`${part}-${index}`}>{part}</span>;
+    }
+
+    const [, label, href] = match;
+    return (
+      <Link
+        key={`${href}-${index}`}
+        href={href}
+        className="font-medium text-obsidian underline decoration-obsidian/28 underline-offset-4 transition hover:decoration-obsidian/60"
+      >
+        {label}
+      </Link>
+    );
+  });
+}
+
 function renderBlock(block: InsightSection) {
   if (block.type === "paragraph") {
     return block.paragraphs.map((paragraph) => (
       <p key={paragraph} className="text-base leading-8 text-stone sm:text-lg sm:leading-9">
-        {paragraph}
+        {renderInlineLinks(paragraph)}
       </p>
     ));
   }
@@ -144,6 +167,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
     id: section.id,
     title: section.title
   }));
+  const relatedPosts = insightPosts.filter((candidate) => candidate.slug !== post.slug).slice(0, 3);
 
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
@@ -197,7 +221,11 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                 <InsightVisual
                   eyebrow={post.eyebrow}
                   stat={post.featuredStat}
-                  label={post.featuredLabel}
+                  kicker={post.visual.kicker}
+                  headline={post.visual.headline}
+                  summary={post.visual.summary}
+                  stages={post.visual.stages}
+                  footerLabel={post.visual.footerLabel}
                 />
               </div>
 
@@ -273,6 +301,31 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                 Back to Insights
               </Link>
             </div>
+
+            <section className="mt-10 rounded-[1.75rem] border border-white/55 bg-white/28 px-6 py-6 shadow-[0_24px_60px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-8 sm:py-8">
+              <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+                More Actionable Insights
+              </p>
+              <div className="mt-5 grid gap-4 lg:grid-cols-3">
+                {relatedPosts.map((relatedPost) => (
+                  <Link
+                    key={relatedPost.slug}
+                    href={`/insights/${relatedPost.slug}`}
+                    className="rounded-[1.25rem] border border-obsidian/8 bg-white/55 px-4 py-4 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(17,17,17,0.05)]"
+                  >
+                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                      {relatedPost.eyebrow}
+                    </p>
+                    <h3 className="mt-3 font-serif text-[1.45rem] leading-tight text-obsidian">
+                      {relatedPost.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-stone">
+                      {relatedPost.summary}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
           </div>
         </div>
       </article>

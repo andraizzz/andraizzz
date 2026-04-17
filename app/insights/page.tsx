@@ -42,7 +42,11 @@ export default function InsightsPage() {
             <InsightVisual
               eyebrow={featuredPost.eyebrow}
               stat={featuredPost.featuredStat}
-              label={featuredPost.featuredLabel}
+              kicker={featuredPost.visual.kicker}
+              headline={featuredPost.visual.headline}
+              summary={featuredPost.visual.summary}
+              stages={featuredPost.visual.stages}
+              footerLabel={featuredPost.visual.footerLabel}
             />
             <div className="pointer-events-none absolute bottom-5 left-5 flex items-center gap-3 rounded-full border border-white/35 bg-obsidian/45 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
               <span>{featuredPost.eyebrow}</span>
@@ -99,7 +103,11 @@ export default function InsightsPage() {
                 <InsightVisual
                   eyebrow={post.eyebrow}
                   stat={post.featuredStat}
-                  label={post.featuredLabel}
+                  kicker={post.visual.kicker}
+                  headline={post.visual.headline}
+                  summary={post.visual.summary}
+                  stages={post.visual.stages}
+                  footerLabel={post.visual.footerLabel}
                   compact
                 />
                 <div className="flex flex-col justify-center px-2 py-2 sm:px-4">
