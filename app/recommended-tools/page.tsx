@@ -37,7 +37,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Descript",
-    href: "https://www.descript.com/",
+    href: "https://descript.cello.so/pDLZWtym204",
     image: "/recommended-tools-extra/descript-logo.png",
     preview: "/recommended-tools-extra/descript-preview.png",
     description:
