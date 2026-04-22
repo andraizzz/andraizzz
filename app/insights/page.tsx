@@ -51,13 +51,42 @@ export default function InsightsPage() {
             Actionable Insights
           </p>
           <h1 className="mt-6 max-w-[65rem] font-serif text-[3.3rem] leading-[1.04] text-obsidian sm:max-w-[72rem] sm:text-[4.2rem] lg:max-w-[78rem] lg:text-[5rem]">
-            Actionable thinking for brands building authority in the AI era.
+            Plain-English guidance on AI workflows, tools, and visibility.
           </h1>
           <p className="mt-8 max-w-[58rem] text-base leading-8 text-stone sm:max-w-[62rem] sm:text-lg sm:leading-9 lg:max-w-[68rem]">
-            Practical strategies for enterprise AI solutions, operational clarity,
-            and digital authority for brands looking to scale with sharper systems
-            and stronger market positioning.
+            This section is here to help you understand what AI workflow strategy
+            actually means in practice: what to fix first, which tools matter, and
+            how to build a clearer system instead of adding more noise.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12 lg:pb-16">
+        <div className="grid gap-5 md:grid-cols-3">
+          <div className="rounded-[1.4rem] border border-white/55 bg-white/36 px-5 py-5 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm">
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+              If you want clarity
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
+              Start with the articles on AI workflows and business operations.
+            </p>
+          </div>
+          <div className="rounded-[1.4rem] border border-white/55 bg-white/36 px-5 py-5 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm">
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+              If you want tools
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
+              Read the practical stack and tools pieces first, then browse the recommended tools page.
+            </p>
+          </div>
+          <div className="rounded-[1.4rem] border border-white/55 bg-white/36 px-5 py-5 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm">
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+              If you want help
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
+              The AI workflow audit is the best next step if the problem feels more practical than theoretical.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -12,30 +12,63 @@ import {
 
 const auditDeliverables = [
   {
-    title: "Workflow Map",
+    title: "What is happening now",
     description:
-      "A clear view of where work actually moves, stalls, loops, or relies on manual follow-up."
+      "A simple map of how work currently moves, where it gets stuck, and what still depends on manual follow-up."
   },
   {
-    title: "AI Opportunities",
+    title: "What should change first",
     description:
-      "A shortlist of the best candidates for automation, copilots, or agent support based on real leverage."
+      "A shortlist of the workflows that are actually worth standardizing, automating, or supporting with AI."
   },
   {
-    title: "Stack Recommendation",
+    title: "What tools fit the workflow",
     description:
-      "Tool guidance grounded in your workflow, not generic hype or a one-size-fits-all stack."
+      "Tool recommendations based on your real workflow, not on whatever platform is currently trending."
   },
   {
-    title: "Execution Roadmap",
+    title: "What to do next",
     description:
       "A practical sequence of quick wins, medium-term system work, and visibility improvements."
   }
 ];
 
+const auditSteps = [
+  {
+    number: "01",
+    title: "We map the workflow",
+    description:
+      "We look at how work currently moves from idea to output and where friction appears."
+  },
+  {
+    number: "02",
+    title: "We find the bottlenecks",
+    description:
+      "We identify what feels slow, repetitive, messy, or inconsistent."
+  },
+  {
+    number: "03",
+    title: "We decide what should stay human and what AI should support",
+    description:
+      "The goal is not to automate everything. The goal is to improve the right parts."
+  },
+  {
+    number: "04",
+    title: "You leave with a clearer roadmap",
+    description:
+      "You know what to fix first, what tools matter, and what next steps actually make sense."
+  }
+];
+
+const plainEnglishPoints = [
+  "If your team is using AI in scattered ways, this helps turn that into a clearer system.",
+  "If you are unsure which tools actually matter, this helps you cut through the noise.",
+  "If your business feels busy but the workflow still feels messy, this helps identify what to standardize first."
+];
+
 const workflowAreas = [
   {
-    title: "Marketing Workflows",
+    title: "Marketing and Content",
     points: [
       "Campaign planning and asset production",
       "Content repurposing and approvals",
@@ -72,17 +105,17 @@ const faqItems = [
   {
     question: "What is an AI workflow audit?",
     answer:
-      "An AI workflow audit is a practical review of how work currently gets done across a business, where friction appears, and where AI or automation can improve speed, consistency, and visibility without creating more chaos."
+      "It is a practical review of how work currently gets done, where it feels messy or repetitive, and which parts are actually worth improving with better systems, AI, or automation."
   },
   {
     question: "Who is this audit for?",
     answer:
-      "It is best for brands, consultants, founders, and growth teams who are already using AI tools in scattered ways and want a sharper system for deciding what to standardize, automate, or improve next."
+      "It is best for brands, consultants, founders, and growth teams who are already experimenting with AI but want a clearer plan for what to standardize, automate, or improve next."
   },
   {
     question: "Do you recommend tools during the audit?",
     answer:
-      "Yes. The audit includes tool recommendations, but only after the workflow and bottlenecks are clear. The goal is to fit tools to the work instead of forcing the work to fit a trend."
+      "Yes, but only after the workflow is clear. The point is to match tools to the work instead of forcing the work to fit a trend."
   }
 ];
 
@@ -146,12 +179,12 @@ export default function AiWorkflowAuditPage() {
               AI Workflow Audit
             </p>
             <h1 className="mt-6 font-serif text-[3.2rem] leading-[1.04] text-obsidian sm:text-[4.2rem] lg:text-[5rem]">
-              Find the workflows worth fixing before you buy another AI tool.
+              If your AI setup feels messy, this shows you what to fix first.
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
-              This is a strategy-first review of how your team actually works:
-              where time gets lost, where AI can help, and which tools are worth
-              introducing for execution, visibility, and growth.
+              This page is about one simple thing: helping you figure out which workflows
+              should be cleaned up, which tools are actually worth using, and what should
+              happen next if your business wants a smarter AI setup.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -182,18 +215,15 @@ export default function AiWorkflowAuditPage() {
 
           <div className="rounded-[1.8rem] border border-white/55 bg-white/38 p-6 shadow-[0_24px_70px_rgba(17,17,17,0.06)] backdrop-blur-sm sm:p-8">
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              What the audit covers
+              In plain English
             </p>
             <div className="mt-6 grid gap-4">
-              {auditDeliverables.map((item) => (
+              {plainEnglishPoints.map((point) => (
                 <div
-                  key={item.title}
+                  key={point}
                   className="rounded-[1.2rem] border border-obsidian/8 bg-white/55 px-5 py-5"
                 >
-                  <h2 className="font-serif text-2xl text-obsidian">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
-                    {item.description}
-                  </p>
+                  <p className="text-base leading-8 text-obsidian sm:text-lg">{point}</p>
                 </div>
               ))}
             </div>
@@ -202,29 +232,29 @@ export default function AiWorkflowAuditPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12 lg:pb-16">
-        <div className="grid gap-6 rounded-[1.8rem] border border-white/55 bg-white/34 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm lg:grid-cols-3 lg:px-8">
+        <div className="grid gap-6 rounded-[1.8rem] border border-white/55 bg-white/34 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm lg:grid-cols-[1.1fr_1fr_1fr] lg:px-8">
+          <div>
+            <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
+              The point
+            </p>
+            <p className="mt-3 text-base leading-8 text-obsidian sm:text-lg">
+              To help you stop guessing, stop overbuying tools, and understand what to standardize before you automate.
+            </p>
+          </div>
           <div>
             <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
               Best for
             </p>
             <p className="mt-3 text-base leading-8 text-obsidian sm:text-lg">
-              Brands and teams already experimenting with AI but lacking a clean operating model.
+              Teams already experimenting with AI but still working in a scattered or inconsistent way.
             </p>
           </div>
           <div>
             <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
-              Outcome
+              You leave with
             </p>
             <p className="mt-3 text-base leading-8 text-obsidian sm:text-lg">
-              Better tool decisions, clearer process design, and faster progress toward real workflow gains.
-            </p>
-          </div>
-          <div>
-            <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
-              Lens
-            </p>
-            <p className="mt-3 text-base leading-8 text-obsidian sm:text-lg">
-              Strategy, systems, AI visibility, and execution quality instead of scattered experimentation.
+              Better tool decisions, clearer process design, and a more obvious next step.
             </p>
           </div>
         </div>
@@ -234,10 +264,45 @@ export default function AiWorkflowAuditPage() {
         <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
           <div>
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              Where We Look
+              How It Works
             </p>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              The workflows that usually hide the biggest leverage.
+              A clearer way to understand the audit.
+            </h2>
+            <p className="mt-5 max-w-sm text-base leading-8 text-stone sm:text-lg">
+              This is usually easier to understand as a sequence than as a block of copy.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {auditSteps.map((step) => (
+              <div
+                key={step.title}
+                className="rounded-[1.5rem] border border-white/55 bg-white/34 px-5 py-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
+              >
+                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                  {step.number}
+                </p>
+                <h3 className="mt-4 font-serif text-[1.7rem] leading-tight text-obsidian">
+                  {step.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
+          <div>
+            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+              What We Look At
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+              The types of workflows this usually helps.
             </h2>
           </div>
 
@@ -260,6 +325,74 @@ export default function AiWorkflowAuditPage() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
+          <div>
+            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+              What You Get
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+              The actual outputs.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {auditDeliverables.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[1.5rem] border border-white/55 bg-white/34 px-5 py-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
+              >
+                <h3 className="font-serif text-[1.85rem] leading-tight text-obsidian">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="rounded-[1.8rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-8">
+          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+            Example Before / After
+          </p>
+          <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
+            <div className="rounded-[1.25rem] border border-obsidian/8 bg-white/60 px-5 py-5">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                Before
+              </p>
+              <ul className="mt-4 grid gap-3 text-sm leading-7 text-stone sm:text-base">
+                <li>Too many tools doing overlapping things</li>
+                <li>No clear workflow from idea to output</li>
+                <li>Manual follow-up and inconsistent execution</li>
+                <li>No obvious priority for what to improve first</li>
+              </ul>
+            </div>
+
+            <div className="hidden items-center justify-center lg:flex">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-obsidian/10 bg-white/70 text-xl text-obsidian">
+                →
+              </div>
+            </div>
+
+            <div className="rounded-[1.25rem] border border-obsidian/8 bg-white/60 px-5 py-5">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                After
+              </p>
+              <ul className="mt-4 grid gap-3 text-sm leading-7 text-stone sm:text-base">
+                <li>A clearer workflow map</li>
+                <li>A shorter, more logical AI stack</li>
+                <li>Better judgment about what to automate versus keep human</li>
+                <li>A practical roadmap instead of more experimentation</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -335,11 +468,11 @@ export default function AiWorkflowAuditPage() {
               Request the Audit
             </p>
             <h2 className="mt-4 max-w-md font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              Tell me where the workflow feels messy.
+              Tell me what feels messy.
             </h2>
             <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
-              If you already know the friction point, book a call or use the form to send a structured inquiry.
-              Email and LinkedIn still work too.
+              If the page feels relevant, book a call or send a structured inquiry.
+              If it still feels unclear, that is useful too. We can use the call to define the problem together.
             </p>
           </div>
 
@@ -371,11 +504,11 @@ export default function AiWorkflowAuditPage() {
             Ready to simplify the stack?
           </p>
           <h2 className="mt-4 max-w-3xl font-serif text-[2.3rem] leading-[1.08] text-white sm:text-[2.9rem]">
-            Let&apos;s identify the workflows that should actually change first.
+            Let&apos;s figure out what to fix first.
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/78 sm:text-lg">
-            The fastest gains usually come from fixing a handful of repetitive workflows, choosing a tighter stack,
-            and building pages that speak directly to how buyers now search in Google and AI tools.
+            Most of the value comes from clarifying a few key workflows, making smarter tool decisions,
+            and creating a cleaner plan instead of adding more complexity.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
