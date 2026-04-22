@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { bookIntroCallUrl, contactEmailHref, linkedinUrl } from "@/lib/contact";
 
 const footerGroups = [
   {
@@ -15,10 +16,11 @@ const footerGroups = [
   {
     title: "Connect",
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/andraizgarian/" },
+      { label: "Book a Call", href: bookIntroCallUrl },
+      { label: "LinkedIn", href: linkedinUrl },
       { label: "YouTube", href: "https://www.youtube.com/@AndraIzzz" },
       { label: "Instagram", href: "https://www.instagram.com/zanobegrowth/" },
-      { label: "Contact", href: "mailto:andra@zanobe.com?subject=Strategy%20Inquiry" }
+      { label: "Contact", href: contactEmailHref }
     ]
   },
   {

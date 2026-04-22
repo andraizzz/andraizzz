@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import { InquiryForm } from "@/components/inquiry-form";
-import { aiStrategyKeywords, buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
+import { bookIntroCallUrl } from "@/lib/contact";
+import {
+  aiStrategyKeywords,
+  buildPageMetadata,
+  siteName,
+  siteUrl
+} from "@/lib/seo";
 
 const auditDeliverables = [
   {
@@ -150,14 +156,16 @@ export default function AiWorkflowAuditPage() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
-                href="mailto:andra@zanobe.com?subject=AI%20Workflow%20Audit"
+                href={bookIntroCallUrl}
+                target="_blank"
+                rel="noreferrer"
                 data-track-click="contact_click"
                 data-track-category="ai_workflow_audit"
-                data-track-label="hero_email"
-                data-track-destination="mailto:andra@zanobe.com"
+                data-track-label="hero_calendly"
+                data-track-destination={bookIntroCallUrl}
                 className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian"
               >
-                Request an Audit
+                Book an Intro Call
               </a>
               <Link
                 href="/recommended-tools"
@@ -330,8 +338,8 @@ export default function AiWorkflowAuditPage() {
               Tell me where the workflow feels messy.
             </h2>
             <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
-              If you already know the friction point, use the form to send a structured inquiry.
-              If you prefer direct contact, email or LinkedIn both work.
+              If you already know the friction point, book a call or use the form to send a structured inquiry.
+              Email and LinkedIn still work too.
             </p>
           </div>
 
@@ -371,14 +379,16 @@ export default function AiWorkflowAuditPage() {
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href="mailto:andra@zanobe.com?subject=AI%20Workflow%20Audit"
+              href={bookIntroCallUrl}
+              target="_blank"
+              rel="noreferrer"
               data-track-click="contact_click"
               data-track-category="ai_workflow_audit"
-              data-track-label="footer_email"
-              data-track-destination="mailto:andra@zanobe.com"
+              data-track-label="footer_calendly"
+              data-track-destination={bookIntroCallUrl}
               className="inline-flex min-h-12 items-center justify-center rounded-[0.72rem] bg-white px-6 py-3 text-sm uppercase tracking-[0.18em] text-obsidian transition duration-300 hover:scale-[1.02]"
             >
-              Request an Audit
+              Book an Intro Call
             </a>
             <Link
               href="/recommended-tools"

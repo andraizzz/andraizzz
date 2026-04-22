@@ -3,6 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { BrandStrip } from "@/components/brand-strip";
 import { InquiryForm } from "@/components/inquiry-form";
+import {
+  bookIntroCallUrl,
+  contactEmail,
+  contactEmailHref,
+  linkedinUrl
+} from "@/lib/contact";
 import { aiStrategyKeywords, buildPageMetadata } from "@/lib/seo";
 
 const specialties = [
@@ -63,14 +69,16 @@ export default function HomePage() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+                  href={bookIntroCallUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   data-track-click="contact_click"
                   data-track-category="homepage"
-                  data-track-label="hero_email"
-                  data-track-destination="mailto:andra@zanobe.com"
+                  data-track-label="hero_calendly"
+                  data-track-destination={bookIntroCallUrl}
                   className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98]"
                 >
-                  Work with me →
+                  Book an intro call →
                 </a>
                 <Link
                   href="/ai-workflow-audit"
@@ -198,27 +206,39 @@ export default function HomePage() {
             </h2>
             <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
               If you want help with AI workflows, visibility, strategy, or the right
-              stack, send a structured inquiry or reach out directly by email or LinkedIn.
+              stack, book directly, send a structured inquiry, or reach out by email or LinkedIn.
             </p>
             <div className="mt-8 grid gap-3 text-sm leading-7 text-stone sm:text-base">
               <a
-                href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+                href={bookIntroCallUrl}
+                target="_blank"
+                rel="noreferrer"
+                data-track-click="contact_click"
+                data-track-category="homepage"
+                data-track-label="contact_calendly"
+                data-track-destination={bookIntroCallUrl}
+                className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
+              >
+                Book an intro call
+              </a>
+              <a
+                href={contactEmailHref}
                 data-track-click="contact_click"
                 data-track-category="homepage"
                 data-track-label="contact_email"
-                data-track-destination="mailto:andra@zanobe.com"
+                data-track-destination={`mailto:${contactEmail}`}
                 className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
               >
-                andra@zanobe.com
+                {contactEmail}
               </a>
               <a
-                href="https://www.linkedin.com/in/andraizgarian/"
+                href={linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
                 data-track-click="contact_click"
                 data-track-category="homepage"
                 data-track-label="contact_linkedin"
-                data-track-destination="https://www.linkedin.com/in/andraizgarian/"
+                data-track-destination={linkedinUrl}
                 className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
               >
                 LinkedIn

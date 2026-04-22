@@ -4,6 +4,7 @@ import Script from "next/script";
 import { notFound } from "next/navigation";
 import { InsightVisual } from "@/components/insight-visual";
 import { getInsightPost, insightPosts, type InsightSection } from "@/lib/insights";
+import { bookIntroCallUrl } from "@/lib/contact";
 import {
   absoluteUrl,
   aiStrategyKeywords,
@@ -159,10 +160,16 @@ function renderBlock(block: InsightSection) {
       ))}
       <div className="mt-8">
         <a
-          href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+          href={bookIntroCallUrl}
+          target="_blank"
+          rel="noreferrer"
+          data-track-click="contact_click"
+          data-track-category="insight_article"
+          data-track-label="cta_calendly"
+          data-track-destination={bookIntroCallUrl}
           className="inline-flex min-h-12 items-center justify-center rounded-[0.72rem] bg-white px-6 py-3 text-sm uppercase tracking-[0.18em] text-obsidian transition duration-300 hover:scale-[1.02] hover:shadow-[0_18px_40px_rgba(255,255,255,0.12)] active:scale-[0.98]"
         >
-          Work with ANDRA
+          Book an Intro Call
         </a>
       </div>
     </div>

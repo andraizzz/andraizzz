@@ -2,6 +2,12 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
+import {
+  bookIntroCallUrl,
+  contactEmail,
+  contactEmailHref,
+  linkedinUrl
+} from "@/lib/contact";
 
 declare global {
   interface Window {
@@ -54,7 +60,7 @@ export function InquiryForm({
     ].join("\n");
 
     const subject = `${sourceLabel}: ${focus}`;
-    const mailtoUrl = `mailto:andra@zanobe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.gtag?.("event", "inquiry_submit", {
       event_category: "contact",
@@ -75,16 +81,28 @@ export function InquiryForm({
             Fill this out and your email app will open with a structured message to send.
           </p>
         </div>
-        <div className="text-sm leading-7 text-stone">
+        <div className="flex flex-wrap items-center gap-3">
           <a
-            href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+            href={bookIntroCallUrl}
+            target="_blank"
+            rel="noreferrer"
+            data-track-click="contact_click"
+            data-track-category="inquiry_form"
+            data-track-label="calendly"
+            data-track-destination={bookIntroCallUrl}
+            className="inline-flex min-h-11 items-center justify-center rounded-[0.72rem] border border-obsidian/16 bg-white px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-obsidian transition duration-200 hover:scale-[1.02] hover:border-obsidian/30"
+          >
+            Book Intro Call
+          </a>
+          <a
+            href={contactEmailHref}
             data-track-click="contact_click"
             data-track-category="inquiry_form"
             data-track-label="direct_email"
-            data-track-destination="mailto:andra@zanobe.com"
+            data-track-destination={`mailto:${contactEmail}`}
             className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
           >
-            andra@zanobe.com
+            {contactEmail}
           </a>
         </div>
       </div>
@@ -176,15 +194,15 @@ export function InquiryForm({
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="text-sm leading-7 text-stone">
             <p>
-              Prefer another route? Reach out on{" "}
+              Prefer another route? Book a call, or reach out on{" "}
               <a
-                href="https://www.linkedin.com/in/andraizgarian/"
+                href={linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
                 data-track-click="contact_click"
                 data-track-category="inquiry_form"
                 data-track-label="linkedin"
-                data-track-destination="https://www.linkedin.com/in/andraizgarian/"
+                data-track-destination={linkedinUrl}
                 className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
               >
                 LinkedIn
@@ -195,14 +213,14 @@ export function InquiryForm({
               <p className="text-obsidian/80">
                 If your email app did not open, email{" "}
                 <a
-                  href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+                  href={contactEmailHref}
                   data-track-click="contact_click"
                   data-track-category="inquiry_form"
                   data-track-label="fallback_email"
-                  data-track-destination="mailto:andra@zanobe.com"
+                  data-track-destination={`mailto:${contactEmail}`}
                   className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
                 >
-                  andra@zanobe.com
+                  {contactEmail}
                 </a>{" "}
                 directly.
               </p>

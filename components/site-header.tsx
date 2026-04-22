@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { bookIntroCallUrl, linkedinUrl } from "@/lib/contact";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,26 +85,28 @@ export function SiteHeader() {
               WORKFLOW AUDIT
             </Link>
             <a
-              href="https://www.linkedin.com/in/andraizgarian/"
+              href={linkedinUrl}
               target="_blank"
               rel="noreferrer"
               data-track-click="contact_click"
               data-track-category="header"
               data-track-label="linkedin"
-              data-track-destination="https://www.linkedin.com/in/andraizgarian/"
+              data-track-destination={linkedinUrl}
               className="text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition hover:opacity-72 sm:text-sm sm:tracking-[0.18em]"
             >
               LINKEDIN
             </a>
             <a
-              href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+              href={bookIntroCallUrl}
+              target="_blank"
+              rel="noreferrer"
               data-track-click="contact_click"
               data-track-category="header"
-              data-track-label="email"
-              data-track-destination="mailto:andra@zanobe.com"
+              data-track-label="calendly"
+              data-track-destination={bookIntroCallUrl}
               className="site-header-contact relative inline-flex min-h-10 items-center justify-center rounded-[0.72rem] border border-obsidian/16 bg-white/52 px-4 py-2 text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition duration-200 hover:border-obsidian/30 hover:bg-white sm:min-h-11 sm:px-5 sm:text-sm sm:tracking-[0.18em]"
             >
-              CONTACT
+              BOOK A CALL
             </a>
           </div>
         </header>
