@@ -6,6 +6,7 @@ const footerGroups = [
     links: [
       { label: "Home", href: "/" },
       { label: "Insights", href: "/insights" },
+      { label: "AI Workflow Audit", href: "/ai-workflow-audit" },
       { label: "Recommended Tools", href: "/recommended-tools" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" }

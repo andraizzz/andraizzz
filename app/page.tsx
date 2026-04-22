@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { BrandStrip } from "@/components/brand-strip";
+import { InquiryForm } from "@/components/inquiry-form";
+import { aiStrategyKeywords, buildPageMetadata } from "@/lib/seo";
 
 const specialties = [
   {
@@ -23,6 +27,14 @@ const specialties = [
     descriptor: "SEO, Social Media Strategy, Website Creation, AI Discovery"
   }
 ];
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "ANDRA | AI Workflows, AI Visibility, Growth Strategy",
+  description:
+    "AI workflow strategy, AI tips and tricks, visibility guidance, and growth consulting for brands that want stronger systems and clearer discoverability.",
+  pathname: "/",
+  keywords: aiStrategyKeywords
+});
 
 export default function HomePage() {
   return (
@@ -52,16 +64,24 @@ export default function HomePage() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a
                   href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+                  data-track-click="contact_click"
+                  data-track-category="homepage"
+                  data-track-label="hero_email"
+                  data-track-destination="mailto:andra@zanobe.com"
                   className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98]"
                 >
                   Work with me →
                 </a>
-                <a
-                  href="#contact"
+                <Link
+                  href="/ai-workflow-audit"
+                  data-track-click="audit_click"
+                  data-track-category="homepage"
+                  data-track-label="hero_audit"
+                  data-track-destination="/ai-workflow-audit"
                   className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] border border-obsidian/20 bg-white/25 px-7 py-4 text-sm uppercase tracking-[0.18em] text-obsidian backdrop-blur-md transition duration-300 hover:scale-[1.02] hover:border-obsidian/45 hover:bg-white/50 hover:shadow-[0_14px_34px_rgba(17,17,17,0.07)] active:scale-[0.98]"
                 >
-                  Join the newsletter →
-                </a>
+                  Request an audit →
+                </Link>
               </div>
             </div>
           </div>
@@ -124,6 +144,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 pb-8 sm:px-8 lg:px-12 lg:pb-12">
+        <div className="grid gap-6 rounded-[1.75rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm lg:grid-cols-[1fr_auto_auto_auto] lg:items-center lg:gap-8 lg:px-8">
+          <div>
+            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+              Explore the Library
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-8 text-stone sm:text-lg">
+              Read practical guides on AI workflows, browse the AI tools worth using, or start with an audit if you want a clearer roadmap.
+            </p>
+          </div>
+          <Link
+            href="/insights"
+            data-track-click="navigation_click"
+            data-track-category="homepage"
+            data-track-label="library_insights"
+            data-track-destination="/insights"
+            className="inline-flex min-h-12 items-center justify-center rounded-[0.72rem] border border-obsidian/16 bg-white/48 px-6 py-3 text-sm uppercase tracking-[0.18em] text-obsidian transition duration-300 hover:scale-[1.02] hover:border-obsidian/36 hover:bg-white"
+          >
+            Read Insights
+          </Link>
+          <Link
+            href="/recommended-tools"
+            data-track-click="navigation_click"
+            data-track-category="homepage"
+            data-track-label="library_tools"
+            data-track-destination="/recommended-tools"
+            className="inline-flex min-h-12 items-center justify-center rounded-[0.72rem] bg-ink px-6 py-3 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian"
+          >
+            View Tools
+          </Link>
+          <Link
+            href="/ai-workflow-audit"
+            data-track-click="audit_click"
+            data-track-category="homepage"
+            data-track-label="library_audit"
+            data-track-destination="/ai-workflow-audit"
+            className="inline-flex min-h-12 items-center justify-center rounded-[0.72rem] border border-obsidian/16 bg-white/48 px-6 py-3 text-sm uppercase tracking-[0.18em] text-obsidian transition duration-300 hover:scale-[1.02] hover:border-obsidian/36 hover:bg-white"
+          >
+            Workflow Audit
+          </Link>
+        </div>
+      </section>
+
       <section
         id="contact"
         className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-28"
@@ -131,51 +194,40 @@ export default function HomePage() {
         <div className="grid gap-14 rounded-[2rem] bg-white/45 px-6 py-8 shadow-[0_20px_60px_rgba(17,17,17,0.05)] ring-1 ring-white/60 backdrop-blur-sm sm:px-8 sm:py-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 lg:px-12 lg:py-14">
           <div>
             <h2 className="max-w-md font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              Join the Conversation.
+              Start an Inquiry.
             </h2>
             <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
-              Stay connected with the tips and tricks I&apos;ve learned along the
-              way.
+              If you want help with AI workflows, visibility, strategy, or the right
+              stack, send a structured inquiry or reach out directly by email or LinkedIn.
             </p>
+            <div className="mt-8 grid gap-3 text-sm leading-7 text-stone sm:text-base">
+              <a
+                href="mailto:andra@zanobe.com?subject=Strategy%20Inquiry"
+                data-track-click="contact_click"
+                data-track-category="homepage"
+                data-track-label="contact_email"
+                data-track-destination="mailto:andra@zanobe.com"
+                className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
+              >
+                andra@zanobe.com
+              </a>
+              <a
+                href="https://www.linkedin.com/in/andraizgarian/"
+                target="_blank"
+                rel="noreferrer"
+                data-track-click="contact_click"
+                data-track-category="homepage"
+                data-track-label="contact_linkedin"
+                data-track-destination="https://www.linkedin.com/in/andraizgarian/"
+                className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           <div className="w-full">
-            <form className="flex flex-col gap-6 lg:flex-row lg:items-end" method="post">
-              <div className="grid flex-1 gap-6 sm:grid-cols-2">
-                <label className="block">
-                  <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
-                    Name
-                  </span>
-                  <input
-                    type="text"
-                    name="name"
-                    autoComplete="name"
-                    className="w-full rounded-[0.85rem] border border-obsidian/12 bg-porcelain/80 px-5 py-4 text-base text-obsidian outline-none transition duration-300 placeholder:text-stone/70 focus:border-obsidian/35 focus:bg-white"
-                    placeholder="Your name"
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="mb-3 block text-xs uppercase tracking-editorial text-stone sm:text-sm">
-                    Email
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    autoComplete="email"
-                    className="w-full rounded-[0.85rem] border border-obsidian/12 bg-porcelain/80 px-5 py-4 text-base text-obsidian outline-none transition duration-300 placeholder:text-stone/70 focus:border-obsidian/35 focus:bg-white"
-                    placeholder="Your email"
-                  />
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex min-h-[3.75rem] items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian hover:shadow-[0_18px_40px_rgba(28,34,40,0.16)] active:scale-[0.98] lg:self-end"
-              >
-                Connect
-              </button>
-            </form>
+            <InquiryForm defaultFocus="General Inquiry" sourceLabel="Homepage Inquiry" />
           </div>
         </div>
       </section>

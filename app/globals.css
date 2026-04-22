@@ -125,27 +125,6 @@ body > * {
   opacity: 1;
 }
 
-.site-header-contact::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.28rem;
-  height: 1px;
-  background: currentColor;
-  opacity: 0;
-  transform: scaleX(0.5);
-  transform-origin: center;
-  transition:
-    opacity 180ms ease,
-    transform 220ms ease;
-}
-
-.site-header-contact:hover::after {
-  opacity: 0.7;
-  transform: scaleX(1);
-}
-
 .hero-fade {
   animation: heroFadeIn 700ms ease-out both;
 }

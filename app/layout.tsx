@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
+import { AnalyticsClickTracker } from "@/components/analytics-click-tracker";
 import { ClickStars } from "@/components/click-stars";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import {
+  aiStrategyKeywords,
+  buildPageMetadata,
+  defaultOgImage,
+  siteName,
+  siteUrl
+} from "@/lib/seo";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -19,10 +27,38 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "ANDRA | Strategy, AI Visibility, Growth",
-  description:
-    "Luxury personal strategy consulting for brands that refuse to be invisible.",
-  metadataBase: new URL("https://andraizzz.com")
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "ANDRA | AI Workflows, AI Visibility, Growth Strategy",
+    template: "%s"
+  },
+  applicationName: siteName,
+  category: "business",
+  creator: "ANDRA",
+  publisher: siteName,
+  referrer: "origin-when-cross-origin",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png"
+  },
+  ...buildPageMetadata({
+    title: "ANDRA | AI Workflows, AI Visibility, Growth Strategy",
+    description:
+      "ANDRA publishes actionable guidance on AI workflows, AI tips and tricks, AI visibility, and recommended tools for brands that want stronger systems and smarter growth.",
+    pathname: "/",
+    keywords: aiStrategyKeywords
+  })
 };
 
 export default function RootLayout({
@@ -33,6 +69,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <head>
+        <Script id="organization-schema" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: siteName,
+            url: siteUrl,
+            image: defaultOgImage,
+            sameAs: []
+          })}
+        </Script>
+        <Script id="website-schema" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: siteName,
+            url: siteUrl,
+            image: defaultOgImage
+          })}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-QPCFDEM7GK"
           strategy="afterInteractive"
@@ -47,6 +102,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
+        <AnalyticsClickTracker />
         <SiteHeader />
         {children}
         <SiteFooter />

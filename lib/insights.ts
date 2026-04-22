@@ -78,6 +78,289 @@ export type InsightPost = {
 
 export const insightPosts: InsightPost[] = [
   {
+    title: "Best AI Tools for Consultants and Growth Teams in 2026",
+    slug: "best-ai-tools-for-consultants-growth-teams",
+    metaDescription:
+      "A practical guide to the best AI tools for consultants and growth teams, including research, automation, content, and AI visibility tools that actually earn their place.",
+    eyebrow: "AI Tools",
+    dateLabel: "April 2026",
+    readTime: "11 min read",
+    imageSrc: "/andra-hero.jpg",
+    imageAlt: "Editorial portrait treatment for ANDRA insights",
+    summary:
+      "A practical AI stack for consultants and growth teams that want better thinking, cleaner workflows, stronger content systems, and sharper visibility.",
+    featuredStat: "5 layers",
+    featuredLabel: "Research to visibility",
+    visual: {
+      kicker: "The Practical Stack",
+      headline: ["Think.", "Build.", "Scale."],
+      summary:
+        "A focused stack for consultants and growth teams that need AI tools to support real workflows instead of adding more tabs.",
+      footerLabel: "Research, execution, visibility",
+      stages: [
+        {
+          number: "01",
+          title: "Think",
+          subtitle: "Research and reasoning",
+          detail: "Use AI to sharpen thinking before execution begins."
+        },
+        {
+          number: "02",
+          title: "Build",
+          subtitle: "Systems and delivery",
+          detail: "Connect tools to recurring workflows and outputs."
+        },
+        {
+          number: "03",
+          title: "Scale",
+          subtitle: "Visibility and growth",
+          detail: "Turn the work into stronger discovery, content, and distribution."
+        }
+      ]
+    },
+    sections: [
+      {
+        title: "Why Most AI Tools Lists Are Not Helpful",
+        id: "why-most-ai-tools-lists-are-not-helpful",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "Most AI tools lists are written like shopping catalogs. They rank dozens of products but do very little to help a business decide what belongs in its actual stack.",
+              "For consultants and growth teams, the problem is rarely a lack of options. The problem is that too many tools overlap, too few fit the workflow, and the team ends up testing software without improving execution.",
+              "The better question is not which AI tool is best in the abstract. The better question is which AI tools reduce bottlenecks inside research, planning, delivery, visibility, and reporting."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Start With Bottlenecks, Not Categories",
+        id: "start-with-bottlenecks-not-categories",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "A strong AI stack starts by identifying where time is actually being lost."
+            ]
+          },
+          {
+            type: "list",
+            intro: "For most consultants and growth teams, the recurring bottlenecks sound like this:",
+            items: [
+              "Research takes too long and ends up fragmented across tabs",
+              "Ideas are clear in conversation but slow to turn into usable drafts",
+              "Content production is inconsistent across channels",
+              "Outreach, reporting, and follow-up still depend on too much manual work",
+              "The business is using AI, but the website is not yet positioned to rank for the way buyers now search"
+            ]
+          },
+          {
+            type: "paragraph",
+            paragraphs: [
+              "Once the bottleneck is visible, the right stack becomes much easier to choose."
+            ]
+          }
+        ]
+      },
+      {
+        title: "The Five-Layer AI Stack That Actually Gets Used",
+        id: "the-five-layer-ai-stack-that-actually-gets-used",
+        subsections: [
+          {
+            title: "Layer 1: Thinking and Research",
+            id: "layer-1-thinking-and-research",
+            blocks: [
+              {
+                type: "paragraph",
+                paragraphs: [
+                  "This is the layer that sharpens raw ideas into direction.",
+                  "For many teams, the best starting combination is Wispr Flow for capture, Claude for deep thinking, ChatGPT for iteration, and Perplexity for cited research.",
+                  "If a consultant is constantly moving between calls, notes, market research, and deliverable drafts, this layer creates the fastest lift."
+                ]
+              },
+              {
+                type: "list",
+                intro: "Good tools in this layer include:",
+                items: [
+                  "Wispr Flow for fast voice capture and idea collection",
+                  "Claude for long-form reasoning, writing, and structured thinking",
+                  "ChatGPT for drafting, iteration, and general problem-solving",
+                  "Perplexity for fast research with sources"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Layer 2: Workflow and Knowledge Systems",
+            id: "layer-2-workflow-and-knowledge-systems",
+            blocks: [
+              {
+                type: "paragraph",
+                paragraphs: [
+                  "Once the ideas are clear, the next question is whether the work can move in a repeatable way.",
+                  "This is where tools like Notion, Lindy, Zapier AI, or Aicado become useful. They support documentation, recurring flows, internal structure, and automation logic."
+                ]
+              },
+              {
+                type: "list",
+                intro: "This layer matters when the business needs:",
+                items: [
+                  "A clearer operating system for documents and projects",
+                  "Repeatable automation across routine internal tasks",
+                  "A more deliberate handoff between human judgment and AI support"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Layer 3: Content and Distribution",
+            id: "layer-3-content-and-distribution",
+            blocks: [
+              {
+                type: "paragraph",
+                paragraphs: [
+                  "Growth teams need more than content generation. They need production and distribution systems.",
+                  "Descript, Canva, HeyGen, Typefully, and HeyReach are useful here because they turn ideas into assets, then help those assets reach the right channels."
+                ]
+              },
+              {
+                type: "list",
+                intro: "This layer supports workflows such as:",
+                items: [
+                  "Video editing and repurposing",
+                  "Creative production for social and ads",
+                  "Publishing systems for thought leadership",
+                  "Outbound and LinkedIn-led growth"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Layer 4: Visibility and Discovery",
+            id: "layer-4-visibility-and-discovery",
+            blocks: [
+              {
+                type: "paragraph",
+                paragraphs: [
+                  "As buyers increasingly ask ChatGPT, Gemini, Perplexity, and Google AI products for recommendations, visibility is no longer just a Google ranking problem.",
+                  "PromptSignal is useful because it keeps attention on how AI systems understand and surface a brand. This layer matters especially for consultants trying to become the name that gets recommended."
+                ]
+              }
+            ]
+          },
+          {
+            title: "Layer 5: Specialized Creative and Campaign Work",
+            id: "layer-5-specialized-creative-and-campaign-work",
+            blocks: [
+              {
+                type: "paragraph",
+                paragraphs: [
+                  "Only after the core stack is working does it make sense to add more specialized tools like Arcads, Midjourney, Blaze, ElevenLabs, or Hailuo.",
+                  "These tools can be powerful, but they create the most value when they plug into a broader workflow instead of becoming a separate hobby."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: "A Simple Way to Choose the Right AI Tools",
+        id: "a-simple-way-to-choose-the-right-ai-tools",
+        blocks: [
+          {
+            type: "table",
+            tables: [
+              {
+                title: "Start With the Bottleneck",
+                headers: ["If this is slow", "Start here"],
+                rows: [
+                  ["Thinking, outlining, and analysis", "Claude, ChatGPT, Wispr Flow"],
+                  ["Current research and source gathering", "Perplexity"],
+                  ["Documentation and internal operating system", "Notion"],
+                  ["Automation and recurring workflow execution", "Lindy, Zapier AI, Aicado"],
+                  ["Video, visual, and multi-channel content production", "Descript, Canva, HeyGen"],
+                  ["LinkedIn and outbound workflow support", "HeyReach, Reachy.ai, Typefully"],
+                  ["AI visibility and discoverability", "PromptSignal plus stronger site content"]
+                ]
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            paragraphs: [
+              "The point is not to collect every tool in the category. The point is to build a smaller stack that handles the core workflow well."
+            ]
+          }
+        ]
+      },
+      {
+        title: "What a Strong Starter Stack Looks Like",
+        id: "what-a-strong-starter-stack-looks-like",
+        blocks: [
+          {
+            type: "list",
+            intro: "For many consultants and growth teams, a sensible starter stack looks like this:",
+            items: [
+              "Claude for deep reasoning and long-form work",
+              "ChatGPT for iteration and flexible drafting",
+              "Perplexity for live research",
+              "Notion for structure and documentation",
+              "One automation layer such as Lindy or Zapier AI",
+              "One content production layer such as Descript or Canva",
+              "One visibility layer that keeps the site aligned to how buyers search"
+            ]
+          },
+          {
+            type: "paragraph",
+            paragraphs: [
+              "That is usually enough to move from experimentation into a repeatable AI workflow without overcomplicating the stack.",
+              "If you want a broader shortlist, the [recommended tools page](/recommended-tools) is the best place to browse the tools referenced here."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Frequently Asked Questions",
+        id: "frequently-asked-questions",
+        blocks: [
+          {
+            type: "faq",
+            items: [
+              {
+                question: "What are the best AI tools for consultants?",
+                answer:
+                  "The best AI tools for consultants usually cover four needs: thinking, research, workflow structure, and content delivery. For many people that means a combination of Claude, ChatGPT, Perplexity, Notion, and one automation layer."
+              },
+              {
+                question: "Do growth teams need one all-in-one AI platform?",
+                answer:
+                  "Usually not. A tighter stack of a few purpose-built tools tends to outperform one giant platform trying to do everything."
+              },
+              {
+                question: "How do I know which AI tools are worth paying for?",
+                answer:
+                  "Start with the workflow that is slowest, most repetitive, or most expensive. If a tool shortens that workflow and improves consistency, it is earning its place."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: "Next Step",
+        id: "next-step",
+        blocks: [
+          {
+            type: "cta",
+            paragraphs: [
+              "The best AI stack is not the most impressive one. It is the one that makes your thinking clearer, your workflows tighter, and your visibility stronger.",
+              "If you want to browse the current shortlist, start with the [recommended tools page](/recommended-tools). If you want help choosing the right stack for your business, the [AI Workflow Audit](/ai-workflow-audit) is the most practical next step."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     title: "How to Implement AI in Business Operations: The Tasks to Systems to Agents Framework",
     slug: "how-to-implement-ai-business-operations-tasks-systems-agents",
     metaDescription:

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+import { absoluteUrl, buildPageMetadata, recommendedToolsKeywords, siteName, siteUrl } from "@/lib/seo";
 
 type Tool = {
   name: string;
@@ -289,10 +292,13 @@ const situationalTools: Tool[] = [
   }
 ];
 
-export const metadata: Metadata = {
-  title: "Recommended Tools | ANDRA",
-  description: "A curated list of tools ANDRA recommends."
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Recommended AI Tools and Workflow Stack | ANDRA",
+  description:
+    "A curated list of recommended AI tools, workflow software, and productivity platforms ANDRA uses or recommends for clearer thinking, stronger execution, and better visibility.",
+  pathname: "/recommended-tools",
+  keywords: recommendedToolsKeywords
+});
 
 function toolMonogram(name: string) {
   const parts = name.split(/[ /]+/).filter(Boolean);
@@ -386,7 +392,15 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
   return (
     <CardTag
       {...(tool.href
-        ? { href: tool.href, target: "_blank", rel: "noreferrer" }
+        ? {
+            href: tool.href,
+            target: "_blank",
+            rel: "noreferrer",
+            "data-track-click": "recommended_tool_click",
+            "data-track-category": compact ? "recommended_tools_compact" : "recommended_tools_featured",
+            "data-track-label": tool.name,
+            "data-track-destination": tool.href
+          }
         : {})}
       className={`group rounded-[0.72rem] border border-obsidian/12 bg-white/45 p-3 shadow-[0_18px_50px_rgba(17,17,17,0.04)] ring-1 ring-white/60 transition duration-300 hover:-translate-y-1.5 hover:border-obsidian/20 hover:bg-white/60 ${
         compact ? "min-h-[14.5rem]" : ""
@@ -475,8 +489,35 @@ function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) 
 }
 
 export default function RecommendedToolsPage() {
+  const allTools = [...featuredTools, ...furtherTools, ...situationalTools];
+
   return (
     <main className="relative overflow-hidden bg-porcelain px-6 py-10 text-obsidian sm:px-8 lg:px-12">
+      <Script id="recommended-tools-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Recommended AI Tools and Workflow Stack",
+          url: `${siteUrl}/recommended-tools`,
+          description:
+            "A curated collection of recommended AI tools, workflow tools, and productivity software.",
+          isPartOf: {
+            "@type": "WebSite",
+            name: siteName,
+            url: siteUrl
+          },
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: allTools.map((tool, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: tool.name,
+              url: tool.href ?? absoluteUrl("/recommended-tools"),
+              description: tool.description
+            }))
+          }
+        })}
+      </Script>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-hero-radial opacity-80" />
 
       <section className="hero-fade mx-auto max-w-7xl pt-6 sm:pt-8 lg:pt-10">
@@ -501,10 +542,10 @@ export default function RecommendedToolsPage() {
             <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
               <div>
                 <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-                  Recommended
+                  Core AI Tools
                 </p>
                 <p className="mt-4 max-w-xs text-sm leading-7 text-stone">
-                  My top eight productive tools and personal recommendations.
+                  The core AI tools I recommend for research, writing, coding, and clearer day-to-day execution.
                 </p>
               </div>
 
@@ -520,11 +561,10 @@ export default function RecommendedToolsPage() {
             <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
               <div>
                 <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-                  Further Tools You Can Use
+                  AI Tools for Marketing and Automation
                 </p>
                 <p className="mt-4 max-w-xs text-sm leading-7 text-stone">
-                  Additional productive tools worth looking at depending on your
-                  workflow and marketing needs.
+                  Additional AI tools worth exploring for outreach, content systems, automation, and growth workflows.
                 </p>
               </div>
 
@@ -540,11 +580,10 @@ export default function RecommendedToolsPage() {
             <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
               <div>
                 <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-                  Situationally Relevant
+                  Specialized AI Workflow Tools
                 </p>
                 <p className="mt-4 max-w-xs text-sm leading-7 text-stone">
-                  Worth considering depending on your stack, creative process,
-                  and campaign goals.
+                  More specialized AI tools depending on your stack, creative process, campaign goals, and implementation stage.
                 </p>
               </div>
 
@@ -555,6 +594,31 @@ export default function RecommendedToolsPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl pb-20 sm:pb-24">
+        <div className="rounded-[1.8rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-8">
+          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+            Need the right stack, not more tabs?
+          </p>
+          <h2 className="mt-4 max-w-3xl font-serif text-[2.15rem] leading-[1.08] text-obsidian sm:text-[2.7rem]">
+            Start with the workflow, then choose the AI tools that actually fit it.
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-stone sm:text-lg">
+            If you want help figuring out which tools matter for your business, the{" "}
+            <Link
+              href="/ai-workflow-audit"
+              data-track-click="audit_click"
+              data-track-category="recommended_tools"
+              data-track-label="audit_cta"
+              data-track-destination="/ai-workflow-audit"
+              className="font-medium text-obsidian underline decoration-obsidian/30 underline-offset-4"
+            >
+              AI Workflow Audit
+            </Link>{" "}
+            is the cleanest way to map your bottlenecks, tighten the stack, and connect the right workflows to the right systems.
+          </p>
         </div>
       </section>
     </main>

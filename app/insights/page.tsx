@@ -1,19 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { InsightVisual } from "@/components/insight-visual";
 import { insightPosts } from "@/lib/insights";
+import { aiStrategyKeywords, absoluteUrl, buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Actionable Insights | ANDRA",
+export const metadata: Metadata = buildPageMetadata({
+  title: "AI Workflows and Actionable Insights | ANDRA",
   description:
-    "Actionable insights on AI visibility, enterprise operations, and growth strategy for brands that want sharper positioning and stronger execution."
-};
+    "Actionable insights on AI workflows, AI business operations, AI tips and tricks, and growth strategy for brands building authority in the AI era.",
+  pathname: "/insights",
+  keywords: [...aiStrategyKeywords, "actionable AI insights", "AI workflow examples"]
+});
 
 export default function InsightsPage() {
   const [featuredPost, ...morePosts] = insightPosts;
 
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
+      <Script id="insights-collection-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "AI Workflows and Actionable Insights",
+          url: `${siteUrl}/insights`,
+          description:
+            "A collection of actionable insights on AI workflows, AI visibility, and operational strategy.",
+          isPartOf: {
+            "@type": "WebSite",
+            name: siteName,
+            url: siteUrl
+          },
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: insightPosts.map((post, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              url: absoluteUrl(`/insights/${post.slug}`),
+              name: post.title
+            }))
+          }
+        })}
+      </Script>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[44rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[26rem] max-w-6xl rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.3),transparent_62%)] blur-3xl" />
 

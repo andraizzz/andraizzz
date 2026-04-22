@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { InsightVisual } from "@/components/insight-visual";
 import { getInsightPost, insightPosts, type InsightSection } from "@/lib/insights";
+import {
+  absoluteUrl,
+  aiStrategyKeywords,
+  articlePublishedTime,
+  buildPageMetadata,
+  siteName,
+  siteUrl
+} from "@/lib/seo";
 
 type InsightPageProps = {
   params: Promise<{
@@ -29,8 +38,13 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${post.title} | Actionable Insights | ANDRA`,
-    description: post.metaDescription
+    ...buildPageMetadata({
+      title: `${post.title} | Actionable Insights | ANDRA`,
+      description: post.metaDescription,
+      pathname: `/insights/${post.slug}`,
+      keywords: [...aiStrategyKeywords, post.eyebrow, post.title],
+      type: "article"
+    })
   };
 }
 
@@ -168,9 +182,56 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
     title: section.title
   }));
   const relatedPosts = insightPosts.filter((candidate) => candidate.slug !== post.slug).slice(0, 3);
+  const faqItems = post.sections.flatMap((section) => [
+    ...(section.blocks?.filter((block) => block.type === "faq") ?? []),
+    ...(section.subsections?.flatMap((subsection) =>
+      subsection.blocks.filter((block) => block.type === "faq")
+    ) ?? [])
+  ]);
 
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
+      <Script id={`${post.slug}-article-schema`} type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.metaDescription,
+          image: [absoluteUrl(post.imageSrc)],
+          datePublished: articlePublishedTime(post),
+          dateModified: articlePublishedTime(post),
+          author: {
+            "@type": "Person",
+            name: siteName
+          },
+          publisher: {
+            "@type": "Organization",
+            name: siteName,
+            url: siteUrl
+          },
+          mainEntityOfPage: absoluteUrl(`/insights/${post.slug}`),
+          articleSection: post.eyebrow,
+          keywords: [...aiStrategyKeywords, post.eyebrow]
+        })}
+      </Script>
+      {faqItems.length > 0 ? (
+        <Script id={`${post.slug}-faq-schema`} type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqItems.flatMap((block) =>
+              block.items.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer
+                }
+              }))
+            )
+          })}
+        </Script>
+      ) : null}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute right-[-6rem] top-[16rem] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_68%)] blur-3xl" />
 
