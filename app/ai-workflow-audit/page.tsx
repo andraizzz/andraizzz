@@ -119,156 +119,6 @@ const faqItems = [
   }
 ];
 
-function Connector({ direction = "down" }: { direction?: "down" | "right" }) {
-  return (
-    <div
-      className={`flex items-center justify-center ${
-        direction === "right" ? "px-1" : "py-1"
-      }`}
-      aria-hidden="true"
-    >
-      <div
-        className={`flex items-center justify-center rounded-full border border-obsidian/10 bg-white/72 text-obsidian shadow-[0_10px_26px_rgba(17,17,17,0.05)] ${
-          direction === "right" ? "h-11 w-11" : "h-10 w-10"
-        }`}
-      >
-        {direction === "right" ? "→" : "↓"}
-      </div>
-    </div>
-  );
-}
-
-function AuditHeroDiagram() {
-  return (
-    <div className="relative overflow-hidden rounded-[1.8rem] border border-white/55 bg-white/38 p-6 shadow-[0_24px_70px_rgba(17,17,17,0.06)] backdrop-blur-sm sm:p-8">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.7),transparent_34%),radial-gradient(circle_at_82%_16%,rgba(217,167,154,0.14),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.18),transparent)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(28,34,40,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(28,34,40,0.03)_1px,transparent_1px)] [background-size:36px_36px]" />
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-40"
-        viewBox="0 0 900 900"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M180 230C260 230 292 275 352 344"
-          stroke="rgba(28,34,40,0.14)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeDasharray="8 10"
-        />
-        <path
-          d="M720 230C640 230 608 275 548 344"
-          stroke="rgba(217,167,154,0.45)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeDasharray="8 10"
-        />
-        <path
-          d="M450 492C450 548 450 590 450 650"
-          stroke="rgba(28,34,40,0.12)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeDasharray="8 10"
-        />
-        <circle cx="180" cy="230" r="8" fill="rgba(28,34,40,0.1)" />
-        <circle cx="720" cy="230" r="8" fill="rgba(217,167,154,0.42)" />
-        <circle cx="450" cy="650" r="10" fill="rgba(28,34,40,0.08)" />
-      </svg>
-
-      <div className="relative">
-        <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-          Human + Machine + Workflow
-        </p>
-        <h2 className="mt-4 font-serif text-[2rem] leading-[1.08] text-obsidian sm:text-[2.4rem]">
-          The best setup is not AI replacing people.
-        </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-7 text-stone sm:text-base">
-          It is human judgment, better workflow design, and AI support working together
-          so the process becomes clearer, faster, and more consistent.
-        </p>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-          <div className="rounded-[1.3rem] border border-obsidian/10 bg-white/68 px-5 py-5 shadow-[0_14px_34px_rgba(17,17,17,0.04)]">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Human judgment
-            </p>
-            <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
-              Context, priorities, brand voice, and the final call on what matters.
-            </p>
-          </div>
-
-          <Connector direction="right" />
-
-          <div className="rounded-[1.3rem] border border-obsidian/10 bg-[linear-gradient(160deg,rgba(28,34,40,0.88),rgba(17,17,17,0.82))] px-5 py-5 text-white shadow-[0_18px_44px_rgba(17,17,17,0.14)]">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/58">
-              AI support
-            </p>
-            <p className="mt-3 text-sm leading-7 text-white/82 sm:text-base">
-              Research, drafting, repetition, analysis, and workflow support where speed actually helps.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <Connector />
-        </div>
-
-        <div className="rounded-[1.45rem] border border-obsidian/10 bg-white/66 px-5 py-6 shadow-[0_16px_40px_rgba(17,17,17,0.05)] sm:px-6">
-          <div className="flex flex-wrap gap-3">
-            <span className="rounded-full border border-obsidian/10 bg-white/78 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Map the workflow
-            </span>
-            <span className="rounded-full border border-obsidian/10 bg-white/78 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Decide what stays human
-            </span>
-            <span className="rounded-full border border-obsidian/10 bg-white/78 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Add AI where it helps
-            </span>
-          </div>
-
-          <p className="mt-5 font-serif text-[1.65rem] leading-tight text-obsidian sm:text-[1.95rem]">
-            Workflow design is the missing layer.
-          </p>
-          <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
-            This is the part that turns random AI usage into a process that actually works.
-          </p>
-        </div>
-
-        <div className="mt-4">
-          <Connector />
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-[1.2rem] border border-obsidian/10 bg-white/64 px-4 py-4 shadow-[0_14px_34px_rgba(17,17,17,0.04)]">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Better process
-            </p>
-            <p className="mt-2 text-sm leading-7 text-stone">
-              Fewer handoff problems and less friction.
-            </p>
-          </div>
-          <div className="rounded-[1.2rem] border border-obsidian/10 bg-white/64 px-4 py-4 shadow-[0_14px_34px_rgba(17,17,17,0.04)]">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Better stack
-            </p>
-            <p className="mt-2 text-sm leading-7 text-stone">
-              Tools chosen because they fit the workflow.
-            </p>
-          </div>
-          <div className="rounded-[1.2rem] border border-obsidian/10 bg-white/64 px-4 py-4 shadow-[0_14px_34px_rgba(17,17,17,0.04)]">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-              Better output
-            </p>
-            <p className="mt-2 text-sm leading-7 text-stone">
-              More consistency, clarity, and usable results.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export const metadata: Metadata = buildPageMetadata({
   title: "AI Workflow Audit and Consulting | ANDRA",
   description:
@@ -363,20 +213,21 @@ export default function AiWorkflowAuditPage() {
             </div>
           </div>
 
-          <AuditHeroDiagram />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12 lg:pb-16">
-        <div className="grid gap-4 md:grid-cols-3">
-          {plainEnglishPoints.map((point) => (
-            <div
-              key={point}
-              className="rounded-[1.2rem] border border-white/55 bg-white/42 px-5 py-5 shadow-[0_18px_44px_rgba(17,17,17,0.04)] backdrop-blur-sm"
-            >
-              <p className="text-base leading-8 text-obsidian sm:text-lg">{point}</p>
+          <div className="rounded-[1.8rem] border border-white/55 bg-white/38 p-6 shadow-[0_24px_70px_rgba(17,17,17,0.06)] backdrop-blur-sm sm:p-8">
+            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+              In plain English
+            </p>
+            <div className="mt-6 grid gap-4">
+              {plainEnglishPoints.map((point) => (
+                <div
+                  key={point}
+                  className="rounded-[1.2rem] border border-obsidian/8 bg-white/55 px-5 py-5"
+                >
+                  <p className="text-base leading-8 text-obsidian sm:text-lg">{point}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -423,30 +274,21 @@ export default function AiWorkflowAuditPage() {
             </p>
           </div>
 
-          <div className="grid gap-4 xl:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] xl:items-stretch">
-            {auditSteps.map((step, index) => (
-              <div key={step.title} className="contents">
-                <div className="rounded-[1.5rem] border border-white/55 bg-white/34 px-5 py-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                    {step.number}
-                  </p>
-                  <h3 className="mt-4 font-serif text-[1.7rem] leading-tight text-obsidian">
-                    {step.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
-                    {step.description}
-                  </p>
-                </div>
-                {index < auditSteps.length - 1 ? (
-                  <>
-                    <div className="xl:hidden">
-                      <Connector />
-                    </div>
-                    <div className="hidden xl:flex">
-                      <Connector direction="right" />
-                    </div>
-                  </>
-                ) : null}
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {auditSteps.map((step) => (
+              <div
+                key={step.title}
+                className="rounded-[1.5rem] border border-white/55 bg-white/34 px-5 py-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
+              >
+                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                  {step.number}
+                </p>
+                <h3 className="mt-4 font-serif text-[1.7rem] leading-tight text-obsidian">
+                  {step.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -517,12 +359,11 @@ export default function AiWorkflowAuditPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="relative overflow-hidden rounded-[1.8rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-8">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_22%,rgba(217,167,154,0.12),transparent_22%),radial-gradient(circle_at_84%_78%,rgba(28,34,40,0.05),transparent_24%)]" />
+        <div className="rounded-[1.8rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-8">
           <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
             Example Before / After
           </p>
-          <div className="relative mt-6 grid gap-5 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
+          <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
             <div className="rounded-[1.25rem] border border-obsidian/8 bg-white/60 px-5 py-5">
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
                 Before
