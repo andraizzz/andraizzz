@@ -29,7 +29,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Claude / Claude Code",
-    href: "https://claude.ai",
+    href: "https://claude.ai/referral/FVwnTFNZTw",
     image: "/recommended-tools/claude-logo.png",
     preview: "/recommended-tools/claude-preview.webp",
     description:
