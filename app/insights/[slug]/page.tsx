@@ -197,7 +197,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
   ]);
 
   return (
-    <main className="relative overflow-hidden bg-porcelain text-obsidian">
+    <main className="relative overflow-x-hidden bg-porcelain text-obsidian">
       <Script id={`${post.slug}-article-schema`} type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
