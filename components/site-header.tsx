@@ -104,7 +104,7 @@ export function SiteHeader() {
               data-track-category="header"
               data-track-label="calendly"
               data-track-destination={bookIntroCallUrl}
-              className="site-header-contact relative inline-flex min-h-10 items-center justify-center rounded-[0.72rem] border border-obsidian/16 bg-white/52 px-4 py-2 text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition duration-200 hover:border-obsidian/30 hover:bg-white sm:min-h-11 sm:px-5 sm:text-sm sm:tracking-[0.18em]"
+              className="site-header-contact relative inline-flex min-h-10 items-center justify-center rounded-[0.72rem] border border-white/75 bg-white px-4 py-2 text-[0.66rem] font-bold tracking-[0.16em] text-obsidian shadow-[0_12px_30px_rgba(255,255,255,0.42),0_10px_24px_rgba(17,17,17,0.07)] transition duration-300 hover:scale-[1.02] hover:border-white/55 hover:bg-white/50 hover:shadow-[0_18px_40px_rgba(255,255,255,0.36),0_14px_30px_rgba(17,17,17,0.08)] active:scale-[0.98] sm:min-h-11 sm:px-5 sm:text-sm sm:tracking-[0.18em]"
             >
               BOOK A CALL
             </a>
