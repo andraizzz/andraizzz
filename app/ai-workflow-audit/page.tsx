@@ -119,6 +119,245 @@ const faqItems = [
   }
 ];
 
+function AuditHeroArtwork() {
+  return (
+    <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-[linear-gradient(160deg,rgba(255,255,255,0.52),rgba(255,255,255,0.2))] p-5 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl sm:p-6">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(255,255,255,0.9),transparent_30%),radial-gradient(circle_at_82%_16%,rgba(217,167,154,0.24),transparent_26%),radial-gradient(circle_at_74%_82%,rgba(28,34,40,0.08),transparent_24%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(28,34,40,0.034)_1px,transparent_1px),linear-gradient(90deg,rgba(28,34,40,0.024)_1px,transparent_1px)] [background-size:44px_44px]" />
+      <div className="workflow-float-soft pointer-events-none absolute -left-10 top-12 h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.85),rgba(255,255,255,0))] blur-3xl" />
+      <div className="workflow-float-soft-delayed pointer-events-none absolute -right-12 bottom-4 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.26),rgba(217,167,154,0))] blur-3xl" />
+
+      <div className="relative min-h-[29rem] overflow-hidden rounded-[1.7rem] border border-white/50 bg-white/34 p-4 sm:min-h-[31rem] sm:p-5">
+        <div className="absolute left-4 top-4 rounded-full border border-obsidian/10 bg-white/80 px-3 py-2 text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-stone shadow-[0_10px_24px_rgba(17,17,17,0.04)]">
+          Human judgment
+        </div>
+        <div className="absolute right-4 top-6 rounded-full border border-obsidian/10 bg-white/74 px-3 py-2 text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-stone shadow-[0_10px_24px_rgba(17,17,17,0.04)]">
+          AI systems
+        </div>
+        <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 rounded-full border border-obsidian/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.88),rgba(231,216,207,0.72))] px-4 py-2 text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-obsidian shadow-[0_16px_36px_rgba(17,17,17,0.06)]">
+          Workflow design
+        </div>
+        <div className="absolute bottom-20 left-5 flex flex-wrap gap-2 sm:bottom-6 sm:left-6">
+          {["clarity", "consistency", "speed"].map((word) => (
+            <span
+              key={word}
+              className="rounded-full border border-white/65 bg-white/70 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-stone shadow-[0_8px_20px_rgba(17,17,17,0.03)]"
+            >
+              {word}
+            </span>
+          ))}
+        </div>
+
+        <svg
+          viewBox="0 0 620 540"
+          className="relative h-full w-full"
+          fill="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="audit-human-fill" x1="122" y1="76" x2="300" y2="420">
+              <stop offset="0%" stopColor="rgba(240,223,216,0.96)" />
+              <stop offset="100%" stopColor="rgba(233,215,206,0.48)" />
+            </linearGradient>
+            <linearGradient id="audit-core-fill" x1="265" y1="118" x2="356" y2="414">
+              <stop offset="0%" stopColor="rgba(255,255,255,0.96)" />
+              <stop offset="55%" stopColor="rgba(244,239,235,0.84)" />
+              <stop offset="100%" stopColor="rgba(228,216,207,0.9)" />
+            </linearGradient>
+            <linearGradient id="audit-beam-stroke" x1="135" y1="170" x2="500" y2="170">
+              <stop offset="0%" stopColor="rgba(217,167,154,0.48)" />
+              <stop offset="52%" stopColor="rgba(28,34,40,0.22)" />
+              <stop offset="100%" stopColor="rgba(28,34,40,0.3)" />
+            </linearGradient>
+            <radialGradient id="audit-machine-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(482 194) rotate(90) scale(118)">
+              <stop offset="0%" stopColor="rgba(28,34,40,0.14)" />
+              <stop offset="100%" stopColor="rgba(28,34,40,0)" />
+            </radialGradient>
+          </defs>
+
+          <path
+            className="workflow-line-motion"
+            d="M150 174C202 171 232 205 278 230C322 255 365 255 405 236C448 215 472 178 492 149"
+            stroke="url(#audit-beam-stroke)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeDasharray="8 10"
+          />
+          <path
+            className="workflow-line-motion"
+            d="M168 330C222 355 264 372 312 375C364 378 408 361 455 324"
+            stroke="rgba(28,34,40,0.14)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeDasharray="7 9"
+          />
+
+          <g className="workflow-float-soft">
+            <path
+              d="M149 138C149 93 179 58 219 58C256 58 286 86 286 130C286 164 266 190 246 219C224 251 217 286 226 335C232 370 250 399 276 426C215 420 170 397 147 359C124 321 126 281 137 245C147 211 158 186 158 161C158 149 149 145 149 138Z"
+              fill="url(#audit-human-fill)"
+            />
+            <path
+              d="M223 84C188 95 171 126 173 160C176 196 199 218 210 244C222 273 224 313 209 354"
+              stroke="rgba(28,34,40,0.34)"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+            />
+            <path
+              d="M173 160C188 150 203 146 220 147"
+              stroke="rgba(28,34,40,0.18)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <circle cx="227" cy="171" r="4.5" fill="rgba(28,34,40,0.42)" />
+          </g>
+
+          <g className="workflow-pulse-glow">
+            <rect
+              x="257"
+              y="118"
+              width="106"
+              height="296"
+              rx="34"
+              fill="url(#audit-core-fill)"
+              stroke="rgba(28,34,40,0.12)"
+            />
+            <rect
+              x="279"
+              y="154"
+              width="62"
+              height="16"
+              rx="8"
+              fill="rgba(255,255,255,0.96)"
+            />
+            <rect
+              x="276"
+              y="203"
+              width="68"
+              height="10"
+              rx="5"
+              fill="rgba(28,34,40,0.11)"
+            />
+            <rect
+              x="288"
+              y="227"
+              width="44"
+              height="10"
+              rx="5"
+              fill="rgba(217,167,154,0.4)"
+            />
+            <path
+              d="M279 274H341"
+              stroke="rgba(28,34,40,0.16)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M279 294H341"
+              stroke="rgba(28,34,40,0.16)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M279 314H321"
+              stroke="rgba(28,34,40,0.16)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <rect
+              x="279"
+              y="344"
+              width="62"
+              height="36"
+              rx="18"
+              fill="rgba(28,34,40,0.84)"
+            />
+            <circle cx="310" cy="362" r="6" fill="rgba(255,255,255,0.88)" />
+          </g>
+
+          <g className="workflow-float-soft-delayed">
+            <circle cx="484" cy="194" r="118" fill="url(#audit-machine-glow)" />
+            <circle
+              cx="484"
+              cy="194"
+              r="96"
+              stroke="rgba(28,34,40,0.18)"
+              strokeWidth="1.5"
+            />
+            <circle
+              cx="484"
+              cy="194"
+              r="66"
+              stroke="rgba(28,34,40,0.15)"
+              strokeWidth="1.5"
+            />
+            <circle
+              cx="484"
+              cy="194"
+              r="34"
+              stroke="rgba(28,34,40,0.18)"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M420 194H548"
+              stroke="rgba(28,34,40,0.12)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M484 130V258"
+              stroke="rgba(28,34,40,0.12)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            {[
+              [484, 98],
+              [484, 130],
+              [452, 194],
+              [516, 194],
+              [438, 148],
+              [530, 148],
+              [438, 240],
+              [530, 240],
+              [484, 258]
+            ].map(([cx, cy]) => (
+              <circle
+                key={`${cx}-${cy}`}
+                cx={cx}
+                cy={cy}
+                r="5.5"
+                fill="rgba(28,34,40,0.78)"
+              />
+            ))}
+            <circle cx="484" cy="194" r="8" fill="rgba(217,167,154,0.88)" />
+          </g>
+
+          <g opacity="0.65">
+            <path
+              d="M247 442C274 428 344 428 376 442"
+              stroke="rgba(28,34,40,0.12)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M160 382C178 390 196 394 217 394"
+              stroke="rgba(217,167,154,0.52)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M435 327C455 316 477 311 501 311"
+              stroke="rgba(28,34,40,0.14)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 export const metadata: Metadata = buildPageMetadata({
   title: "AI Workflow Audit and Consulting | ANDRA",
   description:
@@ -213,21 +452,20 @@ export default function AiWorkflowAuditPage() {
             </div>
           </div>
 
-          <div className="rounded-[1.8rem] border border-white/55 bg-white/38 p-6 shadow-[0_24px_70px_rgba(17,17,17,0.06)] backdrop-blur-sm sm:p-8">
-            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              In plain English
-            </p>
-            <div className="mt-6 grid gap-4">
-              {plainEnglishPoints.map((point) => (
-                <div
-                  key={point}
-                  className="rounded-[1.2rem] border border-obsidian/8 bg-white/55 px-5 py-5"
-                >
-                  <p className="text-base leading-8 text-obsidian sm:text-lg">{point}</p>
-                </div>
-              ))}
+          <AuditHeroArtwork />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12 lg:pb-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          {plainEnglishPoints.map((point) => (
+            <div
+              key={point}
+              className="rounded-[1.3rem] border border-white/55 bg-white/42 px-5 py-5 shadow-[0_18px_44px_rgba(17,17,17,0.04)] backdrop-blur-sm"
+            >
+              <p className="text-base leading-8 text-obsidian sm:text-lg">{point}</p>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
