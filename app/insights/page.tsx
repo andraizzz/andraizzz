@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { InsightVisual } from "@/components/insight-visual";
 import { insightPosts } from "@/lib/insights";
 import { aiStrategyKeywords, absoluteUrl, buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
 
@@ -96,12 +96,14 @@ export default function InsightsPage() {
           className="group grid gap-8 overflow-hidden rounded-[2rem] border border-white/55 bg-white/38 p-4 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_96px_rgba(17,17,17,0.1)] lg:grid-cols-[1.04fr_0.96fr] lg:p-5"
         >
           <div className="relative">
-            <InsightVisual
-              eyebrow={featuredPost.eyebrow}
-              stat={featuredPost.featuredStat}
-              kicker={featuredPost.visual.kicker}
-              headline={featuredPost.visual.headline}
-              stages={featuredPost.visual.stages}
+            <Image
+              src={featuredPost.imageSrc}
+              alt={featuredPost.imageAlt}
+              width={1680}
+              height={945}
+              priority
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="aspect-[16/9] w-full rounded-[1.7rem] object-cover"
             />
           </div>
 
@@ -150,13 +152,13 @@ export default function InsightsPage() {
                 href={`/insights/${post.slug}`}
                 className="group grid gap-6 rounded-[1.75rem] border border-white/50 bg-white/30 p-4 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-halo lg:grid-cols-[0.82fr_1.18fr]"
               >
-                <InsightVisual
-                  eyebrow={post.eyebrow}
-                  stat={post.featuredStat}
-                  kicker={post.visual.kicker}
-                  headline={post.visual.headline}
-                  stages={post.visual.stages}
-                  compact
+                <Image
+                  src={post.imageSrc}
+                  alt={post.imageAlt}
+                  width={1680}
+                  height={945}
+                  sizes="(min-width: 1024px) 34vw, 100vw"
+                  className="aspect-[16/9] w-full rounded-[1.45rem] object-cover"
                 />
                 <div className="flex flex-col justify-center px-2 py-2 sm:px-4">
                   <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">

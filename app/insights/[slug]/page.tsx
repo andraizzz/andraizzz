@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { notFound } from "next/navigation";
-import { InsightVisual } from "@/components/insight-visual";
 import { getInsightPost, insightPosts, type InsightSection } from "@/lib/insights";
 import { bookIntroCallUrl } from "@/lib/contact";
 import {
@@ -286,12 +286,14 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
 
             <div className="mt-10 overflow-hidden rounded-[2rem] border border-white/50 bg-white/30 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl">
               <div className="border-b border-white/40 p-4 sm:p-5">
-                <InsightVisual
-                  eyebrow={post.eyebrow}
-                  stat={post.featuredStat}
-                  kicker={post.visual.kicker}
-                  headline={post.visual.headline}
-                  stages={post.visual.stages}
+                <Image
+                  src={post.imageSrc}
+                  alt={post.imageAlt}
+                  width={1680}
+                  height={945}
+                  priority
+                  sizes="(min-width: 1024px) 62vw, 100vw"
+                  className="aspect-[16/9] w-full rounded-[1.7rem] object-cover"
                 />
               </div>
 
