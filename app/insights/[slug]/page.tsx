@@ -59,9 +59,11 @@ const toolMentionPattern = new RegExp(
   "g"
 );
 
-function renderTextLink(label: string, href: string, key: string) {
+function renderTextLink(label: string, href: string, key: string, tone: "dark" | "light" = "dark") {
   const className =
-    "font-medium text-obsidian underline decoration-obsidian/28 underline-offset-4 transition hover:decoration-obsidian/60";
+    tone === "light"
+      ? "font-medium text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white/80"
+      : "font-medium text-obsidian underline decoration-obsidian/28 underline-offset-4 transition hover:decoration-obsidian/60";
 
   if (href.startsWith("http")) {
     return (
@@ -78,7 +80,7 @@ function renderTextLink(label: string, href: string, key: string) {
   );
 }
 
-function renderToolMentionLinks(text: string, baseKey: string) {
+function renderToolMentionLinks(text: string, baseKey: string, tone: "dark" | "light" = "dark") {
   return text.split(toolMentionPattern).map((part, index) => {
     const tool = recommendedToolMentionLinks.find((candidate) => candidate.label === part);
 
@@ -86,22 +88,22 @@ function renderToolMentionLinks(text: string, baseKey: string) {
       return <span key={`${baseKey}-text-${index}`}>{part}</span>;
     }
 
-    return renderTextLink(tool.label, tool.href, `${baseKey}-tool-${index}`);
+    return renderTextLink(tool.label, tool.href, `${baseKey}-tool-${index}`, tone);
   });
 }
 
-function renderInlineLinks(text: string) {
+function renderInlineLinks(text: string, tone: "dark" | "light" = "dark") {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
 
   return parts.map((part, index) => {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
 
     if (!match) {
-      return renderToolMentionLinks(part, `${part}-${index}`);
+      return renderToolMentionLinks(part, `${part}-${index}`, tone);
     }
 
     const [, label, href] = match;
-    return renderTextLink(label, href, `${href}-${index}`);
+    return renderTextLink(label, href, `${href}-${index}`, tone);
   });
 }
 
@@ -182,7 +184,7 @@ function renderBlock(block: InsightSection) {
     <div className="rounded-[1.7rem] border border-obsidian/10 bg-[linear-gradient(160deg,rgba(28,34,40,0.92),rgba(17,17,17,0.84))] px-6 py-7 text-white shadow-[0_28px_80px_rgba(17,17,17,0.16)] sm:px-8">
       {block.paragraphs.map((paragraph) => (
         <p key={paragraph} className="max-w-3xl text-base leading-8 text-white/82 sm:text-lg sm:leading-9">
-          {paragraph}
+          {renderInlineLinks(paragraph, "light")}
         </p>
       ))}
       <div className="mt-8">
