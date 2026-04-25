@@ -98,7 +98,7 @@ export function BrandStrip() {
               key={`mobile-${logo.name}-${index}`}
               href={logo.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label={logo.name}
               className={`brand-marquee-item flex h-[4.5rem] min-w-[9.25rem] items-center justify-center px-3 sm:h-[5rem] sm:min-w-[10.75rem] sm:px-4 ${logo.itemClass ?? ""}`}
             >
@@ -126,7 +126,7 @@ export function BrandStrip() {
               key={`${logo.name}-${index}`}
               href={logo.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label={logo.name}
               className={`brand-marquee-item flex h-[7.5rem] min-w-[17rem] items-center justify-center px-4 ${logo.desktopItemClass ?? ""}`}
             >

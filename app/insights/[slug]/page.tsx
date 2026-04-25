@@ -45,7 +45,11 @@ export async function generateMetadata({
       description: post.metaDescription,
       pathname: `/insights/${post.slug}`,
       keywords: [...aiStrategyKeywords, post.eyebrow, post.title],
-      type: "article"
+      type: "article",
+      image: post.imageSrc,
+      imageAlt: post.imageAlt,
+      imageWidth: 1680,
+      imageHeight: 945
     })
   };
 }
@@ -67,7 +71,7 @@ function renderTextLink(label: string, href: string, key: string, tone: "dark" |
 
   if (href.startsWith("http")) {
     return (
-      <a key={key} href={href} target="_blank" rel="noreferrer" className={className}>
+      <a key={key} href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {label}
       </a>
     );
@@ -191,7 +195,7 @@ function renderBlock(block: InsightSection) {
         <a
           href={bookIntroCallUrl}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           data-track-click="contact_click"
           data-track-category="insight_article"
           data-track-label="cta_calendly"

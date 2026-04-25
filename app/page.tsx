@@ -71,7 +71,7 @@ export default function HomePage() {
                 <a
                   href={bookIntroCallUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   data-track-click="contact_click"
                   data-track-category="homepage"
                   data-track-label="hero_calendly"
@@ -212,7 +212,7 @@ export default function HomePage() {
               <a
                 href={bookIntroCallUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 data-track-click="contact_click"
                 data-track-category="homepage"
                 data-track-label="contact_calendly"
@@ -234,7 +234,7 @@ export default function HomePage() {
               <a
                 href={linkedinUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 data-track-click="contact_click"
                 data-track-category="homepage"
                 data-track-label="contact_linkedin"

@@ -67,7 +67,7 @@ export function SiteFooter() {
                         key={link.label}
                         href={link.href}
                         target={link.href.startsWith("http") ? "_blank" : undefined}
-                        rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="transition hover:text-obsidian"
                       >
                         {link.label}

@@ -468,7 +468,7 @@ export default function AiWorkflowAuditPage() {
                 <a
                   href={bookIntroCallUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   data-track-click="contact_click"
                   data-track-category="ai_workflow_audit"
                   data-track-label="hero_calendly"
@@ -823,7 +823,7 @@ export default function AiWorkflowAuditPage() {
             <a
               href={bookIntroCallUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               data-track-click="contact_click"
               data-track-category="ai_workflow_audit"
               data-track-label="footer_calendly"

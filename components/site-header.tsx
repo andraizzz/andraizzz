@@ -87,7 +87,7 @@ export function SiteHeader() {
             <a
               href={linkedinUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               data-track-click="contact_click"
               data-track-category="header"
               data-track-label="linkedin"
@@ -99,7 +99,7 @@ export function SiteHeader() {
             <a
               href={bookIntroCallUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               data-track-click="contact_click"
               data-track-category="header"
               data-track-label="calendly"

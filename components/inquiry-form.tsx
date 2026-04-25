@@ -85,7 +85,7 @@ export function InquiryForm({
           <a
             href={bookIntroCallUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             data-track-click="contact_click"
             data-track-category="inquiry_form"
             data-track-label="calendly"
@@ -198,7 +198,7 @@ export function InquiryForm({
               <a
                 href={linkedinUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 data-track-click="contact_click"
                 data-track-category="inquiry_form"
                 data-track-label="linkedin"

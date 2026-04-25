@@ -46,15 +46,24 @@ export function buildPageMetadata({
   description,
   pathname,
   keywords = [],
-  type = "website"
+  type = "website",
+  image = defaultOgImage,
+  imageAlt = "ANDRA editorial portrait",
+  imageWidth = 1200,
+  imageHeight = 1500
 }: {
   title: string;
   description: string;
   pathname: string;
   keywords?: string[];
   type?: "website" | "article";
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }): Metadata {
   const url = absoluteUrl(pathname);
+  const imageUrl = absoluteUrl(image);
 
   return {
     title,
@@ -71,10 +80,10 @@ export function buildPageMetadata({
       siteName,
       images: [
         {
-          url: defaultOgImage,
-          width: 1200,
-          height: 1500,
-          alt: "ANDRA editorial portrait"
+          url: imageUrl,
+          width: imageWidth,
+          height: imageHeight,
+          alt: imageAlt
         }
       ]
     },
@@ -82,7 +91,7 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [defaultOgImage]
+      images: [imageUrl]
     }
   };
 }
@@ -94,6 +103,7 @@ export function getAllSitePaths() {
     "/insights",
     "/recommended-tools",
     "/cool-tools",
+    "/llms.txt",
     "/privacy-policy",
     "/terms-of-service",
     ...insightPosts.map((post) => `/insights/${post.slug}`)
