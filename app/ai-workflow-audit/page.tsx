@@ -105,14 +105,18 @@ const workflowAreas = [
 function BeforeStateIcon() {
   return (
     <svg viewBox="0 0 96 96" className="h-16 w-16" fill="none" aria-hidden="true">
-      <rect x="10" y="14" width="24" height="24" rx="6" fill="rgba(231,216,207,0.5)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <rect x="58" y="12" width="24" height="24" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <rect x="16" y="58" width="24" height="24" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <rect x="58" y="58" width="24" height="24" rx="6" fill="rgba(217,167,154,0.34)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <path d="M34 26C48 18 50 31 58 25" stroke="rgba(28,34,40,0.72)" strokeWidth="2" strokeLinecap="round" strokeDasharray="5 5" />
-      <path d="M28 58C38 42 52 42 64 58" stroke="rgba(28,34,40,0.72)" strokeWidth="2" strokeLinecap="round" strokeDasharray="5 5" />
-      <path d="M32 36L60 60" stroke="rgba(217,167,154,0.78)" strokeWidth="2.4" strokeLinecap="round" />
-      <circle cx="48" cy="48" r="5" fill="rgba(28,34,40,0.82)" />
+      <circle cx="22" cy="22" r="9" fill="rgba(231,216,207,0.46)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <circle cx="72" cy="20" r="9" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <circle cx="20" cy="70" r="9" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <circle cx="72" cy="70" r="9" fill="rgba(217,167,154,0.3)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <circle cx="47" cy="47" r="12" fill="rgba(255,255,255,0.55)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <path d="M47 37V57M37 47H57" stroke="rgba(28,34,40,0.58)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M31 25C43 17 52 28 64 22" stroke="rgba(28,34,40,0.6)" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 5" />
+      <path d="M27 64C36 45 58 51 66 29" stroke="rgba(28,34,40,0.6)" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 5" />
+      <path d="M31 31L62 62M64 34C52 45 48 60 31 72" stroke="rgba(217,167,154,0.72)" strokeWidth="1.7" strokeLinecap="round" />
+      <text x="31" y="84" fill="rgba(28,34,40,0.7)" fontSize="13" fontWeight="700">$</text>
+      <text x="48" y="82" fill="rgba(217,167,154,0.86)" fontSize="15" fontWeight="700">$</text>
+      <text x="61" y="89" fill="rgba(28,34,40,0.46)" fontSize="11" fontWeight="700">$</text>
     </svg>
   );
 }
@@ -120,15 +124,15 @@ function BeforeStateIcon() {
 function AfterStateIcon() {
   return (
     <svg viewBox="0 0 96 96" className="h-16 w-16" fill="none" aria-hidden="true">
-      <path d="M16 68C25 50 36 45 48 48C60 51 67 40 78 22" stroke="rgba(28,34,40,0.86)" strokeWidth="2.4" strokeLinecap="round" />
-      <path d="M78 22V38" stroke="rgba(28,34,40,0.86)" strokeWidth="2.4" strokeLinecap="round" />
-      <path d="M78 22H62" stroke="rgba(28,34,40,0.86)" strokeWidth="2.4" strokeLinecap="round" />
-      <circle cx="16" cy="68" r="7" fill="rgba(255,255,255,0.82)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <circle cx="48" cy="48" r="7" fill="rgba(231,216,207,0.7)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <circle cx="78" cy="22" r="7" fill="rgba(217,167,154,0.42)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <rect x="19" y="20" width="26" height="18" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
-      <path d="M25 29H38" stroke="rgba(28,34,40,0.48)" strokeWidth="2" strokeLinecap="round" />
-      <path d="M19 78H77" stroke="rgba(217,167,154,0.58)" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M16 68C25 50 36 45 48 48C60 51 67 40 78 22" stroke="rgba(28,34,40,0.86)" strokeWidth="1.7" strokeLinecap="round" />
+      <path d="M78 22V37" stroke="rgba(28,34,40,0.86)" strokeWidth="1.7" strokeLinecap="round" />
+      <path d="M78 22H63" stroke="rgba(28,34,40,0.86)" strokeWidth="1.7" strokeLinecap="round" />
+      <circle cx="16" cy="68" r="6.5" fill="rgba(255,255,255,0.82)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <circle cx="48" cy="48" r="6.5" fill="rgba(231,216,207,0.66)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <circle cx="78" cy="22" r="6.5" fill="rgba(217,167,154,0.36)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <rect x="19" y="20" width="26" height="18" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.82)" strokeWidth="1.5" />
+      <path d="M25 29H38" stroke="rgba(28,34,40,0.48)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M19 78H77" stroke="rgba(217,167,154,0.58)" strokeWidth="1.7" strokeLinecap="round" />
     </svg>
   );
 }
@@ -651,7 +655,9 @@ export default function AiWorkflowAuditPage() {
                   "No obvious priority for what to improve first"
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-stone/55" />
+                    <span className="mt-1.5 flex h-4 w-4 items-center justify-center text-[0.8rem] font-semibold leading-none text-stone/70">
+                      ×
+                    </span>
                     <span>{item}</span>
                   </li>
                 ))}
