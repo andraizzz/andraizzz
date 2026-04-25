@@ -513,29 +513,19 @@ export default function AiWorkflowAuditPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[0.32fr_1fr] lg:gap-14">
-          <div>
-            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              How It Works
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              A clearer way to understand the audit.
-            </h2>
-            <p className="mt-5 max-w-sm text-base leading-8 text-stone sm:text-lg">
-              This is usually easier to understand as a flow: map the work, find the friction, then decide what stays human and where AI should support.
-            </p>
-          </div>
+        <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+          How It Works
+        </p>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 p-3 shadow-[0_30px_90px_rgba(17,17,17,0.07)] backdrop-blur-xl">
-            <Image
-              src="/ai-workflow-audit/how-it-works-flowchart.jpg"
-              alt="Flowchart showing the audit process from mapping work to bottlenecks, deciding what stays human versus AI support, and leaving with a clearer roadmap"
-              width={1680}
-              height={945}
-              sizes="(min-width: 1024px) 68vw, 100vw"
-              className="aspect-[16/9] w-full rounded-[1.55rem] object-cover"
-            />
-          </div>
+        <div className="mt-6 relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 p-3 shadow-[0_30px_90px_rgba(17,17,17,0.07)] backdrop-blur-xl">
+          <Image
+            src="/ai-workflow-audit/how-it-works-flowchart.jpg"
+            alt="Flowchart showing the audit process from mapping work to bottlenecks, deciding what stays human versus AI support, and leaving with a clearer roadmap"
+            width={1680}
+            height={945}
+            sizes="(min-width: 1280px) 1184px, calc(100vw - 3rem)"
+            className="aspect-[16/9] w-full rounded-[1.55rem] object-cover"
+          />
         </div>
       </section>
 
@@ -712,7 +702,7 @@ export default function AiWorkflowAuditPage() {
               Request the Audit
             </p>
             <h2 className="mt-4 max-w-md font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              Tell me what feels messy.
+              Tell us what feels messy.
             </h2>
             <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
               If the page feels relevant, book a call or send a structured inquiry.
