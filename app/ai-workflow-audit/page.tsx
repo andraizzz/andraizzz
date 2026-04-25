@@ -421,8 +421,8 @@ export default function AiWorkflowAuditPage() {
             If your AI setup feels messy, this shows you what to fix first.
           </h1>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-end lg:gap-14">
-            <div className="max-w-xl">
+          <div className="mt-8 grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center lg:gap-14">
+            <div className="max-w-xl lg:pb-2">
               <p className="max-w-2xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
                 This page is about one simple thing: helping you figure out which workflows
                 should be cleaned up, which tools are actually worth using, and what should
