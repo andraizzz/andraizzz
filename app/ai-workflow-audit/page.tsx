@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { InquiryForm } from "@/components/inquiry-form";
@@ -452,7 +453,17 @@ export default function AiWorkflowAuditPage() {
             </div>
           </div>
 
-          <AuditHeroArtwork />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 p-3 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl">
+            <Image
+              src="/ai-workflow-audit/workflow-hero.jpg"
+              alt="Illustration of a human strategist arranging AI workflow systems"
+              width={1680}
+              height={945}
+              priority
+              sizes="(min-width: 1024px) 44vw, 100vw"
+              className="aspect-[16/9] w-full rounded-[1.55rem] object-cover"
+            />
+          </div>
         </div>
       </section>
 
