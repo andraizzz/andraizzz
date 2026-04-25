@@ -102,6 +102,37 @@ const workflowAreas = [
   }
 ];
 
+function BeforeStateIcon() {
+  return (
+    <svg viewBox="0 0 96 96" className="h-16 w-16" fill="none" aria-hidden="true">
+      <rect x="10" y="14" width="24" height="24" rx="6" fill="rgba(231,216,207,0.5)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <rect x="58" y="12" width="24" height="24" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <rect x="16" y="58" width="24" height="24" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <rect x="58" y="58" width="24" height="24" rx="6" fill="rgba(217,167,154,0.34)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <path d="M34 26C48 18 50 31 58 25" stroke="rgba(28,34,40,0.72)" strokeWidth="2" strokeLinecap="round" strokeDasharray="5 5" />
+      <path d="M28 58C38 42 52 42 64 58" stroke="rgba(28,34,40,0.72)" strokeWidth="2" strokeLinecap="round" strokeDasharray="5 5" />
+      <path d="M32 36L60 60" stroke="rgba(217,167,154,0.78)" strokeWidth="2.4" strokeLinecap="round" />
+      <circle cx="48" cy="48" r="5" fill="rgba(28,34,40,0.82)" />
+    </svg>
+  );
+}
+
+function AfterStateIcon() {
+  return (
+    <svg viewBox="0 0 96 96" className="h-16 w-16" fill="none" aria-hidden="true">
+      <path d="M16 68C25 50 36 45 48 48C60 51 67 40 78 22" stroke="rgba(28,34,40,0.86)" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M78 22V38" stroke="rgba(28,34,40,0.86)" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M78 22H62" stroke="rgba(28,34,40,0.86)" strokeWidth="2.4" strokeLinecap="round" />
+      <circle cx="16" cy="68" r="7" fill="rgba(255,255,255,0.82)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <circle cx="48" cy="48" r="7" fill="rgba(231,216,207,0.7)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <circle cx="78" cy="22" r="7" fill="rgba(217,167,154,0.42)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <rect x="19" y="20" width="26" height="18" rx="6" fill="rgba(255,255,255,0.72)" stroke="rgba(28,34,40,0.86)" strokeWidth="2" />
+      <path d="M25 29H38" stroke="rgba(28,34,40,0.48)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M19 78H77" stroke="rgba(217,167,154,0.58)" strokeWidth="2.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const faqItems = [
   {
     question: "What is an AI workflow audit?",
@@ -593,38 +624,76 @@ export default function AiWorkflowAuditPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="rounded-[1.8rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:px-8 sm:py-8">
+        <div className="relative overflow-hidden rounded-[1.8rem] border border-white/55 bg-[linear-gradient(160deg,rgba(255,255,255,0.52),rgba(231,216,207,0.22))] px-6 py-7 shadow-[0_24px_70px_rgba(17,17,17,0.06)] backdrop-blur-sm sm:px-8 sm:py-8">
+          <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(28,34,40,0.032)_1px,transparent_1px),linear-gradient(90deg,rgba(28,34,40,0.024)_1px,transparent_1px)] [background-size:42px_42px]" />
+          <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_68%)] blur-3xl" />
           <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
             Example Before / After
           </p>
-          <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
-            <div className="rounded-[1.25rem] border border-obsidian/8 bg-white/60 px-5 py-5">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                Before
-              </p>
-              <ul className="mt-4 grid gap-3 text-sm leading-7 text-stone sm:text-base">
-                <li>Too many tools doing overlapping things</li>
-                <li>No clear workflow from idea to output</li>
-                <li>Manual follow-up and inconsistent execution</li>
-                <li>No obvious priority for what to improve first</li>
+          <div className="relative mt-6 grid gap-5 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
+            <div className="rounded-[1.35rem] border border-obsidian/8 bg-white/68 px-5 py-5 shadow-[0_16px_42px_rgba(17,17,17,0.04)]">
+              <div className="flex items-center gap-4">
+                <BeforeStateIcon />
+                <div>
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                    Before
+                  </p>
+                  <h3 className="mt-2 font-serif text-[1.85rem] leading-tight text-obsidian">
+                    Scattered setup
+                  </h3>
+                </div>
+              </div>
+              <ul className="mt-5 grid gap-3 text-sm leading-7 text-stone sm:text-base">
+                {[
+                  "Too many tools doing overlapping things",
+                  "No clear workflow from idea to output",
+                  "Manual follow-up and inconsistent execution",
+                  "No obvious priority for what to improve first"
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-stone/55" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="hidden items-center justify-center lg:flex">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-obsidian/10 bg-white/70 text-xl text-obsidian">
-                →
+              <div className="flex items-center">
+                <div className="h-px w-10 bg-gradient-to-r from-obsidian/10 to-blush/60" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-blush/28 bg-shell/45 text-xl text-obsidian shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+                  →
+                </div>
+                <div className="h-px w-10 bg-gradient-to-r from-blush/60 to-obsidian/10" />
               </div>
             </div>
 
-            <div className="rounded-[1.25rem] border border-obsidian/8 bg-white/60 px-5 py-5">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                After
-              </p>
-              <ul className="mt-4 grid gap-3 text-sm leading-7 text-stone sm:text-base">
-                <li>A clearer workflow map</li>
-                <li>A shorter, more logical AI stack</li>
-                <li>Better judgment about what to automate versus keep human</li>
-                <li>A practical roadmap instead of more experimentation</li>
+            <div className="rounded-[1.35rem] border border-blush/24 bg-white/72 px-5 py-5 shadow-[0_16px_42px_rgba(17,17,17,0.04)]">
+              <div className="flex items-center gap-4">
+                <AfterStateIcon />
+                <div>
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                    After
+                  </p>
+                  <h3 className="mt-2 font-serif text-[1.85rem] leading-tight text-obsidian">
+                    Clearer system
+                  </h3>
+                </div>
+              </div>
+              <ul className="mt-5 grid gap-3 text-sm leading-7 text-stone sm:text-base">
+                {[
+                  "A clearer workflow map",
+                  "A shorter, more logical AI stack",
+                  "Better judgment about what to automate versus keep human",
+                  "A practical roadmap instead of more experimentation"
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-shell text-[0.62rem] leading-none text-obsidian">
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
