@@ -413,56 +413,59 @@ export default function AiWorkflowAuditPage() {
       <div className="pointer-events-none absolute right-[-4rem] top-[8rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_70%)] blur-3xl" />
 
       <section className="hero-fade relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12 lg:pb-20 lg:pt-28">
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16">
-          <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              AI Workflow Audit
-            </p>
-            <h1 className="mt-6 font-serif text-[3.2rem] leading-[1.04] text-obsidian sm:text-[4.2rem] lg:text-[5rem]">
-              If your AI setup feels messy, this shows you what to fix first.
-            </h1>
-            <p className="mt-8 max-w-2xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
-              This page is about one simple thing: helping you figure out which workflows
-              should be cleaned up, which tools are actually worth using, and what should
-              happen next if your business wants a smarter AI setup.
-            </p>
+        <div>
+          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+            AI Workflow Audit
+          </p>
+          <h1 className="mt-6 max-w-6xl font-serif text-[3.2rem] leading-[1.04] text-obsidian sm:text-[4.4rem] lg:text-[6rem]">
+            If your AI setup feels messy, this shows you what to fix first.
+          </h1>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href={bookIntroCallUrl}
-                target="_blank"
-                rel="noreferrer"
-                data-track-click="contact_click"
-                data-track-category="ai_workflow_audit"
-                data-track-label="hero_calendly"
-                data-track-destination={bookIntroCallUrl}
-                className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian"
-              >
-                Book an Intro Call
-              </a>
-              <Link
-                href="/recommended-tools"
-                data-track-click="navigation_click"
-                data-track-category="ai_workflow_audit"
-                data-track-label="hero_tools"
-                data-track-destination="/recommended-tools"
-                className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] border border-obsidian/18 bg-white/44 px-7 py-4 text-sm uppercase tracking-[0.18em] text-obsidian transition duration-300 hover:scale-[1.02] hover:border-obsidian/36 hover:bg-white"
-              >
-                Explore AI Tools
-              </Link>
+          <div className="mt-10 grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-end lg:gap-14">
+            <div className="max-w-xl">
+              <p className="max-w-2xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
+                This page is about one simple thing: helping you figure out which workflows
+                should be cleaned up, which tools are actually worth using, and what should
+                happen next if your business wants a smarter AI setup.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={bookIntroCallUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-track-click="contact_click"
+                  data-track-category="ai_workflow_audit"
+                  data-track-label="hero_calendly"
+                  data-track-destination={bookIntroCallUrl}
+                  className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] bg-ink px-7 py-4 text-sm uppercase tracking-[0.18em] text-porcelain transition duration-300 hover:scale-[1.02] hover:bg-obsidian"
+                >
+                  Book an Intro Call
+                </a>
+                <Link
+                  href="/recommended-tools"
+                  data-track-click="navigation_click"
+                  data-track-category="ai_workflow_audit"
+                  data-track-label="hero_tools"
+                  data-track-destination="/recommended-tools"
+                  className="inline-flex min-h-14 items-center justify-center rounded-[0.72rem] border border-obsidian/18 bg-white/44 px-7 py-4 text-sm uppercase tracking-[0.18em] text-obsidian transition duration-300 hover:scale-[1.02] hover:border-obsidian/36 hover:bg-white"
+                >
+                  Explore AI Tools
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 p-3 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl">
-            <Image
-              src="/ai-workflow-audit/workflow-hero.jpg"
-              alt="Illustration of a human strategist arranging AI workflow systems"
-              width={1680}
-              height={945}
-              priority
-              sizes="(min-width: 1024px) 44vw, 100vw"
-              className="aspect-[16/9] w-full rounded-[1.55rem] object-cover"
-            />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/40 p-3 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl">
+              <Image
+                src="/ai-workflow-audit/workflow-hero.jpg"
+                alt="Illustration of a human strategist arranging AI workflow systems"
+                width={1680}
+                height={945}
+                priority
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                className="aspect-[16/9] w-full rounded-[1.55rem] object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
