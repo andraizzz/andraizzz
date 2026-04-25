@@ -135,13 +135,10 @@ function renderBlock(block: InsightSection) {
 
   if (block.type === "faq") {
     return (
-      <div className="grid gap-4">
+      <div className="divide-y divide-obsidian/10 border-y border-obsidian/10">
         {block.items.map((item) => (
-          <div
-            key={item.question}
-            className="rounded-[1.25rem] border border-white/55 bg-white/36 px-5 py-5 shadow-[0_14px_34px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
-          >
-            <h3 className="font-serif text-2xl leading-tight text-obsidian sm:text-[2rem]">
+          <div key={item.question} className="py-6 first:pt-5 last:pb-5">
+            <h3 className="font-serif text-[1.75rem] leading-tight text-obsidian sm:text-[2rem]">
               {item.question}
             </h3>
             <p className="mt-3 text-base leading-8 text-stone sm:text-lg">{item.answer}</p>
@@ -243,8 +240,8 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
       <div className="pointer-events-none absolute right-[-6rem] top-[16rem] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_68%)] blur-3xl" />
 
       <article className="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-24 lg:px-12 lg:pb-28 lg:pt-28">
-        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-          <aside className="lg:sticky lg:top-28 lg:self-start">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+          <aside className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto lg:pr-1">
             <div className="rounded-[1.6rem] border border-white/55 bg-white/36 p-5 shadow-[0_24px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm sm:p-6">
               <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
                 In this insight
@@ -270,7 +267,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
               {post.eyebrow}
             </p>
-            <h1 className="mt-6 max-w-4xl font-serif text-[3rem] leading-[1.02] text-obsidian sm:text-[4rem] lg:text-[4.75rem]">
+            <h1 className="mt-6 max-w-4xl font-serif text-[3.3rem] leading-[1.04] text-obsidian sm:text-[4.2rem] lg:text-[5rem]">
               {post.title}
             </h1>
             <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-stone">
