@@ -55,7 +55,7 @@ export default function HomePage() {
               <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
                 Strategy / AI Visibility / Growth
               </p>
-              <h1 className="mt-6 max-w-3xl font-serif text-[3.6rem] leading-[1.04] text-obsidian sm:text-[4.5rem] lg:text-[5.35rem]">
+              <h1 className="mt-6 max-w-3xl font-serif text-[3.3rem] leading-[1.04] text-obsidian sm:text-[4.2rem] lg:text-[5rem]">
                 Strategy for brands that refuse to be invisible.
               </h1>
               <p className="mt-12 max-w-xl text-base leading-8 text-stone sm:text-lg sm:leading-9">

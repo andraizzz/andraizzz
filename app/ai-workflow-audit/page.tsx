@@ -417,7 +417,7 @@ export default function AiWorkflowAuditPage() {
           <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
             AI Workflow Audit
           </p>
-          <h1 className="mt-6 max-w-6xl font-serif text-[3.2rem] leading-[1.04] text-obsidian sm:text-[4.4rem] lg:text-[6rem]">
+          <h1 className="mt-6 max-w-[65rem] font-serif text-[3.3rem] leading-[1.04] text-obsidian sm:max-w-[72rem] sm:text-[4.2rem] lg:max-w-[78rem] lg:text-[5rem]">
             If your AI setup feels messy, this shows you what to fix first.
           </h1>
 
