@@ -784,16 +784,16 @@ export default function AiWorkflowAuditPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-4">
+        <div className="divide-y divide-obsidian/10 border-y border-obsidian/10">
           {faqItems.map((item) => (
             <div
               key={item.question}
-              className="rounded-[1.35rem] border border-white/55 bg-white/34 px-5 py-5 shadow-[0_16px_40px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
+              className="grid gap-4 py-7 md:grid-cols-[0.42fr_0.58fr] md:gap-10"
             >
-              <h2 className="font-serif text-[1.9rem] leading-tight text-obsidian">
+              <h2 className="font-serif text-[1.9rem] leading-tight text-obsidian sm:text-[2.15rem]">
                 {item.question}
               </h2>
-              <p className="mt-3 text-base leading-8 text-stone sm:text-lg">
+              <p className="text-base leading-8 text-stone sm:text-lg">
                 {item.answer}
               </p>
             </div>
