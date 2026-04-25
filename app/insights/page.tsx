@@ -152,14 +152,16 @@ export default function InsightsPage() {
                 href={`/insights/${post.slug}`}
                 className="group grid gap-6 rounded-[1.75rem] border border-white/50 bg-white/30 p-4 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-halo lg:grid-cols-[0.82fr_1.18fr]"
               >
-                <Image
-                  src={post.imageSrc}
-                  alt={post.imageAlt}
-                  width={1680}
-                  height={945}
-                  sizes="(min-width: 1024px) 34vw, 100vw"
-                  className="aspect-[16/9] w-full rounded-[1.45rem] object-cover"
-                />
+                <div className="aspect-[16/9] overflow-hidden rounded-[1.45rem]">
+                  <Image
+                    src={post.imageSrc}
+                    alt={post.imageAlt}
+                    width={1680}
+                    height={945}
+                    sizes="(min-width: 1024px) 34vw, 100vw"
+                    className="h-full w-full scale-[1.08] object-cover transition duration-500 group-hover:scale-[1.1]"
+                  />
+                </div>
                 <div className="flex flex-col justify-center px-2 py-2 sm:px-4">
                   <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
                     {post.eyebrow}
