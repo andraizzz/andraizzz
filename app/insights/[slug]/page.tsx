@@ -5,6 +5,7 @@ import Script from "next/script";
 import { notFound } from "next/navigation";
 import { getInsightPost, insightPosts, type InsightSection } from "@/lib/insights";
 import { bookIntroCallUrl } from "@/lib/contact";
+import { recommendedToolMentionLinks } from "@/lib/recommended-tool-links";
 import {
   absoluteUrl,
   aiStrategyKeywords,
@@ -49,6 +50,46 @@ export async function generateMetadata({
   };
 }
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+const toolMentionPattern = new RegExp(
+  `\\b(${recommendedToolMentionLinks.map((tool) => escapeRegExp(tool.label)).join("|")})\\b`,
+  "g"
+);
+
+function renderTextLink(label: string, href: string, key: string) {
+  const className =
+    "font-medium text-obsidian underline decoration-obsidian/28 underline-offset-4 transition hover:decoration-obsidian/60";
+
+  if (href.startsWith("http")) {
+    return (
+      <a key={key} href={href} target="_blank" rel="noreferrer" className={className}>
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <Link key={key} href={href} className={className}>
+      {label}
+    </Link>
+  );
+}
+
+function renderToolMentionLinks(text: string, baseKey: string) {
+  return text.split(toolMentionPattern).map((part, index) => {
+    const tool = recommendedToolMentionLinks.find((candidate) => candidate.label === part);
+
+    if (!tool) {
+      return <span key={`${baseKey}-text-${index}`}>{part}</span>;
+    }
+
+    return renderTextLink(tool.label, tool.href, `${baseKey}-tool-${index}`);
+  });
+}
+
 function renderInlineLinks(text: string) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
 
@@ -56,19 +97,11 @@ function renderInlineLinks(text: string) {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
 
     if (!match) {
-      return <span key={`${part}-${index}`}>{part}</span>;
+      return renderToolMentionLinks(part, `${part}-${index}`);
     }
 
     const [, label, href] = match;
-    return (
-      <Link
-        key={`${href}-${index}`}
-        href={href}
-        className="font-medium text-obsidian underline decoration-obsidian/28 underline-offset-4 transition hover:decoration-obsidian/60"
-      >
-        {label}
-      </Link>
-    );
+    return renderTextLink(label, href, `${href}-${index}`);
   });
 }
 
@@ -85,16 +118,13 @@ function renderBlock(block: InsightSection) {
     return (
       <div className="space-y-4">
         {block.intro ? (
-          <p className="text-base leading-8 text-stone sm:text-lg sm:leading-9">{block.intro}</p>
+          <p className="text-base leading-8 text-stone sm:text-lg sm:leading-9">{renderInlineLinks(block.intro)}</p>
         ) : null}
         <ul className="grid gap-3">
           {block.items.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-3 rounded-[1rem] border border-obsidian/8 bg-white/34 px-4 py-3 text-base leading-7 text-obsidian/90 backdrop-blur-sm"
-            >
-              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blush" />
-              <span>{item}</span>
+            <li key={item} className="flex items-start gap-3 text-base leading-8 text-stone sm:text-lg">
+              <span className="mt-3 h-1.5 w-1.5 rounded-full bg-blush" />
+              <span>{renderInlineLinks(item)}</span>
             </li>
           ))}
         </ul>
@@ -120,10 +150,10 @@ function renderBlock(block: InsightSection) {
             {table.rows.map(([before, after]) => (
               <div key={before} className="grid grid-cols-1 sm:grid-cols-2">
                 <div className="border-b border-obsidian/8 px-5 py-4 text-sm leading-7 text-stone sm:border-r sm:px-6 sm:text-base">
-                  {before}
+                  {renderInlineLinks(before)}
                 </div>
                 <div className="border-b border-obsidian/8 px-5 py-4 text-sm leading-7 text-obsidian/90 sm:px-6 sm:text-base">
-                  {after}
+                  {renderInlineLinks(after)}
                 </div>
               </div>
             ))}
@@ -141,7 +171,7 @@ function renderBlock(block: InsightSection) {
             <h3 className="font-serif text-[1.75rem] leading-tight text-obsidian sm:text-[2rem]">
               {item.question}
             </h3>
-            <p className="mt-3 text-base leading-8 text-stone sm:text-lg">{item.answer}</p>
+            <p className="mt-3 text-base leading-8 text-stone sm:text-lg">{renderInlineLinks(item.answer)}</p>
           </div>
         ))}
       </div>

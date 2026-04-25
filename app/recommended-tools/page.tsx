@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import { recommendedToolLinks } from "@/lib/recommended-tool-links";
 import { absoluteUrl, buildPageMetadata, recommendedToolsKeywords, siteName, siteUrl } from "@/lib/seo";
 
 type Tool = {
@@ -24,7 +25,7 @@ const toolPalettes = [
 const featuredTools: Tool[] = [
   {
     name: "Wispr Flow",
-    href: "https://wisprflow.ai/r?ANDRA16",
+    href: recommendedToolLinks.wisprFlow,
     image: "/recommended-tools/wispr-logo.png",
     preview: "/recommended-tools/wispr-preview.jpg",
     description:
@@ -32,7 +33,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Claude / Claude Code",
-    href: "https://claude.ai/referral/FVwnTFNZTw",
+    href: recommendedToolLinks.claude,
     image: "/recommended-tools/claude-logo.png",
     preview: "/recommended-tools/claude-preview.webp",
     description:
@@ -40,7 +41,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Descript",
-    href: "https://descript.cello.so/pDLZWtym204",
+    href: recommendedToolLinks.descript,
     image: "/recommended-tools-extra/descript-logo.png",
     preview: "/recommended-tools-extra/descript-preview.png",
     description:
@@ -48,7 +49,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Brave Browser",
-    href: "https://brave.com/",
+    href: recommendedToolLinks.braveBrowser,
     image: "/recommended-tools/brave-logo.png",
     preview: "/recommended-tools/brave-preview.png",
     description:
@@ -56,7 +57,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Perplexity",
-    href: "https://www.perplexity.ai/",
+    href: recommendedToolLinks.perplexity,
     image: "/recommended-tools/perplexity-logo.png",
     preview: "/recommended-tools/perplexity-preview.png",
     description:
@@ -64,7 +65,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "ChatGPT",
-    href: "https://chatgpt.com/",
+    href: recommendedToolLinks.chatgpt,
     image: "/recommended-tools/chatgpt-logo.png",
     preview: "/recommended-tools/chatgpt-preview.png",
     description:
@@ -72,7 +73,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "Notion",
-    href: "https://www.notion.so/",
+    href: recommendedToolLinks.notion,
     image: "/recommended-tools/notion-logo.png",
     preview: "/recommended-tools/notion-preview.jpg",
     description:
@@ -80,7 +81,7 @@ const featuredTools: Tool[] = [
   },
   {
     name: "HeyReach",
-    href: "https://heyreach.io/?via=andra",
+    href: recommendedToolLinks.heyreach,
     image: "/recommended-tools/heyreach-logo.png",
     preview: "/recommended-tools/heyreach-preview.webp",
     description:
@@ -91,7 +92,7 @@ const featuredTools: Tool[] = [
 const furtherTools: Tool[] = [
   {
     name: "Visual Studio Code",
-    href: "https://code.visualstudio.com/",
+    href: recommendedToolLinks.visualStudioCode,
     image: "/recommended-tools/vscode-logo.png",
     preview: "/recommended-tools/vscode-preview.png",
     description:
@@ -100,7 +101,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Lindy AI CMO",
-    href: "https://www.lindy.ai/",
+    href: recommendedToolLinks.lindy,
     image: "/recommended-tools-extra/lindy-logo.png",
     preview: "/recommended-tools-extra/lindy-preview.jpg",
     description:
@@ -109,7 +110,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "HeyGen",
-    href: "https://www.heygen.com/",
+    href: recommendedToolLinks.heygen,
     image: "/recommended-tools-extra/heygen-logo.ico",
     preview: "/recommended-tools-extra/heygen-preview.png",
     description:
@@ -118,7 +119,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Synthesia",
-    href: "https://www.synthesia.io/",
+    href: recommendedToolLinks.synthesia,
     image: "/recommended-tools-extra/synthesia-logo.png",
     preview: "/recommended-tools-extra/synthesia-preview.jpg",
     description:
@@ -127,7 +128,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "ElevenLabs",
-    href: "https://elevenlabs.io/",
+    href: recommendedToolLinks.elevenLabs,
     image: "/recommended-tools-extra/elevenlabs-logo.ico",
     preview: "/recommended-tools-extra/elevenlabs-preview.png",
     description:
@@ -136,7 +137,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Fish Audio S1",
-    href: "https://fish.audio/",
+    href: recommendedToolLinks.fishAudio,
     image: "/recommended-tools-extra/fish-logo.ico",
     preview: "/recommended-tools-extra/fish-preview.png",
     description:
@@ -145,7 +146,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Arcads",
-    href: "https://www.arcads.ai/",
+    href: recommendedToolLinks.arcads,
     image: "/recommended-tools-extra/arcads-logo.png",
     preview: "/recommended-tools-extra/arcads-preview.png",
     description:
@@ -154,7 +155,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Blaze",
-    href: "https://www.blaze.ai/",
+    href: recommendedToolLinks.blaze,
     image: "/recommended-tools-extra/blaze-logo.png",
     preview: "/recommended-tools-extra/blaze-preview.jpg",
     description:
@@ -163,7 +164,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Canva Creative OS",
-    href: "https://www.canva.com/newsroom/news/creative-operating-system/",
+    href: recommendedToolLinks.canvaCreativeOs,
     image: "/recommended-tools-extra/canva-logo.ico",
     preview: "/recommended-tools-extra/canva-creative-os-preview.svg",
     description:
@@ -172,7 +173,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "PromptSignal",
-    href: "https://www.promptsignal.ai/",
+    href: recommendedToolLinks.promptsignal,
     image: "/recommended-tools-extra/promptsignal-logo.png",
     preview: "/recommended-tools-extra/promptsignal-preview.webp",
     description:
@@ -181,7 +182,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Reachy.ai",
-    href: "https://www.reachy.ai/",
+    href: recommendedToolLinks.reachy,
     image: "/recommended-tools-extra/reachy-logo.png",
     preview: "/recommended-tools-extra/reachy-preview.png",
     description:
@@ -190,7 +191,7 @@ const furtherTools: Tool[] = [
   },
   {
     name: "Typefully",
-    href: "https://typefully.com/",
+    href: recommendedToolLinks.typefully,
     image: "/recommended-tools-extra/typefully-logo.ico",
     preview: "/recommended-tools-extra/typefully-preview.png",
     description:
@@ -202,7 +203,7 @@ const furtherTools: Tool[] = [
 const situationalTools: Tool[] = [
   {
     name: "Midjourney",
-    href: "https://www.midjourney.com/",
+    href: recommendedToolLinks.midjourney,
     image: "/recommended-tools-extra/midjourney-logo.png",
     preview: "/recommended-tools-extra/midjourney-preview.png",
     description:
@@ -211,7 +212,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Nano Banana 2",
-    href: "https://gemini.google.com/",
+    href: recommendedToolLinks.gemini,
     image: "/recommended-tools-extra/nano-banana-logo.png",
     preview: "/recommended-tools-extra/nano-banana-preview.png",
     description:
@@ -220,7 +221,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "60secsite",
-    href: "https://60sec.site/",
+    href: recommendedToolLinks.sixtySecSite,
     image: "/recommended-tools-extra/60secsite-logo.png",
     preview: "/recommended-tools-extra/60secsite-preview.webp",
     description:
@@ -229,7 +230,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "10xlaunch",
-    href: "https://tenxlaunch.framer.ai/",
+    href: recommendedToolLinks.tenxlaunch,
     image: "/recommended-tools-extra/10xlaunch-logo.png",
     preview: "/recommended-tools-extra/10xlaunch-preview.png",
     description:
@@ -238,7 +239,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "AI Chatbot on Zapier",
-    href: "https://zapier.com/ai",
+    href: recommendedToolLinks.zapierAi,
     image: "/recommended-tools-extra/zapier-ai-logo.png",
     preview: "/recommended-tools-extra/zapier-ai-preview.png",
     description:
@@ -247,7 +248,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Aicado",
-    href: "https://www.aicado.ai/",
+    href: recommendedToolLinks.aicado,
     image: "/recommended-tools-extra/aicado-logo.png",
     preview: "/recommended-tools-extra/aicado-preview.png",
     description:
@@ -256,7 +257,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Canvas in Gemini",
-    href: "https://blog.google/products/gemini/gemini-collaboration-features/",
+    href: recommendedToolLinks.canvasInGemini,
     image: "/recommended-tools-extra/gemini-logo.ico",
     preview: "/recommended-tools-extra/gemini-canvas-preview.png",
     description:
@@ -265,7 +266,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Magic Animator",
-    href: "https://magicanimator.com/",
+    href: recommendedToolLinks.magicAnimator,
     image: "/recommended-tools-extra/magic-animator-logo.svg",
     preview: "/recommended-tools-extra/magic-animator-preview.png",
     description:
@@ -274,7 +275,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Pomelli",
-    href: "https://www.pomelli.run/",
+    href: recommendedToolLinks.pomelli,
     image: "/recommended-tools-extra/pomelli-logo.ico",
     preview: "/recommended-tools-extra/pomelli-preview.svg",
     description:
@@ -283,7 +284,7 @@ const situationalTools: Tool[] = [
   },
   {
     name: "Hailuo 2.3",
-    href: "https://hailuoai.video/",
+    href: recommendedToolLinks.hailuo,
     image: "/recommended-tools-extra/hailuo-logo.png",
     preview: "/recommended-tools-extra/hailuo-preview.svg",
     description:
