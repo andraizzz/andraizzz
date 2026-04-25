@@ -37,7 +37,7 @@ const auditDeliverables = [
 const auditSteps = [
   {
     number: "01",
-    title: "We map the workflow",
+    title: "We map the work",
     description:
       "We look at how work currently moves from idea to output and where friction appears."
   },
@@ -513,7 +513,7 @@ export default function AiWorkflowAuditPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.32fr_1fr] lg:gap-14">
           <div>
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
               How It Works
@@ -522,27 +522,97 @@ export default function AiWorkflowAuditPage() {
               A clearer way to understand the audit.
             </h2>
             <p className="mt-5 max-w-sm text-base leading-8 text-stone sm:text-lg">
-              This is usually easier to understand as a sequence than as a block of copy.
+              This is usually easier to understand as a flow: map the work, find the friction, then decide what stays human and where AI should support.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {auditSteps.map((step) => (
-              <div
-                key={step.title}
-                className="rounded-[1.5rem] border border-white/55 bg-white/34 px-5 py-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
-              >
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                  {step.number}
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-[linear-gradient(160deg,rgba(255,255,255,0.58),rgba(231,216,207,0.24))] p-4 shadow-[0_30px_90px_rgba(17,17,17,0.07)] backdrop-blur-xl sm:p-5">
+            <div className="pointer-events-none absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(28,34,40,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(28,34,40,0.025)_1px,transparent_1px)] [background-size:42px_42px]" />
+            <div className="pointer-events-none absolute right-[-6rem] top-[-5rem] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.24),transparent_68%)] blur-3xl" />
+            <div className="pointer-events-none absolute bottom-[-5rem] left-[28%] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.8),transparent_70%)] blur-3xl" />
+
+            <div className="relative grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1.28fr_auto_1fr] lg:items-center">
+              <div className="rounded-[1.35rem] border border-obsidian/10 bg-white/68 px-5 py-5 shadow-[0_16px_40px_rgba(17,17,17,0.04)]">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                  {auditSteps[0].number}
                 </p>
-                <h3 className="mt-4 font-serif text-[1.7rem] leading-tight text-obsidian">
-                  {step.title}
+                <h3 className="mt-4 font-serif text-[1.85rem] leading-tight text-obsidian">
+                  {auditSteps[0].title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
-                  {step.description}
+                  {auditSteps[0].description}
                 </p>
               </div>
-            ))}
+
+              <div className="flex items-center justify-center text-obsidian/45 lg:w-8">
+                <span className="hidden h-px w-full bg-obsidian/18 lg:block" />
+                <span className="text-xl lg:hidden">↓</span>
+              </div>
+
+              <div className="rounded-[1.35rem] border border-obsidian/10 bg-white/68 px-5 py-5 shadow-[0_16px_40px_rgba(17,17,17,0.04)]">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                  {auditSteps[1].number}
+                </p>
+                <h3 className="mt-4 font-serif text-[1.85rem] leading-tight text-obsidian">
+                  {auditSteps[1].title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
+                  {auditSteps[1].description}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center text-obsidian/45 lg:w-8">
+                <span className="hidden h-px w-full bg-obsidian/18 lg:block" />
+                <span className="text-xl lg:hidden">↓</span>
+              </div>
+
+              <div className="rounded-[1.45rem] border border-obsidian/10 bg-[linear-gradient(160deg,rgba(255,255,255,0.76),rgba(231,216,207,0.38))] px-5 py-5 shadow-[0_18px_48px_rgba(17,17,17,0.05)]">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                  {auditSteps[2].number}
+                </p>
+                <h3 className="mt-4 font-serif text-[1.9rem] leading-tight text-obsidian">
+                  What stays human, what AI supports
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
+                  {auditSteps[2].description}
+                </p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-[1rem] border border-obsidian/10 bg-white/72 px-4 py-4">
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                      Stays human
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-obsidian">
+                      Judgment, taste, approvals, relationships.
+                    </p>
+                  </div>
+                  <div className="rounded-[1rem] border border-blush/35 bg-shell/38 px-4 py-4">
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                      AI supports
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-obsidian">
+                      Research, drafts, routing, reporting.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center text-obsidian/45 lg:w-8">
+                <span className="hidden h-px w-full bg-obsidian/18 lg:block" />
+                <span className="text-xl lg:hidden">↓</span>
+              </div>
+
+              <div className="rounded-[1.35rem] border border-obsidian/10 bg-white/68 px-5 py-5 shadow-[0_16px_40px_rgba(17,17,17,0.04)]">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                  {auditSteps[3].number}
+                </p>
+                <h3 className="mt-4 font-serif text-[1.85rem] leading-tight text-obsidian">
+                  {auditSteps[3].title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-stone sm:text-base">
+                  {auditSteps[3].description}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
