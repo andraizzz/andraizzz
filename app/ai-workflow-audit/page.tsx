@@ -634,15 +634,15 @@ export default function AiWorkflowAuditPage() {
           <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
             Example Before / After
           </p>
-          <div className="relative mt-6 grid gap-5 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch">
-            <div className="rounded-[1.35rem] border border-obsidian/8 bg-white/68 px-5 py-5 shadow-[0_16px_42px_rgba(17,17,17,0.04)]">
+          <div className="relative mt-6 grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-stretch">
+            <div className="h-full min-w-0 rounded-[1.35rem] border border-obsidian/8 bg-white/68 px-5 py-5 shadow-[0_16px_42px_rgba(17,17,17,0.04)]">
               <div className="flex items-center gap-4">
                 <BeforeStateIcon />
                 <div>
                   <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
                     Before
                   </p>
-                  <h3 className="mt-2 font-serif text-[1.85rem] leading-tight text-obsidian">
+                  <h3 className="mt-2 max-w-[8.5rem] font-serif text-[1.85rem] leading-tight text-obsidian">
                     Scattered setup
                   </h3>
                 </div>
@@ -655,7 +655,7 @@ export default function AiWorkflowAuditPage() {
                   "No obvious priority for what to improve first"
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1.5 flex h-4 w-4 items-center justify-center text-[0.8rem] font-semibold leading-none text-stone/70">
+                    <span className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-obsidian/8 bg-white/58 text-[0.72rem] font-semibold leading-none text-stone/68">
                       ×
                     </span>
                     <span>{item}</span>
@@ -674,14 +674,14 @@ export default function AiWorkflowAuditPage() {
               </div>
             </div>
 
-            <div className="rounded-[1.35rem] border border-blush/24 bg-white/72 px-5 py-5 shadow-[0_16px_42px_rgba(17,17,17,0.04)]">
+            <div className="h-full min-w-0 rounded-[1.35rem] border border-blush/24 bg-white/72 px-5 py-5 shadow-[0_16px_42px_rgba(17,17,17,0.04)]">
               <div className="flex items-center gap-4">
                 <AfterStateIcon />
                 <div>
                   <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-stone">
                     After
                   </p>
-                  <h3 className="mt-2 font-serif text-[1.85rem] leading-tight text-obsidian">
+                  <h3 className="mt-2 max-w-[8.5rem] font-serif text-[1.85rem] leading-tight text-obsidian">
                     Clearer system
                   </h3>
                 </div>
@@ -694,7 +694,7 @@ export default function AiWorkflowAuditPage() {
                   "A practical roadmap instead of more experimentation"
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-shell text-[0.62rem] leading-none text-obsidian">
+                    <span className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-shell text-[0.62rem] leading-none text-obsidian">
                       ✓
                     </span>
                     <span>{item}</span>
