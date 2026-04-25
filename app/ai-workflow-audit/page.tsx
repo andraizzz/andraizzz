@@ -10,6 +10,7 @@ import {
   siteName,
   siteUrl
 } from "@/lib/seo";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 
 const auditDeliverables = [
   {
@@ -412,6 +413,16 @@ export const metadata: Metadata = buildPageMetadata({
 export default function AiWorkflowAuditPage() {
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
+      <Script id="ai-workflow-audit-webpage-schema" type="application/ld+json">
+        {JSON.stringify(
+          webPageSchema({
+            name: "AI Workflow Audit",
+            description:
+              "AI workflow audit and consulting for brands, consultants, and growth teams that want clearer systems, smarter tool choices, and better AI visibility.",
+            path: "/ai-workflow-audit"
+          })
+        )}
+      </Script>
       <Script id="ai-workflow-audit-service-schema" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -428,6 +439,14 @@ export default function AiWorkflowAuditPage() {
           serviceType: "AI workflow audit and consulting",
           url: `${siteUrl}/ai-workflow-audit`
         })}
+      </Script>
+      <Script id="ai-workflow-audit-breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "AI Workflow Audit", path: "/ai-workflow-audit" }
+          ])
+        )}
       </Script>
       <Script id="ai-workflow-audit-faq-schema" type="application/ld+json">
         {JSON.stringify({

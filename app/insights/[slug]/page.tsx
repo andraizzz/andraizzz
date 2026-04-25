@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { getInsightPost, insightPosts, type InsightSection } from "@/lib/insights";
 import { bookIntroCallUrl } from "@/lib/contact";
 import { recommendedToolMentionLinks } from "@/lib/recommended-tool-links";
+import { breadcrumbSchema } from "@/lib/schema";
 import {
   absoluteUrl,
   aiStrategyKeywords,
@@ -253,6 +254,15 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
           articleSection: post.eyebrow,
           keywords: [...aiStrategyKeywords, post.eyebrow]
         })}
+      </Script>
+      <Script id={`${post.slug}-breadcrumb-schema`} type="application/ld+json">
+        {JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Actionable Insights", path: "/insights" },
+            { name: post.title, path: `/insights/${post.slug}` }
+          ])
+        )}
       </Script>
       {faqItems.length > 0 ? (
         <Script id={`${post.slug}-faq-schema`} type="application/ld+json">

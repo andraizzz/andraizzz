@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { BrandStrip } from "@/components/brand-strip";
 import { InquiryForm } from "@/components/inquiry-form";
 import {
@@ -10,6 +11,7 @@ import {
   linkedinUrl
 } from "@/lib/contact";
 import { aiStrategyKeywords, buildPageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 
 const specialties = [
   {
@@ -45,6 +47,20 @@ export const metadata: Metadata = buildPageMetadata({
 export default function HomePage() {
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
+      <Script id="home-webpage-schema" type="application/ld+json">
+        {JSON.stringify(
+          webPageSchema({
+            name: "ANDRA | AI Workflows, AI Visibility, Growth Strategy",
+            description:
+              "AI workflow strategy, AI tips and tricks, visibility guidance, and growth consulting for brands that want stronger systems and clearer discoverability.",
+            path: "/",
+            type: "AboutPage"
+          })
+        )}
+      </Script>
+      <Script id="home-breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema([{ name: "Home", path: "/" }]))}
+      </Script>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[58rem] bg-hero-radial opacity-90" />
 
       <section className="hero-fade relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-24 lg:px-12 lg:pb-28 lg:pt-28">

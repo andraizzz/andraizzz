@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { recommendedToolLinks } from "@/lib/recommended-tool-links";
 import { absoluteUrl, buildPageMetadata, recommendedToolsKeywords, siteName, siteUrl } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/schema";
 
 type Tool = {
   name: string;
@@ -518,6 +519,14 @@ export default function RecommendedToolsPage() {
             }))
           }
         })}
+      </Script>
+      <Script id="recommended-tools-breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Recommended Tools", path: "/recommended-tools" }
+          ])
+        )}
       </Script>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-hero-radial opacity-80" />
 
