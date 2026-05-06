@@ -73,12 +73,12 @@ const featuredTools: Tool[] = [
       "Strong for strategy support, ideation, drafting, and helping move a concept from rough instinct into clearer structure."
   },
   {
-    name: "Notion",
-    href: recommendedToolLinks.notion,
-    image: "/recommended-tools/notion-logo.png",
-    preview: "/recommended-tools/notion-preview.jpg",
+    name: "AgencyAnalytics",
+    href: recommendedToolLinks.agencyAnalytics,
+    image: "/recommended-tools/agencyanalytics-logo.png",
+    preview: "/recommended-tools/agencyanalytics-preview.jpg",
     description:
-      "A clean operating system for notes, planning, systems, and keeping ideas organized without adding visual noise."
+      "Client reporting and marketing dashboards in one place — pulls data from 80+ platforms so reporting stops eating your week."
   },
   {
     name: "HeyReach",
