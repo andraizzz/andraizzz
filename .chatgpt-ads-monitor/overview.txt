@@ -1,0 +1,26 @@
+Ads Manager Beta Overview
+
+Create, launch, and manage campaigns in OpenAI Ads Manager Beta.
+
+OpenAI Ads Manager Beta is the platform for creating, launching, and managing campaigns in ChatGPT Ads, with tools to monitor performance and make updates in one place. This is a beta product and will continue to evolve over time.
+
+Ads Manager Availability by Country
+
+For current advertiser availability by country, see Ads Manager Availability. Availability may continue to evolve as testing expands.
+
+What you can do in Ads Manager Beta
+
+Ads Manager Beta supports the core workflows required to run campaigns end to end:
+
+Create and manage campaigns: create campaigns individually in the guided workflow or create them at scale with bulk upload for supported campaign types. Ads Manager CSV upload does not currently support creating product-feed campaigns.
+
+Monitor performance: track impressions, clicks, and spend across campaigns, ad groups, and ads using table views, charts, and CSV exports. Impressions, clicks, and click-through rate can appear within minutes. Spend can update later, so a temporary zero spend value does not necessarily mean that no charges have accrued.
+
+Manage account settings: access account-level settings such as members, permissions, API keys, billing details, and change logs.
+
+Because Ads Manager Beta is still evolving, some capabilities are limited today and additional functionality will be added over time.
+
+Next steps
+
+Set up your Ads Manager Beta account.
+Launch your first campaign on Ads Manager Beta.

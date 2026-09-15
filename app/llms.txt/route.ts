@@ -15,6 +15,7 @@ ANDRA publishes practical guidance for teams implementing AI workflows, AI busin
 ## Priority Pages
 - Home: ${siteUrl}/
 - AI Workflow Audit: ${siteUrl}/ai-workflow-audit
+- ChatGPT Ads: ${siteUrl}/chatgpt-ads
 - Actionable Insights: ${siteUrl}/insights
 - Recommended Tools: ${siteUrl}/recommended-tools
 

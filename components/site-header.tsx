@@ -1,11 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useId, useRef, useState } from "react";
 import { bookIntroCallUrl, linkedinUrl } from "@/lib/contact";
+
+const services = [
+  {
+    href: "/ai-workflow-audit",
+    label: "Workflow Audit",
+    trackLabel: "workflow_audit"
+  },
+  {
+    href: "/chatgpt-ads",
+    label: "ChatGPT Ads",
+    trackLabel: "chatgpt_ads"
+  }
+];
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const menuId = useId();
+  const pathname = usePathname();
+  const isServicesActive = services.some((service) => pathname === service.href);
 
   useEffect(() => {
     let ticking = false;
@@ -38,6 +58,56 @@ export function SiteHeader() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isServicesOpen) {
+      return;
+    }
+
+    const handleClick = (event: MouseEvent) => {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKey);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [isServicesOpen]);
+
+  useEffect(() => {
+    setIsServicesOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) {
+        clearTimeout(closeTimer.current);
+      }
+    };
+  }, []);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setIsServicesOpen(false), 140);
+  };
 
   return (
     <div
@@ -74,16 +144,61 @@ export function SiteHeader() {
             >
               RECOMMENDED TOOLS
             </Link>
-            <Link
-              href="/ai-workflow-audit"
-              data-track-click="navigation_click"
-              data-track-category="header"
-              data-track-label="workflow_audit"
-              data-track-destination="/ai-workflow-audit"
-              className="text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition hover:opacity-72 sm:text-sm sm:tracking-[0.18em]"
+            <div
+              ref={servicesRef}
+              className="relative"
+              onMouseEnter={() => {
+                cancelClose();
+                setIsServicesOpen(true);
+              }}
+              onMouseLeave={scheduleClose}
             >
-              WORKFLOW AUDIT
-            </Link>
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={isServicesOpen}
+                aria-controls={menuId}
+                onClick={() => setIsServicesOpen((open) => !open)}
+                data-track-click="navigation_click"
+                data-track-category="header"
+                data-track-label="services_toggle"
+                className={`inline-flex items-center gap-1.5 text-[0.66rem] font-bold tracking-[0.16em] text-obsidian transition hover:opacity-72 sm:text-sm sm:tracking-[0.18em] ${
+                  isServicesActive ? "opacity-88" : ""
+                }`}
+              >
+                SERVICES
+                <span
+                  aria-hidden="true"
+                  className={`transition-transform duration-200 ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  ▾
+                </span>
+              </button>
+              <div
+                id={menuId}
+                role="menu"
+                aria-label="Services"
+                data-open={isServicesOpen}
+                className="pointer-events-none absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 rounded-[1rem] border border-white/60 bg-white/95 p-2 opacity-0 shadow-[0_18px_50px_rgba(17,17,17,0.14)] backdrop-blur-xl transition duration-200 data-[open=true]:pointer-events-auto data-[open=true]:opacity-100"
+              >
+                {services.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    role="menuitem"
+                    data-track-click="navigation_click"
+                    data-track-category="header"
+                    data-track-label={service.trackLabel}
+                    data-track-destination={service.href}
+                    className="block rounded-[0.72rem] px-4 py-3 text-[0.72rem] font-bold tracking-[0.16em] text-obsidian transition hover:bg-shell/55 sm:text-[0.78rem] sm:tracking-[0.18em]"
+                  >
+                    {service.label.toUpperCase()}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <a
               href={linkedinUrl}
               target="_blank"

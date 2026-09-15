@@ -1,0 +1,61 @@
+Ads Manager Beta Account Setup
+
+Learn how to set up your Ads Manager Beta account, including eligible self-serve setup with ChatGPT Ads Manager.
+
+Account setup is the process of configuring your advertiser account so you can create and manage campaigns in Ads Manager Beta. This includes completing onboarding, verifying your account, setting up billing, and inviting team members.
+
+Each business should have only one account owner create the advertiser account. After the account is created, the account owner can invite additional team members to access Ads Manager Beta. Campaigns will not deliver until all required steps are complete.
+
+Setup flow
+
+Account setup happens in five steps:
+1. Access Ads Manager Beta and create your account
+2. Complete account onboarding and verification
+3. Complete account information
+4. Set up billing and payment
+5. Invite team members
+
+1. Access Ads Manager Beta and create your account
+An OpenAI account is required. If you do not already have one, you can create one during signup.
+
+2. Complete account onboarding and verification
+Business details: business name, website, logo, industry. Account details: country, currency, time zone. Verification is completed through Persona. Reviewed against Ads Policies. Rolling queue review; may take some time.
+
+3. Complete account information
+Confirm account name and logo exactly as they should appear in the ad unit. Ads will not serve unless this step is complete.
+
+4. Set up billing and payment
+Create a billing profile (business name, invoice delivery email, billing address). Add a credit card payment method. Campaigns do not deliver until billing is complete.
+
+5. Invite team members
+From Settings > Users > Invite.
+
+If you manage multiple advertisers: each advertiser requires its own account.
+
+Account setup FAQ
+- Confirm country/region, currency, time zone, legal business name, advertiser website, billing details before submitting. Some fields are not self-serve editable after creation.
+- Country, currency, and time zone cannot be changed after creation.
+- Identity or business verification does not always mean the ad account is ready to run campaigns immediately.
+- If verification was exited early, return to the verification flow when available.
+- Do not submit duplicate applications.
+- A company can have multiple advertiser accounts.
+
+Use ChatGPT Ads Manager in ChatGPT
+Eligible business advertisers can begin self-serve setup from within ChatGPT via ChatGPT Ads Manager.
+
+Before you create an advertiser account
+- Available only in supported countries or regions.
+- Availability and access are based on the advertiser business or ad-account country selected during setup, not the ChatGPT login country.
+- Only eligible business advertiser accounts are supported. Individual advertisers and agencies-on-behalf-of are not supported; agencies can be invited after client account creation.
+- Confirm business name, advertiser website, country/region, currency, time zone before submitting.
+
+Set up an account from ChatGPT
+1. Open ChatGPT Ads Manager and connect your account.
+2. Ask ChatGPT to help set up a business advertiser account.
+3. Review advertiser name, website, business country/region, currency, time zone, logo.
+4. Open Ads Manager to complete billing, payment, tax, or identity-verification steps.
+
+Create or access additional advertiser accounts
+- An existing email may be associated with more than one advertiser account.
+- If an additional account already exists, ask an administrator to invite you.
+- Do not submit duplicate account-creation requests.
