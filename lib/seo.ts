@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { insightPosts, type InsightPost } from "@/lib/insights";
 
-export const siteUrl = "https://andraizzz.com";
+export const siteUrl = "https://www.andraizzz.com";
 export const siteName = "ANDRA";
 export const defaultOgImage = `${siteUrl}/andra-hero.jpg`;
 
