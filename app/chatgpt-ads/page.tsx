@@ -15,213 +15,152 @@ const chatGptAdsKeywords = [
   "ChatGPT ad formats",
   "ChatGPT Ads pros and cons",
   "ChatGPT Ads restrictions",
-  "advertising in AI chat",
-  "AI ads strategy"
+  "Sponsored Agents ChatGPT",
+  "advertising in AI chat"
 ];
 
-const lastVerified = "September 15, 2026";
+const lastVerified = "September 18, 2026";
 
-const currentSnapshot = [
-  {
-    label: "Product name",
-    value: "OpenAI Ads Manager Beta (the platform behind ChatGPT Ads)"
-  },
+const topline =
+  "ChatGPT Ads is OpenAI's advertising platform for placing single-image ads inside ChatGPT. It's in public beta, open to eligible businesses only in supported countries, with static 1:1 creative, Maximize Results bidding, conversion-optimized campaigns, custom audiences, and integrations with measurement partners. It's a first-mover awareness play in a new intent surface — worth a controlled test, not yet a channel to bet the business on.";
+
+const cheatSheet = [
   {
     label: "Status",
-    value: "Public beta. Capabilities are limited today and expanding over time."
+    value: "Public beta. Capabilities and pricing evolving."
   },
   {
-    label: "Where ads appear",
-    value: "Inside ChatGPT surfaces, served through OpenAI Ads Manager."
+    label: "Where ads run",
+    value: "Inside ChatGPT surfaces, served by OpenAI Ads Manager."
   },
   {
     label: "Who can advertise",
-    value:
-      "Eligible business advertisers only. No individual advertisers. Agencies can be invited after a client creates the account."
+    value: "Eligible businesses only. No individual advertisers or agency-on-behalf accounts."
   },
   {
-    label: "Access",
-    value:
-      "Advertiser accounts are created through OpenAI Ads Manager, or self-serve through ChatGPT Ads Manager inside ChatGPT."
+    label: "Country access",
+    value: "Gated by advertiser business country. Country, currency, and time zone lock at account creation."
   },
   {
-    label: "Availability",
-    value:
-      "Country-gated. Advertiser access is based on the business or ad-account country, not the country associated with your ChatGPT login."
+    label: "Ad formats",
+    value: "Static 1:1 image ads. Sponsored Agents also supported. No video, no carousels."
+  },
+  {
+    label: "Campaign types",
+    value: "Guided single campaigns and CSV bulk upload. Product-feed campaigns supported through a separate flow, not CSV."
+  },
+  {
+    label: "Bidding",
+    value: "Maximize Results strategy. Daily budgets with automatic pacing."
+  },
+  {
+    label: "Conversions",
+    value: "Conversion-optimized campaigns, conversion measurement, event-quality signals."
+  },
+  {
+    label: "Audiences",
+    value: "Custom audiences setup at the campaign level."
+  },
+  {
+    label: "Measurement",
+    value: "Impressions, clicks, CTR, spend + measurement-partner and mobile-MMP integrations."
+  },
+  {
+    label: "Access model",
+    value: "Self-serve via Ads Manager or through ChatGPT Ads Manager inside ChatGPT. Team roles and API keys."
+  },
+  {
+    label: "Billing",
+    value: "Credit card, per-advertiser billing profile. Campaigns don't deliver until billing is set."
   }
 ];
 
 const proPoints = [
-  {
-    title: "You are in front of intent, not scroll.",
-    body:
-      "ChatGPT users are asking questions, comparing options, and making decisions. That is a very different quality of attention than a feed."
-  },
-  {
-    title: "First-mover positioning inside AI surfaces.",
-    body:
-      "Being early inside a new ad ecosystem is the same play that worked in early Meta, YouTube, and TikTok. Costs and competition are still forming."
-  },
-  {
-    title: "One place to manage everything.",
-    body:
-      "Ads Manager Beta covers campaign creation, ad groups, ads, performance reporting, and account settings in a single platform."
-  },
-  {
-    title: "Bulk workflows are already supported.",
-    body:
-      "Guided creation for single campaigns, plus CSV bulk upload for supported campaign types. Useful once you are scaling structured accounts."
-  },
-  {
-    title: "Fast performance signal.",
-    body:
-      "Impressions, clicks, and click-through rate can appear within minutes. Spend can lag, so read the metrics together, not one in isolation."
-  },
-  {
-    title: "Real account infrastructure.",
-    body:
-      "Multiple team members, roles, API keys, billing profiles, change logs, and support for companies running multiple advertiser accounts."
-  }
+  "You are in front of intent, not scroll. ChatGPT users are asking questions and comparing options, which is very different attention than a feed.",
+  "First-mover positioning inside a new ad ecosystem. Costs and competition are still forming.",
+  "Real infrastructure: campaigns, ad groups, bulk upload, conversion tracking, MMP integrations, roles, API keys.",
+  "Fast performance signal. Impressions, clicks, and CTR appear within minutes."
 ];
 
 const conPoints = [
-  {
-    title: "It is a beta. Behavior will change.",
-    body:
-      "OpenAI states directly that Ads Manager is evolving. Expect features to shift, gaps to appear, and processes to change without warning."
-  },
-  {
-    title: "Creative is currently limited.",
-    body:
-      "Expect static, square-style creative only in this phase. No video, no carousels, no shoppable multi-frame formats yet. Plan around a single-image visual story."
-  },
-  {
-    title: "Country availability is narrow and locked in.",
-    body:
-      "Ads Manager is only live in select countries. Country, currency, and time zone cannot be changed after the account is created. Choosing the wrong entity at setup means starting over."
-  },
-  {
-    title: "Individual advertisers cannot participate.",
-    body:
-      "Only eligible business advertiser accounts are supported. Solo creators, personal brands without a business entity, and agency-owned test accounts are excluded from self-serve setup."
-  },
-  {
-    title: "Account review is manual and can be slow.",
-    body:
-      "Applications go through identity and business verification via Persona plus an internal ads-policy review. There is no expedited path. Duplicate applications slow things down further."
-  },
-  {
-    title: "Reporting is functional, not deep yet.",
-    body:
-      "Table views, charts, and CSV exports cover the basics. Attribution nuance, incrementality testing, and downstream conversion depth still need to mature before this becomes a serious primary channel."
-  },
-  {
-    title: "Product-feed campaigns are not fully served yet.",
-    body:
-      "CSV bulk upload does not currently support creating product-feed campaigns, which limits eCommerce advertisers who rely on catalog-based ads elsewhere."
-  }
-];
-
-const creativeAndFormat = [
-  {
-    label: "Format available today",
-    value: "Static image creative, single-frame."
-  },
-  {
-    label: "Aspect ratio",
-    value: "1:1 square (based on current beta behavior)."
-  },
-  {
-    label: "Video",
-    value: "Not supported yet."
-  },
-  {
-    label: "Carousels & multi-frame",
-    value: "Not supported yet."
-  },
-  {
-    label: "Product feed / catalog",
-    value:
-      "Product-feed campaigns cannot yet be created through CSV bulk upload. Plan single-product creative for now."
-  },
-  {
-    label: "Bulk creation",
-    value:
-      "CSV bulk upload is available for supported campaign types. Use it once you have a stable naming convention."
-  }
+  "It's a beta. Features, availability, and behavior will change without warning.",
+  "Creative is limited to a static 1:1 image. No video, no carousels, no shoppable multi-frame formats yet.",
+  "Country, currency, and time zone lock at account creation. No self-serve edits later.",
+  "Individual advertisers aren't supported. Agencies can only join after the client creates the account.",
+  "Account review is manual (Persona + policy). No expedited path.",
+  "Product-feed campaigns can't be created via CSV bulk upload today."
 ];
 
 const setupSteps = [
   {
     number: "01",
-    title: "Access Ads Manager Beta and create the account",
+    title: "Create the advertiser account",
     description:
-      "Sign in with an OpenAI account. If your business does not have one yet, create it during signup. One account owner per business."
+      "Sign in with OpenAI. One owner per business. Enter business name, website, logo, industry, country, currency, time zone."
   },
   {
     number: "02",
-    title: "Onboarding and Persona verification",
+    title: "Persona verification + policy review",
     description:
-      "Enter business name, website, logo, industry, country, currency, and time zone. Complete identity verification through Persona. The application then enters review."
+      "Complete identity verification through Persona. OpenAI reviews eligibility against its Ads Policies. Rolling queue — no expedite."
   },
   {
     number: "03",
-    title: "Complete the account info",
+    title: "Finalize account info",
     description:
-      "Once access is granted, confirm account name and logo exactly as they should appear inside the ad unit. Ads will not serve without this step."
+      "Confirm account name and logo exactly as they should appear inside the ad unit. Ads will not serve until this is complete."
   },
   {
     number: "04",
-    title: "Billing and payment",
+    title: "Set billing and payment",
     description:
-      "Create a billing profile with business name, invoice email, and address. Add a credit card. Campaigns do not deliver until billing is complete."
+      "Billing profile with business name, invoice email, address. Add a credit card. Campaigns don't deliver until billing is complete."
   },
   {
     number: "05",
     title: "Invite the team",
     description:
-      "From Settings, invite additional users into the advertiser account. Different brands or legal entities need their own advertiser accounts."
+      "Add teammates from Settings > Users. Different brands or legal entities each need their own advertiser account."
   }
 ];
 
 const strategicTake = [
-  "Treat ChatGPT Ads as a positioning and awareness bet inside a new intent surface, not as a proven direct-response channel yet.",
-  "Ship creative that is legible at small square sizes. One visual, one clear promise, real product, no clutter.",
-  "Run it in parallel with an existing paid channel so you have a stable baseline to compare CTR, spend pacing, and downstream signal.",
-  "Do not migrate a real revenue channel into ChatGPT Ads on the strength of the beta alone. Layer it in.",
-  "Get the account structure right on day one. Country, currency, and time zone cannot be changed later."
+  "Treat ChatGPT Ads as a positioning bet inside a new intent surface, not yet as a proven direct-response channel.",
+  "Design creative for the constraint: one square image, one clear promise, real product, zero clutter.",
+  "Run in parallel with your existing paid channel so you have a stable baseline to compare CTR, pacing, and downstream signal.",
+  "Lock the account structure correctly on day one. Country, currency, and time zone can't be changed later."
 ];
 
 const faqItems = [
   {
     question: "What is ChatGPT Ads?",
     answer:
-      "ChatGPT Ads is OpenAI's advertising product inside ChatGPT, managed through Ads Manager Beta. Eligible business advertisers create campaigns, ad groups, and ads, and measure performance in one platform."
+      "OpenAI's advertising platform inside ChatGPT, managed through Ads Manager Beta. Eligible businesses create campaigns, ad groups, and ads, and measure performance in one place."
   },
   {
     question: "Can individuals or solo creators run ChatGPT Ads?",
     answer:
-      "Not through self-serve setup. Only eligible business advertiser accounts are supported today. Solo operators generally need a registered business entity to advertise."
+      "Not via self-serve. Only eligible business advertiser accounts are supported. Solo operators generally need a registered business entity."
   },
   {
     question: "What creative formats are supported right now?",
     answer:
-      "Static single-image creative, 1:1 in current beta behavior. No video, no carousels, and no multi-frame formats yet."
+      "Static 1:1 image creative and Sponsored Agents. No video, carousels, or multi-frame formats yet."
   },
   {
     question: "How fast do metrics appear?",
     answer:
-      "Impressions, clicks, and click-through rate can appear within minutes. Spend can update later, so a temporary zero spend value does not necessarily mean no charges have accrued."
+      "Impressions, clicks, and CTR appear within minutes. Spend can update later, so a temporary zero-spend value doesn't necessarily mean no charges have accrued."
   },
   {
     question: "Should a brand be running ChatGPT Ads today?",
     answer:
-      "If you are a business, your audience is already inside ChatGPT, and you can commit to real creative discipline and testing hygiene, then it is worth a controlled test. If you are looking for a mature, precise direct-response channel with deep attribution, wait for the next phase."
+      "If you're a business, your audience is inside ChatGPT, and you can commit to real creative discipline and clean testing, it's worth a controlled test. If you need a mature direct-response channel with deep attribution, wait."
   },
   {
-    question: "How often does this page get updated?",
+    question: "How often is this page updated?",
     answer:
-      "This page is checked against the official OpenAI Ads Manager documentation weekly, and updated whenever OpenAI ships new features, formats, or availability changes."
+      "Every ChatGPT Ads help article from OpenAI is checked weekly. When something meaningful changes, this page is updated within days."
   }
 ];
 
@@ -283,9 +222,9 @@ function ChatGptAdsHeroArtwork() {
 }
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "ChatGPT Ads: What It Is, Pros, Cons, and Current Limits | ANDRA",
+  title: "ChatGPT Ads: The Cheat Sheet, Pros, and Cons | ANDRA",
   description:
-    "A clear, up-to-date rundown of ChatGPT Ads (OpenAI Ads Manager Beta): what it is today, where ads appear, what formats are supported, the real pros, the current cons, and how to think about it strategically.",
+    "A tight, plain-English cheat sheet for ChatGPT Ads (OpenAI Ads Manager Beta): what's supported today, creative and format limits, bidding and measurement, pros, cons, and how to think about it strategically. Updated weekly.",
   pathname: "/chatgpt-ads",
   keywords: chatGptAdsKeywords
 });
@@ -296,9 +235,9 @@ export default function ChatGptAdsPage() {
       <Script id="chatgpt-ads-webpage-schema" type="application/ld+json">
         {JSON.stringify(
           webPageSchema({
-            name: "ChatGPT Ads: What It Is, Pros, Cons, and Current Limits",
+            name: "ChatGPT Ads: The Cheat Sheet, Pros, and Cons",
             description:
-              "A current-state rundown of ChatGPT Ads and OpenAI Ads Manager Beta, including pros, cons, creative limits, and setup requirements.",
+              "A current-state cheat sheet for ChatGPT Ads and OpenAI Ads Manager Beta, including creative limits, bidding, measurement, and setup.",
             path: "/chatgpt-ads"
           })
         )}
@@ -358,10 +297,9 @@ export default function ChatGptAdsPage() {
           <div className="mt-8 grid gap-10 lg:grid-cols-[0.44fr_0.56fr] lg:items-center lg:gap-14">
             <div className="max-w-xl lg:pb-2">
               <p className="max-w-2xl text-base leading-8 text-stone sm:text-lg sm:leading-9">
-                A grounded rundown of OpenAI&apos;s new advertising product: what it actually
-                is today, where ads appear, what you can and cannot do inside it, and how to
-                decide whether it belongs in your stack. Updated every week against
-                OpenAI&apos;s live documentation.
+                A grounded cheat sheet on OpenAI&apos;s new advertising product: what it
+                actually is today, what you can and can&apos;t ship, and whether it belongs
+                in your stack. Updated every week against OpenAI&apos;s live documentation.
               </p>
               <p className="mt-4 text-xs uppercase tracking-[0.18em] text-stone/72">
                 Last verified against OpenAI documentation on {lastVerified}
@@ -398,58 +336,70 @@ export default function ChatGptAdsPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 pb-14 sm:px-8 lg:px-12 lg:pb-16">
+        <div className="relative overflow-hidden rounded-[1.9rem] border border-white/60 bg-[linear-gradient(160deg,rgba(255,255,255,0.6),rgba(231,216,207,0.22))] px-6 py-8 shadow-[0_28px_80px_rgba(17,17,17,0.07)] backdrop-blur-xl sm:px-10 sm:py-10">
+          <div className="pointer-events-none absolute right-[-5rem] top-[-4rem] h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_68%)] blur-3xl" />
+          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+            The Topline
+          </p>
+          <p className="mt-5 max-w-4xl font-serif text-[1.85rem] leading-[1.28] text-obsidian sm:text-[2.15rem] sm:leading-[1.24]">
+            {topline}
+          </p>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 pb-12 sm:px-8 lg:px-12 lg:pb-16">
-        <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-          The Current State
-        </p>
-        <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-          What ChatGPT Ads actually is today.
-        </h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {currentSnapshot.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-[1.35rem] border border-white/55 bg-white/42 px-5 py-5 shadow-[0_18px_44px_rgba(17,17,17,0.04)] backdrop-blur-sm"
-            >
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                {item.label}
-              </p>
-              <p className="mt-3 text-base leading-7 text-obsidian sm:text-[1.05rem]">
-                {item.value}
-              </p>
-            </div>
-          ))}
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+              The Cheat Sheet
+            </p>
+            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+              Everything you need to know, on one page.
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-7 text-stone sm:text-base">
+            Synthesized from OpenAI&apos;s full ChatGPT Ads help collection — 30 articles
+            covering setup, campaigns, creative, bidding, measurement, and admin.
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-[1.6rem] border border-white/55 bg-white/50 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm">
+          <dl className="divide-y divide-obsidian/8">
+            {cheatSheet.map((item) => (
+              <div
+                key={item.label}
+                className="grid gap-2 px-6 py-5 sm:grid-cols-[0.28fr_0.72fr] sm:gap-8 sm:px-8"
+              >
+                <dt className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone sm:text-[0.78rem]">
+                  {item.label}
+                </dt>
+                <dd className="text-base leading-7 text-obsidian sm:text-[1.05rem]">
+                  {item.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-6 rounded-[1.9rem] border border-white/55 bg-white/36 px-6 py-7 shadow-[0_20px_60px_rgba(17,17,17,0.05)] backdrop-blur-sm lg:grid-cols-2 lg:gap-10 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
               The Pros
             </p>
-            <h2 className="mt-4 font-serif text-[2.4rem] leading-tight text-obsidian sm:text-[2.8rem]">
-              Why it is worth paying attention.
+            <h2 className="mt-4 font-serif text-[2.4rem] leading-tight text-obsidian sm:text-[2.6rem]">
+              Why it&apos;s worth attention.
             </h2>
-            <ul className="mt-6 grid gap-4">
+            <ul className="mt-6 grid gap-3">
               {proPoints.map((point) => (
                 <li
-                  key={point.title}
-                  className="rounded-[1.2rem] border border-obsidian/8 bg-white/64 px-5 py-4"
+                  key={point}
+                  className="flex items-start gap-3 border-b border-obsidian/8 pb-3 text-base leading-7 text-obsidian last:border-0 sm:text-[1.05rem]"
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-shell text-[0.72rem] font-semibold leading-none text-obsidian">
-                      +
-                    </span>
-                    <div>
-                      <p className="font-serif text-[1.2rem] leading-snug text-obsidian">
-                        {point.title}
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-stone sm:text-[0.98rem]">
-                        {point.body}
-                      </p>
-                    </div>
-                  </div>
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blush" />
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
@@ -459,28 +409,17 @@ export default function ChatGptAdsPage() {
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
               The Current Cons
             </p>
-            <h2 className="mt-4 font-serif text-[2.4rem] leading-tight text-obsidian sm:text-[2.8rem]">
-              What is still missing today.
+            <h2 className="mt-4 font-serif text-[2.4rem] leading-tight text-obsidian sm:text-[2.6rem]">
+              What&apos;s still missing.
             </h2>
-            <ul className="mt-6 grid gap-4">
+            <ul className="mt-6 grid gap-3">
               {conPoints.map((point) => (
                 <li
-                  key={point.title}
-                  className="rounded-[1.2rem] border border-obsidian/8 bg-white/64 px-5 py-4"
+                  key={point}
+                  className="flex items-start gap-3 border-b border-obsidian/8 pb-3 text-base leading-7 text-obsidian last:border-0 sm:text-[1.05rem]"
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-obsidian/12 bg-white text-[0.72rem] font-semibold leading-none text-stone/78">
-                      ×
-                    </span>
-                    <div>
-                      <p className="font-serif text-[1.2rem] leading-snug text-obsidian">
-                        {point.title}
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-stone sm:text-[0.98rem]">
-                        {point.body}
-                      </p>
-                    </div>
-                  </div>
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-obsidian/40" />
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
@@ -489,93 +428,57 @@ export default function ChatGptAdsPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
-          <div>
-            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-              Creative & Format Restrictions
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              What you can actually ship.
-            </h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
-              This is not the moment to plan a 30-second hero video. Creative today is a
-              single square image and clear language. Design for that constraint on purpose.
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {creativeAndFormat.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-[1.35rem] border border-white/55 bg-white/38 px-5 py-5 shadow-[0_18px_44px_rgba(17,17,17,0.04)] backdrop-blur-sm"
-              >
-                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                  {item.label}
-                </p>
-                <p className="mt-3 text-base leading-7 text-obsidian sm:text-[1.05rem]">
-                  {item.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
+        <div className="grid gap-8 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
           <div>
             <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
               Getting In
             </p>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-              How account setup works.
+              How setup works.
             </h2>
             <p className="mt-6 max-w-md text-base leading-8 text-stone sm:text-lg">
-              The setup path is straightforward, but a few of the choices lock in permanently.
-              Get the entity, country, currency, and time zone right the first time.
+              Five steps. A few of the choices lock in permanently, so get entity, country,
+              currency, and time zone right the first time.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            {setupSteps.map((step) => (
-              <div
-                key={step.number}
-                className="rounded-[1.4rem] border border-white/55 bg-white/38 px-5 py-6 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm sm:px-6"
-              >
+          <ol className="relative space-y-0 border-l border-obsidian/12 pl-6 sm:pl-8">
+            {setupSteps.map((step, index) => (
+              <li key={step.number} className={index === setupSteps.length - 1 ? "" : "pb-6 sm:pb-7"}>
+                <div className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border border-obsidian/20 bg-porcelain">
+                  <span className="h-1.5 w-1.5 rounded-full bg-blush" />
+                </div>
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">
-                  {step.number}
+                  Step {step.number}
                 </p>
-                <h3 className="mt-3 font-serif text-[1.55rem] leading-tight text-obsidian">
+                <h3 className="mt-1.5 font-serif text-[1.45rem] leading-tight text-obsidian sm:text-[1.6rem]">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-stone sm:text-base">
+                <p className="mt-2 max-w-2xl text-sm leading-7 text-stone sm:text-base">
                   {step.description}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
         <div className="relative overflow-hidden rounded-[1.9rem] border border-white/55 bg-[linear-gradient(160deg,rgba(255,255,255,0.52),rgba(231,216,207,0.22))] px-6 py-8 shadow-[0_24px_70px_rgba(17,17,17,0.06)] backdrop-blur-sm sm:px-10 sm:py-10">
-          <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_68%)] blur-3xl" />
           <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
             The Honest Strategic Take
           </p>
           <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
-            How to think about ChatGPT Ads right now.
+            How to think about it right now.
           </h2>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          <ul className="mt-8 grid gap-3 max-w-4xl">
             {strategicTake.map((point) => (
               <li
                 key={point}
-                className="flex items-start gap-3 rounded-[1.2rem] border border-obsidian/8 bg-white/68 px-5 py-4"
+                className="flex items-start gap-3 text-base leading-7 text-obsidian sm:text-[1.05rem]"
               >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blush" />
-                <span className="text-sm leading-7 text-obsidian sm:text-base">
-                  {point}
-                </span>
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blush" />
+                <span>{point}</span>
               </li>
             ))}
           </ul>
@@ -629,33 +532,21 @@ export default function ChatGptAdsPage() {
             Sources & Freshness
           </p>
           <h2 className="mt-4 max-w-3xl font-serif text-[2.1rem] leading-[1.12] text-white sm:text-[2.5rem]">
-            This page is checked against OpenAI&apos;s documentation weekly.
+            This page tracks OpenAI&apos;s full ChatGPT Ads help collection weekly.
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-white/78 sm:text-lg">
-            Reference articles used to keep this page current:
+            All 30 articles in{" "}
+            <a
+              href="https://help.openai.com/en/collections/20001223-chatgpt-ads"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            >
+              OpenAI&apos;s ChatGPT Ads collection
+            </a>{" "}
+            — covering setup, campaigns, creative, bidding, measurement, and admin — are
+            diffed every Monday. Substantive changes flow back into this cheat sheet.
           </p>
-          <ul className="mt-6 grid gap-3 text-sm leading-7 text-white/85 sm:text-base">
-            <li>
-              <a
-                href="https://help.openai.com/en/articles/20001206-ads-manager-beta-overview"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
-              >
-                OpenAI · Ads Manager Beta Overview
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://help.openai.com/en/articles/20001213-ads-manager-beta-account-setup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
-              >
-                OpenAI · Ads Manager Beta Account Setup
-              </a>
-            </li>
-          </ul>
           <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/58">
             Last verified {lastVerified}
           </p>
