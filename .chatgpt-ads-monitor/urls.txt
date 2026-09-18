@@ -1,0 +1,46 @@
+# URLs monitored by the weekly ChatGPT Ads doc check.
+# One per line. Blank lines and lines starting with # are ignored.
+# Snapshot filename for each URL = the article slug (the last path segment).
+# Add or remove URLs freely; the routine handles new URLs on the next run.
+
+# Getting started
+https://help.openai.com/en/articles/20001047-ads-in-chatgpt
+https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics
+https://help.openai.com/en/articles/20001206-ads-manager-beta-overview
+https://help.openai.com/en/articles/20001213-ads-manager-beta-account-setup
+https://help.openai.com/en/articles/20001245-ads-manager-availability
+https://help.openai.com/en/articles/20001220-frequently-asked-questions
+https://help.openai.com/en/articles/20001224-quickstart-launch-your-first-campaign
+
+# Campaigns, ad groups, ads
+https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads
+https://help.openai.com/en/articles/20001211-create-ad-groups-for-chatgpt-ads
+https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt-ads
+https://help.openai.com/en/articles/20001268-create-campaigns-from-product-feeds
+https://help.openai.com/en/articles/20001209-launch-campaigns
+https://help.openai.com/en/articles/20001215-edit-campaigns
+https://help.openai.com/en/articles/20001521-write-context-hints-for-chatgpt-ads
+https://help.openai.com/en/articles/20001524-sponsored-agents-in-chatgpt-ads
+
+# Budgets & bidding
+https://help.openai.com/en/articles/20001413-daily-budgets
+https://help.openai.com/en/articles/20001515-budget-pacing
+https://help.openai.com/en/articles/20001425-maximize-results-bid-strategy
+https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns
+
+# Audiences
+https://help.openai.com/en/articles/20001346-set-up-custom-audiences-for-your-campaign
+
+# Measurement & reporting
+https://help.openai.com/en/articles/20001214-measure-results
+https://help.openai.com/en/articles/20001409-conversion-measurement
+https://help.openai.com/en/articles/20001416-set-up-measurement-partner-integrations
+https://help.openai.com/en/articles/20001372-set-up-mobile-measurement-partner-integrations
+https://help.openai.com/en/articles/20001513-understand-and-improve-event-quality
+
+# Account & admin
+https://help.openai.com/en/articles/20001216-billing-payment
+https://help.openai.com/en/articles/20001218-bulk-upload-campaign-schema-checklist
+https://help.openai.com/en/articles/20001273-managing-identity-and-access-for-ads-manager
+https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers
+https://help.openai.com/en/articles/20001217-troubleshooting-common-issues
