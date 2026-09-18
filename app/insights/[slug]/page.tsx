@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
+import { JsonLd } from "@/components/json-ld";
 import { notFound } from "next/navigation";
 import { getInsightPost, insightPosts, type InsightSection } from "@/lib/insights";
 import { bookIntroCallUrl } from "@/lib/contact";
@@ -232,8 +232,9 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
 
   return (
     <main className="relative overflow-x-hidden bg-porcelain text-obsidian">
-      <Script id={`${post.slug}-article-schema`} type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd
+        id={`${post.slug}-article-schema`}
+        data={{
           "@context": "https://schema.org",
           "@type": "Article",
           headline: post.title,
@@ -253,20 +254,20 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
           mainEntityOfPage: absoluteUrl(`/insights/${post.slug}`),
           articleSection: post.eyebrow,
           keywords: [...aiStrategyKeywords, post.eyebrow]
-        })}
-      </Script>
-      <Script id={`${post.slug}-breadcrumb-schema`} type="application/ld+json">
-        {JSON.stringify(
-          breadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "Actionable Insights", path: "/insights" },
-            { name: post.title, path: `/insights/${post.slug}` }
-          ])
-        )}
-      </Script>
+        }}
+      />
+      <JsonLd
+        id={`${post.slug}-breadcrumb-schema`}
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Actionable Insights", path: "/insights" },
+          { name: post.title, path: `/insights/${post.slug}` }
+        ])}
+      />
       {faqItems.length > 0 ? (
-        <Script id={`${post.slug}-faq-schema`} type="application/ld+json">
-          {JSON.stringify({
+        <JsonLd
+          id={`${post.slug}-faq-schema`}
+          data={{
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: faqItems.flatMap((block) =>
@@ -279,8 +280,8 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                 }
               }))
             )
-          })}
-        </Script>
+          }}
+        />
       ) : null}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute right-[-6rem] top-[16rem] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_68%)] blur-3xl" />

@@ -11,7 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       pathname === "/"
         ? 1
-        : pathname === "/recommended-tools" || pathname === "/insights"
+        : pathname === "/chatgpt-ads" ||
+            pathname === "/ai-workflow-audit" ||
+            pathname === "/recommended-tools" ||
+            pathname === "/insights"
           ? 0.9
           : pathname.startsWith("/insights/")
             ? 0.8

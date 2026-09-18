@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import { insightPosts } from "@/lib/insights";
 import { aiStrategyKeywords, absoluteUrl, buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "AI Workflows and Actionable Insights | ANDRA",
@@ -19,8 +19,7 @@ export default function InsightsPage() {
 
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
-      <Script id="insights-collection-schema" type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd id="insights-collection-schema" data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "AI Workflows and Actionable Insights",
@@ -41,16 +40,13 @@ export default function InsightsPage() {
               name: post.title
             }))
           }
-        })}
-      </Script>
-      <Script id="insights-breadcrumb-schema" type="application/ld+json">
-        {JSON.stringify(
+        }} />
+      <JsonLd id="insights-breadcrumb-schema" data={
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Actionable Insights", path: "/insights" }
           ])
-        )}
-      </Script>
+        } />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[44rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute inset-x-0 top-20 mx-auto h-[26rem] max-w-6xl rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.3),transparent_62%)] blur-3xl" />
 

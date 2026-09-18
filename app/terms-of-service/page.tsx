@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Terms of Service | ANDRA",
@@ -13,23 +13,19 @@ export const metadata: Metadata = buildPageMetadata({
 export default function TermsOfServicePage() {
   return (
     <main className="min-h-screen bg-porcelain px-6 py-10 text-obsidian sm:px-8 lg:px-12">
-      <Script id="terms-webpage-schema" type="application/ld+json">
-        {JSON.stringify(
+      <JsonLd id="terms-webpage-schema" data={
           webPageSchema({
             name: "Terms of Service",
             description: "Terms of Service for ANDRA.",
             path: "/terms-of-service"
           })
-        )}
-      </Script>
-      <Script id="terms-breadcrumb-schema" type="application/ld+json">
-        {JSON.stringify(
+        } />
+      <JsonLd id="terms-breadcrumb-schema" data={
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Terms of Service", path: "/terms-of-service" }
           ])
-        )}
-      </Script>
+        } />
       <div className="mx-auto max-w-4xl">
         <div className="border-b border-obsidian/10 pb-6">
           <Link href="/" className="text-xs uppercase tracking-editorial text-stone">

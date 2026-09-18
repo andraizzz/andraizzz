@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import { recommendedToolLinks } from "@/lib/recommended-tool-links";
 import { absoluteUrl, buildPageMetadata, recommendedToolsKeywords, siteName, siteUrl } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/json-ld";
 
 type Tool = {
   name: string;
@@ -495,8 +495,7 @@ export default function RecommendedToolsPage() {
 
   return (
     <main className="relative overflow-hidden bg-porcelain px-6 py-10 text-obsidian sm:px-8 lg:px-12">
-      <Script id="recommended-tools-schema" type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd id="recommended-tools-schema" data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Recommended AI Tools and Workflow Stack",
@@ -518,16 +517,13 @@ export default function RecommendedToolsPage() {
               description: tool.description
             }))
           }
-        })}
-      </Script>
-      <Script id="recommended-tools-breadcrumb-schema" type="application/ld+json">
-        {JSON.stringify(
+        }} />
+      <JsonLd id="recommended-tools-breadcrumb-schema" data={
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Recommended Tools", path: "/recommended-tools" }
           ])
-        )}
-      </Script>
+        } />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-hero-radial opacity-80" />
 
       <section className="hero-fade mx-auto max-w-7xl pt-6 sm:pt-8 lg:pt-10">

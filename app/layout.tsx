@@ -12,7 +12,9 @@ import {
   siteName,
   siteUrl
 } from "@/lib/seo";
+import { contactEmail, linkedinUrl } from "@/lib/contact";
 import "./globals.css";
+import { JsonLd } from "@/components/json-ld";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -69,25 +71,54 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <head>
-        <Script id="organization-schema" type="application/ld+json">
-          {JSON.stringify({
+        <JsonLd
+          id="organization-schema"
+          data={{
             "@context": "https://schema.org",
             "@type": "Organization",
+            "@id": `${siteUrl}/#organization`,
+            name: siteName,
+            alternateName: "Andra Izgarian",
+            url: siteUrl,
+            logo: {
+              "@type": "ImageObject",
+              url: `${siteUrl}/icon.svg`
+            },
+            image: defaultOgImage,
+            description:
+              "ANDRA advises brands on AI workflows, AI visibility, and growth strategy — including advertising inside AI surfaces such as ChatGPT Ads.",
+            email: contactEmail,
+            founder: {
+              "@type": "Person",
+              name: "Andra Izgarian",
+              url: linkedinUrl,
+              sameAs: [linkedinUrl]
+            },
+            sameAs: [linkedinUrl],
+            knowsAbout: [
+              "AI workflows",
+              "AI visibility",
+              "Generative Engine Optimization",
+              "ChatGPT Ads",
+              "OpenAI Ads Manager",
+              "AI advertising",
+              "Growth strategy"
+            ]
+          }}
+        />
+        <JsonLd
+          id="website-schema"
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${siteUrl}/#website`,
             name: siteName,
             url: siteUrl,
             image: defaultOgImage,
-            sameAs: []
-          })}
-        </Script>
-        <Script id="website-schema" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: siteName,
-            url: siteUrl,
-            image: defaultOgImage
-          })}
-        </Script>
+            publisher: { "@id": `${siteUrl}/#organization` },
+            inLanguage: "en"
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-QPCFDEM7GK"
           strategy="afterInteractive"

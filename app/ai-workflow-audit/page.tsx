@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import { InquiryForm } from "@/components/inquiry-form";
 import { bookIntroCallUrl } from "@/lib/contact";
 import {
@@ -11,6 +10,7 @@ import {
   siteUrl
 } from "@/lib/seo";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/json-ld";
 
 const auditDeliverables = [
   {
@@ -413,18 +413,15 @@ export const metadata: Metadata = buildPageMetadata({
 export default function AiWorkflowAuditPage() {
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
-      <Script id="ai-workflow-audit-webpage-schema" type="application/ld+json">
-        {JSON.stringify(
+      <JsonLd id="ai-workflow-audit-webpage-schema" data={
           webPageSchema({
             name: "AI Workflow Audit",
             description:
               "AI workflow audit and consulting for brands, consultants, and growth teams that want clearer systems, smarter tool choices, and better AI visibility.",
             path: "/ai-workflow-audit"
           })
-        )}
-      </Script>
-      <Script id="ai-workflow-audit-service-schema" type="application/ld+json">
-        {JSON.stringify({
+        } />
+      <JsonLd id="ai-workflow-audit-service-schema" data={{
           "@context": "https://schema.org",
           "@type": "Service",
           name: "AI Workflow Audit",
@@ -438,18 +435,14 @@ export default function AiWorkflowAuditPage() {
           areaServed: "Global",
           serviceType: "AI workflow audit and consulting",
           url: `${siteUrl}/ai-workflow-audit`
-        })}
-      </Script>
-      <Script id="ai-workflow-audit-breadcrumb-schema" type="application/ld+json">
-        {JSON.stringify(
+        }} />
+      <JsonLd id="ai-workflow-audit-breadcrumb-schema" data={
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "AI Workflow Audit", path: "/ai-workflow-audit" }
           ])
-        )}
-      </Script>
-      <Script id="ai-workflow-audit-faq-schema" type="application/ld+json">
-        {JSON.stringify({
+        } />
+      <JsonLd id="ai-workflow-audit-faq-schema" data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: faqItems.map((item) => ({
@@ -460,8 +453,7 @@ export default function AiWorkflowAuditPage() {
               text: item.answer
             }
           }))
-        })}
-      </Script>
+        }} />
 
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[40rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute right-[-4rem] top-[8rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_70%)] blur-3xl" />

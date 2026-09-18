@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { InquiryForm } from "@/components/inquiry-form";
 import { bookIntroCallUrl } from "@/lib/contact";
 import { buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/json-ld";
 
 const chatGptAdsKeywords = [
   "ChatGPT Ads",
@@ -232,43 +232,53 @@ export const metadata: Metadata = buildPageMetadata({
 export default function ChatGptAdsPage() {
   return (
     <main className="relative overflow-hidden bg-porcelain text-obsidian">
-      <Script id="chatgpt-ads-webpage-schema" type="application/ld+json">
-        {JSON.stringify(
-          webPageSchema({
+      <JsonLd
+        id="chatgpt-ads-webpage-schema"
+        data={{
+          ...webPageSchema({
             name: "ChatGPT Ads: The Cheat Sheet, Pros, and Cons",
             description:
               "A current-state cheat sheet for ChatGPT Ads and OpenAI Ads Manager Beta, including creative limits, bidding, measurement, and setup.",
             path: "/chatgpt-ads"
-          })
-        )}
-      </Script>
-      <Script id="chatgpt-ads-service-schema" type="application/ld+json">
-        {JSON.stringify({
+          }),
+          datePublished: "2026-09-15",
+          dateModified: "2026-09-18",
+          about: {
+            "@type": "Thing",
+            name: "ChatGPT Ads",
+            sameAs: "https://help.openai.com/en/collections/20001223-chatgpt-ads"
+          },
+          keywords: chatGptAdsKeywords.join(", ")
+        }}
+      />
+      <JsonLd
+        id="chatgpt-ads-service-schema"
+        data={{
           "@context": "https://schema.org",
           "@type": "Service",
           name: "ChatGPT Ads Strategy and Advisory",
           description:
             "Advisory on running campaigns inside OpenAI Ads Manager Beta, evaluating whether ChatGPT Ads fits a given brand, and designing creative for the current single-image beta format.",
-          provider: {
-            "@type": "Organization",
-            name: siteName,
-            url: siteUrl
-          },
+          provider: { "@id": `${siteUrl}/#organization` },
           areaServed: "Global",
           serviceType: "ChatGPT Ads strategy and advisory",
-          url: `${siteUrl}/chatgpt-ads`
-        })}
-      </Script>
-      <Script id="chatgpt-ads-breadcrumb-schema" type="application/ld+json">
-        {JSON.stringify(
-          breadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "ChatGPT Ads", path: "/chatgpt-ads" }
-          ])
-        )}
-      </Script>
-      <Script id="chatgpt-ads-faq-schema" type="application/ld+json">
-        {JSON.stringify({
+          url: `${siteUrl}/chatgpt-ads`,
+          about: {
+            "@type": "Thing",
+            name: "ChatGPT Ads",
+            sameAs: "https://help.openai.com/en/collections/20001223-chatgpt-ads"
+          }
+        }}
+      />
+      <JsonLd
+        id="chatgpt-ads-breadcrumb-schema"
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/ai-workflow-audit" },
+          { name: "ChatGPT Ads", path: "/chatgpt-ads" }
+        ])}
+      />
+      <JsonLd id="chatgpt-ads-faq-schema" data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: faqItems.map((item) => ({
@@ -279,17 +289,39 @@ export default function ChatGptAdsPage() {
               text: item.answer
             }
           }))
-        })}
-      </Script>
+        }} />
 
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[40rem] bg-hero-radial opacity-90" />
       <div className="pointer-events-none absolute right-[-4rem] top-[8rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(217,167,154,0.22),transparent_70%)] blur-3xl" />
 
       <section className="hero-fade relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-24 lg:px-12 lg:pb-20 lg:pt-28">
         <div>
-          <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
-            Services / ChatGPT Ads
-          </p>
+          <nav
+            aria-label="Breadcrumb"
+            className="text-xs uppercase tracking-editorial text-stone sm:text-sm"
+          >
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <li>
+                <Link href="/" className="hover:text-obsidian">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-stone/50">
+                /
+              </li>
+              <li>
+                <Link href="/ai-workflow-audit" className="hover:text-obsidian">
+                  Services
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-stone/50">
+                /
+              </li>
+              <li aria-current="page" className="text-obsidian">
+                ChatGPT Ads
+              </li>
+            </ol>
+          </nav>
           <h1 className="mt-6 max-w-[65rem] font-serif text-[3.3rem] leading-[1.04] text-obsidian sm:max-w-[72rem] sm:text-[4.2rem] lg:max-w-[78rem] lg:text-[5rem]">
             ChatGPT Ads, in plain English.
           </h1>
