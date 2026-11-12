@@ -821,6 +821,50 @@ export default function ChatGptAdsPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+          Related
+        </p>
+        <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+          Go deeper on the parts that matter.
+        </h2>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <Link
+            href="/chatgpt-ads/examples"
+            className="group rounded-[1.4rem] border border-obsidian/10 bg-white/58 px-5 py-6 transition duration-300 hover:-translate-y-1 hover:border-obsidian/30 hover:shadow-[0_18px_40px_rgba(17,17,17,0.06)]"
+            data-track-click="navigation_click"
+            data-track-category="chatgpt_ads"
+            data-track-label="related_examples"
+          >
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">Examples</p>
+            <h3 className="mt-3 font-serif text-[1.55rem] leading-tight text-obsidian">What ChatGPT ads actually look like</h3>
+            <p className="mt-3 text-sm leading-7 text-stone">Real-scale and zoomed renders of the single-image and multi-image formats, with a labelled anatomy of the sponsored card.</p>
+          </Link>
+          <Link
+            href="/chatgpt-ads/manager"
+            className="group rounded-[1.4rem] border border-obsidian/10 bg-white/58 px-5 py-6 transition duration-300 hover:-translate-y-1 hover:border-obsidian/30 hover:shadow-[0_18px_40px_rgba(17,17,17,0.06)]"
+            data-track-click="navigation_click"
+            data-track-category="chatgpt_ads"
+            data-track-label="related_manager"
+          >
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">Ads Manager</p>
+            <h3 className="mt-3 font-serif text-[1.55rem] leading-tight text-obsidian">OpenAI Ads Manager Beta, demystified</h3>
+            <p className="mt-3 text-sm leading-7 text-stone">What the dashboard does, how to access it, and how the ChatGPT Ads Manager plugin fits in.</p>
+          </Link>
+          <Link
+            href="/ai-ads"
+            className="group rounded-[1.4rem] border border-obsidian/10 bg-white/58 px-5 py-6 transition duration-300 hover:-translate-y-1 hover:border-obsidian/30 hover:shadow-[0_18px_40px_rgba(17,17,17,0.06)]"
+            data-track-click="navigation_click"
+            data-track-category="chatgpt_ads"
+            data-track-label="related_ai_ads"
+          >
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">Context</p>
+            <h3 className="mt-3 font-serif text-[1.55rem] leading-tight text-obsidian">AI Ads: the current landscape</h3>
+            <p className="mt-3 text-sm leading-7 text-stone">How ChatGPT Ads compares to Perplexity, Copilot, and Google's AI Overview placements today.</p>
+          </Link>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-6 sm:px-8 lg:px-12 lg:pb-24">
         <div className="rounded-[1.9rem] bg-[linear-gradient(160deg,rgba(28,34,40,0.94),rgba(17,17,17,0.88))] px-6 py-8 text-white shadow-[0_28px_80px_rgba(17,17,17,0.16)] sm:px-8 sm:py-9">
           <p className="text-xs uppercase tracking-editorial text-white/60 sm:text-sm">

@@ -21,6 +21,7 @@ declare global {
 
 const inquiryOptions = [
   "AI Workflow Audit",
+  "AI Ads",
   "ChatGPT Ads",
   "AI Visibility Strategy",
   "Recommended Tools / Stack",

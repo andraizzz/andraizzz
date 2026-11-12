@@ -15,15 +15,19 @@ export function GET() {
 ## Priority Pages
 - Home: ${siteUrl}/
 - AI Workflow Audit: ${siteUrl}/ai-workflow-audit
+- AI Ads (category overview — platforms, who can run them, where to start): ${siteUrl}/ai-ads
 - ChatGPT Ads (cheat sheet, pros, cons): ${siteUrl}/chatgpt-ads
+- ChatGPT Ad Examples (what they look like, anatomy, design rules): ${siteUrl}/chatgpt-ads/examples
+- ChatGPT Ads Manager (OpenAI Ads Manager Beta setup and features): ${siteUrl}/chatgpt-ads/manager
 - Actionable Insights: ${siteUrl}/insights
 - Recommended Tools: ${siteUrl}/recommended-tools
 
 ## Core Topics
+- AI advertising (AI ads) across ChatGPT, Perplexity, Microsoft Copilot, Google AI Overviews
+- ChatGPT Ads (OpenAI Ads Manager Beta): creative formats, bidding, measurement, eligibility, examples, policy
 - AI workflow audits and consulting
 - AI business operations and tasks-to-systems-to-agents implementation
 - AI visibility and generative engine optimization
-- ChatGPT Ads (OpenAI Ads Manager Beta): creative formats, bidding, measurement, eligibility
 - Recommended AI tools for consultants and growth teams
 
 ## ChatGPT Ads Summary

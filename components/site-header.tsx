@@ -12,6 +12,11 @@ const services = [
     trackLabel: "workflow_audit"
   },
   {
+    href: "/ai-ads",
+    label: "AI Ads",
+    trackLabel: "ai_ads"
+  },
+  {
     href: "/chatgpt-ads",
     label: "ChatGPT Ads",
     trackLabel: "chatgpt_ads"
