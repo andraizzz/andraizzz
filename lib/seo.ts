@@ -101,6 +101,7 @@ export function getAllSitePaths() {
     "/",
     "/ai-workflow-audit",
     "/chatgpt-ads",
+    "/chatgpt-ads/examples",
     "/insights",
     "/recommended-tools",
     "/cool-tools",

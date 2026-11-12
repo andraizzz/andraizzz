@@ -5,6 +5,7 @@ import { bookIntroCallUrl } from "@/lib/contact";
 import { buildPageMetadata, siteName, siteUrl } from "@/lib/seo";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/json-ld";
+import { MiniProductImage, ProductImage } from "@/components/chatgpt-ad-mockup";
 
 const chatGptAdsKeywords = [
   "ChatGPT Ads",
@@ -290,127 +291,6 @@ const faqItems = [
       "Every ChatGPT Ads help article from OpenAI is checked weekly. When something meaningful changes, this page is updated within days."
   }
 ];
-
-function ProductImage() {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className="h-full w-full"
-      aria-hidden="true"
-      preserveAspectRatio="xMidYMid slice"
-    >
-      <defs>
-        <linearGradient id="ad-bg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f1e3d8" />
-          <stop offset="100%" stopColor="#d7b4a3" />
-        </linearGradient>
-        <linearGradient id="ad-bottle" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#f6efe9" />
-          <stop offset="55%" stopColor="#efe0d3" />
-          <stop offset="100%" stopColor="#c99a84" />
-        </linearGradient>
-        <linearGradient id="ad-bottle-highlight" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="rgba(255,255,255,0.68)" />
-          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-        </linearGradient>
-      </defs>
-      <rect width="160" height="160" fill="url(#ad-bg)" />
-      <circle cx="40" cy="36" r="30" fill="rgba(255,255,255,0.32)" />
-      <circle cx="132" cy="128" r="46" fill="rgba(28,34,40,0.08)" />
-      <g transform="translate(58 30)">
-        <rect
-          x="0"
-          y="0"
-          width="44"
-          height="100"
-          rx="8"
-          fill="url(#ad-bottle)"
-          stroke="rgba(28,34,40,0.14)"
-          strokeWidth="1"
-        />
-        <rect x="14" y="-6" width="16" height="12" rx="2" fill="#8b6855" />
-        <rect
-          x="4"
-          y="40"
-          width="36"
-          height="26"
-          rx="3"
-          fill="rgba(255,255,255,0.84)"
-        />
-        <text
-          x="22"
-          y="52"
-          textAnchor="middle"
-          fontSize="5.4"
-          fontWeight="700"
-          letterSpacing="0.14em"
-          fill="#4a382e"
-        >
-          ANDRA
-        </text>
-        <text
-          x="22"
-          y="60"
-          textAnchor="middle"
-          fontSize="3.6"
-          letterSpacing="0.18em"
-          fill="#7a6355"
-        >
-          SERUM 01
-        </text>
-        <rect
-          x="5"
-          y="4"
-          width="7"
-          height="92"
-          rx="3"
-          fill="url(#ad-bottle-highlight)"
-          opacity="0.5"
-        />
-      </g>
-      <ellipse
-        cx="80"
-        cy="140"
-        rx="36"
-        ry="4"
-        fill="rgba(28,34,40,0.18)"
-      />
-    </svg>
-  );
-}
-
-function MiniProductImage({ variant }: { variant: number }) {
-  const palettes = [
-    { bg: "#eadbcf", accent: "#c08a74" },
-    { bg: "#f0e2d6", accent: "#b57a63" },
-    { bg: "#e4d1c2", accent: "#a57158" },
-    { bg: "#f2e5da", accent: "#c99a84" }
-  ];
-  const p = palettes[variant % palettes.length];
-  return (
-    <svg viewBox="0 0 40 40" className="h-full w-full" aria-hidden="true">
-      <rect width="40" height="40" fill={p.bg} />
-      <circle cx="10" cy="8" r="7" fill="rgba(255,255,255,0.35)" />
-      <rect
-        x="15"
-        y="8"
-        width="10"
-        height="24"
-        rx="2"
-        fill={p.accent}
-        opacity="0.9"
-      />
-      <rect
-        x="16.5"
-        y="18"
-        width="7"
-        height="6"
-        rx="1"
-        fill="rgba(255,255,255,0.85)"
-      />
-    </svg>
-  );
-}
 
 function ChatGptAdsHeroArtwork() {
   return (
