@@ -1,0 +1,78 @@
+name: ChatGPT Ads Doc Monitor
+
+on:
+  schedule:
+    # Mondays 08:00 UTC = 09:00 Lisbon (summer) / 08:00 Lisbon (winter)
+    - cron: "0 8 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: chatgpt-ads-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.47.2
+          npx playwright install --with-deps chromium
+
+      - name: Fetch, diff, and update snapshots
+        id: monitor
+        run: node .github/scripts/chatgpt-ads-monitor.mjs
+
+      - name: Read summary
+        id: summary
+        if: always()
+        run: |
+          {
+            echo "body<<EOF"
+            cat .chatgpt-ads-monitor-summary.md
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Clean up summary artifact before PR
+        if: always()
+        run: rm -f .chatgpt-ads-monitor-summary.md
+
+      - name: Open PR if snapshots changed
+        if: steps.monitor.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chatgpt-ads-monitor/${{ steps.monitor.outputs.date }}
+          base: main
+          commit-message: |
+            chore(chatgpt-ads): weekly doc check ${{ steps.monitor.outputs.date }}
+
+            ${{ steps.monitor.outputs.changed_count }} changed, ${{ steps.monitor.outputs.seeded_count }} newly seeded, ${{ steps.monitor.outputs.failed_count }} failed.
+          title: "docs(chatgpt-ads): OpenAI docs change ${{ steps.monitor.outputs.date }}"
+          body: |
+            Automated weekly snapshot refresh of OpenAI's ChatGPT Ads help collection.
+
+            ${{ steps.summary.outputs.body }}
+
+            Review the snapshot diffs and, if a change is substantive, update [`app/chatgpt-ads/page.tsx`](app/chatgpt-ads/page.tsx) and the `lastVerified` / schema `dateModified` constants.
+          delete-branch: true
+          sign-commits: false
+
+      - name: Report when nothing changed
+        if: steps.monitor.outputs.has_changes != 'true'
+        run: |
+          echo "No substantive changes this week. last-verified.txt bumped to ${{ steps.monitor.outputs.date }}, but not pushed because nothing else changed."

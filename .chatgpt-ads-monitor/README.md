@@ -1,10 +1,13 @@
 # ChatGPT Ads doc monitor
 
 Snapshots of the OpenAI ChatGPT Ads help articles that back
-`/chatgpt-ads`. A weekly scheduled Claude routine re-fetches every URL
-listed in `urls.txt`, diffs against the corresponding snapshot in
-`snapshots/`, and opens a PR whenever OpenAI publishes a meaningful
-change.
+`/chatgpt-ads`. The **ChatGPT Ads Doc Monitor** GitHub Action
+(`.github/workflows/chatgpt-ads-monitor.yml`) runs every Monday at
+08:00 UTC, uses headless Chromium to render each URL in `urls.txt`,
+updates `snapshots/<slug>.txt`, and opens a PR whenever anything
+changed. Runs are visible under the Actions tab of
+`github.com/andraizzz/andraizzz`. Trigger it manually from the
+Actions tab (**Run workflow**) any time you want an immediate check.
 
 ## Files
 
