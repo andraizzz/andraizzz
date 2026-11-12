@@ -413,47 +413,52 @@ function ChatGptAdsHeroArtwork() {
           </div>
         </div>
 
-        <div className="mt-5 overflow-hidden rounded-[1.1rem] border border-obsidian/10 bg-white shadow-[0_18px_42px_rgba(17,17,17,0.06)]">
-          <div className="flex items-center justify-between px-3.5 pt-3">
-            <div className="flex items-center gap-2">
-              <span className="text-[0.56rem] font-bold uppercase tracking-[0.18em] text-stone">
-                Sponsored
-              </span>
-              <span className="text-[0.56rem] uppercase tracking-[0.14em] text-stone/60">
-                · andra.co
-              </span>
-            </div>
-            <span className="rounded-full bg-shell/70 px-2 py-0.5 text-[0.5rem] font-semibold uppercase tracking-[0.14em] text-stone/70">
-              Ad
-            </span>
-          </div>
-          <div className="mt-2 flex gap-3 px-3.5">
-            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[0.7rem] border border-obsidian/8 sm:h-28 sm:w-28">
+        <p className="mt-5 text-[0.78rem] font-medium text-obsidian/80">
+          This might also interest you.
+        </p>
+
+        <div className="mt-2 overflow-hidden rounded-[1.1rem] border border-obsidian/10 bg-white shadow-[0_18px_42px_rgba(17,17,17,0.06)]">
+          <div className="flex items-stretch gap-3 p-3">
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[0.6rem] border border-obsidian/8 sm:h-24 sm:w-24">
               <ProductImage />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="font-serif text-[1rem] leading-[1.2] text-obsidian sm:text-[1.1rem]">
-                Barrier-repair serum for sensitive skin, from $42.
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-obsidian/20 bg-porcelain text-[0.5rem] text-stone">
+                    ⨀
+                  </span>
+                  <span className="truncate text-[0.68rem] font-medium text-obsidian">
+                    andra.co
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="rounded-md bg-shell/70 px-1.5 py-0.5 text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-stone/80">
+                    Ad
+                  </span>
+                  <span className="text-[0.7rem] text-stone/60">⋯</span>
+                </div>
+              </div>
+              <p className="mt-1 font-serif text-[0.98rem] leading-[1.2] text-obsidian sm:text-[1.05rem]">
+                Barrier-repair serum for sensitive skin
               </p>
-              <p className="mt-1 text-[0.72rem] leading-5 text-stone">
-                Ceramides + squalane. Fragrance-free. 30-day returns.
+              <p className="mt-0.5 text-[0.72rem] leading-5 text-stone">
+                Ceramides + squalane, from $42
               </p>
             </div>
           </div>
-          <div className="mt-3 flex items-center justify-between border-t border-obsidian/6 bg-porcelain/70 px-3.5 py-2">
-            <span className="text-[0.62rem] uppercase tracking-[0.14em] text-stone/70">
-              andra.co/serum-01
-            </span>
-            <span className="rounded-full bg-obsidian px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-white">
-              Learn more
-            </span>
+          <div className="border-t border-obsidian/6 bg-porcelain/60 px-3 py-2">
+            <p className="text-[0.58rem] leading-4 text-stone/70">
+              Ads do not influence the answers you get from ChatGPT. Your chats stay
+              private. <span className="font-medium text-obsidian/80">Learn about ads ›</span>
+            </p>
           </div>
         </div>
 
         <div className="mt-4 overflow-hidden rounded-[1.1rem] border border-obsidian/8 bg-white/88 px-3.5 py-3 shadow-[0_14px_36px_rgba(17,17,17,0.05)]">
           <div className="flex items-center justify-between">
             <span className="text-[0.56rem] font-bold uppercase tracking-[0.18em] text-stone">
-              Sponsored · multi-image
+              Multi-image ad
             </span>
             <span className="text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-blush">
               Open beta
@@ -470,7 +475,7 @@ function ChatGptAdsHeroArtwork() {
             ))}
           </div>
           <p className="mt-2 text-[0.62rem] leading-4 text-stone/80">
-            4–6 square frames, one headline, one destination, one Learn more CTA.
+            4–6 square frames. One headline, one destination, one Learn more CTA.
           </p>
         </div>
       </div>
