@@ -77,7 +77,15 @@ jobs:
           BRANCH="chatgpt-ads-monitor/${DATE}"
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$BRANCH"
+
+          # Stash our snapshot updates, rebase onto latest main, then reapply.
+          # This keeps the branch tip's workflow file identical to main so
+          # GitHub's GITHUB_TOKEN doesn't reject the push for "modifying" a
+          # workflow file.
+          git stash push -u -m "monitor-${DATE}" -- .chatgpt-ads-monitor/
+          git fetch origin main
+          git checkout -B "$BRANCH" origin/main
+          git stash pop
           git add .chatgpt-ads-monitor/
           git commit -m "chore(chatgpt-ads): weekly doc check ${DATE}
 

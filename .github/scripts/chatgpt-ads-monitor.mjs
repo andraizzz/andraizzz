@@ -39,14 +39,26 @@ for (const url of urls) {
   }
   const page = await context.newPage();
   try {
-    await page.goto(url, { waitUntil: "networkidle", timeout: 45_000 });
-    await page.waitForSelector("article", { timeout: 15_000 });
+    // Intercom's SPA keeps long-polling, so `networkidle` rarely fires.
+    // domcontentloaded + explicit article wait is faster and more reliable.
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45_000 });
+    try {
+      await page.waitForSelector("article", { timeout: 45_000 });
+    } catch {
+      // Fallback: give the SPA a bit more time and continue with whatever
+      // text ends up in the DOM. Better a slightly imperfect snapshot than
+      // nothing.
+      await page.waitForTimeout(5_000);
+    }
     const text = await page.evaluate(() => {
-      const a = document.querySelector("article");
-      if (!a) return "";
+      const el =
+        document.querySelector("article") ||
+        document.querySelector("main") ||
+        document.body;
+      if (!el) return "";
       // Drop the dynamic "Updated: X ago" line — it changes constantly
       // and isn't substantive.
-      return a.innerText
+      return el.innerText
         .split("\n")
         .filter((line) => !/^Updated:/i.test(line.trim()))
         .join("\n")
