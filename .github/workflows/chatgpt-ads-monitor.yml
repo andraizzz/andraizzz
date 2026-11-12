@@ -8,7 +8,7 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 concurrency:
   group: chatgpt-ads-monitor
@@ -52,27 +52,48 @@ jobs:
         if: always()
         run: rm -f .chatgpt-ads-monitor-summary.md
 
-      - name: Open PR if snapshots changed
+      - name: Push branch and open Issue if snapshots changed
         if: steps.monitor.outputs.has_changes == 'true'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: chatgpt-ads-monitor/${{ steps.monitor.outputs.date }}
-          base: main
-          commit-message: |
-            chore(chatgpt-ads): weekly doc check ${{ steps.monitor.outputs.date }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.monitor.outputs.date }}
+          CHANGED: ${{ steps.monitor.outputs.changed_count }}
+          SEEDED: ${{ steps.monitor.outputs.seeded_count }}
+          FAILED: ${{ steps.monitor.outputs.failed_count }}
+          SUMMARY_BODY: ${{ steps.summary.outputs.body }}
+        run: |
+          set -euo pipefail
+          BRANCH="chatgpt-ads-monitor/${DATE}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add .chatgpt-ads-monitor/
+          git commit -m "chore(chatgpt-ads): weekly doc check ${DATE}
 
-            ${{ steps.monitor.outputs.changed_count }} changed, ${{ steps.monitor.outputs.seeded_count }} newly seeded, ${{ steps.monitor.outputs.failed_count }} failed.
-          title: "docs(chatgpt-ads): OpenAI docs change ${{ steps.monitor.outputs.date }}"
-          body: |
-            Automated weekly snapshot refresh of OpenAI's ChatGPT Ads help collection.
+          ${CHANGED} changed, ${SEEDED} newly seeded, ${FAILED} failed."
+          git push -f origin "$BRANCH"
 
-            ${{ steps.summary.outputs.body }}
+          COMPARE_URL="https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH}"
+          ISSUE_BODY=$(cat <<ISSUE
+          Automated weekly snapshot refresh of OpenAI's ChatGPT Ads help collection.
 
-            Review the snapshot diffs and, if a change is substantive, update [`app/chatgpt-ads/page.tsx`](app/chatgpt-ads/page.tsx) and the `lastVerified` / schema `dateModified` constants.
-          delete-branch: true
-          sign-commits: false
+          **Diff:** [main...${BRANCH}](${COMPARE_URL})
+          **Workflow run:** [#${GITHUB_RUN_NUMBER}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})
+
+          ${SUMMARY_BODY}
+
+          When a change is substantive (new creative format, new availability, new policy, new bidding/measurement capability), update [\`app/chatgpt-ads/page.tsx\`](app/chatgpt-ads/page.tsx) and bump the \`lastVerified\` / schema \`dateModified\` constants. Then close this issue.
+          ISSUE
+          )
+          gh issue create \
+            --title "ChatGPT Ads docs changed on ${DATE}" \
+            --label "chatgpt-ads-monitor" \
+            --body "$ISSUE_BODY" || \
+          gh issue create \
+            --title "ChatGPT Ads docs changed on ${DATE}" \
+            --body "$ISSUE_BODY"
 
       - name: Report when nothing changed
         if: steps.monitor.outputs.has_changes != 'true'
         run: |
-          echo "No substantive changes this week. last-verified.txt bumped to ${{ steps.monitor.outputs.date }}, but not pushed because nothing else changed."
+          echo "No substantive changes this week. Snapshots are current; nothing to push."
