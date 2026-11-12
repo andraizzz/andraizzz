@@ -1480,6 +1480,202 @@ export const insightPosts: InsightPost[] = [
         ]
       }
     ]
+  },
+  {
+    title: "Does ChatGPT Have Ads? Yes — Here's What They Are, Where They Appear, and Who Can Run Them",
+    slug: "does-chatgpt-have-ads",
+    metaDescription:
+      "Yes, ChatGPT has ads. A direct answer on what ChatGPT Ads are, where they appear inside ChatGPT, who can run them, what formats are supported, and what the beta actually looks like today.",
+    eyebrow: "ChatGPT Ads",
+    dateLabel: "November 2026",
+    readTime: "4 min read",
+    imageSrc: "/insights/best-ai-tools-for-consultants-growth-teams.jpg",
+    imageAlt: "Illustration representing advertising inside ChatGPT",
+    summary:
+      "A direct answer to the question most people are asking right now: does ChatGPT have ads, what do they look like, and who can actually run them today.",
+    featuredStat: "Yes",
+    featuredLabel: "ChatGPT Ads is live in beta",
+    visual: {
+      kicker: "Status Check",
+      headline: ["Is it live?", "Who can run it?", "What does it look like?"],
+      summary:
+        "The three questions people searching 'does ChatGPT have ads' are actually asking — answered in order.",
+      footerLabel: "ChatGPT Ads, in plain English",
+      stages: [
+        {
+          number: "01",
+          title: "Is it live?",
+          subtitle: "Public beta",
+          detail: "Yes. OpenAI Ads Manager Beta is open to eligible advertisers."
+        },
+        {
+          number: "02",
+          title: "Who can run it?",
+          subtitle: "Businesses only",
+          detail: "Eligible business advertisers in supported countries."
+        },
+        {
+          number: "03",
+          title: "What does it look like?",
+          subtitle: "A sponsored card",
+          detail: "A small 1:1 or multi-image card labelled 'Sponsored'."
+        }
+      ]
+    },
+    sections: [
+      {
+        title: "The Short Answer",
+        id: "the-short-answer",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "Yes. ChatGPT has ads.",
+              "They run through OpenAI Ads Manager Beta — a public beta OpenAI opened to eligible business advertisers in supported countries. The ads appear inside ChatGPT as a small sponsored card beneath an assistant response, usually under a short 'This might also interest you' lead-in.",
+              "OpenAI states directly that ads do not influence the answers users get from ChatGPT. The ad is a separate surface, not a steer on the model's output."
+            ]
+          }
+        ]
+      },
+      {
+        title: "What a ChatGPT Ad Actually Looks Like",
+        id: "what-a-chatgpt-ad-looks-like",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "A compact card with a few consistent elements:"
+            ]
+          },
+          {
+            type: "list",
+            items: [
+              "A 1:1 square image on the left (single-image ad) or 4–6 square frames (multi-image, open beta since October 26, 2026)",
+              "An advertiser name and a small 'Ad' pill at the top",
+              "A one-line headline and a short supporting line of copy",
+              "The destination URL",
+              "A 'Learn more' CTA (currently the only CTA for multi-image ads)",
+              "A footer: 'Ads do not influence the answers you get from ChatGPT. Your chats stay private.'"
+            ]
+          },
+          {
+            type: "paragraph",
+            paragraphs: [
+              "The whole card renders small. Design assuming the image is thumb-sized and the text has to be legible at a glance."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Who Can Run ChatGPT Ads",
+        id: "who-can-run-chatgpt-ads",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "Eligible business advertisers in supported countries. The current access rules:"
+            ]
+          },
+          {
+            type: "list",
+            items: [
+              "Business entity only — no individual advertisers, no agencies on behalf of a client (agencies can be invited after the client sets up the account)",
+              "Country-gated — availability is based on the advertiser business country, not the ChatGPT login country",
+              "Country, currency, and time zone lock at account creation and cannot be changed later",
+              "Verification is manual through Persona plus a policy review; there is no expedited path"
+            ]
+          }
+        ]
+      },
+      {
+        title: "What's Banned and What's Restricted",
+        id: "whats-banned-and-restricted",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "Beta launched with a deliberately narrow set of allowed categories: household goods, local services, travel, digital products, and education. Everything outside that is either restricted (case-by-case approval, US only) or banned."
+            ]
+          },
+          {
+            type: "list",
+            intro: "Case-by-case US only:",
+            items: [
+              "Healthcare and hospitals",
+              "Financial services (requires proof of licensure)",
+              "Legal services (US only, licensed)"
+            ]
+          },
+          {
+            type: "list",
+            intro: "Hard-banned:",
+            items: [
+              "Adult content, dating apps, sexual services",
+              "Alcohol, tobacco, nicotine",
+              "Gambling",
+              "Political content",
+              "Recreational drugs (cannabis, psychedelics)",
+              "Specific job and housing listings"
+            ]
+          }
+        ]
+      },
+      {
+        title: "How ChatGPT Ads Compares to Google or Meta Ads Today",
+        id: "how-chatgpt-ads-compares",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "Different jobs. Google and Meta carry mature direct-response work with deep attribution and dozens of creative formats. ChatGPT Ads right now is an intent-driven awareness channel with image-only creative, early-stage measurement, and no benchmark CPCs. The right answer for most businesses is to keep running Google or Meta as the direct-response engine and layer ChatGPT Ads as a controlled test on top — not a replacement."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Frequently Asked Questions",
+        id: "frequently-asked-questions",
+        blocks: [
+          {
+            type: "faq",
+            items: [
+              {
+                question: "Does ChatGPT have ads?",
+                answer:
+                  "Yes. ChatGPT Ads launched as a public beta through OpenAI Ads Manager. Ads appear inside ChatGPT as a small sponsored card beneath an assistant response."
+              },
+              {
+                question: "Are the ads influencing the answers ChatGPT gives?",
+                answer:
+                  "No. OpenAI's own disclosure states that ads do not influence the answers users get from ChatGPT. The ad is a separate surface shown alongside the response, not a factor in the model's output."
+              },
+              {
+                question: "Can I block ads inside ChatGPT?",
+                answer:
+                  "There is no advertised user-side opt-out today. Current ads are limited in volume, clearly labelled 'Sponsored' and 'Ad', and only shown in a small card format beneath responses."
+              },
+              {
+                question: "Can my business start running ChatGPT Ads right now?",
+                answer:
+                  "If you are a registered business in a supported country and your category is allowed (or restricted but approvable), yes. Expect a manual verification and policy review step that is not expedited."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: "Related Reading",
+        id: "related-reading",
+        blocks: [
+          {
+            type: "paragraph",
+            paragraphs: [
+              "For the full breakdown — cheat sheet, pros, cons, creative best practices, and setup walkthrough — see the [ChatGPT Ads cheat sheet](/chatgpt-ads). It is updated weekly against OpenAI's live documentation."
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
 
