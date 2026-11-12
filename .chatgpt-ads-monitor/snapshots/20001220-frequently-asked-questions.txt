@@ -1,0 +1,30 @@
+Frequently asked questions
+
+Learn more about how ChatGPT Ads works today and what to expect as the platform evolves.
+
+This FAQ covers common questions about ChatGPT Ads Beta, including platform stage, performance, delivery, budgets, tools, and integrations. For tactical issues, review Troubleshooting Common Issues.
+
+What stage are ChatGPT Ads at today?
+Beta, early-scaling. Focused pilot Feb-April; now expanding via self-serve onboarding in Ads Manager Beta. Current scope: core campaign creation, billing, access management, reporting, conversion measurement, CPC bidding. Capabilities expanding.
+
+What should I expect to change during the beta?
+Delivery systems, inventory, ad formats, buying/managing/measuring/optimizing — all evolving. Delivery and spend may fluctuate. For conversion-optimized campaigns, goal is improved conversion outcomes, not spending full budget.
+
+What countries are Ads Self-Serve available in?
+See Ads Manager availability. Sign up at ads.openai.com. If unavailable in your country, you can create an account and be notified when it becomes available. Creating an account does not grant pre-launch access.
+
+What does good performance look like on ChatGPT Ads?
+No benchmarks yet. Results depend on objective, creative, landing page experience, relevance, setup.
+
+How can I increase my delivery?
+Review setup against best-practice guides: Create campaigns / Create ad groups / Create ads.
+
+What should I do if my ads are not delivering?
+Check: review status (Serving vs Not serving), account verification, campaign budget limit reached, campaign end date, billing issues.
+
+How should I think about budget during the beta?
+Daily budget sets average per day. Published limits are 2x daily and 7x weekly (Sunday-Saturday). Budget changes subject to proration. Campaign-total budget limits spend over full duration.
+
+For postpaid invoice billing accounts: daily account spending limit in Ads Manager > Billing > Account limits. Shared across all campaigns, resets at midnight in account time zone. Does not pace or allocate budget between campaigns. Daily and date-range account limits cannot overlap.
+
+Support: ads-support@openai.com

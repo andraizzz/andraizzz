@@ -19,10 +19,10 @@ const chatGptAdsKeywords = [
   "advertising in AI chat"
 ];
 
-const lastVerified = "September 18, 2026";
+const lastVerified = "November 12, 2026";
 
 const topline =
-  "ChatGPT Ads is OpenAI's advertising platform for placing single-image ads inside ChatGPT. It's in public beta, open to eligible businesses only in supported countries, with static 1:1 creative, Maximize Results bidding, conversion-optimized campaigns, custom audiences, and integrations with measurement partners. It's a first-mover awareness play in a new intent surface — worth a controlled test, not yet a channel to bet the business on.";
+  "ChatGPT Ads is OpenAI's advertising platform for placing ads inside ChatGPT. It's in public beta, open to eligible businesses in supported countries, with 1:1 single-image ads, a multi-image format (open beta since October 26, 2026), Reach, Clicks, and Conversions objectives, Maximize Results and CPC bidding, custom audiences, and measurement-partner integrations. It's a first-mover intent surface — worth a controlled test, with creative and policy discipline being the two things that actually decide whether you ship.";
 
 const cheatSheet = [
   {
@@ -43,15 +43,19 @@ const cheatSheet = [
   },
   {
     label: "Ad formats",
-    value: "Static 1:1 image ads. Sponsored Agents also supported. No video, no carousels."
+    value: "Single-image 1:1 ads, multi-image ads (4–6 × 1:1, open beta since October 26, 2026), and Sponsored Agents. No video."
+  },
+  {
+    label: "Campaign objectives",
+    value: "Reach, Clicks, and Conversions on standard campaigns. Multi-image is supported across all three."
   },
   {
     label: "Campaign types",
-    value: "Guided single campaigns and CSV bulk upload. Product-feed campaigns supported through a separate flow, not CSV."
+    value: "Guided single campaigns and CSV bulk upload. Product-feed campaigns are supported through a separate flow, not CSV."
   },
   {
     label: "Bidding",
-    value: "Maximize Results strategy. Daily budgets with automatic pacing."
+    value: "Maximize Results and CPC. Daily budgets pace up to 2× daily and 7× weekly (Sun–Sat). Campaign-total budgets also supported."
   },
   {
     label: "Conversions",
@@ -63,7 +67,7 @@ const cheatSheet = [
   },
   {
     label: "Measurement",
-    value: "Impressions, clicks, CTR, spend + measurement-partner and mobile-MMP integrations."
+    value: "Impressions, clicks, CTR refresh ~every 15 minutes. Spend can lag 7–8 hours. Measurement-partner and mobile-MMP integrations supported."
   },
   {
     label: "Access model",
@@ -71,7 +75,11 @@ const cheatSheet = [
   },
   {
     label: "Billing",
-    value: "Credit card, per-advertiser billing profile. Campaigns don't deliver until billing is set."
+    value: "Credit card or postpaid invoice (account-level daily spend limit available). Campaigns don't deliver until billing is set."
+  },
+  {
+    label: "Policy guardrails",
+    value: "Early-phase categories only: household goods, local services, travel, digital products & education. Healthcare, finance, and legal are case-by-case US-only. Adult, alcohol/tobacco, gambling, political, drugs, housing/job listings are banned."
   }
 ];
 
@@ -79,15 +87,18 @@ const proPoints = [
   "You are in front of intent, not scroll. ChatGPT users are asking questions and comparing options, which is very different attention than a feed.",
   "First-mover positioning inside a new ad ecosystem. Costs and competition are still forming.",
   "Real infrastructure: campaigns, ad groups, bulk upload, conversion tracking, MMP integrations, roles, API keys.",
-  "Fast performance signal. Impressions, clicks, and CTR appear within minutes."
+  "Multi-image ads (4–6 × 1:1) are now in open beta, so you can finally tell a short visual story instead of carrying everything in one frame.",
+  "Fast performance signal. Impressions, clicks, and CTR refresh roughly every 15 minutes."
 ];
 
 const conPoints = [
   "It's a beta. Features, availability, and behavior will change without warning.",
-  "Creative is limited to a static 1:1 image. No video, no carousels, no shoppable multi-frame formats yet.",
+  "Creative is still image-only. No video.",
+  "Spend reporting can lag 7–8 hours, so pacing decisions need to wait for data to settle.",
   "Country, currency, and time zone lock at account creation. No self-serve edits later.",
   "Individual advertisers aren't supported. Agencies can only join after the client creates the account.",
   "Account review is manual (Persona + policy). No expedited path.",
+  "Entire categories are closed or restricted: healthcare, financial, legal (US case-by-case), plus hard bans on adult, alcohol/tobacco, gambling, political, drugs, and specific housing/job listings.",
   "Product-feed campaigns can't be created via CSV bulk upload today."
 ];
 
@@ -124,9 +135,85 @@ const setupSteps = [
   }
 ];
 
+const creativeSpecs = [
+  {
+    label: "Single-image ad",
+    value: "One square image at 1:1 aspect ratio, with a headline, description, and single destination URL."
+  },
+  {
+    label: "Multi-image ad (open beta)",
+    value: "4–6 square images, each 1:1. All frames share one destination URL and one CTA — currently 'Learn more' only."
+  },
+  {
+    label: "What ChatGPT shows",
+    value: "A small square creative inside a chat response. Users are reading quickly on mobile and desktop. Assume the ad is thumb-sized when you design."
+  },
+  {
+    label: "Text in the image",
+    value: "Keep it minimal. The frame is small and typography shrinks fast. Carry the pitch in the headline and description, not inside the image."
+  },
+  {
+    label: "What works visually",
+    value: "Clear product shot. Real object. High contrast. Clean background. Visual that matches the headline word-for-word."
+  },
+  {
+    label: "Headline & copy",
+    value: "Benefit-focused and specific (what it is, who it helps, when it helps). Don't repeat the headline inside the description — use it to add detail. Build many title and copy variations for the system to test."
+  },
+  {
+    label: "Landing page",
+    value: "Link to the most relevant page, not the homepage. Don't block OAI-AdsBot or OAI-SearchBot. Add UTMs directly to the destination URL."
+  }
+];
+
+const rejectionRisks = [
+  {
+    title: "Healthcare & hospitals",
+    body: "Hospital and clinical content is restricted US-only and reviewed case-by-case. Outside the US it's prohibited. Expect rejection on first pass — budget for back-and-forth."
+  },
+  {
+    title: "Health claims & wellness",
+    body: "Any claim about preventing, diagnosing, or treating a condition is restricted. Diet pills, detox programs, and supplements with unsupported claims are banned outright."
+  },
+  {
+    title: "Financial & legal services",
+    body: "Restricted to approved US advertisers only. You may be asked for proof of licensure. Credit repair, debt settlement, and alternative investments like bullion are banned."
+  },
+  {
+    title: "Alcohol, tobacco, nicotine",
+    body: "Banned. Even incidental references are reviewed — if alcohol is anywhere near the focus of the ad, don't ship it."
+  },
+  {
+    title: "Gambling",
+    body: "Banned, including online sports betting, casinos, lotteries, and real-money card games. A hotel at a casino resort may pass if gambling isn't the focus."
+  },
+  {
+    title: "Political & contested social issues",
+    body: "Banned. Elections, candidates, policy debates, and framing around abortion, immigration, race, religion, or gender identity are all out."
+  },
+  {
+    title: "Recreational drugs",
+    body: "Banned, including cannabis and THC products. Non-intoxicating hemp like CBD topicals or hemp clothing may be allowed."
+  },
+  {
+    title: "Adult content",
+    body: "Banned, including dating apps, sexual services, adult companion apps, and sexualized imagery. Standard fashion lingerie may pass if presented as retail."
+  },
+  {
+    title: "Interface imitation",
+    body: "The ad must look clearly like an ad. Anything that mimics the ChatGPT product UI, voice, or layout to look like a system response will be removed."
+  },
+  {
+    title: "Misleading claims",
+    body: "Unsubstantiated outcomes, fake endorsements, exaggerated results, or inconsistency between ad, image, and landing page all get rejected. Review checks the full chain end-to-end."
+  }
+];
+
 const strategicTake = [
   "Treat ChatGPT Ads as a positioning bet inside a new intent surface, not yet as a proven direct-response channel.",
-  "Design creative for the constraint: one square image, one clear promise, real product, zero clutter.",
+  "Design for the frame: square, thumb-sized, minimal text in the image. The headline and description carry the pitch.",
+  "If your business lives in a restricted category (healthcare, hospitals, financial, legal) or a banned one (adult, alcohol, gambling, political, drugs), check policy fit before you build anything.",
+  "Use the multi-image beta to split what you'd normally crush into one frame — product shot, context, detail.",
   "Run in parallel with your existing paid channel so you have a stable baseline to compare CTR, pacing, and downstream signal.",
   "Lock the account structure correctly on day one. Country, currency, and time zone can't be changed later."
 ];
@@ -145,12 +232,22 @@ const faqItems = [
   {
     question: "What creative formats are supported right now?",
     answer:
-      "Static 1:1 image creative and Sponsored Agents. No video, carousels, or multi-frame formats yet."
+      "Single-image 1:1 ads, multi-image ads (4–6 × 1:1, open beta since October 26, 2026), and Sponsored Agents. No video."
+  },
+  {
+    question: "How much text should the image carry?",
+    answer:
+      "As little as possible. The ad renders small inside a chat response, and text shrinks fast. Carry the pitch in the headline and description — use the image for a clean product shot or single visual that matches the headline."
+  },
+  {
+    question: "Why would my ad get rejected?",
+    answer:
+      "Most common: a restricted category (healthcare, hospitals, financial, legal — US case-by-case only), a hard-banned category (adult, alcohol, tobacco, gambling, political, drugs, specific housing/job listings), an unsubstantiated health or outcome claim, or a mismatch between the ad, image, and landing page."
   },
   {
     question: "How fast do metrics appear?",
     answer:
-      "Impressions, clicks, and CTR appear within minutes. Spend can update later, so a temporary zero-spend value doesn't necessarily mean no charges have accrued."
+      "Impressions, clicks, and CTR refresh approximately every 15 minutes. Spend can lag 7–8 hours, so a temporary zero-spend value doesn't mean no charges have accrued."
   },
   {
     question: "Should a brand be running ChatGPT Ads today?",
@@ -242,7 +339,7 @@ export default function ChatGptAdsPage() {
             path: "/chatgpt-ads"
           }),
           datePublished: "2026-09-15",
-          dateModified: "2026-09-18",
+          dateModified: "2026-11-12",
           about: {
             "@type": "Thing",
             name: "ChatGPT Ads",
@@ -457,6 +554,97 @@ export default function ChatGptAdsPage() {
             </ul>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-editorial text-stone sm:text-sm">
+              Creative Best Practices
+            </p>
+            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-obsidian sm:text-5xl">
+              Dimensions, design, and what gets rejected.
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-7 text-stone sm:text-base">
+            The ad is small, the review is strict, and the categories you can ship are narrower than you think. Design for both constraints at once.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+          <div>
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone">
+              Design the image
+            </p>
+            <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-white/55 bg-white/50 shadow-[0_18px_50px_rgba(17,17,17,0.04)] backdrop-blur-sm">
+              <dl className="divide-y divide-obsidian/8">
+                {creativeSpecs.map((item) => (
+                  <div
+                    key={item.label}
+                    className="grid gap-2 px-5 py-4 sm:grid-cols-[0.34fr_0.66fr] sm:gap-6 sm:px-6"
+                  >
+                    <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone">
+                      {item.label}
+                    </dt>
+                    <dd className="text-sm leading-7 text-obsidian sm:text-[1rem]">
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-stone">
+              What gets ads rejected
+            </p>
+            <ul className="mt-4 grid gap-3">
+              {rejectionRisks.map((risk) => (
+                <li
+                  key={risk.title}
+                  className="rounded-[1.2rem] border border-obsidian/8 bg-white/58 px-5 py-4"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-obsidian/14 bg-white text-[0.72rem] font-semibold leading-none text-stone/78">
+                      !
+                    </span>
+                    <div>
+                      <p className="font-serif text-[1.1rem] leading-snug text-obsidian">
+                        {risk.title}
+                      </p>
+                      <p className="mt-1.5 text-sm leading-7 text-stone sm:text-[0.98rem]">
+                        {risk.body}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-6 text-sm leading-7 text-stone sm:text-base">
+          Source:{" "}
+          <a
+            href="https://openai.com/policies/ad-policies/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-stone/40 underline-offset-4 hover:decoration-obsidian hover:text-obsidian"
+          >
+            OpenAI Ad policies
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt-ads"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-stone/40 underline-offset-4 hover:decoration-obsidian hover:text-obsidian"
+          >
+            Creating ads for ChatGPT Ads
+          </a>
+          . Categories evolve — this list is checked weekly.
+        </p>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12 lg:py-16">

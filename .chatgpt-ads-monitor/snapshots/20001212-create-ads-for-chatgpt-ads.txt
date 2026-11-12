@@ -1,0 +1,29 @@
+Creating ads for ChatGPT Ads
+
+Starting Monday, October 26, 2026, we're introducing the multi-image ad format in Ads Manager as an open beta.
+
+Overview
+
+Creating ads for ChatGPT requires a different approach than keyword-based platforms. Instead of matching ads to simple search queries, ChatGPT considers multiple relevance signals, including conversational intent and, when ads personalization is enabled, select signals from a user's broader ChatGPT experience, helping advertisers reach people with more relevant messages at the right moment.
+
+In ChatGPT, ads with clear, specific, and benefit-focused copy are more likely to be relevant to users. Benefit-focused copy explains the practical value of what you offer, who it is for, and when it may be helpful, rather than relying on a catchy line or generic call to action.
+
+When creating an ad in Ads Manager, choose Single image or Multiple images under Ad format. Both formats are available for standard campaigns with Reach, Clicks, or Conversions objectives and follow the same headline and description requirements. The multi-image format is currently available as an open beta.
+
+Overall guidance
+- Build for coverage, not just one message: high volume and diverse ads per offering help identify relevance opportunities.
+- Keep creatives distinct from each other.
+- Focus on usefulness.
+- Represent your offering accurately.
+- All ads must align with Ads Policies; rejected if misleading, inconsistent, or disallowed.
+
+Ad title best practices: spell out value, keep concise, make informative.
+Ad copy best practices: complement the title, expand on value, keep easy to understand.
+Landing page best practices: one destination URL per ad (multi-image uses "Learn more" CTA only; all images link to the same URL); link to most relevant destination; UTMs can be added to destination URL; landing pages must not block OpenAI user agents (OAI-AdsBot and OAI-SearchBot).
+Image best practices:
+- Single-image: one image. Multi-image: 4-6 square images, 1:1 aspect ratio each.
+- Keep images simple and relevant.
+- Avoid abstract or cluttered visuals.
+- Align images with the ad message.
+
+Suggested ad drafts: existing website metadata can prefill an ad draft with image, title, description to review, edit, assign. Does not generate new copy or imagery with AI.
