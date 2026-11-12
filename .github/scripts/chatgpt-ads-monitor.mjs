@@ -26,7 +26,8 @@ const browser = await chromium.launch();
 const context = await browser.newContext({
   userAgent:
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36",
-  locale: "en-US"
+  locale: "en-US",
+  viewport: { width: 1366, height: 900 }
 });
 
 const results = { ok: [], failed: [], seeded: [], changed: [] };
@@ -39,16 +40,22 @@ for (const url of urls) {
   }
   const page = await context.newPage();
   try {
-    // Intercom's SPA keeps long-polling, so `networkidle` rarely fires.
-    // domcontentloaded + explicit article wait is faster and more reliable.
+    // Intercom's SPA keeps long-polling, so `networkidle` rarely fires. Use
+    // domcontentloaded + wait for the article to actually contain content —
+    // checking for element presence alone fires before the SPA hydrates.
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45_000 });
     try {
-      await page.waitForSelector("article", { timeout: 45_000 });
+      await page.waitForFunction(
+        () => {
+          const el = document.querySelector("article");
+          return el ? (el.textContent ?? "").trim().length > 300 : false;
+        },
+        null,
+        { timeout: 60_000, polling: 500 }
+      );
     } catch {
-      // Fallback: give the SPA a bit more time and continue with whatever
-      // text ends up in the DOM. Better a slightly imperfect snapshot than
-      // nothing.
-      await page.waitForTimeout(5_000);
+      // Fall through — we'll grab whatever ended up in the DOM and let the
+      // text-length guard below decide whether it counts as a fetch.
     }
     const text = await page.evaluate(() => {
       const el =
