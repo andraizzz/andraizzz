@@ -220,9 +220,39 @@ const strategicTake = [
 
 const faqItems = [
   {
+    question: "Does ChatGPT have ads?",
+    answer:
+      "Yes. ChatGPT Ads launched as a public beta through OpenAI Ads Manager. Ads appear inside ChatGPT responses — a small single-image or multi-image sponsored card labelled 'Sponsored' with an 'Ad' badge, usually under a short 'This might also interest you' lead-in. OpenAI states explicitly that ads do not influence the answers users get from ChatGPT."
+  },
+  {
+    question: "What do ChatGPT ads look like?",
+    answer:
+      "A compact sponsored card inside a chat response. A single 1:1 image on the left, advertiser name and 'Ad' pill at the top, a one-line headline and short supporting copy, destination URL, and a 'Learn more' CTA. Multi-image ads (open beta since October 26, 2026) show 4–6 square frames with one shared headline and destination. All ads render small — design for the thumbnail scale."
+  },
+  {
     question: "What is ChatGPT Ads?",
     answer:
       "OpenAI's advertising platform inside ChatGPT, managed through Ads Manager Beta. Eligible businesses create campaigns, ad groups, and ads, and measure performance in one place."
+  },
+  {
+    question: "How much do ChatGPT ads cost?",
+    answer:
+      "OpenAI doesn't publish a fixed CPC. Pricing is auction-based through Maximize Results and CPC bid strategies, with a daily budget that can pace up to 2× in a single day and 7× in a Sunday–Saturday week. There are no benchmark CPCs yet because the beta is early. Start with a daily budget you can sustain for 2–3 weeks of learning and expect delivery and spend to fluctuate while OpenAI's delivery systems mature."
+  },
+  {
+    question: "ChatGPT Ads vs Google Ads — which is better?",
+    answer:
+      "Different jobs. Google Ads matches keyword intent at huge scale with deep attribution and 25 years of advertiser infrastructure. ChatGPT Ads matches conversational intent — users asking questions and comparing options in natural language — at much smaller scale, with limited creative formats (single or multi-image, no video, no carousels), and early-stage attribution. Today ChatGPT Ads is a positioning and awareness test inside a new intent surface, not a replacement for Google Ads. The right answer is usually both, with Google Ads carrying the direct-response load."
+  },
+  {
+    question: "When will ChatGPT Ads be available in my country?",
+    answer:
+      "Availability is country-gated and still expanding. OpenAI publishes the current list in its Ads Manager Availability article. You can create an advertiser account for an unsupported country and OpenAI will notify you when it opens, but your campaigns won't deliver until it does. Country, currency, and time zone lock at account creation, so wait until your business country is supported before you set up."
+  },
+  {
+    question: "Can small businesses run ChatGPT Ads?",
+    answer:
+      "Yes, if you are a registered business in a supported country and your category isn't restricted. Individual advertisers and agencies acting on behalf of a client can't self-serve setup today — the client has to create the account first, then invite the agency. Expect a manual review step (Persona identity verification plus policy review) that isn't expedited."
   },
   {
     question: "Can individuals or solo creators run ChatGPT Ads?",
