@@ -261,58 +261,218 @@ const faqItems = [
   }
 ];
 
+function ProductImage() {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className="h-full w-full"
+      aria-hidden="true"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <linearGradient id="ad-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f1e3d8" />
+          <stop offset="100%" stopColor="#d7b4a3" />
+        </linearGradient>
+        <linearGradient id="ad-bottle" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#f6efe9" />
+          <stop offset="55%" stopColor="#efe0d3" />
+          <stop offset="100%" stopColor="#c99a84" />
+        </linearGradient>
+        <linearGradient id="ad-bottle-highlight" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="rgba(255,255,255,0.68)" />
+          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+        </linearGradient>
+      </defs>
+      <rect width="160" height="160" fill="url(#ad-bg)" />
+      <circle cx="40" cy="36" r="30" fill="rgba(255,255,255,0.32)" />
+      <circle cx="132" cy="128" r="46" fill="rgba(28,34,40,0.08)" />
+      <g transform="translate(58 30)">
+        <rect
+          x="0"
+          y="0"
+          width="44"
+          height="100"
+          rx="8"
+          fill="url(#ad-bottle)"
+          stroke="rgba(28,34,40,0.14)"
+          strokeWidth="1"
+        />
+        <rect x="14" y="-6" width="16" height="12" rx="2" fill="#8b6855" />
+        <rect
+          x="4"
+          y="40"
+          width="36"
+          height="26"
+          rx="3"
+          fill="rgba(255,255,255,0.84)"
+        />
+        <text
+          x="22"
+          y="52"
+          textAnchor="middle"
+          fontSize="5.4"
+          fontWeight="700"
+          letterSpacing="0.14em"
+          fill="#4a382e"
+        >
+          ANDRA
+        </text>
+        <text
+          x="22"
+          y="60"
+          textAnchor="middle"
+          fontSize="3.6"
+          letterSpacing="0.18em"
+          fill="#7a6355"
+        >
+          SERUM 01
+        </text>
+        <rect
+          x="5"
+          y="4"
+          width="7"
+          height="92"
+          rx="3"
+          fill="url(#ad-bottle-highlight)"
+          opacity="0.5"
+        />
+      </g>
+      <ellipse
+        cx="80"
+        cy="140"
+        rx="36"
+        ry="4"
+        fill="rgba(28,34,40,0.18)"
+      />
+    </svg>
+  );
+}
+
+function MiniProductImage({ variant }: { variant: number }) {
+  const palettes = [
+    { bg: "#eadbcf", accent: "#c08a74" },
+    { bg: "#f0e2d6", accent: "#b57a63" },
+    { bg: "#e4d1c2", accent: "#a57158" },
+    { bg: "#f2e5da", accent: "#c99a84" }
+  ];
+  const p = palettes[variant % palettes.length];
+  return (
+    <svg viewBox="0 0 40 40" className="h-full w-full" aria-hidden="true">
+      <rect width="40" height="40" fill={p.bg} />
+      <circle cx="10" cy="8" r="7" fill="rgba(255,255,255,0.35)" />
+      <rect
+        x="15"
+        y="8"
+        width="10"
+        height="24"
+        rx="2"
+        fill={p.accent}
+        opacity="0.9"
+      />
+      <rect
+        x="16.5"
+        y="18"
+        width="7"
+        height="6"
+        rx="1"
+        fill="rgba(255,255,255,0.85)"
+      />
+    </svg>
+  );
+}
+
 function ChatGptAdsHeroArtwork() {
   return (
     <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-[linear-gradient(160deg,rgba(255,255,255,0.52),rgba(255,255,255,0.2))] p-5 shadow-[0_30px_90px_rgba(17,17,17,0.08)] backdrop-blur-xl sm:p-6">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_20%,rgba(255,255,255,0.9),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(217,167,154,0.24),transparent_26%),radial-gradient(circle_at_74%_82%,rgba(28,34,40,0.08),transparent_24%)]" />
       <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(28,34,40,0.034)_1px,transparent_1px),linear-gradient(90deg,rgba(28,34,40,0.024)_1px,transparent_1px)] [background-size:44px_44px]" />
 
-      <div className="relative min-h-[26rem] overflow-hidden rounded-[1.7rem] border border-white/50 bg-white/34 p-6 sm:min-h-[28rem] sm:p-8">
+      <div className="relative min-h-[28rem] overflow-hidden rounded-[1.7rem] border border-white/50 bg-white/40 p-5 sm:min-h-[30rem] sm:p-6">
         <div className="flex items-center justify-between">
-          <span className="rounded-full border border-obsidian/10 bg-white/78 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-stone">
-            ChatGPT
-          </span>
-          <span className="rounded-full border border-blush/32 bg-shell/60 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-obsidian">
-            Beta
+          <div className="flex items-center gap-2">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-obsidian text-[0.6rem] font-semibold text-white">
+              ✦
+            </span>
+            <span className="text-[0.72rem] font-semibold tracking-[0.04em] text-obsidian">
+              ChatGPT
+            </span>
+          </div>
+          <span className="rounded-full border border-blush/32 bg-shell/60 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-obsidian">
+            Illustrative
           </span>
         </div>
 
-        <div className="mt-8 space-y-4">
-          <div className="max-w-[22rem] rounded-[1.2rem] rounded-tl-[0.4rem] border border-obsidian/10 bg-white/86 px-4 py-3 text-sm leading-6 text-stone shadow-[0_10px_28px_rgba(17,17,17,0.05)]">
-            What is the best AI workflow tool for growth teams?
+        <div className="mt-5 space-y-3">
+          <div className="ml-auto max-w-[20rem] rounded-[1rem] rounded-tr-[0.3rem] bg-shell/70 px-3.5 py-2.5 text-[0.82rem] leading-6 text-obsidian">
+            Best serum for sensitive skin under $60?
           </div>
-          <div className="ml-auto max-w-[22rem] rounded-[1.2rem] rounded-tr-[0.4rem] border border-obsidian/10 bg-[linear-gradient(160deg,rgba(255,255,255,0.94),rgba(231,216,207,0.7))] px-4 py-3 text-sm leading-6 text-obsidian shadow-[0_12px_30px_rgba(17,17,17,0.06)]">
-            Here are a few directions worth looking at, depending on how your team already works…
+          <div className="max-w-[22rem] rounded-[1rem] rounded-tl-[0.3rem] bg-white/92 px-3.5 py-2.5 text-[0.82rem] leading-6 text-stone shadow-[0_6px_18px_rgba(17,17,17,0.04)]">
+            A few options worth comparing, depending on whether you prioritize barrier
+            repair or brightening…
           </div>
         </div>
 
-        <div className="mt-8 rounded-[1.2rem] border border-blush/30 bg-white/78 p-4 shadow-[0_16px_40px_rgba(17,17,17,0.06)]">
+        <div className="mt-5 overflow-hidden rounded-[1.1rem] border border-obsidian/10 bg-white shadow-[0_18px_42px_rgba(17,17,17,0.06)]">
+          <div className="flex items-center justify-between px-3.5 pt-3">
+            <div className="flex items-center gap-2">
+              <span className="text-[0.56rem] font-bold uppercase tracking-[0.18em] text-stone">
+                Sponsored
+              </span>
+              <span className="text-[0.56rem] uppercase tracking-[0.14em] text-stone/60">
+                · andra.co
+              </span>
+            </div>
+            <span className="rounded-full bg-shell/70 px-2 py-0.5 text-[0.5rem] font-semibold uppercase tracking-[0.14em] text-stone/70">
+              Ad
+            </span>
+          </div>
+          <div className="mt-2 flex gap-3 px-3.5">
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[0.7rem] border border-obsidian/8 sm:h-28 sm:w-28">
+              <ProductImage />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-serif text-[1rem] leading-[1.2] text-obsidian sm:text-[1.1rem]">
+                Barrier-repair serum for sensitive skin, from $42.
+              </p>
+              <p className="mt-1 text-[0.72rem] leading-5 text-stone">
+                Ceramides + squalane. Fragrance-free. 30-day returns.
+              </p>
+            </div>
+          </div>
+          <div className="mt-3 flex items-center justify-between border-t border-obsidian/6 bg-porcelain/70 px-3.5 py-2">
+            <span className="text-[0.62rem] uppercase tracking-[0.14em] text-stone/70">
+              andra.co/serum-01
+            </span>
+            <span className="rounded-full bg-obsidian px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-white">
+              Learn more
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-4 overflow-hidden rounded-[1.1rem] border border-obsidian/8 bg-white/88 px-3.5 py-3 shadow-[0_14px_36px_rgba(17,17,17,0.05)]">
           <div className="flex items-center justify-between">
-            <span className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-blush">
-              Sponsored
+            <span className="text-[0.56rem] font-bold uppercase tracking-[0.18em] text-stone">
+              Sponsored · multi-image
             </span>
-            <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-stone/70">
-              1:1 image
+            <span className="text-[0.52rem] font-semibold uppercase tracking-[0.14em] text-blush">
+              Open beta
             </span>
           </div>
-          <div className="mt-3 flex items-center gap-4">
-            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[0.9rem] border border-obsidian/10 bg-[linear-gradient(135deg,rgba(217,167,154,0.72),rgba(231,216,207,0.6))]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.7),transparent_50%)]" />
-            </div>
-            <div className="min-w-0">
-              <p className="font-serif text-[1.05rem] leading-tight text-obsidian">
-                Your brand, but inside the question.
-              </p>
-              <p className="mt-1 text-xs leading-5 text-stone">
-                One image. One clear promise. That is the format today.
-              </p>
-            </div>
+          <div className="mt-2 grid grid-cols-4 gap-1.5">
+            {[0, 1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="relative aspect-square overflow-hidden rounded-[0.5rem] border border-obsidian/8"
+              >
+                <MiniProductImage variant={i} />
+              </div>
+            ))}
           </div>
+          <p className="mt-2 text-[0.62rem] leading-4 text-stone/80">
+            4–6 square frames, one headline, one destination, one Learn more CTA.
+          </p>
         </div>
-
-        <p className="mt-6 text-center text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-stone/72">
-          Illustrative — not an actual OpenAI ad unit
-        </p>
       </div>
     </div>
   );
