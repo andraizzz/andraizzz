@@ -1,0 +1,148 @@
+Set up Measurement Partner Integrations
+
+Connect a measurement partner to ChatGPT Ads.
+
+
+ChatGPT Ads supports integrations with select measurement partners to help advertisers measure campaign performance. Depending on the partner, integrations may support conversion tracking, attribution, spend reporting, incrementality measurement, and sharing conversion events with ChatGPT Ads. Available capabilities and setup options vary by partner; refer to the partner’s documentation for current details. This article also covers third-party tools that help you implement the ChatGPT Ads Pixel and Conversions API.
+
+For specific mobile measurement partner integrations we support, view the setup guides here.
+
+Looking for a simpler way to set up Pixel or CAPI? Third-party implementation tools can help you set up conversion tracking without building the entire integration yourself. See third-party implementation tools.
+
+Before you begin
+
+You’ll need:
+
+An active Ads Manager account.
+
+The credentials required by your integration: an Ads Manager API key, or a Pixel ID and Conversions API key from the Conversions section of Ads Manager.
+
+A data source containing the conversion events you want to send, if applicable.
+
+The appropriate permissions in your data partner.
+
+A list of the standard or custom events you want to send to ChatGPT Ads, if applicable.
+
+See OpenAI’s measurement documentation for information about supported events, the JavaScript Pixel, and the Conversions API.
+
+The sections below cover measurement partner integrations and third-party conversion implementation tools. Refer to each provider’s documentation for current capabilities and setup requirements.
+
+Set up Fospha
+
+Log in to the OpenAI Ads Manager account at ads.openai.com. Please make sure you have admin access.
+
+Go to Settings → General → API Keys.
+
+Click Create New Key to create a new key.
+
+Copy the key and share it in your Fospha onboarding portal, along with your UTM setup.
+
+For complete instructions, see the Fospha set up guide.
+
+Set up Hightouch
+
+In Hightouch, open Destinations, click Add destination, select OpenAI, and click Continue.
+
+Authenticate the destination by entering your ChatGPT Ads Pixel ID and API key.
+
+Select the model containing the events you want to send to ChatGPT Ads and create a sync to the OpenAI destination.
+
+Configure record matching and map the event properties you want to send to ChatGPT Ads. Make sure the event model uses a truly unique primary key so Hightouch sends every event.
+
+For complete instructions, see the Hightouch setup guide.
+
+Set up INCRMNTAL
+
+In ChatGPT Ads Manager, go to Settings → General → API Keys and click Create New Key to create an API key for INCRMNTAL.
+
+In INCRMNTAL, go to Configuration → Integrations, click Add Integration, search for OpenAI, and click Add.
+
+Select Activities to connect marketing activity data. Select Reporting if you also want INCRMNTAL to retrieve spend data.
+
+Enter your ChatGPT Ads API key and click Test.
+
+Confirm that your campaigns appear in Preview, then click Save.
+
+For complete instructions, see the INCRMNTAL setup guide.
+
+Set up LiveRamp
+
+Reach out to your LiveRamp rep to request access to the OpenAI integration.
+
+If you haven't already, set up a conversion event feed to LiveRamp. For online conversion events, see the online setup instructions. For offline conversions, such as in-store purchases, see the offline setup instructions.
+
+For offline conversions, create a destination account for OpenAI using your Pixel ID and Conversions API key. For online conversions, use the credentials specified in the online setup instructions.
+
+Map your events and required fields according to the applicable guide. For online conversions, see LiveRamp’s supported events and parameters.
+
+Check your OpenAI ads manager to confirm successful receipt of your events.
+
+For complete instructions, see the LiveRamp online setup guide or offline setup guide.
+
+Set up Northbeam
+
+In ChatGPT Ads Manager, select the ad account you want to connect. Go to Settings → General → API Keys and click Create New Key to create an API key for Northbeam.
+
+In Northbeam, go to Integrations and UTMs → OpenAI Ads during onboarding, or Settings → Connections → OpenAI Ads from the dashboard.
+
+Enter your API key, confirm the correct ad account, and click Connect.
+
+In ChatGPT Ads Manager, add Northbeam’s required tracking parameter to your campaigns’ Landing page query parameters, following the setup guide below.
+
+For complete instructions, see the Northbeam setup guide.
+
+Set up Rockerbox
+
+In ChatGPT Ads Manager, go to Settings → General → API Keys and click Create New Key to create an API key for Rockerbox.
+
+Go to the integrations connection page in Rockerbox and use your API key to authenticate the OpenAI integration.
+
+Work with your Rockerbox representative to provide your API key, Pixel ID, Conversion Event ID, and Rockerbox Segment ID.
+
+Confirm which field identifies each conversion, such as order_id for purchases. This value must match across your pixel events and Rockerbox conversion data so Rockerbox can deduplicate pixel and server-side events.
+
+In ChatGPT Ads Manager, add Rockerbox’s tracking parameters to your campaigns’ Landing page query parameters, following the setup guide below.
+
+For tracking instructions, see the Rockerbox setup guide. Contact your Rockerbox representative for authentication and conversion-forwarding assistance.
+
+Set up Triple Whale
+
+Before connecting, make sure your ChatGPT Ads account has at least one active campaign.
+
+In ChatGPT Ads Manager, go to Settings → General → API Keys and click Create New Key to create an API key for Triple Whale.
+
+In Triple Whale, go to Data → Integrations, find ChatGPT Ads, and click Connect.
+
+Enter your ChatGPT Ads API key and click Save.
+
+Continue applying Triple Whale UTMs to your ChatGPT Ads campaigns to attribute traffic, orders, and customer journeys in Triple Whale.
+
+For complete instructions, see the Triple Whale setup guide.
+
+Note: For information about data enrichment through Sonar Optimize, including availability and setup requirements, contact Triple Whale.
+
+Set up WorkMagic
+
+In WorkMagic, go to Settings → Platform Integrations → Marketing.
+
+Find the ChatGPT Ads card and click Connect.
+
+Review and agree to the terms and conditions.
+
+In ChatGPT Ads Manager, go to Settings → General → API Keys and click Create New Key to create an API key for WorkMagic.
+
+Back in WorkMagic, paste your ChatGPT Ads API key in the WorkMagic integration screen and click Confirm.
+
+For complete instructions, see the WorkMagic setup guide.
+
+Third-party conversion implementation tools
+
+Third-party tools can help you set up the ChatGPT Ads Pixel and Conversions API, map your conversion events, and deduplicate events sent through both. These tools are developed and maintained by their respective providers. Setup and supported features vary by provider.
+
+Set up Stape
+
+Stape provides Google Tag Manager templates for the ChatGPT Ads Pixel and Conversions API. Use its web and server-side tags to configure conversion events and deduplicate events sent through both channels. Follow the Stape setup guide, then test your implementation and confirm that events appear in Ads Manager.
+
+Set up Datahash
+
+Datahash helps implement the ChatGPT Ads Pixel and Conversions API, including event mapping and deduplication. Contact Datahash to confirm the requirements for your data sources and configure your integration. See Datahash’s OpenAI integration overview, then test your implementation and confirm that events appear in Ads Manager.

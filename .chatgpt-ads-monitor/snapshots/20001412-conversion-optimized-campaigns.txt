@@ -1,0 +1,118 @@
+Conversion-optimized Campaigns
+
+Learn how to create campaigns with the Conversion optimization objective and choose billing based on impressions or clicks in Ads Manager.
+
+Conversion optimization campaigns
+
+Use the Conversion optimization objective when you want ChatGPT Ads to optimize delivery toward a specific conversion event, such as a purchase, sign-up, lead submission, or other supported standard conversion event. After selecting this objective, choose whether you are billed based on impressions or valid clicks.
+
+With click billing, you pay for valid clicks and delivery optimizes toward conversions that happen after someone clicks your ad. With impression billing, you pay for impressions served and delivery optimizes toward a broader set of eligible conversions, including those driven by ad views and clicks.
+
+Impression billing can help advertisers better reflect how people discover, evaluate, and choose products through ChatGPT. Someone may see an ad while exploring an idea, return later, and complete a conversion without a direct ad click. Delivery stays focused on your conversion goal while optimization and measurement can account for more of the moments that contribute to that outcome.
+
+Before you start
+
+Before creating a campaign with the Conversion optimization objective, make sure:
+
+Conversion tracking is set up for your ad account. You can set it up via Conversions API and/or JavaScript Pixel.
+
+At least one supported standard conversion event is available. Custom conversion events are not currently supported for the Conversion optimization objective.
+
+You know which conversion event you want the campaign to optimize toward.
+
+You are ready to create a new campaign or clone an existing campaign to change the objective. 
+
+1. Create or clone a campaign
+
+In Ads Manager, create a new campaign and select Conversion optimization in the Campaign objective field. To move an existing campaign to the Conversion optimization objective, clone it and select Impressions for the cloned campaign.
+
+2. Choose how you’re billed: impressions or clicks
+
+Choose Impressions for impression billing. You are billed based on impressions served while delivery remains focused on your selected conversion event.
+
+Impressions optimize for more conversions, including those driven by views and clicks. Selecting Clicks will lower your conversions.
+
+Choose Clicks for click billing. You are billed for valid clicks, and delivery optimizes toward conversions that follow an ad click.
+
+The campaign objective and billing option cannot be changed in place after campaign creation. To move a conversion optimized campaign from click billing to impression billing, clone the campaign and select Impressions for the cloned campaign. For other changes, create a new campaign.
+
+3. Choose a conversion event
+
+After choosing the billing method, choose the Conversion event you want to optimize for. This is the downstream action, such as a purchase, sign-up, lead submission, or other supported standard conversion event, that ChatGPT Ads will use to guide delivery.
+
+Each campaign with the Conversion optimization objective uses one selected conversion event. The conversion event cannot be changed after campaign creation. To optimize toward a different event, create a new campaign.
+
+4. Set campaign budget, dates, and locations
+
+Set your campaign budget, start and end dates, and location targeting as you would for other campaign objectives. Choose settings that give the campaign enough time and budget to gather meaningful performance data.
+
+5. Create ad groups and set bid controls
+
+Create ad groups and ads as you normally would. Follow the bid strategy and bid control options shown in Ads Manager for the billing option you selected.
+
+For campaigns with the Conversion optimization objective, Bid Cap is the maximum amount you are willing to bid for a conversion. The system uses predicted conversion likelihood to determine an auction bid while optimizing toward your selected conversion event. Billing remains based on the option you selected, and your actual cost per conversion is determined by the auction.
+
+6. Launch and monitor performance
+
+For campaigns with the Conversion optimization objective, Ads Manager shows standard delivery and spend metrics alongside conversion reporting. You can review performance across the reporting views available in Ads Manager.
+
+With click billing, Average CPC is the main cost metric for what you pay per click. Because delivery optimizes toward your selected conversion event, Conversions is the key outcome metric to monitor.
+
+With impression billing, Average CPM and impressions are important billing and delivery metrics. Because delivery optimizes toward conversions, monitor conversion volume, cost per conversion, and reporting for click-through and view-through conversions when available.
+
+When evaluating performance, look at conversion volume together with spend, impressions, clicks, and the attribution windows selected for the campaign. You may also calculate cost per conversion by dividing spend by conversions.
+
+Optimization tips
+
+Choose the conversion event that best represents your campaign goal.
+
+Use a conversion event with enough signal. Events that happen too rarely can make performance harder to evaluate.
+
+Keep conversion tracking healthy. Incomplete or misconfigured tracking can make reporting and optimization less effective.
+
+With impression billing, review both click-through and view-through conversion reporting when available to understand how ad views and clicks contribute to outcomes.
+
+Monitor performance and adjust your Bid Cap, bid strategy, or available bid controls based on campaign delivery and results. There is no recommended bid amount at this time.
+
+Review performance over enough volume before making large changes to bids, budgets, or creative.
+
+Enable automatic advanced matching for your website pixel to help improve conversion matching and provide additional measurement signals for campaign optimization.
+
+FAQ
+Which conversion event types are supported for the Conversion optimization objective?
+
+The Conversion optimization objective currently supports one standard conversion event per campaign. Custom conversion events are not currently supported.
+
+Can I use an existing campaign to create a Conversion optimization campaign?
+
+You cannot change an existing campaign’s objective in place. To move a conversion optimized campaign from click billing to impression billing, clone the campaign and select Impressions billing option for the cloned campaign. 
+
+Does the Conversion optimization objective mean I pay per conversion?
+
+No. The Conversion optimization objective optimizes delivery toward your selected conversion event, but billing depends on the option you choose. With click billing, you are billed for valid clicks. With impression billing, you are billed for impressions served.
+
+Why use impression billing if my goal is conversions?
+
+A click captures one part of the customer journey, but customers do not always act immediately after encountering a brand. Impression billing can optimize for more conversions, including eligible conversions driven by ad views and clicks, while keeping billing tied to impressions served.
+
+Will clicks still matter with impression billing?
+
+Yes. Clicks remain a valuable signal of interest, and conversions that follow a click continue to matter. Impression billing expands the set of eligible conversion signals that can inform delivery, including conversions after ad views and clicks.
+
+How will conversions be counted with impression billing?
+
+Attribution depends on the eligible conversion event and applicable measurement rules. When available, flexible click-through and view-through attribution windows will let you choose reporting settings that best fit your measurement strategy.
+
+How does my Bid Cap affect what I pay?
+
+With click billing, Bid Cap is a conversion-oriented bid used to determine how the campaign competes in click auctions; it is not the price charged for a conversion or a guaranteed achieved cost per acquisition. You are billed for valid clicks, and your actual cost per click is determined by the auction.
+
+Next steps
+
+After creating your campaign with the Conversion optimization objective, you can:
+
+Create ad groups and ads.
+
+Launch your campaign.
+
+Measure click-through and view-through results where available.

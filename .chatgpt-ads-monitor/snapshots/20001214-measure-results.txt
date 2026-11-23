@@ -1,0 +1,221 @@
+Measure Results
+
+Understand the reporting tools available in Ads Manager Beta.
+
+
+In Ads Manager Beta, you can measure campaign performance with reporting tools that help you track delivery and monitor results. As the platform evolves, we’ll introduce additional metrics, reporting views, and insights over time.
+
+Metrics
+
+You can currently track the following metrics across all levels (campaign, ad group, and ad):
+
+Impressions: Number of times your ads were shown
+
+Clicks: Number of times users clicked on your ads
+
+Spend: Total amount spent delivering your ads
+
+CTR: Percentage of impressions that resulted in clicks
+
+Avg CPC: Average cost per click
+
+Avg CPM: Average cost per thousand impressions
+
+Conversions: Number of conversion events attributed to your campaigns, if conversion measurement is set up. To get started with conversions, visit our measurement documentation
+
+Order Created Sales and Order Created ROAS are calculated only from attributed order_created events. Other standard and custom conversion events do not contribute to these columns.
+
+These metrics are available in table view, chart view, and CSV export downloads and can be used to evaluate delivery, engagement, and pacing across your campaigns.
+
+The Conversions total includes click-through and eligible view-through conversions based on your selected reporting windows. Click-through and view-through conversions can also be viewed separately.
+
+How conversions appear in reporting
+
+Ads Manager displays a single Conversions total for the selected reporting scope and date range. This total includes click-through and eligible view-through conversions based on your selected reporting windows. If you’re comparing totals with your analytics tool or store, see Why conversion totals differ between platforms.
+
+To view individual conversion events:
+
+Open the three-dot menu
+
+Select Edit columns
+
+Choose the events you want
+
+Select Save changes.
+
+Selected event columns can also appear in CSV exports. The Segment menu controls Device, Country, and Platform breakdowns; it does not add conversion-event columns.
+
+By default, Conversions uses ad event time—the time of the ad click or impression that received credit for the conversion. To report based on when the conversion occurred, select Conversions (by conv. time) under Conversion Events in Edit columns, then select Save changes.
+
+Note: Conversions may not be reflected in Ads Manager immediately. Please allow 24–48 hours for attributed conversions to be included in reporting. Totals may change as recent events are processed.
+
+View-through conversion reporting
+
+Ads Manager shows one-day view-through conversions at the campaign, ad group, and ad levels when the view-through reporting window is set to 1 Day.
+
+A view-through conversion is counted when someone converts within one day after seeing an eligible ad impression, and no qualifying ad click receives credit for the same conversion. If both an impression and a click qualify, the click gets credit.
+
+You can find view-through conversions in Ads Manager:
+
+In the attribution breakdown shown when you hover over the Conversions column
+
+As an optional standalone column called View-through conversions
+
+To add the View-through conversions column, open Campaigns, Ad groups, or Ads and select Edit columns. Under Conversion Events, select View-through conversions. Select Save changes.
+
+View-through conversion data can also be included in CSV exports.
+
+Flexible attribution windows
+
+Ads Manager lets advertisers choose a 7-, 14-, or 30-day click-through reporting window and either 0 Day (disabled) or a 1-day view-through reporting window. Any supported combination can be used.
+
+When the view-through window is set to 1 Day, eligible view-through conversions are included in the Conversions total. Selecting 0 Day disables view-through attribution in reporting, so the total includes click-through conversions only.
+
+Changing the reporting window affects reporting only; it does not change campaign optimization, bidding, or billing. The feature uses OpenAI’s existing last-touch attribution logic and is not multi-touch attribution.
+
+To change your reporting attribution windows, open Campaigns, Ad groups, or Ads and select Edit columns. Under Conversion Events, find Attribution windows and choose your click-through and view-through reporting windows. Select Save changes.
+
+These preferences apply to all conversion columns displayed.
+
+Reporting freshness
+
+Impressions, clicks, and click-through rate (CTR) typically refresh approximately every 15 minutes. Spend insights are delayed by approximately 7–8 hours, so recent impressions and clicks may appear before the corresponding spend.
+
+Spend-based metrics, such as average CPC and average CPM, depend on settled spend and can update later. Attributed conversions have a separate processing window and can take 24–48 hours to appear.
+
+Hover over or focus the Spend column header to see information about estimated spend. When a reporting cutoff is available, the tooltip shows how far the spend data extends in your ad account’s time zone, limited to the selected date range. Some views, including product or segmented reporting, may show the estimate notice without a cutoff.
+
+These are approximate refresh times, and recent totals may change as data is processed.
+
+Table view
+
+Table view is the default reporting view for monitoring performance in Ads Manager Beta.
+
+Navigate to the Campaigns, Ad Groups, or Ads page
+
+Review performance metrics directly in the table on each page, including impressions, clicks, spend, CTR, Avg CPC, Avg CPM, and conversions if conversion measurement is set up.
+
+Product reporting
+
+For product-feed campaigns, the Products tab is an insights-backed reporting view, not a complete feed inventory. Products appear after an active campaign delivers and generates reporting data. Use the product count during ad-group setup to confirm feed readiness and eligibility.
+
+CSV download
+
+CSV downloads allow you to export reporting data from Ads Manager Beta for offline analysis.
+
+To export cumulative reporting for the current table, select the three-dot menu, then Export → Export current table view. To export specific rows, select those rows, then choose Export → Export cumulative values. Both options use the same cumulative metrics; the difference is which rows are included.
+
+For daily reporting, choose Export → Export daily values.
+
+View-through conversion reporting can be included in CSV exports when available.
+
+Insights charts
+
+Ads Manager Beta includes chart views that allow you to analyze performance trends over time.
+
+Select the chart icon next to the three-dot menu
+
+Click View insights
+
+Select the metrics you want to view: impressions, clicks, spend, or any combination of all three.
+
+Set the date range you want to analyze
+
+Measurement and reporting FAQ
+How are conversions measured?
+
+OpenAI tracks conversions using first-party measurement signals after an eligible ad click or impression; for details, see Conversion Measurement.
+
+Are view-through conversions included in the total Conversions metric?
+
+Yes. When the view-through reporting window is set to 1 Day, the Conversions total includes click-through and eligible view-through conversions. When it is set to 0 Day (disabled), the total includes click-through conversions only.
+
+You can view each component separately using the Click-through conversions and View-through conversions columns.
+
+Do I need to update my Pixel or Conversions API setup for view-through conversions?
+
+No. The same submitted conversion events support both click-through and view-through reporting.
+
+Can I configure the view-through window for view-through conversions?
+
+Yes. You can select 0 Day to disable view-through attribution in reporting or 1 Day to include it. Either option can be combined with a 7-, 14-, or 30-day click-through reporting window. See Flexible attribution windows above for instructions.
+
+How do I validate that the JavaScript Pixel is installed correctly?
+
+Install the JavaScript Pixel on pages where you want to measure ad activity, confirm it initializes with the correct pixel ID, and use debug mode while testing. See the JavaScript Pixel documentation for installation, event, and troubleshooting guidance.
+
+Test signed-in pages and each checkout step as well as pages before login. Use your browser’s Console and Network panels to check for content security policy (CSP) blocks. Confirm that the Pixel SDK loads, event requests leave the browser, and the expected events are received. A Google Tag Manager tag firing alone does not confirm event delivery.
+
+Can I deploy the Pixel through Google Tag Manager?
+
+Yes, as long as your tag manager loads the Pixel snippet on the correct pages and does not block or reorder the initialization and event calls. If the tag manager prevents the Pixel from loading reliably, install the snippet directly or use server-side measurement where appropriate.
+
+How should I measure Shopify, headless storefront, or server-side purchase events?
+
+Use the browser Pixel for browser-side events and the Conversions API for server-side events. If you pass server-side conversions, preserve and send the available click reference values, such as oppref, so events can be attributed correctly.
+
+Why do Ads clicks differ from Google Analytics sessions or landing-page visits?
+
+Ads clicks measure ad interactions. Analytics sessions depend on page load, redirects, consent settings, browser blocking, UTM handling, attribution windows, and time zone settings. Compare the same date range and time zone, then use CSV exports to check campaign and ad-level activity.
+
+If expected UTM traffic is missing from analytics, check the URL and website handling:
+
+Compare the landing page URL and query parameters configured in Ads Manager with an existing observed destination URL and the final URL after any redirects. Check whether the expected UTM parameters reach the final page. You do not need to generate an additional paid ad click for this check.
+
+If a website redirect drops the parameters, update the redirect or destination URL handling to preserve them.
+
+Confirm that the analytics tag loads on the final landing page and that the report, filters and time zone match the traffic you are checking. Respect the visitor's consent choices; consent and browser blocking can affect what analytics records.
+
+After correcting an evidenced setup issue, check newly arriving traffic in the relevant analytics report.
+
+These checks do not guarantee that every ad click becomes an analytics session or that historical missing traffic will be recovered.
+
+Can I add dynamic URL parameters?
+
+Yes. Dynamic URL parameters are available in Ads Manager Beta. You can add custom landing page query parameters using your own text or supported macros, including {campaign_id}, {ad_group_id}, {ad_id}, and {ad_account_id}. Ads Manager populates supported macros automatically at delivery time.
+
+You can configure query parameters from the three-dot menu on the Campaigns, Ad groups, or Ads page by selecting Edit campaign, Edit ad group, or Edit ad. In the edit modal, use Landing page query parameters to add the parameters you want appended to landing page URLs.
+
+More specific settings take precedence. The hierarchy is: Ad URL, then Ad, then Ad Group, then Campaign. If a parameter is already set at the Ad URL level, campaign, ad group, or ad-level settings will not overwrite it.
+
+Why do conversions appear as one metric in reporting?
+
+The Conversions column combines attributed conversion events into a single total. To include individual event metrics, add the relevant columns through Edit columns → Conversions & events before exporting. Event-specific CSV headers may appear as attributed_event_account_created or attributed_event_registration_completed.
+
+Why do my conversion events show 0 in Ads Manager?
+
+A conversion event can be firing or accepted and still show 0 in Ads Manager if it does not match the conversion event configured for the campaign.
+
+For standard events, the configured event type must match the event you send. For custom events, Ads Manager must use Event type: Custom and the custom event name must exactly match the event name you send. A matching display name alone is not enough.
+
+Also make sure the correct conversion is attached to the campaign before traffic starts. If you correct the configuration, test again with new eligible traffic. Historical events from the mismatched setup will not backfill.
+
+What is automatic advanced matching?
+
+Automatic advanced matching helps match website conversions to your ads using supported customer information entered into website forms. The OpenAI Pixel securely hashes this information in the browser before including it with conversion events. No changes to your Pixel implementation are required.
+
+For additional information, see Conversion Measurement.
+
+What should I include before contacting support about reporting?
+
+Include the following:
+
+Ad account ID
+
+Campaign & Ad Names
+
+Date range and Time zone
+
+Ads Manager CSV export
+
+Analytics comparison
+
+Pixel ID
+
+Event names
+
+Sample conversion timestamps
+
+Screenshots of the discrepancy.
+
+This helps support isolate implementation issues from reporting or attribution differences.

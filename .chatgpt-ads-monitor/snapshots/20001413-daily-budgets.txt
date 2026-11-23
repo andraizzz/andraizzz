@@ -1,0 +1,93 @@
+Daily budgets
+
+Learn how daily budgets and spending limits work when creating or editing campaigns in Ads Manager.
+
+
+A daily budget is the average amount you want your campaign to spend per day over a 7-day period. The budget week runs from Sunday through Saturday in your ad account’s timezone. Daily spend may be higher or lower than your selected budget on individual days. If delivery is below your daily budget on some days, unused amounts may be used later in the same 7-day period. This helps ChatGPT Ads account for normal day-to-day changes in delivery while continuing to pace toward the applicable 7-day spending limit.
+
+What is changing
+
+Daily budgets represent the average amount you want to spend per day over a 7-day period.
+
+This means daily spend may be higher or lower than your daily budget amount on individual days. If a campaign spends less on some days, the unused amount may be used later in the same 7-day period. If it spends more on some days, ChatGPT Ads accounts for that when pacing delivery during the remainder of the period.
+
+How daily budgets work
+
+When you set a daily budget, you choose the average amount you want your campaign to spend per day.
+
+Your maximum daily spend is twice your daily budget. If you change your daily budget during a day, the maximum daily spend for that day is based on the highest daily budget amount that was active at any point during that day.
+
+Your maximum 7-day spend is seven times your daily budget. If you change your daily budget partway through the week, your 7-day spending limit is prorated from the time of the latest budget change through the next Sunday at midnight in your ad account’s timezone.
+
+Example:
+
+If your campaign runs for 7 days with a $100 average daily budget, your total campaign media spend limit is $700.
+
+Your campaign may spend more than $100 on some days and less than $100 on others. Across the full 7-day campaign, billed media spend will not exceed $700.
+
+What changes for existing campaigns
+
+Existing campaigns will automatically use average daily budgets after this update. You do not need to recreate, pause, or edit your campaigns.
+
+Your budget amounts and campaign settings will stay the same. The main difference is that your daily budget will now be treated as an average daily amount over a 7-day period.
+
+What you will see in Ads Manager
+
+When creating or editing a campaign, Ads Manager will show the maximum daily and 7-day spending amounts associated with your selected daily budget.
+
+Use this field the same way you use daily budgets today: enter the average amount you want to spend per day for the campaign.
+
+Key things to know
+
+Your budget amounts are not changing.
+
+Existing campaigns will update automatically.
+
+Daily spend may vary by day, while campaigns continue pacing toward the overall campaign budget.
+
+Ads Manager will continue to use the Daily budget label and will display the applicable spending limits during campaign creation.
+
+FAQs
+Does this change my campaign budget?
+
+No. Your budget amount is not changing, and existing campaigns will update automatically.
+
+Can daily spend be higher than my daily budget amount?
+
+Yes. You may be billed up to twice your selected daily budget on an individual day. That said, your campaign will not spend more than seven times your daily budget over the applicable 7-day period.
+
+What happens if I change my daily budget during the day?
+
+If you change your daily budget during a day, your maximum daily spend for that day is based on the highest daily budget amount that was active at any point during that day.
+
+For example, if your daily budget is set to $100 and you increase it to $110 later that day, your maximum daily spend for that day would be up to $220, which is twice the highest budget active that day.
+
+How does the 7-day spending limit work if I change my budget mid-week?
+
+If you change your daily budget partway through the week, your 7-day spending limit is prorated from the time of the latest budget change through the next Sunday at midnight in your ad account’s timezone.
+
+What happens if my campaign does not have an end date?
+
+The same daily and 7-day spending limits apply while your campaign is active.
+
+Do I need to update my existing campaigns?
+
+No. Existing campaigns using daily budgets will update automatically.
+
+Can I change my daily budget?
+
+Yes. You can change your daily budget amount in Ads Manager. Changes to your budget may affect the applicable daily and 7-day spending limits.
+
+Why can’t I lower my daily budget?
+
+The minimum daily campaign budget varies by market and currency. The standard minimum for the US in USD is $25.
+
+For campaigns that use a daily budget and fixed bidding, the daily budget must also be at least the highest effective per-event bid across applicable non-archived ad groups, including relevant audience bid adjustments. This bid-based constraint does not apply to automated bidding or lifetime-budget campaigns.
+
+To set a daily budget below an existing ad-group bid or adjusted effective bid, first lower each incompatible bid cap or applicable adjustment to the desired daily budget or below. Then save the campaign’s new daily budget.
+
+For example, a $250.50 effective ad-group bid prevents you from setting that campaign’s daily budget below $250.50 until you lower the bid. This is not a universal $250 platform minimum.
+
+Where can I see my spending limits?
+
+When you create or edit a campaign, Ads Manager will display your daily budget alongside the applicable maximum daily and 7-day spending amounts.

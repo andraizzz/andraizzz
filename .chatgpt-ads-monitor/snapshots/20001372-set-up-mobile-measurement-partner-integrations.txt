@@ -1,0 +1,154 @@
+Set up Mobile Measurement Partner Integrations
+
+Connect a mobile measurement partner to ChatGPT Ads.
+
+
+ChatGPT Ads supports integrations with select mobile measurement partners. These integrations can help advertisers measure eligible conversions and share event data for reporting and optimization. Available capabilities and setup options vary by partner; refer to the partner’s documentation for current details.
+
+Before you begin
+
+You’ll need:
+
+An active Ads Manager account.
+
+A Pixel ID from a Web data source and a Conversions API key, both available in the Conversions section of Ads Manager.
+
+Your app or website configured in your measurement partner.
+
+Appropriate permissions in your measurement partner.
+
+A list of the standard or custom events you want to send to ChatGPT Ads.
+
+See OpenAI’s measurement documentation for information about supported events, the JavaScript Pixel, and the Conversions API.
+
+Adjust, Airbridge, AppsFlyer, Branch, Kochava, Singular, and Tenjin are the mobile measurement partners currently supported for ChatGPT Ads. We’ll update this article as additional mobile measurement partner integrations become available.
+
+Set up Adjust
+
+In Adjust, go to Campaign Lab → Partners, click New partner, select ChatGPT Ads, and click Next.
+
+Select your app and enable data sharing. Enter your ChatGPT Ads Pixel ID, Conversions API key, and Install Event Name. Set Action Source to Mobile App.
+
+Map the events and optional data you want to share.
+
+Configure your attribution settings and campaign link, then click Create link. Use the resulting click URL in the appropriate ChatGPT Ads campaign.
+
+For complete instructions, see the Adjust setup guide.
+
+Set up Airbridge
+
+In Airbridge, go to Integrations → Ad Channel Integration and select ChatGPT Ads.
+
+On the Postback tab, click Postback Keys, then enter your ChatGPT Ads Pixel ID and Conversions API key.
+
+Configure the events and conditions for sending postbacks to ChatGPT Ads.
+
+On the Tracking Link tab, create a tracking link.
+
+In ChatGPT Ads Manager, split the tracking link at the ?. Enter the part before it in Default Ad Destination URL and the part after it in Tracking parameters.
+
+For complete instructions, see the Airbridge setup guide.
+
+Set up AppsFlyer
+
+In AppsFlyer, go to Collaborate → Partner Integrations → Marketplace, select your app, find ChatGPT Ads (OpenAI), and click Integrate.
+
+Turn on Activate partner and enter your ChatGPT Ads Pixel ID and Conversions API key.
+
+Turn on In-app event postbacks and map the events you want to send to ChatGPT Ads.
+
+For mobile apps, create an attribution link and use it in the appropriate ChatGPT Ads campaign, keeping dynamic parameters in the Tracking parameters field. For websites, configure event forwarding from the AppsFlyer Web SDK to the ChatGPT Ads Conversions API.
+
+For complete instructions, see the AppsFlyer setup guide.
+
+Set up Branch
+
+Before connecting, make sure Branch’s Performance Product is enabled for your account.
+
+In Branch, go to Configuration → Ad Partners → Integrations and select OpenAI Ads.
+
+Enable the integration, then enter your ChatGPT Ads Pixel ID and Conversions API key on the Postbacks tile. Click Next, then Save & Go to Postback config.
+
+Map the events you want to send to ChatGPT Ads, then enable Send all events to forward events from all attribution sources.
+
+Create a Branch Ad Link and use it as the destination URL in the appropriate ChatGPT Ads campaign, keeping Branch’s macros in the Landing page query parameters field.
+
+In Ads Manager, create a conversion event for each event you’re sending and link it to your campaign.
+
+For verification steps and complete instructions, see the Branch setup guide.
+
+Set up Kochava
+
+In Kochava, select your account and app, then go to Engagement → Campaign Manager. Create or select a campaign and segment.
+
+Add a tracker and select the Media Partner for your platform: ChatGPT Ads – iOS, ChatGPT Ads – Android, or ChatGPT Ads – Web. Configure the destination and save the tracker.
+
+Go to App Configurations → Partner Configuration, click Add a Partner, and select the matching ChatGPT Ads partner. Click Next, confirm that the partner is Active, and click Save.
+
+Expand the partner configuration and edit each event you want to send. Enter your ChatGPT Ads Pixel ID and Conversions API key, select the Delivery Method, and click Save.
+
+In Campaign Manager, copy the tracker’s Click URL and use it as the ad destination in the appropriate ChatGPT Ads campaign.
+
+For complete instructions, see the Kochava setup guide.
+
+Set up Singular
+
+In Singular, go to Attribution → Partner Configuration, click Add a Partner, and select OpenAI Ads (ChatGPT).
+
+Select your app and platform, then enter your ChatGPT Ads Pixel ID and Conversions API key.
+
+Map the events you want to send to ChatGPT Ads and click Save.
+
+Confirm that your app or website sends the required event attributes listed in the setup guide.
+
+Go to Attribution → Manage Links, select your app, and click Create Link. Select Partner as the link type and OpenAI Ads (ChatGPT) as the source. Complete the link setup, click Generate, and use the resulting Click-through Tracking Link in the appropriate ChatGPT Ads campaign.
+
+For complete instructions, see the Singular setup guide.
+
+Set up Tenjin
+
+In Tenjin, open the Channels tab, click Add a Channel, search for OpenAI Ads, and select it.
+
+Open your app’s Callbacks tab and select ChatGPT Ads from the Channels and Partners dropdown.
+
+Enter your ChatGPT Ads Pixel ID. Enter your Conversions API key as Bearer YOUR_API_KEY: the word Bearer, followed by a space and your key. Click Save, then turn on the OpenAI Ads install callback.
+
+Open the Campaigns tab and click Create Campaign. Select your OpenAI Ads account and app, enter a campaign name, and click Create Campaign.
+
+Click View Tracking Links on the campaign and copy the Click Tracking URL.
+
+In ChatGPT Ads Manager, open your ad and paste the full Tenjin click tracking URL into the Link field. Click Move to tracking parameters before saving so the dynamic placeholders are placed in the correct field.
+
+Save the ad. Repeat the link setup for each ad you want to track.
+
+For additional setup assistance, contact Tenjin.
+
+How attribution works
+
+Mobile app attribution through these integrations is click-based. Use the attribution link generated by your measurement partner in the corresponding ChatGPT Ads campaign.
+
+Your measurement partner’s attribution windows and event-sharing settings are configured in that partner’s platform. Ads Manager uses its own attribution settings for reporting. Refer to your partner’s documentation and Measure Results for available options.
+
+Reporting
+
+Attributed events appear in the Conversions metric in Ads Manager. Allow 24–48 hours for reporting. For more information, see Measure Results.
+
+Troubleshooting
+
+If conversions do not appear:
+
+Confirm that the partner integration is active.
+
+Verify the Pixel ID and Conversions API key.
+
+Confirm that event names are mapped correctly.
+
+Make sure the correct tracking link is used in the campaign.
+
+Confirm that the relevant conversion is attached to the campaign.
+
+Test using a new eligible ad click.
+
+Allow 24–48 hours for reporting.
+
+For direct server-side measurement, see the Conversions API documentation.

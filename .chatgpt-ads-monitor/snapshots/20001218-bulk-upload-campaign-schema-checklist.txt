@@ -1,0 +1,96 @@
+Bulk Upload Campaign Schema Checklist
+
+Use this checklist to review your bulk upload file before uploading it in Ads Manager Beta.
+
+Overview
+
+Use this checklist when reviewing your bulk upload schema file before uploading into Ads Manager Beta. It helps catch avoidable file formatting and validation issues before upload.
+
+Campaigns tab
+
+All required campaign fields are filled in.
+
+Campaign names are unique.
+
+Campaign objective is Views, Clicks, or Conversions. Conversion campaigns require conversion bidding to be enabled for the ad account and exactly one conversion event setting ID, entered as a JSON array. Product-feed campaigns cannot use Conversions in bulk upload.
+
+Campaign dates are valid and correctly formatted (YYYY-MM-DD). Launch and end dates both mean 00:00:00 UTC at the start of that date. The end date does not include the rest of that day. To run through October 10, for example, set the end date to 2026-10-11.
+
+Budget fields are completed.
+
+Country field is completed and in JSON format.
+
+No duplicate campaign names.
+
+The ad account contains no more than 5,000 campaigns. This is an account limit.
+
+Ad groups tab
+
+All required ad group fields are filled in.
+
+Ad group names are unique.
+
+Every ad group is linked to the correct campaign.
+
+Campaign names match exactly across the campaigns and ad groups tabs.
+
+Context hints are in JSON format, such as ["hint1", "hint2"].
+
+No duplicate ad group names.
+
+The ad account contains no more than 5,000 ad groups. This is an account limit.
+
+Ads tab
+
+All required ad fields are filled in.
+
+Ad group names match exactly across the ad groups and ads tabs.
+
+Ad titles are within character limits (16-24 characters recommended; 50 characters maximum).
+
+Ad copy is within character limits (32-48 characters recommended; 100 characters maximum).
+
+Landing page URLs are valid and reachable.
+
+Image URLs are publicly accessible and open directly to the image in the browser.
+
+Images are hosted through supported methods such as Google Drive links, AWS-hosted image links such as S3 or CloudFront, or self-hosted image links on the advertiser's domain or CDN.
+
+Images are PNG or JPG, square, and no larger than 1200 x 1200 pixels.
+
+The ad account contains no more than 5,000 ads. This is an account limit.
+
+Formatting checks
+
+Keep the row with the column names in each template tab. You can add note rows above it, and you can remove or move template instruction or sample rows. Ads Manager ignores template instruction and sample rows when validating your upload.
+
+Tabs are still named campaigns, ad groups, and ads.
+
+Column headers have not been renamed.
+
+Each row in every tab must represent a unique campaign, ad group, or ad, with no duplicate object rows.
+
+There are no merged cells.
+
+Campaign and ad group names are consistent everywhere they appear.
+
+Bulk upload edge cases
+Am I updating an existing object or creating a new one?
+
+Rows with existing campaign, ad group, or ad IDs update those existing objects. Rows for new ad groups or ads should include the correct parent ID and leave the new object's ID blank so Ads Manager can create it.
+
+What is the safest workflow before making bulk edits?
+
+Start from Export for edit whenever possible. A fresh export includes the current IDs and field values, which reduces accidental duplicate rows, stale IDs, or overwrites. See Edit Campaigns for the export-for-edit workflow.
+
+Do context hints get merged with the existing list?
+
+No. Treat context hints in an uploaded ad group row as the complete value you want that ad group to use after upload. Include the full JSON list rather than only the new hints you want to add.
+
+Can I use inaccessible image links?
+
+No. Image URLs must be publicly accessible and open directly to the image in a browser. If the image requires sign-in, redirects to a preview page, blocks crawlers, or is blocked by a firewall or CDN rule, upload validation or review may fail.
+
+What should I check if a landing page or image URL fails validation?
+
+Confirm that the URL loads without authentication, returns a successful response, and can be reached by OpenAI crawlers. For crawler-specific guidance, see Advertiser Guidance for Allowing OpenAI Web Crawlers.

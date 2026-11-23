@@ -1,0 +1,129 @@
+Advertiser Guidance for Allowing OpenAI Web Crawlers
+
+Learn how to make your ad landing pages accessible to OpenAI and troubleshoot common access issues.
+
+Why does OpenAI use web crawlers?
+
+We use crawlers to validate the safety of web pages submitted as ads on ChatGPT. When you submit an ad, OpenAI may visit the landing page to ensure it complies with our policies. We may also use content from the landing page to determine when it's most relevant to show the ad to users.
+
+Which OpenAI crawlers should you allow?
+
+You must allow OAI-AdsBot. We recommend allowing both OAI-AdsBot and OAI-SearchBot.
+
+For product feeds, also allow OAI-SearchBot to crawl the product image URLs. Check firewall, CDN, and bot-protection rules on the image host; a 403 response can block feed processing.
+
+Check that OpenAI can access your ad landing page
+
+Before submitting ads—or after changing your website—use these checks to help prevent common crawler issues. If someone else manages your website, share this checklist with your web developer, hosting provider, or security team.
+
+1. Check the exact link used in your ad
+
+Open the complete ad URL, including any tracking parameters. Follow the redirects and confirm that the final page shows the product or service you are advertising.
+
+If you use a tracking link, check where it sends visitors on different devices or in different locations. A working homepage does not confirm that the link in your ad works.
+
+2. Allow the relevant OpenAI crawlers
+
+Allow OAI-AdsBot, which is required for ad landing-page validation. We also recommend allowing OAI-SearchBot.
+
+Ask your website team to check the robots.txt rules for the landing page and any required assets. Check each host involved in a redirect, including subdomains and third-party destinations.
+
+Use the current OpenAI crawler documentation and published OAI-AdsBot and OAI-SearchBot IP ranges when configuring access.
+
+3. Check your website’s security settings
+
+A robots.txt rule alone may not be enough. Your firewall, content delivery network (CDN), or bot-protection service may apply separate restrictions.
+
+Ask your website or security team to confirm that verified OpenAI crawler requests can reach the landing page and required content without signing in, completing a CAPTCHA, or passing a browser challenge. Check the destination host as well as the starting domain.
+
+If access is denied, use the failed request’s time and request ID, when available, to find the relevant event in your website or security logs.
+
+4. Check the page the crawler receives
+
+A page opening in your browser does not always mean the crawler receives the same content. Ask your website team to check the response to the crawler’s request.
+
+What the request returns
+	
+What to check or update
+
+
+403 / Access denied
+	
+Review security rules on the host that denied the request. This may be a redirected subdomain rather than the original website.
+
+
+404 / Page not found
+	
+Fix the missing page or the redirect destination. For tracking links, check the destination selected for different devices or locations.
+
+
+429 / Too many requests
+	
+Review rate limits and bot-protection events. For large ad uploads, spreading submissions over smaller batches may help.
+
+
+A blank, incomplete, login, or challenge page
+	
+Make sure the intended page content and required assets are accessible to the crawler. A successful HTTP response alone does not confirm that the content loaded.
+5. Check again after making changes
+
+Record what changed and when, then test the exact ad URL and its redirects again. For a large group of ads, start with a few representative URLs before applying the fix more widely.
+
+Once access is fixed, check the affected ads in Ads Manager. If their status does not update, follow the available resubmission or review steps. Ads still need to pass review; fixing crawler access does not guarantee approval.
+
+Repeat these checks after changes to your landing pages, tracking links, redirects, hosting, or security settings.
+
+Still having trouble?
+
+Contact Support with:
+
+The affected ad account and ad IDs, if available.
+
+The exact URL used in the ad and its final destination.
+
+The error message or a screenshot.
+
+When the failure occurred, including the timezone.
+
+What your website team checked or changed, and when.
+
+If Support shares a failed-check time or request ID, pass it to your website team so they can locate the matching request.
+
+A note on stable IP ranges
+
+Some security systems require crawler traffic to originate from stable, publicly documented IP ranges before traffic can be reliably allowlisted. Because crawler infrastructure may evolve over time, your engineering team should avoid relying solely on short-term IP observations from logs. Instead, validate traffic through a combination of user-agent identification, verified bot programs where supported, firewall allowlists, robots.txt behavior, and provider-level bot verification systems.
+
+If you must allow a stable list of IP ranges, reference https://openai.com/searchbot.json and https://openai.com/adsbot.json.
+
+A note on rate limiting
+
+Large batch uploads or sudden spikes in crawler traffic can sometimes trigger automated rate limiting or bot protection systems.
+
+If you suspect rate limiting is occurring, ask your engineering team to review HTTP response codes, especially 429 Too Many Requests, firewall or CDN logs, bot mitigation events, request throttling rules, and traffic analytics around the time the crawler attempted access. This can help identify whether requests are being intentionally slowed or blocked by infrastructure protections.
+
+You may also consider uploading ads over a longer period of time in smaller batches.
+
+A note on Cloudflare
+
+OAI-AdsBot is officially verified and allowlisted by Cloudflare.
+
+Crawler and landing page FAQ
+Which crawler is required for ads review?
+
+OAI-AdsBot is required for ChatGPT Ads landing page validation and review. OAI-SearchBot is recommended because it may help OpenAI understand public web content, but OAI-AdsBot is the crawler advertisers should prioritize for ads readiness.
+
+Can support manually bypass crawler validation?
+
+Do not rely on a manual bypass. Make the landing page crawlable for OAI-AdsBot by fixing robots.txt, WAF, CDN, bot mitigation, authentication, and rate-limiting blocks. Ads may need to be re-uploaded or resubmitted for review after the landing page becomes accessible.
+
+What should my engineering team check first?
+
+Check whether the landing page returns a successful HTTP response to OAI-AdsBot, whether robots.txt allows the relevant path, and whether WAF, CDN, bot mitigation, JavaScript challenges, CAPTCHAs, authentication, or geo rules block automated access.
+
+Are app-store links, deep links, or non-web destinations supported as landing pages?
+
+Use a directly reachable web landing page whenever possible. App-store links, deep links, documents, or destinations that require an app, login, region-specific access, or unsupported redirects may not provide enough crawlable content for validation or review.
+
+When should I re-upload or request review again?
+
+After fixing crawler access, re-upload or resubmit affected ads if the status does not update on its own. For bulk-uploaded ads, smaller batches can reduce rate-limit or bot-protection triggers while your team validates the fix.

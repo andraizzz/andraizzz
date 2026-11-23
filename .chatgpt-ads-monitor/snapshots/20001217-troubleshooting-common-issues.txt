@@ -1,0 +1,157 @@
+Troubleshooting Common Issues
+
+A guide to resolving common setup, launch, measurement, and payment issues in Ads Manager Beta.
+
+
+Use this guide to troubleshoot common issues in Ads Manager Beta. Start with the issue category that best matches your issue, work through the recommended checks, and contact support if the issue persists.
+
+1. Onboarding and account setup
+I cannot access Ads Manager
+
+Check first: Confirm you are signed in with the OpenAI account tied to the organization the ad account is set up with, and you have been granted access to the correct Ads Manager Beta account. If you need Admin access on an existing ad account, ask an existing account Admin to update your role in the Ads Manager Users tab. Being a member does not by itself mean you have the Admin role needed to finish account setup.
+
+Helpful details for support: User email, account name, screenshot of the error message.
+
+I lost access while my campaigns are running
+
+If you see “Your saved ad account is no longer available” or an access-permission error, confirm that you are using the intended sign-in email and have selected the correct ad account. Confirm that you accepted any invitation with that email. If another authorized account administrator can access the account, ask them to check your access.
+
+If you want to stop delivery, ask an authorized user with access to pause the affected campaigns using the controls described in Edit Campaigns.
+
+Do not assume that an access error has paused your campaigns. If no authorized user can access the account, contact ads-support@openai.com or use the Help Center support widget promptly. State that access is blocked and that campaigns may still be serving. If you want a pause, name the campaigns and explicitly request help pausing them. A support request alone does not confirm that a campaign is paused.
+
+Include your sign-in email, ad account name and ID if available, affected campaign names or IDs, exact error or screenshot, date and time with time zone, whether another administrator can access the account, and any recent workspace or account changes. Do not include passwords or payment-card details.
+
+Billing profile or payment method is missing
+
+Check first: Confirm a billing profile has been created, a payment method has been added, and billing settings are correctly configured
+
+Helpful details for support: Account name, screenshot of the billing page, description of the missing or blocked step
+
+Don’t have permission to create an ad account
+
+Check first: If your company already has an OpenAI tenant, ask your IT team or admin to grant you the Ads Admin role in the OpenAI admin console at https://admin.openai.com/. They can do this by going to Users, selecting your user profile, opening Direct roles, clicking +, and assigning Ads Admin.
+
+Helpful details for support: Tenant name, screenshot of the error message.
+
+Create account is missing or blocked
+
+Check first: Confirm that you are signed in with the intended OpenAI login and have selected an eligible existing self-serve ad account that uses credit-card billing.
+
+Check the creation limit: Once you belong to 10 or more ad accounts, you cannot create another account yourself. Count both accounts you created and accounts you joined by invitation. Having fewer than 10 accounts does not guarantee that you meet the other account-creation requirements.
+
+Check organization permissions: If the error asks you to contact an organization administrator, follow the permission guidance above.
+
+To access an existing account: Ask an account administrator to go to Settings > Users > Invite and enter the email address you use to sign in. The creation limit does not prevent you from being invited to additional existing accounts.
+
+Helpful details for support: If you belong to fewer than 10 accounts and still cannot create another, contact support. Include your sign-in email, the selected ad account name and ID, how many accounts you belong to, whether Create account is missing or returns an error, the exact error or a screenshot, and the date, time, and time zone of the attempt. Include the organization shown during setup if the issue concerns permissions.
+
+Do not include passwords, payment-card details, or other sensitive credentials.
+
+For setup steps, see Ads Manager Beta Account Setup.
+
+2. Uploading and launching campaigns
+My campaign upload had an error
+
+Check first: Review the error message as it typically identifies the exact issue. Compare your file against the Campaign Structure Checklist and fix any issues in the template. Before retrying, check the upload’s row-level results and confirm that each ad_group_id identifies the intended destination. Processing can finish even when individual rows fail. Reconcile ads already created before resubmitting rows: a successful upload with blank ad_id values creates new ads and can duplicate earlier imports. Image URLs must return the image itself, rather than a preview or sign-in page.
+
+Helpful details for support: The exact file used, the row or object you believe is failing, the error message or screenshot
+
+My product feed upload fails
+
+If a product feed upload fails with a general error, check the values in individual rows against the product feed specification. Look for missing required fields, field names that do not match the specification, or values in the wrong format.
+
+Check the file content even if the message refers to a hosted URL, especially if the same CSV also fails when uploaded directly. Correct invalid values and upload the corrected feed again. For the upload steps, see Create Campaigns from Product Feeds.
+
+My images won’t upload
+
+Check first: Confirm that images are PNG or JPG, square, no larger than 1200 x 1200. Images must also be publicly accessible and open directly to the image in the browser. Accepted image hosting options include publicly available Google Drive links, AWS-hosted image links such as S3 or CloudFront, and self-hosted image links on the advertiser’s domain or CDN
+
+Helpful details for support: Account name, campaign name, ad title associated with the image, image URL
+
+My ad was rejected
+
+Check first: In the Ads tab of Ads Manager Beta, review the ad ‘Status’. If the status is ‘Not serving’, hover over the ad to view the reason. Common causes include ad copy or landing pages that do not align with our Ad Policies, or landing pages that block OpenAI user agents or IP addresses. If this happens, you can edit the ad and resubmit it for review, or request another review if you believe the ad was rejected in error
+
+Helpful details for support: Ad title and copy, disapproval code or message, creative copy, landing URL, and the time you received the notice
+
+3. Reporting and measurement
+My campaign launched but is not getting any impressions
+
+Check first: For a newly launched campaign with no confirmed delivery and no clear blocker, allow at least 24 hours after launch before reporting a zero-delivery issue. Once ads are delivering, impressions, clicks, and CTR typically refresh approximately every 15 minutes. Spend insights may be delayed approximately 7–8 hours; CPC and CPM depend on settled spend and update later. These are approximate timings, not guarantees. If you see a hard error or a clear billing or review blocker, contact support without waiting. If you’re still seeing zero impressions, check the following:
+
+Campaign and ad status:
+
+Confirm that your campaign and ads are active, ad review is complete, and today falls within your campaign’s start and end dates. Ads that are actively delivering should show a
+
+Serving
+
+status.
+
+Account and billing:
+
+Make sure your account verification and billing setup are complete, and your payment method is valid. If delivery stopped after a name change, check which field you changed. Changing Brand Name pauses ad serving until brand review is approved. Changing Legal Name restarts business review and may pause serving. Changing Account Name does not trigger review.
+
+Budget and spending allowance: Confirm that your campaign has spending allowance remaining.
+
+Daily budgets:
+
+Review spending for both today and the current weekly period. Using the weekly allowance early can stop delivery later in the week.
+
+Lifetime budgets with active pacing:
+
+Delivery may slow if your campaign is ahead of pace. Changing the budget or end date recalculates pacing based on the remaining spend and time. A daily minimum can shorten the effective pacing period, and setting an end date does not guarantee evenly spread spend.
+
+Campaign goal, conversions, and bids:
+
+Review your campaign goal, conversion setup, and any ad-group bid warnings. For conversion-optimized campaigns, make sure your bid reflects the selected conversion rather than a click. Bid recommendations are estimates, while the Low bid warning uses observed auction performance, so they may differ. Raising your bid does not guarantee delivery.
+
+Delivery can vary as we improve systems to optimize conversions. If delivery drops despite unchanged settings, contact support with your campaign goal, bid, conversion-setup details, and when the drop began.
+
+If you’re using a new self-serve account to advertise outside your home country, check the international-targeting requirements in our campaign creation guide. Some accounts are initially limited to home-country delivery.
+
+Helpful details for support: Account name, campaign name, launch date, screenshot showing zero delivery.
+
+Reporting does not match what I expected
+
+Check first: When comparing table views, CSV exports, charts or another reporting tool, confirm that you are comparing the same ad account and that the campaigns and activity match what you intend to review, including paused ads when reviewing earlier activity. Also confirm that the filters, date range and time zone match.
+
+For conversion discrepancies: Check which conversion events and attribution windows each report includes. Also check whether conversions are reported against the date of the ad interaction or the date the conversion occurred. A conversion may happen after an ad click or view, so these reporting approaches can produce different daily totals.
+
+For unexpected country delivery: Review the campaign’s selected locations and exclusions, including any changes made during the reporting period. Selecting all countries and excluding some can still allow delivery in eligible countries that have not been excluded. For United States-only targeting, explicitly select the United States and save the campaign settings. Changes to targeting do not change where past delivery occurred.
+
+Helpful details for support: If the discrepancy remains after these checks, or you are unsure how a report assigns conversion dates, contact support for further review. Include the ad account and campaign IDs, report screenshots or exports, date range, time zone, filters and a short explanation of the discrepancy. For conversion issues, include the conversion event names and example conversion timestamps. For location issues, include screenshots of the location settings, affected countries and when any targeting changes were made.
+
+My product feed uploaded successfully, but the Products tab is empty or incomplete
+
+Check first: The Products tab is a reporting view and does not show every uploaded or ads-eligible product. Products appear after an active product-feed campaign delivers and generates reporting data.
+
+If the campaign has not started, has a future start date, or has not delivered, an empty or incomplete Products tab may be expected.
+
+During ad-group setup, confirm that the correct feed is selected and review the number of products ready to serve or passing your filters.
+
+After delivery begins, allow up to seven hours for product rows to appear for the first time in the Products tab. Campaign-level impressions, clicks, and CTR typically refresh approximately every 15 minutes; this refresh cadence is separate from initial product-row availability.
+
+Helpful details for support: Ad account ID, feed ID, campaign and ad-group names, date range and time zone, example product IDs, and a screenshot of the Products tab.
+
+Why was I billed for campaign spend that does not match my dashboard?
+
+Your billing information and Ads Manager reporting can update at different times. Spend accrues as your ads are delivered. Impressions, clicks, and CTR typically refresh approximately every 15 minutes, while spend insights may be delayed approximately 7–8 hours. CPC and CPM depend on settled spend and update later. These are approximate timings, not guarantees. This means a recent invoice or charge may include campaign spend that is not yet visible in your dashboard.
+
+Your payment method is charged when your account reaches its payment threshold, or at the end of the month for any remaining unpaid balance. See Billing & Payment for more information.
+
+Check first:
+
+Allow time for reporting to update, then confirm you are comparing the same ad account, campaigns, date range, and time zone. Check that dashboard filters are not excluding spend covered by the invoice or charge. If the discrepancy persists after reporting updates, contact support for review.
+
+Helpful details for support:
+
+Ad account ID, invoice or charge ID, amount in question, campaign IDs, date range and time zone, and screenshots or exports showing the difference.
+
+How to submit a support request
+
+You can submit a support request directly to ads-support@openai.com or use the support widget in the bottom right of this page.
+
+How to describe urgency
+
+If the issue looks broader than one campaign or one user, say that clearly. Mention whether it affects multiple campaigns, multiple accounts, or an entire workflow such as reporting or launch. If you suspect a broader incident, include a few concrete examples rather than a general statement that the platform is down.

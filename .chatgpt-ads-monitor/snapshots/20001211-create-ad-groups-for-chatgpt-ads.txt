@@ -1,0 +1,38 @@
+Create Ad Groups for ChatGPT Ads
+
+Learn how to organize related ads into focused ad groups and add context hints to describe when your ads may be relevant.
+
+
+Ad groups organize your campaigns around a shared product, service, or customer need.
+
+A campaign supports up to 10,000 ad groups. If your structure needs more, distribute the ad groups across multiple campaigns.
+
+Organize your ad groups
+
+Choose a clear focus. Group ads around a shared product category, service, theme, or customer need.
+
+Use a descriptive title. Make the ad group’s purpose easy to identify.
+
+Separate meaningfully different use cases. Create separate ad groups when they require different messaging or landing pages.
+
+Test messaging variations. Include multiple ads within an ad group to try different approaches to the same theme.
+
+For example, a plumbing business might use separate ad groups for emergency repairs and preventive maintenance. Both promote the same business but address different customer needs.
+
+Add context hints
+
+Context hints help our systems understand when your ads may be relevant in ChatGPT. Use them to share additional information about your offering beyond what is already clear from your ad or landing page.
+
+Write clear, specific phrases that describe what you offer, who it helps, or when it may be useful. For example, “cushioned everyday running shoes for beginners training for their first 5K” adds more useful context than “running shoes.”
+
+Context hints inform relevance. They are not exact-match keywords or targeting rules, and they do not guarantee delivery for particular conversations or audiences.
+
+For guidance and examples, see Write Effective Context Hints for ChatGPT Ads.
+
+Next steps
+
+After creating your ad groups, you can:
+
+Create ads and creative variations
+
+Launch your campaign and monitor performance

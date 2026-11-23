@@ -1,61 +1,195 @@
-Ads Manager Beta Account Setup
+Ads Manager Account Setup
 
-Learn how to set up your Ads Manager Beta account, including eligible self-serve setup with ChatGPT Ads Manager.
+Learn how to sign up for Ads Manager, create your first campaign, and complete your account setup.
 
-Account setup is the process of configuring your advertiser account so you can create and manage campaigns in Ads Manager Beta. This includes completing onboarding, verifying your account, setting up billing, and inviting team members.
 
-Each business should have only one account owner create the advertiser account. After the account is created, the account owner can invite additional team members to access Ads Manager Beta. Campaigns will not deliver until all required steps are complete.
+You can get started in Ads Manager in two ways: use your website URL to create an ad and build your first campaign during signup, or skip that step and create a campaign after you enter Ads Manager. Both paths let you create an advertiser account and finish setup in Ads Manager.
 
-Setup flow
+Have one person create the advertiser account, then invite anyone else who needs access. If your business already has an account, ask its administrator to invite you.
 
-Account setup happens in five steps:
-1. Access Ads Manager Beta and create your account
-2. Complete account onboarding and verification
-3. Complete account information
-4. Set up billing and payment
-5. Invite team members
+1. Sign in or create an account
 
-1. Access Ads Manager Beta and create your account
-An OpenAI account is required. If you do not already have one, you can create one during signup.
+Go to ads.openai.com and select Login or Sign up. Sign in with the OpenAI account you use for ChatGPT, or create an account if you do not already have one.
 
-2. Complete account onboarding and verification
-Business details: business name, website, logo, industry. Account details: country, currency, time zone. Verification is completed through Persona. Reviewed against Ads Policies. Rolling queue review; may take some time.
+You can then choose whether to start with your website URL or go directly to Ads Manager.
 
-3. Complete account information
-Confirm account name and logo exactly as they should appear in the ad unit. Ads will not serve unless this step is complete.
+2. Choose how to get started
+Option 1: Create your first ad and campaign during signup
 
-4. Set up billing and payment
-Create a billing profile (business name, invoice delivery email, billing address). Add a credit card payment method. Campaigns do not deliver until billing is complete.
+Enter your website URL when prompted. Ads Manager uses your website to help create your first ad.
 
-5. Invite team members
-From Settings > Users > Invite.
+Review the ad and make any changes you need.
 
-If you manage multiple advertisers: each advertiser requires its own account.
+Continue to create your first campaign from that ad.
 
-Account setup FAQ
-- Confirm country/region, currency, time zone, legal business name, advertiser website, billing details before submitting. Some fields are not self-serve editable after creation.
-- Country, currency, and time zone cannot be changed after creation.
-- Identity or business verification does not always mean the ad account is ready to run campaigns immediately.
-- If verification was exited early, return to the verification flow when available.
-- Do not submit duplicate applications.
-- A company can have multiple advertiser accounts.
+Review and confirm your campaign details.
 
-Use ChatGPT Ads Manager in ChatGPT
-Eligible business advertisers can begin self-serve setup from within ChatGPT via ChatGPT Ads Manager.
+Enter your advertiser name and the other required account details to create your advertiser account.
 
-Before you create an advertiser account
-- Available only in supported countries or regions.
-- Availability and access are based on the advertiser business or ad-account country selected during setup, not the ChatGPT login country.
-- Only eligible business advertiser accounts are supported. Individual advertisers and agencies-on-behalf-of are not supported; agencies can be invited after client account creation.
-- Confirm business name, advertiser website, country/region, currency, time zone before submitting.
+For ads created during signup, the onboarding notice below explains: “Your ads will go live once they pass review.” Your submitted ads can begin running after approval when billing, account readiness and campaign settings allow delivery. Advertising spend can then accrue.
 
-Set up an account from ChatGPT
-1. Open ChatGPT Ads Manager and connect your account.
-2. Ask ChatGPT to help set up a business advertiser account.
-3. Review advertiser name, website, business country/region, currency, time zone, logo.
-4. Open Ads Manager to complete billing, payment, tax, or identity-verification steps.
+Select Go to Ads Manager to review your campaign’s status, budget, schedule and any actions that need your attention. If you are not ready to advertise, pause the campaign and confirm its status.
 
-Create or access additional advertiser accounts
-- An existing email may be associated with more than one advertiser account.
-- If an additional account already exists, ask an administrator to invite you.
-- Do not submit duplicate account-creation requests.
+Example onboarding notice: “Your ads will go live once they pass review.” Ads can begin delivering after approval when account, billing and campaign requirements are also met.
+
+The advertiser name you enter initially becomes your Account Name, Brand Name, and Legal Name. After creating your account, you can change each name separately in Settings → General. See “Understand your account, brand, and legal names” below for details.
+
+Option 2: Skip ad creation and go directly to Ads Manager
+
+When prompted to enter your website URL, choose the option to skip this step and continue to Ads Manager.
+
+Enter your advertiser name and the other required account details to create your advertiser account.
+
+Once you are in Ads Manager, create your first campaign when you are ready.
+
+This path uses the same name defaults: your advertiser name initially fills your Account Name, Brand Name, and Legal Name. You can edit these separately after account creation.
+
+Understand your account, brand, and legal names
+
+Ads Manager uses three names for different purposes. They can be the same, or you can use different names for your internal account, public brand, and registered business.
+
+Account Name: The name you use to identify and manage your account within Ads Manager.
+
+Brand Name: The public name shown alongside your ads in ChatGPT.
+
+Legal Name: Your business’s registered legal name, used for billing and business verification.
+
+During signup, the single advertiser name you enter is used for all three fields. After your account is created, go to Settings → General to update them separately. Changing your Brand Name or Legal Name triggers review; see the final section of this article for details.
+
+Review all required account details before submitting, including your country or region, currency, and time zone where shown. These three settings cannot be changed after account creation. By creating an ad account, you agree to the Terms and acknowledge the Privacy Policy presented during signup.
+
+Can OpenAI complete a vendor form or sign my company's agreement?
+
+For self-service ChatGPT Ads, use the standard OpenAI Advertising Terms applicable to your location. OpenAI Support cannot complete customer-specific vendor or due-diligence forms, sign customer-provided agreements, or negotiate individual legal terms for the self-service offering.
+
+For available security and compliance documentation, visit the Trust Portal.
+
+If you are already working with a named OpenAI Ads commercial contact, contact them about the applicable approved contracting or vendor-onboarding process.
+
+3. Complete setup in Ads Manager
+
+Whichever signup path you choose, finish the following steps in Ads Manager before your campaigns start delivering.
+
+Set up billing
+
+Open Billing and complete the setup prompts. For self-serve card-billed accounts, enter your credit card information and any required billing profile details, such as your business name, billing address, and invoice delivery email. Billing must be set up before your campaigns can deliver.
+
+When you add a card, you may see a temporary authorization hold to verify your payment method. The amount varies by country and uses the billing currency saved for your ad account. Review the expected hold amount shown during setup. The hold is separate from advertising charges.
+
+For more information, see Billing & Payment.
+
+Understand your billing and purchaser addresses
+
+For customers on invoicing:
+
+When setting up your billing account, you’ll provide two addresses. They can be the same or different, depending on your business’s billing arrangements.
+
+Billing address (bill-to): The address of the company that receives the invoice.
+
+Purchaser address (sold-to): The business address of the legal entity that owns the ad account and is named on your agreement.
+
+If both addresses are the same, keep Same as billing address selected. If they differ, uncheck this option and enter the purchaser address separately.
+
+You’ll also provide an invoice delivery email for your primary billing contact. You can add other email addresses to receive invoice copies, separated by commas, and an optional purchase order number to appear on your invoices.
+
+Review all billing details before submitting to ensure they match the appropriate legal entities and addresses.
+
+Confirm your logo and account names
+
+Go to Settings → General to review your logo, Account Name, Brand Name, and Legal Name. Confirm or update your logo and make sure your Brand Name represents how you want your business to appear in ads. Use your registered business name for Legal Name.
+
+Invite users, if needed
+
+To give teammates access, go to Settings → Users, select Invite, and enter their email addresses. Choose a role for each person you invite:
+
+Admin: Full access to the platform.
+
+Member: Create and manage campaigns.
+
+Viewer: View content only.
+
+Invite users to the existing advertiser account so they can work in the same account.
+
+Review your first campaign
+
+If you created a campaign during signup, review it in Ads Manager. If you skipped that step, create your first campaign now. Make sure your campaign details are correct and required setup and reviews are complete before launching.
+
+If you manage multiple advertisers
+
+Create a separate account for each advertiser. You can use the same OpenAI login to access the accounts you belong to and switch between them.
+
+Creating additional ad accounts in Ads Manager
+
+You can use the same OpenAI login to access multiple advertiser accounts. Eligible self-serve advertisers can also create additional accounts for their business.
+
+Once you belong to 10 or more ad accounts, you cannot create another ad account yourself. This is a limit on creating accounts, not on membership: you can still be invited to additional existing ad accounts.
+
+How the account-creation limit works
+
+The limit considers the ad accounts you belong to, including accounts you created and accounts you joined through an invitation. It is not a separate allowance of 10 accounts you can create in addition to the accounts you already belong to.
+
+For example:
+
+If you belong to 9 ad accounts, you may be able to create one more, provided you meet the other account-creation requirements.
+
+If you created 2 accounts and joined 8 others, you belong to 10 accounts and cannot create another yourself.
+
+If you belong to 10 or more accounts, an administrator of another existing ad account can still invite you through the usual access process. The creation limit does not prevent that membership.
+
+Create an additional ad account
+
+Sign in to Ads Manager with your existing OpenAI account.
+
+Select an existing eligible self-serve ad account that uses credit-card billing.
+
+Open the account menu and select Create account, when available.
+
+Follow the setup prompts and check the business and account details before submitting.
+
+Complete any required billing, verification, and account-review steps for the new account.
+
+The additional-account option depends on eligible self-serve credit-card billing, organization permissions, and remaining account-creation capacity. Having fewer than 10 accounts does not by itself guarantee eligibility. Follow the setup flow above to complete the full account setup process.
+
+Why is Create account missing or blocked?
+
+You may have reached the 10-account creation limit, or the selected account or organization may not meet the requirements for creating another account.
+
+Check that you are signed in with the intended OpenAI login. If the error asks you to contact an organization administrator, follow the permission guidance in Troubleshooting Common Issues.
+
+If you belong to fewer than 10 accounts and still cannot create another, contact support using the details below. Support can help identify the blocker.
+
+Access an account that already exists
+
+Ask an administrator of that ad account to invite you. In Ads Manager, they can go to Settings > Users > Invite and enter the email address you use to sign in.
+
+You do not need to create another account to access an advertiser account that already exists. Creating additional accounts does not bypass verification, account review, or other eligibility requirements.
+
+Helpful details for support
+
+Contact ads-support@openai.com or use the support widget in the bottom-right corner of the Help Center. Include:
+
+The email address you use to sign in.
+
+The name and ID of the ad account selected when the issue occurs, if available.
+
+How many ad accounts you currently belong to, including accounts you joined by invitation.
+
+Whether Create account is missing or you receive an error after selecting it.
+
+The exact error text or a screenshot, plus the date, time, and time zone of the attempt.
+
+The organization shown in the setup flow, if the issue concerns permissions.
+
+Do not include passwords, payment-card details, or other sensitive credentials.
+
+Already have an account? Update your account, brand, and legal names
+
+As of Sep 25, 2026, you can manage Account Name, Brand Name, and Legal Name separately in Ads Manager.
+
+For accounts created before this update, all three fields initially use the same name. To change them, open Settings → General and update the relevant field.
+
+Account Name changes affect only Ads Manager and do not trigger review.
+
+Brand Name changes trigger brand review and pause ad serving until the new name is approved.
+
+Legal Name changes restart business review and may pause ad serving.
