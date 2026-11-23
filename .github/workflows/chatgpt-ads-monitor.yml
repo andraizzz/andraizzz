@@ -1,0 +1,118 @@
+name: ChatGPT Ads Doc Monitor
+
+on:
+  schedule:
+    # Mondays 08:00 UTC = 09:00 Lisbon (summer) / 08:00 Lisbon (winter)
+    - cron: "0 8 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: chatgpt-ads-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-1.47.2-${{ runner.os }}
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.47.2
+          if [ "${{ steps.playwright-cache.outputs.cache-hit }}" != "true" ]; then
+            npx playwright install --with-deps chromium
+          else
+            npx playwright install-deps chromium
+          fi
+
+      - name: Fetch, diff, and update snapshots
+        id: monitor
+        run: node .github/scripts/chatgpt-ads-monitor.mjs
+
+      - name: Read summary
+        id: summary
+        if: always()
+        run: |
+          {
+            echo "body<<EOF"
+            cat .chatgpt-ads-monitor-summary.md
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Clean up summary artifact before PR
+        if: always()
+        run: rm -f .chatgpt-ads-monitor-summary.md
+
+      - name: Push branch and open Issue if snapshots changed
+        if: steps.monitor.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.monitor.outputs.date }}
+          CHANGED: ${{ steps.monitor.outputs.changed_count }}
+          SEEDED: ${{ steps.monitor.outputs.seeded_count }}
+          FAILED: ${{ steps.monitor.outputs.failed_count }}
+          SUMMARY_BODY: ${{ steps.summary.outputs.body }}
+        run: |
+          set -euo pipefail
+          BRANCH="chatgpt-ads-monitor/${DATE}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stash our snapshot updates, rebase onto latest main, then reapply.
+          # This keeps the branch tip's workflow file identical to main so
+          # GitHub's GITHUB_TOKEN doesn't reject the push for "modifying" a
+          # workflow file.
+          git stash push -u -m "monitor-${DATE}" -- .chatgpt-ads-monitor/
+          git fetch origin main
+          git checkout -B "$BRANCH" origin/main
+          git stash pop
+          git add .chatgpt-ads-monitor/
+          git commit -m "chore(chatgpt-ads): weekly doc check ${DATE}
+
+          ${CHANGED} changed, ${SEEDED} newly seeded, ${FAILED} failed."
+          git push -f origin "$BRANCH"
+
+          COMPARE_URL="https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH}"
+          ISSUE_BODY=$(cat <<ISSUE
+          Automated weekly snapshot refresh of OpenAI's ChatGPT Ads help collection.
+
+          **Diff:** [main...${BRANCH}](${COMPARE_URL})
+          **Workflow run:** [#${GITHUB_RUN_NUMBER}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})
+
+          ${SUMMARY_BODY}
+
+          When a change is substantive (new creative format, new availability, new policy, new bidding/measurement capability), update [\`app/chatgpt-ads/page.tsx\`](app/chatgpt-ads/page.tsx) and bump the \`lastVerified\` / schema \`dateModified\` constants. Then close this issue.
+          ISSUE
+          )
+          gh issue create \
+            --title "ChatGPT Ads docs changed on ${DATE}" \
+            --label "chatgpt-ads-monitor" \
+            --body "$ISSUE_BODY" || \
+          gh issue create \
+            --title "ChatGPT Ads docs changed on ${DATE}" \
+            --body "$ISSUE_BODY"
+
+      - name: Report when nothing changed
+        if: steps.monitor.outputs.has_changes != 'true'
+        run: |
+          echo "No substantive changes this week. Snapshots are current; nothing to push."

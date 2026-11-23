@@ -14,13 +14,13 @@ Ads Manager Beta supports the core workflows required to run campaigns end to en
 
 Create and manage campaigns: create campaigns individually in the guided workflow or create them at scale with bulk upload for supported campaign types. Ads Manager CSV upload does not currently support creating product-feed campaigns.
 
-Monitor performance: track impressions, clicks, and spend across campaigns, ad groups, and ads using table views, charts, and CSV exports. Impressions, clicks, and click-through rate can appear within minutes. Spend can update later, so a temporary zero spend value does not necessarily mean that no charges have accrued.
+Monitor performance: track impressions, clicks, and spend across campaigns, ad groups, and ads using table views, charts, and CSV exports. Impressions, clicks, and click-through rate refresh approximately every 15 minutes. Spend insights may be delayed 7-8 hours, so a temporary zero spend value does not necessarily mean that no charges have accrued.
 
-Manage account settings: access account-level settings such as members, permissions, API keys, billing details, and change logs.
+Manage account settings: access account-level settings such as members, permissions, API keys, billing details, and change logs
 
 Because Ads Manager Beta is still evolving, some capabilities are limited today and additional functionality will be added over time.
 
 Next steps
 
-Set up your Ads Manager Beta account.
-Launch your first campaign on Ads Manager Beta.
+Set up your Ads Manager Beta account
+Launch your first campaign on Ads Manager Beta

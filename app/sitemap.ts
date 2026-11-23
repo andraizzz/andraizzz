@@ -12,12 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       pathname === "/"
         ? 1
         : pathname === "/chatgpt-ads" ||
+            pathname === "/ai-ads" ||
             pathname === "/ai-workflow-audit" ||
             pathname === "/recommended-tools" ||
             pathname === "/insights"
           ? 0.9
-          : pathname.startsWith("/insights/")
-            ? 0.8
-            : 0.3
+          : pathname === "/chatgpt-ads/examples" || pathname === "/chatgpt-ads/manager"
+            ? 0.75
+            : pathname.startsWith("/insights/")
+              ? 0.8
+              : 0.3
   }));
 }
